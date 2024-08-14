@@ -5,7 +5,7 @@ $("body").append(`<div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" r
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Valor do Produto de Garantia
+                <h4 class="modal-title">Opções de entrega
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>						
@@ -14,7 +14,7 @@ $("body").append(`<div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" r
             <div class="modal-body">
                 <form id="1000MARCAS_ModalFormAposAddCarrinho">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
                             <label id="1000MARCASLabelCustomerOrder" class="fonte" for="1000MARCASCustomerOrder">Valor Garantia</label><span id="1000MARCASSpanCustomerOrder" style="color: red;font-size: small"></span>
                             <div class="input-group input-group-lg  clearable">
                             <select id="1000MARCASCustomerOrder" class="form-control clearableInput" required>
@@ -89,7 +89,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var nItem   = 0;
     var cItem   = '';
     var dropdownGarantia = document.getElementById("1000MARCASCustomerOrder");
-    var content= dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
+    var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
     cCliente		= $("#cliente").data("codigo")
