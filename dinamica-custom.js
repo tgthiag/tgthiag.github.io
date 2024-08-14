@@ -1,51 +1,80 @@
 console.log("Hello world2!");
 
-$("body").append(`<div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Opções de entrega
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>						
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form id="1000MARCAS_ModalFormAposAddCarrinho">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
-                            <label id="1000MARCASLabelCustomerOrder" class="fonte" for="1000MARCASCustomerOrder">Valor Garantia</label><span id="1000MARCASSpanCustomerOrder" style="color: red;font-size: small"></span>
-                            <div class="input-group input-group-lg  clearable">
-                            <select id="1000MARCASCustomerOrder" class="form-control clearableInput" required>
-                                <!-- Dropdown options will be populated here dynamically -->
-                            </select>
-                            <i class="clearable__clear">&times;</i>
+$("body").append(`
+    <div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Opções de entrega
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>						
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="1000MARCAS_ModalFormAposAddCarrinho">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
+                                <label id="1000MARCASLabelCustomerOrder" class="fonte" for="1000MARCASCustomerOrder">Valor Garantia</label><span id="1000MARCASSpanCustomerOrder" style="color: red;font-size: small"></span>
+                                <div class="input-group input-group-lg clearable">
+                                    <select id="1000MARCASCustomerOrder" class="form-control clearableInput" required>
+                                        <!-- Dropdown options will be populated here dynamically -->
+                                    </select>
+                                    <i class="clearable__clear">&times;</i>
+                                </div>
+                                <span id="lbl1000MARCASCustomerOrder" class="span-erro"></span>	
+                            </div>
                         </div>
-                            <span id="lbl1000MARCASCustomerOrder" class="span-erro"></span>	
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <label class="fonte">Tipo de entrega</label>
+                                <select id="selectTipoEntrega" class="form-control">
+                                    <option value="2">2 - Retira NFC-e</option>
+                                    <option value="3">3 - Entrega</option>
+                                </select>
+                                <p id="infoEntregaCd" style="color: red"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <label class="fonte">Tipo de entrega</label>
-                            
-                            <select id="selectTipoEntrega" class="form-control "  >  
-                                <option value="2">2 - Retira NFC-e</option>
-                                <option value="3">3 - Entrega</option>
-                            </select>
-                            <p id="infoEntregaCd" style="color: red"></p>
-                        
+                        <div id="opcoesEntrega" style="display: none;">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="fonte">Turno de entrega</label>
+                                    <select id="selectTurnoEntrega" class="form-control">
+                                        <option value="1">Manhã</option>
+                                        <option value="2">Tarde</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="fonte">Data de entrega</label>
+                                    <input type="date" id="dataEntrega" class="form-control">
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="fonte">Data de montagem</label>
+                                    <input type="date" id="dataMontagem" class="form-control">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="modal-footer" id="buttons">
-                <button id="1000MARCASBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal" >Continuar <i class="fas fa-check"></i></button>
+                    </form>
+                </div>
+                <div class="modal-footer" id="buttons">
+                    <button id="1000MARCASBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
+                </div>
             </div>
         </div>
     </div>
-</div>`);
+    `);
+    
+
+    $("#selectTipoEntrega").change(function() {
+        if ($(this).val() == "3") {
+            $("#opcoesEntrega").show();
+        } else {
+            $("#opcoesEntrega").hide();
+        }
+    });
 
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
