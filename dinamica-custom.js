@@ -267,3 +267,10 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         next(item)
     }
 }
+
+function PE_GERORC_ANTES_GERORC(jsonenv){
+    var typeInvoice = sessionStorage.getItem("typeInvoice");
+    jsonenv.cabecalho[0].LQ_IMPNF = (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
+
+    return jsonenv;
+} 
