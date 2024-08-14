@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log("Hello world2!");
 
 $("body").append(`<div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" role="dialog">
     <div class="modal-dialog modal-lg">
