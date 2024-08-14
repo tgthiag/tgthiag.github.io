@@ -119,7 +119,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var cItem   = '';
     var dropdownGarantia = document.getElementById("1000MARCASCustomerOrder");
     var dropdownTurno = document.getElementById("selectTurnoEntrega");
-    var dinamica_turno = dropdownTurno.options[dropdownTurno.selectedIndex].text
+    var dinamica_turno = $("#selectTurnoEntrega").val();
     var dinamica_dataEntrega = $("#dataEntrega").val();
     var dinamica_dataMontagem = $("#dataMontagem").val();
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
