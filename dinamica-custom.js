@@ -48,6 +48,7 @@ $("body").append(`<div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" r
 </div>`);
 
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
+    $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
     nQtditemCarrinhoEntrega = 0;
 
     var produtoSelecionado = $("#codigo").val().trim();
