@@ -118,6 +118,10 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var nItem   = 0;
     var cItem   = '';
     var dropdownGarantia = document.getElementById("1000MARCASCustomerOrder");
+    var dropdownTurno = document.getElementById("selectTurnoEntrega");
+    var dinamica_turno = dropdownTurno.options[dropdownTurno.selectedIndex].text
+    var dinamica_dataEntrega = $("#dataEntrega").val();
+    var dinamica_dataMontagem = $("#dataMontagem").val();
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -188,6 +192,9 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-qtde="'				+ nQuantidade + '"' +
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
+                ' data-turno="'			+ dinamica_turno + '"' +
+                ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
+                ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
                     ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
