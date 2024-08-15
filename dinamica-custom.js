@@ -76,6 +76,38 @@ $("body").append(`
         }
     });
 
+    // Função para verificar o prazo de entrega
+function verificarPrazoEntrega() {
+    var dataAtual = new Date();
+    var dataEntrega = new Date($("#dataEntrega").val());
+
+    if (dataEntrega.getTime() < dataAtual.getTime() + (2 * 24 * 60 * 60 * 1000)) {
+        alert("A data de entrega deve ser no mínimo 2 dias.");
+        $("#dataEntrega").val('');
+    }
+}
+
+// Função para verificar o prazo de montagem
+function verificarPrazoMontagem() {
+    var dataEntrega = new Date($("#dataEntrega").val());
+    var dataMontagem = new Date($("#dataMontagem").val());
+
+    if (dataMontagem.getTime() <= dataEntrega.getTime() + (1 * 24 * 60 * 60 * 1000)) {
+        alert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
+        $("#dataMontagem").val('');
+    }
+}
+
+// Eventos para verificar as datas
+$("#dataEntrega").change(function() {
+    verificarPrazoEntrega();
+    verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
+});
+
+$("#dataMontagem").change(function() {
+    verificarPrazoMontagem();
+});
+
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
     nQtditemCarrinhoEntrega = 0;
@@ -269,8 +301,50 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
 }
 
 function PE_GERORC_ANTES_GERORC(jsonenv){
+    var lEntregaposterior   = false;
     var typeInvoice = sessionStorage.getItem("typeInvoice");
+    const nQtdItensCarrinho = jsonenv.itens.length;
     jsonenv.cabecalho[0].LQ_IMPNF = (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
+
+    $(".list-group-item").each(function(index) {
+
+        jsonenv.itens[index]["LR_ITEM"] = ("0000" + (index+1)).slice(-2);
+
+        /**Configura operação é entrega posterior c/pedido */
+        // if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
+        //     lEntregaposterior = true;
+        // }
+        // if ($(this).data("cmesesdegarantia") != 100 && $(this).data("cmesesdegarantia") !== undefined){
+        //     jsonenv.itens[index]["LR_XMSGAR"] = $(this).data("cmesesdegarantia").toString();
+        // }
+        
+        
+        // if (nValFrete != 0){
+        //     jsonenv.itens[index]["LR_VALFRE"] =  (nValFrete/nQtdItensCarrinho).toString()
+        // }
+        
+        jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
+        jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
+        jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString();
+        jsonenv.itens[index]["LR_FDTMONT "] = $(this).data("datamontagem").toString();
+        /**Configura operação quando o produto tem garantia */
+        // if (jsonenv.itens[index]["LR_PRODUTO"] == 'GARANTIA'){
+        //     jsonenv.itens[index]["LR_GARANT"] = '';
+        //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
+
+        //     //Essas colunas são excluídas quando o item é Garatina para concretizar o processo dentro do orçamento.
+        //     delete jsonenv.itens[index].LR_QUANT
+        //     delete jsonenv.itens[index].LR_DESC
+        //     delete jsonenv.itens[index].LR_VALDESC
+        //     delete jsonenv.itens[index].LR_DESCPRO
+        //     delete jsonenv.itens[index].LR_VEND
+
+        // }else if (jsonenv.itens[index]["LR_PRODUTO"] != 'GARANTIA' || ("0000" + parseFloat($(this).data("itempro"))).slice(-2) != ''){
+        //     jsonenv.itens[index]["LR_GARANT"] = 'GARANTIA';
+        //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
+        // }
+
+    });
 
     return jsonenv;
 } 
