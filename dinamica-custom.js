@@ -75,11 +75,13 @@ $("body").append(`
             $("#opcoesEntrega").hide();
         }
     });
-
-    // Função para verificar o prazo de entrega
+// Função para verificar o prazo de entrega
 function verificarPrazoEntrega() {
     var dataAtual = new Date();
-    var dataEntrega = new Date($("#dataEntrega").val());
+    
+    // Correção na criação da data de entrega
+    var datePartsEntrega = $("#dataEntrega").val().split("-");
+    var dataEntrega = new Date(datePartsEntrega[0], datePartsEntrega[1] - 1, datePartsEntrega[2]);
 
     if (dataEntrega.getTime() < dataAtual.getTime() + (2 * 24 * 60 * 60 * 1000)) {
         alert("A data de entrega deve ser no mínimo 2 dias.");
@@ -89,8 +91,13 @@ function verificarPrazoEntrega() {
 
 // Função para verificar o prazo de montagem
 function verificarPrazoMontagem() {
-    var dataEntrega = new Date($("#dataEntrega").val());
-    var dataMontagem = new Date($("#dataMontagem").val());
+    // Correção na criação da data de entrega
+    var datePartsEntrega = $("#dataEntrega").val().split("-");
+    var dataEntrega = new Date(datePartsEntrega[0], datePartsEntrega[1] - 1, datePartsEntrega[2]);
+
+    // Correção na criação da data de montagem
+    var datePartsMontagem = $("#dataMontagem").val().split("-");
+    var dataMontagem = new Date(datePartsMontagem[0], datePartsMontagem[1] - 1, datePartsMontagem[2]);
 
     if (dataMontagem.getTime() <= dataEntrega.getTime() + (1 * 24 * 60 * 60 * 1000)) {
         alert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
@@ -107,6 +114,7 @@ $("#dataEntrega").change(function() {
 $("#dataMontagem").change(function() {
     verificarPrazoMontagem();
 });
+
 
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
