@@ -685,8 +685,9 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         
         jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
         jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
-        jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
-        jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
+        jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('-');
+        jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('-');
+        
         
         /**Configura operação quando o produto tem garantia */
         // if (jsonenv.itens[index]["LR_PRODUTO"] == 'GARANTIA'){
