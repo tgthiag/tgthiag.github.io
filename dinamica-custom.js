@@ -712,26 +712,29 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
     return jsonenv;
 } 
 
-<div class="modal fade" id="alertModalDinamica" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Alerta</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p id="alertMessageDinamica">Esta é uma mensagem de alerta.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+// Adiciona o modal de alerta dinamicamente ao body
+$("body").append(`
+    <div class="modal fade" id="alertModalDinamica" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Alerta</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="alertMessageDinamica">Esta é uma mensagem de alerta.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+`);
 
-
+// Função para exibir o alerta com uma mensagem personalizada
 function showAlert(message) {
     document.getElementById("alertMessageDinamica").innerText = message;
     $("#alertModalDinamica").modal({ backdrop: "static" });
