@@ -436,7 +436,7 @@ function verificarPrazoEntrega() {
     var dataEntrega = new Date(datePartsEntrega[0], datePartsEntrega[1] - 1, datePartsEntrega[2]);
 
     if (dataEntrega.getTime() < dataAtual.getTime() + (2 * 24 * 60 * 60 * 1000)) {
-        alert("A data de entrega deve ser no mínimo 2 dias.");
+        showAlert("A data de entrega deve ser no mínimo 2 dias após a data de compra.");
         $("#dataEntrega").val('');
     }
 }
@@ -451,7 +451,7 @@ function verificarPrazoMontagem() {
 
     // Verifica se a data de montagem é pelo menos um dia após a data de entrega
     if (dataMontagem.getTime() < dataEntrega.getTime() + (1 * 24 * 60 * 60 * 1000)) {
-        alert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
+        showAlert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
         $("#dataMontagem").val('');
     }
 }
@@ -711,3 +711,29 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
 
     return jsonenv;
 } 
+
+<div class="modal fade" id="alertModalDinamica" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Alerta</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="alertMessageDinamica">Esta é uma mensagem de alerta.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+function showAlert(message) {
+    document.getElementById("alertMessageDinamica").innerText = message;
+    $("#alertModalDinamica").modal({ backdrop: "static" });
+}
+
