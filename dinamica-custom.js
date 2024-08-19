@@ -671,9 +671,9 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         jsonenv.itens[index]["LR_ITEM"] = ("0000" + (index+1)).slice(-2);
 
         /**Configura operação é entrega posterior c/pedido */
-        // if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
-        //     lEntregaposterior = true;
-        // }
+         if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
+             lEntregaposterior = true;
+         }
         // if ($(this).data("cmesesdegarantia") != 100 && $(this).data("cmesesdegarantia") !== undefined){
         //     jsonenv.itens[index]["LR_XMSGAR"] = $(this).data("cmesesdegarantia").toString();
         // }
@@ -706,7 +706,9 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         //     jsonenv.itens[index]["LR_GARANT"] = 'GARANTIA';
         //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
         // }
-
+        if (lEntregaposterior){
+            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';//Envia o autreserva, dessa forma o backend busca qual codigo reservar na SLJ
+        }
     });
 
     return jsonenv;
