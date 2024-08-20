@@ -435,7 +435,7 @@ function verificarPrazoEntrega() {
     var datePartsEntrega = $("#dataEntrega").val().split("-");
     var dataEntrega = new Date(datePartsEntrega[0], datePartsEntrega[1] - 1, datePartsEntrega[2]);
 
-    if (dataEntrega.getTime() < dataAtual.getTime() + (2 * 24 * 60 * 60 * 1000)) {
+    if (dataEntrega.getTime() < dataAtual.getTime() + (1 * 24 * 60 * 60 * 1000)) {
         showAlert("A data de entrega deve ser no mínimo 2 dias após a data de compra.");
         $("#dataEntrega").val('');
     }
@@ -450,7 +450,7 @@ function verificarPrazoMontagem() {
     var dataMontagem = new Date(datePartsMontagem[0], datePartsMontagem[1] - 1, datePartsMontagem[2]);
 
     // Verifica se a data de montagem é pelo menos um dia após a data de entrega
-    if (dataMontagem.getTime() < dataEntrega.getTime() + (1 * 24 * 60 * 60 * 1000)) {
+    if (dataMontagem.getTime() < dataEntrega.getTime() + (0 * 24 * 60 * 60 * 1000)) {
         showAlert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
         $("#dataMontagem").val('');
     }
@@ -703,7 +703,7 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
         // }
         if (lEntregaposterior){
-            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';//Envia o autreserva, dessa forma o backend busca qual codigo reservar na SLJ
+            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
