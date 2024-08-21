@@ -442,7 +442,7 @@ $("body").append(`
 
 $(document).ready(function() {
     $('#vendedorInput').on('input', function() {
-        let vendedorInputValue = $(this).val();
+        let vendedorInputValue = $(this).val().toUpperCase();
         if (vendedorInputValue.length >= 3) {
             $.ajax({
                 url: url + "QueryResult",
