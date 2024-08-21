@@ -395,7 +395,7 @@ $("body").append(`
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <label class="fonte" for="vendedorInput">Vendedor</label>
                                 <input type="text" id="vendedorInput" class="form-control" placeholder="Digite o nome do vendedor">
-                                <ul id="vendedorSuggestions" class="list-group" style="position: absolute; z-index: 1000; display: none;"></ul>
+                                <ul id="vendedorSuggestions" class="list-group-vendor" style="position: absolute; z-index: 1000; display: none;"></ul>
                             </div>
                         </div>
 
@@ -456,7 +456,7 @@ $(document).ready(function() {
                 success: function(response) {
                     if (response && response.Dados) {
                         var suggestions = response.Dados.map(function(item) {
-                            return '<li class="list-group-item" data-code="' + item.A3_COD + '">' + item.A3_NOME + '</li>';
+                            return '<li class="list-group-vendor-item" data-codevendedor="' + item.A3_COD + '">' + item.A3_NOME + '</li>';
                         }).join('');
                         $('#vendedorSuggestions').html(suggestions).show();
                     } else {
@@ -475,7 +475,9 @@ $(document).ready(function() {
 
     $(document).on('click', '#vendedorSuggestions li', function() {
         var selectedVendor = $(this).text();
+        var selectedVendorCode = $(this).data('codevendedor'); // Get A3_COD from data attribute
         $('#vendedorInput').val(selectedVendor);
+        $('#vendedorInput').data('codevendedor', selectedVendorCode); // Store A3_COD in a data attribute
         $('#vendedorSuggestions').hide();
     });
 });
@@ -565,7 +567,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_turno = $("#selectTurnoEntrega").val();
     var dinamica_dataEntrega = $("#dataEntrega").val();
     var dinamica_dataMontagem = $("#dataMontagem").val();
-    var vendorCodeDinamica = $('#vendedorSuggestions li.selected').data('code');
+    var vendorCodeDinamica = $('#vendedorInput').data('codevendedor');
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
