@@ -639,7 +639,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                 ' data-turno="'			+ dinamica_turno + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
-                ' data-vendcod="'			+ vendorCodeDinamica + '"' +
+                // ' data-vendcod="'			+ vendorCodeDinamica + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
                     ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
@@ -722,7 +722,7 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
     $(".list-group-item").each(function(index) {
         jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
         jsonenv.itens[index]["LR_ITEM"] = ("0000" + (index+1)).slice(-2);
-        jsonenv.itens[index]["LR_VEND"] = $(this).data("vendcod").toString();
+        // jsonenv.itens[index]["LR_VEND"] = $(this).data("vendcod").toString();
         /**Configura operação é entrega posterior c/pedido */
          if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
              lEntregaposterior = true;
