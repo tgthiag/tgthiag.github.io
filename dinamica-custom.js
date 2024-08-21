@@ -389,6 +389,16 @@ $("body").append(`
                                 <p id="infoEntregaCd" style="color: red"></p>
                             </div>
                         </div>
+
+                            <!-- New Vendedor section -->
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <label class="fonte" for="vendedorInput">Vendedor</label>
+                                <input type="text" id="vendedorInput" class="form-control" placeholder="Digite o nome do vendedor">
+                                <ul id="vendedorSuggestions" class="list-group" style="position: absolute; z-index: 1000; display: none;"></ul>
+                            </div>
+                        </div>
+
                         <div id="opcoesEntrega" style="display: none;">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -429,6 +439,38 @@ $("body").append(`
         }
     });
 // Função para verificar o prazo de entrega
+
+$(document).ready(function() {
+    $('#vendedorInput').on('input', function() {
+        var query = $(this).val();
+        if (query.length >= 3) {
+            $.ajax({
+                url: url + "QueryResult",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    "cnpj_empresa": cCnpj,
+                    "query": "SELECT TOP 2 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + query + "%'"
+                }),
+                success: function(response) {
+                    var suggestions = response.Dados.map(function(item) {
+                        return '<li class="list-group-item" data-code="' + item.A3_COD + '">' + item.A3_NOME + '</li>';
+                    }).join('');
+                    $('#vendedorSuggestions').html(suggestions).show();
+                }
+            });
+        } else {
+            $('#vendedorSuggestions').hide();
+        }
+    });
+
+    $(document).on('click', '#vendedorSuggestions li', function() {
+        var selectedVendor = $(this).text();
+        $('#vendedorInput').val(selectedVendor);
+        $('#vendedorSuggestions').hide();
+    });
+});
+
 function verificarPrazoEntrega() {
     var dataAtual = new Date();
     
