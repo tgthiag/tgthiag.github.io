@@ -448,15 +448,24 @@ $(document).ready(function() {
                 url: url + "QueryResult",
                 type: 'POST',
                 contentType: 'application/json',
+                dataType: 'json',
                 data: JSON.stringify({
                     "cnpj_empresa": cCnpj,
                     "query": "SELECT TOP 2 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + query + "%'"
                 }),
                 success: function(response) {
-                    var suggestions = response.Dados.map(function(item) {
-                        return '<li class="list-group-item" data-code="' + item.A3_COD + '">' + item.A3_NOME + '</li>';
-                    }).join('');
-                    $('#vendedorSuggestions').html(suggestions).show();
+                    if (response && response.Dados) {
+                        var suggestions = response.Dados.map(function(item) {
+                            return '<li class="list-group-item" data-code="' + item.A3_COD + '">' + item.A3_NOME + '</li>';
+                        }).join('');
+                        $('#vendedorSuggestions').html(suggestions).show();
+                    } else {
+                        $('#vendedorSuggestions').hide();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("An error occurred: " + error);
+                    $('#vendedorSuggestions').hide();
                 }
             });
         } else {
