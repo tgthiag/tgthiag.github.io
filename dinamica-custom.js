@@ -757,7 +757,7 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
         // }
         if (lEntregaposterior){
-            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
+            // jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
