@@ -442,8 +442,8 @@ $("body").append(`
 
 $(document).ready(function() {
     $('#vendedorInput').on('input', function() {
-        var query = $(this).val();
-        if (query.length >= 3) {
+        let vendedorInputValue = $(this).val();
+        if (vendedorInputValue.length >= 3) {
             $.ajax({
                 url: url + "QueryResult",
                 type: 'POST',
@@ -451,7 +451,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: JSON.stringify({
                     "cnpj_empresa": cCnpj,
-                    "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + query + "%'"
+                    "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + vendedorInputValue + "%'"
                 }),
                 success: function(response) {
                     if (response && response.Dados) {
