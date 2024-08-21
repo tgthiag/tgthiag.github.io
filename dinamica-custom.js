@@ -448,6 +448,7 @@ $(document).ready(function() {
                 url: url + "QueryResult",
                 type: 'POST',
                 contentType: 'application/json',
+                dataType: 'json',
                 data: JSON.stringify({
                     "cnpj_empresa": cCnpj,
                     "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + vendedorInputValue + "%'"
