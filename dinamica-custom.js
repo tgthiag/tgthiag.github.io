@@ -451,7 +451,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: JSON.stringify({
                     "cnpj_empresa": cCnpj,
-                    "query": "SELECT TOP 2 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + query + "%'"
+                    "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + query + "%'"
                 }),
                 success: function(response) {
                     if (response && response.Dados) {
@@ -565,6 +565,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_turno = $("#selectTurnoEntrega").val();
     var dinamica_dataEntrega = $("#dataEntrega").val();
     var dinamica_dataMontagem = $("#dataMontagem").val();
+    var vendorCodeDinamica = $('#vendedorSuggestions li.selected').data('code');
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -638,6 +639,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                 ' data-turno="'			+ dinamica_turno + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
+                ' data-vendcod="'			+ vendorCodeDinamica + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
                     ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
@@ -718,9 +720,9 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
     jsonenv.cabecalho[0].LQ_IMPNF = (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
 
     $(".list-group-item").each(function(index) {
-
+        jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
         jsonenv.itens[index]["LR_ITEM"] = ("0000" + (index+1)).slice(-2);
-
+        jsonenv.itens[index]["LR_VEND"] = $(this).data("vendcod").toString();
         /**Configura operação é entrega posterior c/pedido */
          if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
              lEntregaposterior = true;
@@ -754,7 +756,6 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
         //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
         // }
         if (lEntregaposterior){
-            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
