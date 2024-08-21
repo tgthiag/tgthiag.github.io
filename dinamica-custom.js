@@ -395,7 +395,7 @@ $("body").append(`
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <label class="fonte" for="vendedorInput">Vendedor</label>
                                 <input type="text" id="vendedorInput" class="form-control" placeholder="Digite o nome do vendedor">
-                                <ul id="vendedorSuggestions" class="list-group-vendor" style="position: absolute; z-index: 1000; display: none;"></ul>
+                                <ul id="vendedorSuggestions" class="list-group-vendor" style="background-color: white;position: absolute;z-index: 1000;margin: 5px;border-radius: 8px; display: none;"></ul>
                             </div>
                         </div>
 
