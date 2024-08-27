@@ -1,5 +1,255 @@
 console.log("Hello world2!");
-function inserirCampos() {
+/* LISTA DE PRESENTES */
+
+$(document).ready(function () {
+    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`
+
+    $('#divMenu').prepend(button);
+
+    $("#btnListaPresentes").on("click", function () {
+        $("#modalListaPresentes").modal({ backdrop: "static" });
+    })
+})
+
+$("body").append(
+    `<div class="modal fade" id="modalListaPresentes" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Consultar Lista de Presentes
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearListas()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                            <div class="input-group input-group-lg">
+                                <select class="form-control" name="opcPresentes" id="opcPresentes">
+                                    <option value="1">1 - Data do Evento</option>
+                                    <option value="2">2 - Nome do Evento</option>
+                                    <option value="3">3 - Local de Evento</option>
+                                    <option value="4">4 - Nome do organizador</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                            <div class="input-group input-group-lg">
+                                <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                            <button class="btn" onclick="insertData()">Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <br>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <table id="dtPresentes" class="table display table-striped" style="display: none">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Cod.Lista</th>
+                                            <th scope="col">Cod.Organizador</th>
+                                            <th scope="col">Nome Organizador</th>
+                                            <th scope="col">Evento</th>
+                                            <th scope="col">Data Evento</th>
+                                            <th scope="col">Local</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bodydtPresentes">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer" id="buttons">
+                </div>
+            </div>
+        </div>
+    </div>`
+)
+
+$("body").append(
+    `<div class="modal fade" id="modalProdutosLista" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Selecionar Produto
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProdutos()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <table id="dtProdutos" class="table display table-striped" style="display: block">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Cod.Produto</th>
+                                        <th scope="col">Desc.Prod.</th>
+                                        <th scope="col">Val.Unitario</th>
+                                        <th scope="col">Unidade</th>
+                                        <th scope="col">Qtd.Disponivel</th>
+                                        <th scope="col">Qtd.Solicitada</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodydtProdutos">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" id="buttons">
+                    <button class="btn" data-dismiss="modal">Selecionar</button>
+                </div>
+            </div>
+        </div>
+    </div>`
+)
+
+$(document).ready(function () {
+    $("#opcPresentes").on("change", function () {
+        const $opcVal = $("#opcPresentes").val()
+
+        if ($opcVal == "1") {
+            $("#txtPesquisa").attr('type', 'date');
+        }
+        else {
+            $("#txtPesquisa").attr('type', 'text');
+        }
+    })
+})
+
+function insertData() {
+    clearListas();
+
+    const $table = $("#dtPresentes");
+    const $tbody = $("#bodydtPresentes");
+
+    const $opcPresentes = $("#opcPresentes");
+    const $txtPesquisa = $("#txtPesquisa");
+
+    if (!$txtPesquisa.val()) {
+        return;
+    }
+
+    const reqObj = {
+        "Parametros": {}
+    };
+
+    const opcValor = $opcPresentes.val();
+    const txtValor = $txtPesquisa.val();
+
+    if (opcValor == "1") {
+        reqObj["Parametros"]["DataEvento"] = txtValor.replace(/-/g, "");
+    } else if (opcValor == "2") {
+        reqObj["Parametros"]["Nome"] = txtValor;
+    } else if (opcValor == "3") {
+        reqObj["Parametros"]["LocalEvento"] = txtValor;
+    } else if (opcValor == "4") {
+        reqObj["Parametros"]["NomeCliente"] = txtValor;
+    }
+
+    $.ajax({
+        url: url + "easymobile/CONSULTAS/LISTAPRESENTES",
+        type: 'POST',
+        contentType: 'application/json',
+        async: true,
+        dataType: 'json',
+        data: JSON.stringify(reqObj),
+        success: function (response) {
+            if (!response || !response.ListaPresentes) return;
+
+            const data = response.ListaPresentes;
+
+            data.forEach((lista) => {
+                const $row = $("<tr>").css({
+                    cursor: "pointer",
+                    transition: "0.2s"
+                });
+
+                $tbody.append(
+                    $row.append(`
+                        <td>${lista.Codigo}</td>
+                        <td>${lista.CodigoCliente}</td>
+                        <td>${lista.NomeCliente}</td>
+                        <td>${lista.Nome}</td>
+                        <td>${lista.DataEvento}</td>
+                        <td>${lista.LocalEvento}</td>
+                    `)
+                );
+
+                $row.on("click", function () {
+                    lista.Produtos.forEach((produto) => {
+                        const $produtosRow = $("<tr>");
+                        const $imgElement = $('<img>').attr({
+                            src: 'data:image/png;base64,' + produto.ImagemBase64,
+                            width: 100,
+                            height: 100
+                        });
+                        const $checkbox = $("<input>").attr('type', 'checkbox');
+
+                        $("#bodydtProdutos").append(
+                            $produtosRow.append(
+                                $("<td>").append($checkbox),
+                                $("<td>").append($imgElement),
+                                $(`
+                                    <td>${produto.Item}</td>
+                                    <td>${produto.CodigoProduto}</td>
+                                    <td>${produto.DescProduto}</td>
+                                    <td>${produto.ValorUnitario}</td>
+                                    <td>${produto.UnidadeMedida}</td>
+                                    <td>${produto.QtdAtendida}</td>
+                                    <td>${produto.QtdSolicitada}</td>
+                                `)
+                            )
+                        );
+                    });
+
+                    $("#modalProdutosLista").modal({ backdrop: "static" });
+                });
+
+                $row.on("mouseover", function () {
+                    $row.css("backgroundColor", "#00000024");
+                });
+
+                $row.on("mouseout", function () {
+                    $row.css("backgroundColor", "");
+                });
+            });
+
+            $table.show();
+        },
+        error: function () {
+            window.alert("Erro ao carregar as listas de presentes");
+        }
+    });
+}
+
+function clearListas() {
+    $("#bodydtPresentes tr").remove();
+    const table = document.getElementById("dtPresentes")
+    table.style.display = "none"
+}
+
+function clearProdutos() {
+    $("#bodydtProdutos tr").remove();
+}
+
+/* CAMPOS "NOME CLIENTE" E "DOCUMENTO CLIENTE" */
+
+$(document).ready(function () {
     const divInputClienteHtml =
         `<div id="divInputCliente" class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -15,7 +265,7 @@ function inserirCampos() {
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <label id="labelDocumento" class="fonte" for="cliente">Documento do Cliente</label><span id="spanCliente" style="color: red;font-size: small"></span>
                 <div class="input-group input-group-lg clearable">
-                    <input type="number" class="form-control clearableInput ui-autocomplete-input" autocomplete="off" placeholder="Informe o documento do cliente" name="documento" id="documentoCliente" required="">
+                    <input type="text" class="form-control clearableInput ui-autocomplete-input" autocomplete="off" placeholder="Informe o documento do cliente" name="documento" id="documentoCliente" required="">
                         <i class="clearable__clear">×</i>
                         <span class="input-group-addon"></span>
                 </div>
@@ -23,335 +273,22 @@ function inserirCampos() {
             </div>
         </div>`
 
-    const divInputCliente = document.createElement("div")
-    divInputCliente.innerHTML = divInputClienteHtml
+    const $divBuscaProduto = $('#divBuscaProduto');
 
-    const formInfo = document.getElementById("formInfo")
-    const divBuscaProduto = document.getElementById("divBuscaProduto")
+    $(divInputClienteHtml).insertBefore($divBuscaProduto);
+})
 
-    formInfo.insertBefore(divInputCliente, divBuscaProduto)
-}
+$('#divAddProd button').on('click', function() {
+    const nomeCliente = $('#nomeCliente').val();
+    const documentoCliente = $('#documentoCliente').val();
 
-const button = document.querySelector('#divAddProd button');
-button.addEventListener("click", function () {
-    const nomeCliente = document.getElementById("nomeCliente")
-    const documentoCliente = document.getElementById("documentoCliente")
-
-    jsonorc.cabecalho[0].LQ_OBS1 = nomeCliente.value
-    jsonorc.cabecalho[0].LQ_OBS2 = documentoCliente.value
+    jsonorc.cabecalho[0].LQ_OBS1 = nomeCliente
+    jsonorc.cabecalho[0].LQ_OBS2 = documentoCliente
 
     if (typeof PE_GERORC_ANTES_GERORC === 'function') {
         PE_GERORC_ANTES_GERORC(jsonorc);
     }
-})
-
-inserirCampos()
-function createConsultaPresentesBtn() {
-    const button = document.createElement('button');
-
-    button.className = 'btn btn-primary form-control';
-
-    button.style.marginTop = '5px';
-    button.style.marginBottom = '5px';
-
-    button.setAttribute('type', 'button');
-
-    button.addEventListener('click', function () {
-        $("#modalListaPresentes").modal({ backdrop: "static" });
-    })
-
-    button.textContent = 'Lista de Presentes';
-
-    const divMenu = document.getElementById('divMenu')
-
-    divMenu.insertBefore(button, divMenu.firstChild);
-}
-
-function createModalPresentes() {
-    const modalHtml =
-        `<div class="modal fade" id="modalListaPresentes" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">
-                            Consultar Lista de Presentes
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearListas()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                                <div class="input-group input-group-lg">
-                                    <select class="form-control" name="opcPresentes" id="opcPresentes">
-                                        <option value="1">1 - Número da lista</option>
-                                        <option value="2">2 - Atores</option>
-                                        <option value="3">3 - Data de evento</option>
-                                        <option value="4">4 - Local de Evento</option>
-                                        <option value="5">5 - Nome do organizador</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                                <div class="input-group input-group-lg">
-                                    <input type="text" class="form-control" autocomplete="off" id="txtPesquisa">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                                <button class="btn" onclick="insertData()">Pesquisar</button>
-                            </div>
-                        </div>
-
-                        <br>
-
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <table id="dtPresentes" class="table display table-striped" style="display: none">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Cod.Lista</th>
-                                                <th scope="col">Cod.Organizador</th>
-                                                <th scope="col">Nome Organizador</th>
-                                                <th scope="col">Evento</th>
-                                                <th scope="col">Data Evento</th>
-                                                <th scope="col">Local</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="bodydtPresentes">
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="modal-footer" id="buttons">
-                    </div>
-                </div>
-            </div>
-        </div>`;
-
-    const modalProdutosHtml =
-        `<div class="modal fade" id="modalProdutosLista" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    Selecionar Produto
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProdutos()">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <table id="dtProdutos" class="table display table-striped" style="display: block">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Item</th>
-                                    <th scope="col">Cod.Produto</th>
-                                    <th scope="col">Desc.Prod.</th>
-                                    <th scope="col">Val.Unitario</th>
-                                    <th scope="col">Unidade</th>
-                                    <th scope="col">Qtd.Disponivel</th>
-                                    <th scope="col">Qtd.Solicitada</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bodydtProdutos">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer" id="buttons">
-                <button class="btn" data-dismiss="modal">Selecionar</button>
-            </div>
-        </div>
-    </div>
-</div>`;
-
-    document.body.insertAdjacentHTML('beforeend', modalHtml);
-    document.body.insertAdjacentHTML('beforeend', modalProdutosHtml);
-}
-
-// const response = {
-//     "ListaPresentes": [
-//         {
-//             "Codigo": "000001",
-//             "Tipo": "2",
-//             "Nome": "CASAMENTO DO RAFAEL",
-//             "TipoEvento": "001",
-//             "DataEvento": "20240808",
-//             "LocalEvento": "LAGO DO AROCHE",
-//             "CodigoCliente": "000001",
-//             "LojaCliente": "01",
-//             "NomeCliente": "N ORIGUELA SERVICOS CORPORATIVOS LTDA",
-//             "CodigoVendedor": "000001",
-//             "NomeVendedor": "VENDEDOR PADRAO",
-//             "CodigoAtor": "01",
-//             "DescAtor": "ANDRE",
-//             "Produtos": [
-//                 {
-//                     "Item": "001",
-//                     "CodigoProduto": "000001",
-//                     "DescProduto": "PRODUTO 1",
-//                     "UnidadeMedida": "UN",
-//                     "QtdSolicitada": 1,
-//                     "QtdAtendida": 0,
-//                     "ValorUnitario": 0,
-//                     "ImagemBase64": "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"
-//                 },
-//                 {
-//                     "Item": "002",
-//                     "CodigoProduto": "000002",
-//                     "DescProduto": "PRODUTO 2",
-//                     "UnidadeMedida": "UN",
-//                     "QtdSolicitada": 1,
-//                     "QtdAtendida": 0,
-//                     "ValorUnitario": 0,
-//                     "ImagemBase64": "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"
-//                 }
-//             ]
-//         },
-//         {
-//             "Codigo": "000002",
-//             "Tipo": "1",
-//             "Nome": "FESTA DO DENNIS",
-//             "TipoEvento": "002",
-//             "DataEvento": "20241231",
-//             "LocalEvento": "SALAO MENINO DE OURO",
-//             "CodigoCliente": "000002",
-//             "LojaCliente": "01",
-//             "NomeCliente": "VICTOR HUGO VIEIRA BARBOSA",
-//             "CodigoVendedor": "000002",
-//             "NomeVendedor": "VENDEDOR TESTES",
-//             "CodigoAtor": "02",
-//             "DescAtor": "B",
-//             "Produtos": [
-//                 {
-//                     "Item": "001",
-//                     "CodigoProduto": "000003",
-//                     "DescProduto": "PRODUTO 3",
-//                     "UnidadeMedida": "UN",
-//                     "QtdSolicitada": 1,
-//                     "QtdAtendida": 0,
-//                     "ValorUnitario": 0,
-//                     "ImagemBase64": ""
-//                 },
-//                 {
-//                     "Item": "002",
-//                     "CodigoProduto": "000004",
-//                     "DescProduto": "PRODUTO 4",
-//                     "UnidadeMedida": "UN",
-//                     "QtdSolicitada": 1,
-//                     "QtdAtendida": 0,
-//                     "ValorUnitario": 0,
-//                     "ImagemBase64": ""
-//                 }
-//             ]
-//         }
-//     ]
-// }
-
-function insertData() {
-    clearListas()
-
-    const table = document.getElementById("dtPresentes")
-    const tbody = document.getElementById("bodydtPresentes")
-
-    $.ajax({
-        url: "http://45.236.240.38:9051/rest/EASYMOBILE/CONSULTAS/LISTAPRESENTES",
-        type: "GET",
-        async: true,
-        dataType: "json",
-        contentType: "application/json",
-        success: function (response) {
-            const data = response.ListaPresentes
-
-            data.forEach((lista) => {
-                const row = document.createElement("tr")
-                row.style.cursor = "pointer"
-                row.style.transition = "0.2s"
-
-                $(tbody).append($(row).append(`
-                    <td>${lista.Codigo}</td>
-                    <td>${lista.CodigoCliente}</td>
-                    <td>${lista.NomeCliente}</td>
-                    <td>${lista.Nome}</td>
-                    <td>${lista.DataEvento}</td>
-                    <td>${lista.LocalEvento}</td>
-                    `));
-
-                row.addEventListener("click", function () {
-                    lista.Produtos.forEach((produto) => {
-                        const produtosRow = document.createElement("tr")
-                        const imgElement = document.createElement('img');
-                        const checkbox = document.createElement("input");
-                        checkbox.setAttribute('type', 'checkbox')
-
-                        imgElement.src = 'data:image/png;base64,' + produto.ImagemBase64;
-
-                        imgElement.width = 100;
-                        imgElement.height = 100;
-
-                        $("#bodydtProdutos")
-                            .append($(produtosRow)
-                                .append(
-                                    $('<td>').append(checkbox)
-                                )
-                                .append(
-                                    $('<td>').append(imgElement)
-                                )
-                                .append(`
-                                <td>${produto.Item}</td>
-                                <td>${produto.CodigoProduto}</td>
-                                <td>${produto.DescProduto}</td>
-                                <td>${produto.ValorUnitario}</td>
-                                <td>${produto.UnidadeMedida}</td>
-                                <td>${produto.QtdAtendida}</td>
-                                <td>${produto.QtdSolicitada}</td>
-                        `));
-                    })
-
-                    $("#modalProdutosLista").modal({ backdrop: "static" })
-                })
-
-                row.addEventListener("mouseover", function () {
-                    row.style.backgroundColor = "#00000024"
-                })
-
-                row.addEventListener("mouseout", function () {
-                    row.style.backgroundColor = ""
-                })
-            })
-
-            table.style.display = "block"
-        },
-        error: function (jqXhr, textStatus, errorThrown) {
-
-            $("#alerta").modal({ backdrop: "static" });
-            $("#dmodal").html("Erro ao carregar as listas de presentes");//statusText
-        }
-    })
-}
-
-function clearListas() {
-    $("#bodydtPresentes tr").remove();
-    const table = document.getElementById("dtPresentes")
-    table.style.display = "none"
-}
-
-function clearProdutos() {
-    $("#bodydtProdutos tr").remove();
-}
-
-createModalPresentes()
-createConsultaPresentesBtn()
-
+});
 // THIAGO CARVALHO
 $("body").append(`
     <div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" role="dialog">
