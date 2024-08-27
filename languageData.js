@@ -1,7 +1,4 @@
-// public/languageData.js
-
-const languageData = `
-{
+"""{
   "en_us": {
     "short": "en",
     "flag": "us",
@@ -59,8 +56,5 @@ const languageData = `
     "free_trial_description":
       "5 days free trial, no ads, all features available. You can cancel before the trial ends."
   }
-  // Add more language objects here if needed...
-}
-`;
 
-export default languageData;
+}"""
