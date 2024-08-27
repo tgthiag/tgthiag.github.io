@@ -1,4 +1,4 @@
-"""{
+{
   "en_us": {
     "short": "en",
     "flag": "us",
@@ -57,4 +57,4 @@
       "5 days free trial, no ads, all features available. You can cancel before the trial ends."
   }
 
-}"""
+}
