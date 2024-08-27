@@ -112,6 +112,6 @@
         "Diga adeus aos anúncios! Contamos com uma pequena taxa anual para cobrir os custos do servidor e melhorar sua experiência.",
     "monthly_price": "Preço mensal:",
     "free_trial_description":
-        "5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine.",
-  },
+        "5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine."
+  }
 }
