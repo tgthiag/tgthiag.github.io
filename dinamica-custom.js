@@ -728,34 +728,6 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
          if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
              lEntregaposterior = true;
          }
-        // if ($(this).data("cmesesdegarantia") != 100 && $(this).data("cmesesdegarantia") !== undefined){
-        //     jsonenv.itens[index]["LR_XMSGAR"] = $(this).data("cmesesdegarantia").toString();
-        // }
-        
-        
-        // if (nValFrete != 0){
-        //     jsonenv.itens[index]["LR_VALFRE"] =  (nValFrete/nQtdItensCarrinho).toString()
-        // }
-        
-
-        
-        
-        /**Configura operação quando o produto tem garantia */
-        // if (jsonenv.itens[index]["LR_PRODUTO"] == 'GARANTIA'){
-        //     jsonenv.itens[index]["LR_GARANT"] = '';
-        //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
-
-        //     //Essas colunas são excluídas quando o item é Garatina para concretizar o processo dentro do orçamento.
-        //     delete jsonenv.itens[index].LR_QUANT
-        //     delete jsonenv.itens[index].LR_DESC
-        //     delete jsonenv.itens[index].LR_VALDESC
-        //     delete jsonenv.itens[index].LR_DESCPRO
-        //     delete jsonenv.itens[index].LR_VEND
-
-        // }else if (jsonenv.itens[index]["LR_PRODUTO"] != 'GARANTIA' || ("0000" + parseFloat($(this).data("itempro"))).slice(-2) != ''){
-        //     jsonenv.itens[index]["LR_GARANT"] = 'GARANTIA';
-        //     jsonenv.itens[index]["LR_ITEMGAR"] = ("0000" + parseFloat($(this).data("itempro"))).slice(-2);
-        // }
         if (lEntregaposterior){
             jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
