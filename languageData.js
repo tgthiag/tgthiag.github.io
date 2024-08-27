@@ -55,6 +55,63 @@
     "monthly_price": "Monthly price:",
     "free_trial_description":
       "5 days free trial, no ads, all features available. You can cancel before the trial ends."
-  }
-
+  },
+  "pt_br": {
+    "short": "pt",
+    "flag": "br",
+    "complete": "pt-BR",
+    "name": "Português",
+    "variant": "pt-BR",
+    "free_conversation": "Conversar livremente",
+    "job_interview": "Entrevista de emprego",
+    "choose_subject": "Escolha um tema",
+    "choose_language": "Escolha seu idioma",
+    "choose_username": "Seu nome",
+    "username": "Nome de usuário",
+    "proceed": "Continuar",
+    "please_enter_username": "Digite o nome de usuário.",
+    "please_choose_language": "Selecione o idioma.",
+    "listening_status": "Ouvindo",
+    "wait_status": "Aguarde...",
+    "speaking_status": "Falando",
+    "waiting_your_answer_status": "Aguardando sua resposta",
+    "tap_mic": "Clique no microfone para falar...",
+    "conversation_history": "Meu histórico de conversação",
+    "manual_mode_text": "Modo Manual",
+    "automatic_mode_text": "Modo Automático",
+    "manual_mode_description":
+        "Clique no microfone na parte inferior para falar.",
+    "automatic_mode_description":
+        "Você pode falar agora, aguarde a resposta e comece a falar novamente, tente.",
+    "messages": "Mensagens",
+    "evaluate_conversation": "Avaliar esta conversa",
+    "premium_notice":
+        "Você precisa ser um usuário premium; as avaliações têm um custo para nós, então não é possível usá-las gratuitamente.",
+    "see_options": "Ver opções",
+    "please_choose_language_to_learn": "Qual idioma quer praticar?",
+    "learn_according_level": "Aprenda de acordo com seu nível",
+    "choose_level": "Escolha seu nível",
+    "select_level_message": "Por favor, selecione o nível que deseja aprender:",
+    "basic_level": "Nível Básico",
+    "intermediate_level": "Nível Intermediário",
+    "advanced_level": "Nível Avançado",
+    "custom_prompt": "Tema Personalizado",
+    "custom_prompt_description":
+        "Use para praticar situações cotidianas, como exemplo: em uma padaria, em um restaurante ou qualquer outro tema, especificando ao máximo.",
+    "interview_training": "Treinamento para entrevista",
+    "interview_training_description":
+        "Escreva o cargo no campo abaixo, e boa prática!",
+    "premium_required": "Requerido Premium",
+    "premium_required_message":
+        "Você precisa ser um usuário premium para acessar este recurso.",
+    "fetching_products": "Buscando produtos...",
+    "subscriptions": "Assinaturas",
+    "no_cost_option": "Opção sem custos:",
+    "free_user_with_ads": "Usuário gratuito com anúncios",
+    "say_goodbye_to_ads":
+        "Diga adeus aos anúncios! Contamos com uma pequena taxa anual para cobrir os custos do servidor e melhorar sua experiência.",
+    "monthly_price": "Preço mensal:",
+    "free_trial_description":
+        "5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine.",
+  },
 }
