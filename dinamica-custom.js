@@ -291,7 +291,7 @@ $('#divAddProd button').on('click', function() {
 });
 // THIAGO CARVALHO
 $("body").append(`
-    <div class="modal fade" id="1000MARCAS_ModalAposAddCarrinho" role="dialog">
+    <div class="modal fade" id="Dinamica_ModalAposAddCarrinho" role="dialog">
         <div class="modal-dialog modal-lg">
             <!-- Modal content-->
             <div class="modal-content">
@@ -303,17 +303,17 @@ $("body").append(`
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form id="1000MARCAS_ModalFormAposAddCarrinho">
+                    <form id="Dinamica_ModalFormAposAddCarrinho">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
-                                <label id="1000MARCASLabelCustomerOrder" class="fonte" for="1000MARCASCustomerOrder">Valor Garantia</label><span id="1000MARCASSpanCustomerOrder" style="color: red;font-size: small"></span>
+                                <label id="DinamicaLabelCustomerOrder" class="fonte" for="DinamicaCustomerOrder">Valor Garantia</label><span id="DinamicaSpanCustomerOrder" style="color: red;font-size: small"></span>
                                 <div class="input-group input-group-lg clearable">
-                                    <select id="1000MARCASCustomerOrder" class="form-control clearableInput" required>
+                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" required>
                                         <!-- Dropdown options will be populated here dynamically -->
                                     </select>
                                     <i class="clearable__clear">&times;</i>
                                 </div>
-                                <span id="lbl1000MARCASCustomerOrder" class="span-erro"></span>	
+                                <span id="lblDinamicaCustomerOrder" class="span-erro"></span>	
                             </div>
                         </div>
                         <div class="row">
@@ -360,7 +360,7 @@ $("body").append(`
                     </form>
                 </div>
                 <div class="modal-footer" id="buttons">
-                    <button id="1000MARCASBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
+                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
                 </div>
             </div>
         </div>
@@ -459,17 +459,17 @@ $("#dataMontagem").change(function() {
 
 
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
-    $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
+    $("#Dinamica_ModalAposAddCarrinho").modal({backdrop: "static"});
     nQtditemCarrinhoEntrega = 0;
 
     var produtoSelecionado = $("#codigo").val().trim();
     if (produtoSelecionado.includes("GARANTIA ESTENDIDA AVULSA")) {
         checkForGarantiaEstendida();
     }else{
-    // $("#1000MARCAS_ModalAposAddCarrinho").modal({backdrop: "static"});
+    // $("#Dinamica_ModalAposAddCarrinho").modal({backdrop: "static"});
     //     populateGarantiaDropdown(item);
     // };
-    document.getElementById("1000MARCASBtnCustomerOrderItem").onclick = function(){
+    document.getElementById("DinamicaBtnCustomerOrderItem").onclick = function(){
         aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
 
         $(".list-group-item").each(function() {
@@ -499,7 +499,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var Som2    = "somatorio";
     var nItem   = 0;
     var cItem   = '';
-    var dropdownGarantia = document.getElementById("1000MARCASCustomerOrder");
+    var dropdownGarantia = document.getElementById("DinamicaCustomerOrder");
     var dropdownTurno = document.getElementById("selectTurnoEntrega");
     var dinamica_turno = $("#selectTurnoEntrega").val();
     var dinamica_dataEntrega = $("#dataEntrega").val();
@@ -513,7 +513,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     //var valprod =  parseFloat($("#codigo").data("valor").replace(/\./g, "").replace(/\,/g, "."));
     var valprod =  parseFloat($("#codigo").data("valor"));
     
-    //var precoNegociado =parseFloat($("#1000MarcasPrecoNegociado").val().replace(/\./g, "").replace(/\,/g, "."));
+    //var precoNegociado =parseFloat($("#DinamicaPrecoNegociado").val().replace(/\./g, "").replace(/\,/g, "."));
     
     nQuantidade   = parseInt($("#qtde").val());
     cDesconto     = ((valprod*nQuantidade)*(parseFloat(cPercentual)/100)).toFixed(2)//$("#reais").val()
@@ -536,7 +536,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     // LR_VRUNIT = valor
     // LR_VLRITEM = valort
     // LR_PRCTAB = valor
-    if ($("#1000MARCASCustomerOrder").val() != ''){
+    if ($("#DinamicaCustomerOrder").val() != ''){
         $(".list-group-item").each(function(index) {
             nItem ++
          });
@@ -554,7 +554,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     cCodProduto   = $("#codigo").data("codigo");
     cDescricaoProd= $("#codigo").val();
     cQtdEstoque   = $("#codigo").data("estoque");
-    if ($("#1000MARCASCustomerOrder").val() != ''){
+    if ($("#DinamicaCustomerOrder").val() != ''){
         cItem         = (nItem+1).toString();
     }else{
         cItem         = (0).toString();
@@ -597,8 +597,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     }
     
     item = item+'>'+ divCarrinho+ '</a>';
-    //$("#1000MarcasPrecoNegociado").val("");
-    //$("#1000MARCASCustomerOrderItem").val("");
+    //$("#DinamicaPrecoNegociado").val("");
+    //$("#DinamicaCustomerOrderItem").val("");
     next(item)
 
     
@@ -608,7 +608,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         const match = content.match(/Valor: (\d+(\.\d+)?)/);
         const parsedValue = parseFloat(match[1]);
         cCodProduto = "GARANTIA";
-        cDescricaoProd = "GARANTIA " + $("#1000MARCASCustomerOrder").val() + " MESES";
+        cDescricaoProd = "GARANTIA " + $("#DinamicaCustomerOrder").val() + " MESES";
         nQuantidade = 1;
         cDesconto   = '0';
         cQtdEstoque = '1';
@@ -640,14 +640,14 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                             '<div class="col-lg-3 somatorio" align="right" " style="' 	+ SinalS +  '" > '+ nValUnitCDesc.toFixed(2).toString()								+ '</div>'+
                         '</div>';
 
-        if($("#1000MARCASCustomerOrder").val() != ''){
+        if($("#DinamicaCustomerOrder").val() != ''){
             divCarrinho += '<div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center"><span class="style_disponivel">&nbsp;&nbsp;&nbsp;Garantia do Item:'+nItem.toString()+' &nbsp;&nbsp;&nbsp;</span></div></div>';
         }
         
         item = item+'>'+ divCarrinho+ '</a>';
-        //$("#1000MarcasPrecoNegociado").val("");
-        $("#1000MARCASCustomerOrderItem").val("");
-        $("#1000MARCASCustomerOrder").val("");
+        //$("#DinamicaPrecoNegociado").val("");
+        $("#DinamicaCustomerOrderItem").val("");
+        $("#DinamicaCustomerOrder").val("");
         next(item)
     }
 }
@@ -711,4 +711,170 @@ function PE_ANTES_PAGARORCAMENTO(orcamentosSelecionados){
     let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L1_VEND;
     $('#vendedorInput').val(sellerCodeDinamica);
     $('#vendedorInput').data('codevendedor', sellerCodeDinamica);
+}
+
+function pagarOrcamento(){
+    var SinalS  = 'font-weight: bold; size="2" ';
+    var tamanho = 'size="5"';
+    var vldContinue = true;
+    jsonorc.cabecalho[0]["ctype"] = "Finaliza";
+    //jsonorc.cabecalho[0]["LQ_NUM"] = numOrc;
+    
+    var table = $('#dtOrcamentos').DataTable();
+    var rows = table.rows().nodes();
+    var orcamentosSelecionados = $(".myChkOrcamento:checked",rows);//$("#bodydtOrcamentos input:checked");
+    
+    if (typeof PE_ANTES_PAGARORCAMENTO ==='function'){
+        PE_ANTES_PAGARORCAMENTO(orcamentosSelecionados);
+    }
+    
+    if (orcamentosSelecionados.length > 0){
+        
+        //Limpa o carrinho
+        $("#navbarTogglerDemo03 a").remove();
+        isempty();
+        jsonorc['orcamentos'] = [];
+        //Valida se os orçamentos são do mesmo cliente
+        var clienteAux = "";
+        var vendAux = "";
+        $(orcamentosSelecionados).each(function(){
+            var itensOrcamento = JSON.parse(atob($(this).data("orcamento")));
+            $(itensOrcamento).each(function(){
+                if (this.L1_CLIENTE+ this.L1_LOJA != clienteAux){
+                    
+                    if (clienteAux != ""){
+                        document.getElementById("titleMsgLog").innerHTML = '<i class="fa fa-window-close" style="color:red;"></i>Erro';
+                        document.getElementById("divMsgLog").textContent = "Favor selecionar orçamento do mesmo cliente.";
+                        $("#modalMsgLog").modal({backdrop: "static"});
+                        vldContinue = false;
+                        return false;
+                    }
+                    
+                    clienteAux = this.L1_CLIENTE+ this.L1_LOJA;
+                }
+                if (this.L1_VEND != vendAux){
+                    if (vendAux != ""){
+                        document.getElementById("titleMsgLog").innerHTML = '<i class="fa fa-window-close" style="color:red;"></i>Erro';
+                        document.getElementById("divMsgLog").textContent = "Favor selecionar orçamento do mesmo vendedor.";
+                        $("#modalMsgLog").modal({backdrop: "static"});
+                        vldContinue = false;
+                        return false;
+                    }
+                    
+                    vendAux = this.L1_VEND;
+                }
+            });
+        });
+        if (vldContinue){
+            $(orcamentosSelecionados).each(function(){
+                var itensOrcamento = JSON.parse(atob($(this).data("orcamento")));
+                $(itensOrcamento).each(function(){
+                    var orcamentoAux = this.L1_NUM;
+                    $("#dmodal").html("C");
+                    function myFindIndex(){
+                        for (var i = 0; i < jsonorc.orcamentos.length; i++) {
+                            if(jsonorc.orcamentos[i] == orcamentoAux){
+                                return i;
+                            }
+                        }
+                        return -1;
+                    }
+                    document.getElementById("cliente").value = this.L1_CLIENTE+": "+this.A1_NOME+" - "+this.A1_CGC;
+                    $("#cliente").data("codigo",this.L1_CLIENTE);
+                    $("#cliente").data("loja",this.L1_LOJA);
+                    jsonorc.cabecalho[0].LQ_CLIENTE = this.L1_CLIENTE;
+                    jsonorc.cabecalho[0].LQ_LOJA = this.L1_LOJA;
+                    jsonorc.cabecalho[0].LQ_VEND = this.L1_VEND;
+                    var posOrcamento = myFindIndex();
+                    // var posOrcamento = jsonorc.orcamentos.findIndex(function(e){
+                    // 	return e == orcamentoAux;
+                    // });
+                    
+                    if (posOrcamento < 0){
+                        jsonorc.orcamentos.push(orcamentoAux);
+                    }
+                    
+                    nValUnitCDesc = this.L2_VLRITEM.toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                    nValorDesconto= 0///(parseFloat($("#codigo").data("valor")-($('#reais').val())))*(cPercentual/100).toFixed(2).toString()
+                    nQuantidade   = this.L2_QUANT;//$("#qtde").val()
+                    cDesconto     = "0";//$("#reais").val()
+
+                    cValsemDescont= this.L2_VRUNIT.toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");//$("#codigo").data("valor")
+                    cCodProduto   = this.L2_PRODUTO;//$("#codigo").data("codigo")
+                    cDescricaoProd= this.L2_DESCRI//$("#codigo").val()
+                    cQtdEstoque   = "0";//$("#codigo").data("estoque")
+                    cPercentual = "0";
+                    let dinamica_turno = this.L2_XTURNO;
+                    let dinamica_dataEntrega = this.L2_FDTENTR;
+                    let dinamica_dataMontagem = this.L2_FDTMONT;
+                    let vendorCodeDinamica = this.L1_VEND;
+                    
+                    var item = '<a data-acessorio="acessorio"'+
+                                    //'" data-percent="' 		+ document.getElementById("percent").value + 
+                                    ' data-percent="' 			+ cPercentual.toString() +'"'+ 
+                                    //'" data-descontoreais="' 	+ document.getElementById("reais").value + 
+                                    ' data-descontoreais="' 	+ nValorDesconto + '"' +
+                                    ' data-codigo="'			+ cCodProduto+'"' +
+                                    ' data-valort="'			+ nValUnitCDesc+'"' +
+                                    ' data-valor="'				+ cValsemDescont+'"' +
+                                    ' data-desc="'				+ cDescricaoProd+'"' +
+                                    ' data-qtde="'				+ nQuantidade+'"' +
+                                    ' data-turno="'			+ dinamica_turno + '"' +
+                                    ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
+                                    ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
+                                    ' data-vendcod="'			+ vendorCodeDinamica + '"' +
+                                    ' data-reais="'				+ cDesconto+'"' +
+                                    ' data-estoque="'			+ cQtdEstoque+'"' +
+                                    ' data-cliente="'			+ this.L1_CLIENTE+ this.L1_LOJA+'"' +
+                                    ' data-auxiliar=""' 		+
+                                    ' data-localprod="' 		+ this.L2_LOCAL+'"' +
+                                    ' data-ctipoentrega="'      + this.L2_ENTREGA+ '"' +
+                                        '" href="javascript:void(0);" class="list-group-item" ondblclick="deleta(this);" onclick="selline(this);" id="itens">'+
+                                        '<div class="row" style="font-size: 12px;">'+
+                                            '<div class="col-lg-4 " style="' 							+ tamanho 		+  '" >' + cCodProduto+' - '+ cDescricaoProd 	+ '</div>'+
+                                            '<div class="col-lg-1 " align="center">'					+ nQuantidade 													+ '</div>'+
+                                            '<div class="col-lg-3 " align="left"  " >' 					+ cValsemDescont 												+ '</div>'+
+                                            '<div class="col-lg-1 percentual" align="right"> ' 			+(parseFloat(cPercentual)).toFixed(2).toString()				+ '</div>'+
+                                            '<div class="col-lg-3 somatorio" align="right" " style="' 	+ SinalS +  '" > '+ (this.L2_VRUNIT*this.L2_QUANT).toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")/*nValUnitCDesc*/								+ '</div>'+
+                                        '</div>'
+
+                    // if(parseFloat($("#codigo").data("estoque")) == 0.00){
+                    //     item+='<div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center"><span class="style_indisponivel">&nbsp;&nbsp;&nbsp;Indisponnível em estoque.&nbsp;&nbsp;&nbsp;</span></div></div>';
+                    // }
+                    item+='</a>';
+                    document.getElementById("nav1").innerHTML=document.getElementById("nav1").innerHTML+item;
+                    
+                });
+            });
+            $("#codigo").val("");
+            $("#qtde").val("1");
+            $("#percent").val("");
+            $("#reais").val("");
+            $("#codigo").data("valor","");
+            somatorio();
+            //percentual();
+            $("#pedido").removeClass("disabled");
+            document.getElementById("valorprod").innerHTML="0,00";
+            document.getElementById("percent").innerHTML="0,00";
+            if((($('#reais').val())) != ''){
+                document.getElementById("percent").innerHTML="0,00";
+            }
+            $('#modalOrcamentos').modal('hide');
+        }
+        
+    }
+    else{
+        $("#dmodal").html("Escolha primeiro pelo menos um orçamento");
+        $("#alerta").modal({backdrop: "static"});
+    }
+    
+}
+
+function PE_ANT_buscaNrOrcamento(cQuery) {
+    cQuery = cQuery.replace(
+        "L2_LOCAL",
+        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_FDTMONT"
+    );
+        console.log(cQuery);
+	return cQuery;
 }
