@@ -651,7 +651,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         next(item)
     }
 }
-
+window.myGlobalFunction = PE_GERORC_ANTES_GERORC;
+delete window.myGlobalFunction;
 function PE_GERORC_ANTES_GERORC(jsonenv){
     var lEntregaposterior   = false;
     var typeInvoice = sessionStorage.getItem("typeInvoice");
