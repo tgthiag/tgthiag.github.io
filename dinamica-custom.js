@@ -450,11 +450,39 @@ function verificarPrazoMontagem() {
 $("#dataEntrega").change(function() {
     verificarPrazoEntrega();
     verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
+    let dataEntregaDinamica = $("#selectTurnoEntrega").val();
+    let turnoEntregaDinamica = $("#dataEntrega").val().replaceAll("-","");
+    checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas");
 });
 
 $("#dataMontagem").change(function() {
     verificarPrazoMontagem();
 });
+
+function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo){
+    $.ajax({
+        url: url + "QueryResult",
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+            "cnpj_empresa": "84467307000197",
+            "query": "SELECT COUNT(*) AS totalCount FROM xEmp('SL2') WHERE L2_FDTENTR LIKE '%" + dataEntregaOuMontagem + "%' AND (L2_XTURNO LIKE '%" + turno + "%')"
+        }),
+        success: function(response) {
+            if (response && response.Dados && response.Dados.length > 0) {
+                let count = response.Dados[0].totalCount;
+                console.log("Total entries found: " + count);
+                // Further processing based on the count
+            } else {
+                console.log("No entries found.");
+            }
+        },
+        error: function(error) {
+            console.error("Error during AJAX request", error);
+        }
+    });
+}
 
 
 
@@ -708,7 +736,7 @@ function showAlert(message) {
 }
 
 function PE_ANTES_PAGARORCAMENTO(orcamentosSelecionados){
-    let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L2_VEND;
+    let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L2_VEND.trim();
     $('#vendedorInput').val(sellerCodeDinamica);
     $('#vendedorInput').data('codevendedor', sellerCodeDinamica);
 }
