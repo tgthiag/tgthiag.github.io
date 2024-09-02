@@ -708,7 +708,7 @@ function showAlert(message) {
 }
 
 function PE_ANTES_PAGARORCAMENTO(orcamentosSelecionados){
-    let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L1_VEND;
+    let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L2_VEND;
     $('#vendedorInput').val(sellerCodeDinamica);
     $('#vendedorInput').data('codevendedor', sellerCodeDinamica);
 }
@@ -807,7 +807,7 @@ function pagarOrcamento(){
                     let dinamica_turno = this.L2_XTURNO;
                     let dinamica_dataEntrega = this.L2_FDTENTR;
                     let dinamica_dataMontagem = this.L2_FDTMONT;
-                    let vendorCodeDinamica = this.L1_VEND;
+                    let vendorCodeDinamica = this.L2_VEND;
                     
                     var item = '<a data-acessorio="acessorio"'+
                                     //'" data-percent="' 		+ document.getElementById("percent").value + 
@@ -873,7 +873,7 @@ function pagarOrcamento(){
 function PE_ANT_buscaNrOrcamento(cQuery) {
     cQuery = cQuery.replace(
         "L2_LOCAL",
-        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_FDTMONT"
+        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT"
     );
         console.log(cQuery);
 	return cQuery;
