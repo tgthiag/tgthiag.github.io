@@ -388,7 +388,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: JSON.stringify({
                     "cnpj_empresa": cCnpj,
-                    "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + vendedorInputValue + "%'"
+                    "query": "SELECT TOP 8 * FROM xEmp('SA3') SA3 WHERE A3_NOME LIKE '%" + vendedorInputValue + "%' OR A3_COD LIKE '%" + vendedorInputValue + "%'"
                 }),
                 success: function(response) {
                     if (response && response.Dados) {
@@ -707,3 +707,164 @@ function showAlert(message) {
     $("#alertModalDinamica").modal({ backdrop: "static" });
 }
 
+function buscaNrOrcamento(){
+    nrOrcamento = document.getElementById("txtNrOrcamento").value;
+    if (nrOrcamento.length >= 6 || (nrOrcamento.length == 1 && nrOrcamento == "*")){
+        
+        if ($.fn.DataTable.isDataTable('#dtOrcamentos')) {
+            $('#dtOrcamentos').DataTable().destroy();
+        }
+        document.getElementById("dtOrcamentos").style.display = "none";
+        document.getElementById("btnPagarOrcamento").innerHTML = 'R$ 0,00 <i class="fas fa-check"></i>';
+        document.getElementById("spanCarregandoOrcamentos").style.display = "block";
+        var cQuery = "SELECT L1_NUM, L1_VLRLIQ, L1_EMISSAO, L1_CLIENTE, L1_LOJA, A1_NOME, A1_CGC, L1_VEND, L2_PRODUTO, L2_DESCRI, L2_QUANT, L2_VRUNIT, L2_VLRITEM, L2_LOCAL, L2_ENTREGA FROM xEmp('SL1') SL1"+
+                    " JOIN xEmp('SL2') SL2 ON L2_FILIAL = L1_FILIAL AND L2_NUM = L1_NUM AND SL2.D_E_L_E_T_ <> '*'"+
+                    //" AND L2_PRODUTO = '4564'"+
+
+                    " JOIN xEmp('SA1') SA1 ON A1_FILIAL = xFilial('SA1') AND A1_COD = L1_CLIENTE AND A1_LOJA = L1_LOJA AND SA1.D_E_L_E_T_ <> '*'"+
+                    " WHERE L1_FILIAL = xFilial('SL1')"+
+                    //" AND L1_KEYNFCE = ''"+
+                    " AND L1_DOC = ' '"+
+                    " AND L1_DTLIM >= CONVERT(VARCHAR(8),GETDATE(),112)"+
+                    " AND L1_NUMFRT = ' '";
+                    if (nrOrcamento != "*"){
+                        cQuery += " AND L1_NUM = '"+nrOrcamento+"'"
+                    }
+                    
+        cQuery += " AND SL1.D_E_L_E_T_ <> '*'"+
+                    " ORDER BY L1_NUM DESC";
+                    
+        //Ponto de entrada para alterar a query do buscaorcamento
+        if (typeof PE_ANT_buscaNrOrcamento ==='function'){
+            cQuery = PE_ANT_buscaNrOrcamento(cQuery);
+        }
+
+        var query={
+            "cnpj_empresa":cCnpj,
+            "query" : cQuery
+        }
+        if (ligaGeraLog){
+            geraLog({"origin":"ANTES QUERYRESULT - chamado na function buscaNrOrcamento","datetime": new Date(),"result":query});
+        }
+        $.ajax({
+            url: url + "QueryResult",
+            type: "POST",
+            async: true,
+            data: JSON.stringify(query),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (response) {
+                document.getElementById("txtNrOrcamento").blur();
+                document.getElementById("spanCarregandoOrcamentos").style.display = "none";
+                if (response.Retorno == "OK"){
+                    if (response.Dados.length <= 0){
+                        document.getElementById("titleMsgLog").innerHTML = '<i class="fa fa-window-close" style="color:red;"></i>Erro';
+                        if (nrOrcamento.length >= 6){
+                            document.getElementById("divMsgLog").textContent = "Nenhum orçamento encontrado em aberto com o número informado.";
+                        }
+                        else{
+                            document.getElementById("divMsgLog").textContent = "Nenhum orçamento encontrado em aberto.";
+                        }
+                        $("#modalMsgLog").modal({backdrop: "static"});
+                    }
+                    else{
+                        document.getElementById("dtOrcamentos").style.display = "block";
+                        document.getElementById("msgBuscaOrcamento").style.display = "none";
+                        
+                        var numAux = "";
+                        var aOrcamentos = [];
+                        $(response.Dados).each(function(){
+                            if (numAux != this.L1_NUM){
+                                numAux = this.L1_NUM;
+                                aOrcamentos.push({ 
+                                    L1_NUM: numAux, 
+                                    L1_EMISSAO: this.L1_EMISSAO.substring(6,9)+'/'+this.L1_EMISSAO.substring(4,6)+'/'+this.L1_EMISSAO.substring(0,4),
+                                    TOTPED: (this.L2_QUANT*this.L2_VRUNIT) /*this.L1_VLRLIQ.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")*/,
+                                    STRTOTPED: (this.L2_QUANT*this.L2_VRUNIT).toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."),
+                                    A1_NOME: this.A1_NOME,
+                                    L1_VEND: this.L1_VEND,
+                                    itens:[this]
+                                })
+                            }
+                            else{
+                                aOrcamentos[aOrcamentos.length -1].TOTPED += (this.L2_QUANT*this.L2_VRUNIT);
+                                aOrcamentos[aOrcamentos.length -1].STRTOTPED = aOrcamentos[aOrcamentos.length -1].TOTPED.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                                aOrcamentos[aOrcamentos.length -1].itens.push(this);
+                            }
+                        });
+                        if ($.fn.DataTable.isDataTable('#dtOrcamentos')) {
+                            $('#dtOrcamentos').DataTable().destroy();
+                        }
+                        var table = $('#dtOrcamentos').DataTable({
+                            pageLength: 5,
+                            responsive: true,
+                            language: {
+                                zeroRecords: "Nenhum registro encontrado",
+                                info: "Página _PAGE_ de _PAGES_",
+                                infoEmpty: "",
+                                infoFiltered: "(Filtrado de _MAX_ registros)",
+                                search: "Pesquisar",
+                                paginate: {
+                                    "previous": "Anterior",
+                                    "next": "Próxima"
+                                },
+                                lengthMenu: 'Mostrar <select>' +
+                                    '<option value="10">10</option>' +
+                                    '<option value="20">20</option>' +
+                                    '<option value="30">30</option>' +
+                                    '<option value="40">40</option>' +
+                                    '<option value="50">50</option>' +
+                                    '<option value="-1">Todos</option>' +
+                                    '</select> registros por página',
+                                copyHtml5: "Copiar"
+                            },
+                            search: {
+                                search: ""
+                            },
+                            searching: false,
+                            data: aOrcamentos ,
+                            columns: [
+                                { data: 'Select' },
+                                { data: 'STRTOTPED' },
+                                { data: 'L1_EMISSAO' },
+                                { data: 'L1_NUM' },
+                                { data: 'A1_NOME' }
+                            ],
+                            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                            },
+                            buttons: [
+
+                            ],
+                            columnDefs: [
+                                {
+                                    "className": "text-center", "targets": "_all",
+                                },
+                                {
+                                    "targets": 0, "data": 'creator', "render": function (data, type, row) {
+                                        return '<div class="form-check">'+
+                                                    '<input id="btnOrcamento_'+row.L1_NUM+'" data-orcamento="'+btoa(unescape(encodeURIComponent(JSON.stringify(row.itens))))+'" class="form-check-input myChkOrcamento" type="checkbox" value="" onChange="somaOrcamento()">'+
+                                                    '<label class="form-check-label" >'+
+                                                    '</label>'+
+                                                '</div>';
+                                    }
+                                }
+                            ]
+                        });
+                        $(".dataTables_length").css("display", "none");
+
+                    }
+                }
+                else{
+                    $('#modalOrcamentos').modal('hide');
+                    $("#dmodal").html(response.Retorno);
+                    $("#alerta").modal({backdrop: "static"});
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                $("#dmodal").html("Não foi possível buscar orçamentos, tente novamente!");
+                $("#alerta").modal({backdrop: "static"});
+            }
+        });
+    }
+}
