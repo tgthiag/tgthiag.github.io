@@ -2,6 +2,7 @@ console.log("Hello world! teste");
 
 function PE_BUSCA_GRID_PROD(ui){
     console.log(ui);
+    verificandoProdutoControlado(ui.item.codigo);
 }
 
 function verificandoProdutoControlado(codProdToCheck) {
