@@ -22,8 +22,9 @@ function verificandoProdutoControlado(codProdToCheck) {
             try {
                 let b1_xvacin = JSON.parse(response).Dados[0].B1_XVACIN
                 if(b1_xvacin.includes('R')){
-                    codProdToCheck.label = codProdToCheck.label + "(Produto Controlado)";
-                    codProdToCheck.value = codProdToCheck.value + "(Produto Controlado2)";
+                    codProdToCheck.label = codProdToCheck.label + " (Produto Controlado)";
+                    codProdToCheck.value = codProdToCheck.value + " (Produto Controlado2)";
+                    $("#codigo").val(codProdToCheck.label + " (Produto Controlado)");
                     console.log(codProdToCheck);
                 }
             } catch (error) {
