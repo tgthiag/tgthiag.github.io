@@ -450,8 +450,8 @@ function verificarPrazoMontagem() {
 $("#dataEntrega").change(function() {
     verificarPrazoEntrega();
     verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
-    let dataEntregaDinamica = $("#selectTurnoEntrega").val();
-    let turnoEntregaDinamica = $("#dataEntrega").val().replaceAll("-","");
+    let dataEntregaDinamica = $("#dataEntrega").val().replaceAll("-","");
+    let turnoEntregaDinamica = $("#selectTurnoEntrega").val();
     checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas");
 });
 
