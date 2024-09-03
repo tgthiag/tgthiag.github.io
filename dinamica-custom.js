@@ -471,7 +471,7 @@ function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo){
         }),
         success: function(response) {
             if (response && response.Dados && response.Dados.length > 0) {
-                let count = response.Dados[0].totalCount;
+                let count = response.Dados[0].TOTALCOUNT;
                 console.log("Total entries found: " + count);
                 // Further processing based on the count
             } else {
