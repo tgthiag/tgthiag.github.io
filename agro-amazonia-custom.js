@@ -2,13 +2,13 @@ console.log("Hello world! teste");
 
 function PE_BUSCA_GRID_PROD(ui){
     console.log(ui);
-    verificandoProdutoControlado(ui.item.codigo);
+    verificandoProdutoControlado(ui.item);
 }
 
 function verificandoProdutoControlado(codProdToCheck) {
     var query = {
         cnpj_empresa: "13563680000365",
-        query: "SELECT B1_XVACIN FROM xEmp('SB1') WHERE B1_COD = '" + codProdToCheck + "'"
+        query: "SELECT B1_XVACIN FROM xEmp('SB1') WHERE B1_COD = '" + codProdToCheck.codigo + "'"
     };
 
     $.ajax({
@@ -22,7 +22,8 @@ function verificandoProdutoControlado(codProdToCheck) {
             try {
                 let b1_xvacin = JSON.parse(response).Dados[0].B1_XVACIN
                 if(b1_xvacin.includes('R')){
-                    codProdToCheck = codProdToCheck + "(Produto Controlado)"
+                    codProdToCheck = codProdToCheck.label + "(Produto Controlado)";
+                    codProdToCheck = codProdToCheck.value + "(Produto Controlado2)";
                 }
             } catch (error) {
                 
