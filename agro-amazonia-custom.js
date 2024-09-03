@@ -16,13 +16,19 @@ function verificandoProdutoControlado(codProdToCheck) {
         type: 'POST',
         async: false,
         data: JSON.stringify(query),
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json",
         success: function(response) {
-            // Handle the success response
             console.log("Response:", response);
+            try {
+                let b1_xvacin = JSON.parse(response).Dados[0].B1_XVACIN
+                if(b1_xvacin.includes('R')){
+                    codProdToCheck = codProdToCheck + "(Produto Controlado)"
+                }
+            } catch (error) {
+                
+            }
         },
         error: function(error) {
-            // Handle any errors
             console.error("Error:", error);
         }
     });
