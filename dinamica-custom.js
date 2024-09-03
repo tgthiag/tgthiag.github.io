@@ -466,7 +466,7 @@ function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo){
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify({
-            "cnpj_empresa": "84467307000197",
+            "cnpj_empresa": cCnpj,
             "query": "SELECT COUNT(*) AS totalCount FROM xEmp('SL2') WHERE L2_FDTENTR LIKE '%" + dataEntregaOuMontagem + "%' AND (L2_XTURNO LIKE '%" + turno + "%')"
         }),
         success: function(response) {
