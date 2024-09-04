@@ -703,7 +703,7 @@ setTimeout(function() {
         let resut2 = PE_GERORC_ANTES_GERORC2(result);
         return resut2;
     };
-}, 10000); // 20000 ms = 20 seconds
+}, 5000); // 20000 ms = 20 seconds
 
 
 console.log(PE_GERORC_ANTES_GERORC);
@@ -716,7 +716,7 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
 
     $(".list-group-item").each(function(index) {
         jsonenv.itens[index]["LR_ITEM"] = ("0000" + (index+1)).slice(-2);
-        jsonenv.itens[index]["LR_VEND"] = $(this).data("vendcod").toString();
+        jsonenv.itens[index]["LR_VEND"] = $(this).data("vendcod").toString().trim();
         /**Configura operação é entrega posterior c/pedido */
          if ($(this).data("ctipoentrega") == 3 && !(lEntregaposterior) ){
              lEntregaposterior = true;
