@@ -451,18 +451,22 @@ $("#selectTurnoEntrega").change(function() {
 });
 
 $("#dataEntrega").change(function() {
-    verificarPrazoEntrega();
-    verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
-    let dataEntregaDinamica = $("#dataEntrega");
-    let turnoEntregaDinamica = $("#selectTurnoEntrega");
-    checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5);
+    if ($("#dataEntrega").val() != "") {
+        verificarPrazoEntrega();
+        verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
+        let dataEntregaDinamica = $("#dataEntrega");
+        let turnoEntregaDinamica = $("#selectTurnoEntrega");
+        checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5);
+    }
 });
 
 $("#dataMontagem").change(function() {
-    verificarPrazoMontagem();
-    let dataMontagemDinamica = $("#dataMontagem");
-    let turnoEntregaDinamica = $("#selectTurnoEntrega");
-    checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", 10);
+    if ($("#dataMontagem").val() != "") {
+        verificarPrazoMontagem();
+        let dataMontagemDinamica = $("#dataMontagem");
+        let turnoEntregaDinamica = $("#selectTurnoEntrega");
+        checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", 10);
+    }
 });
 
 function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdLimite){
