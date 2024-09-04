@@ -694,15 +694,17 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         next(item)
     }
 }
+setTimeout(function() {
+    print(typeof PE_GERORC_ANTES_GERORC === "function");
+    const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
+    print(PE_GERORC_ANTES_GERORC);
+    PE_GERORC_ANTES_GERORC = function(jsonenv) {
+        let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
+        let resut2 = PE_GERORC_ANTES_GERORC2(result);
+        return resut2;
+    };
+}, 10000); // 20000 ms = 20 seconds
 
-const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
-print(typeof PE_GERORC_ANTES_GERORC === "function");
-print(PE_GERORC_ANTES_GERORC);
-PE_GERORC_ANTES_GERORC = function(jsonenv) {
-    let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
-    let resut2 = PE_GERORC_ANTES_GERORC2(result);
-    return resut2;
-};
 
 print(PE_GERORC_ANTES_GERORC);
 
