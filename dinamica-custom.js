@@ -695,9 +695,9 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     }
 }
 setTimeout(function() {
-    print(typeof PE_GERORC_ANTES_GERORC === "function");
+    console.log(typeof PE_GERORC_ANTES_GERORC === "function");
     const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
-    print(PE_GERORC_ANTES_GERORC);
+    console.log(PE_GERORC_ANTES_GERORC);
     PE_GERORC_ANTES_GERORC = function(jsonenv) {
         let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
         let resut2 = PE_GERORC_ANTES_GERORC2(result);
@@ -706,7 +706,7 @@ setTimeout(function() {
 }, 10000); // 20000 ms = 20 seconds
 
 
-print(PE_GERORC_ANTES_GERORC);
+console.log(PE_GERORC_ANTES_GERORC);
 
 function PE_GERORC_ANTES_GERORC2(jsonenv){
     var lEntregaposterior   = false;
