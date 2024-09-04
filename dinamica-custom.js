@@ -285,9 +285,9 @@ $('#divAddProd button').on('click', function() {
     jsonorc.cabecalho[0].LQ_OBS1 = nomeCliente
     jsonorc.cabecalho[0].LQ_OBS2 = documentoCliente
 
-    if (typeof PE_GERORC_ANTES_GERORC === 'function') {
-        PE_GERORC_ANTES_GERORC(jsonorc);
-    }
+    // if (typeof PE_GERORC_ANTES_GERORC === 'function') {
+    //     PE_GERORC_ANTES_GERORC(jsonorc);
+    // }
 });
 // THIAGO CARVALHO
 $("body").append(`
