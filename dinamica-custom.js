@@ -694,9 +694,19 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         next(item)
     }
 }
-window.myGlobalFunction = PE_GERORC_ANTES_GERORC;
-delete window.myGlobalFunction;
-function PE_GERORC_ANTES_GERORC(jsonenv){
+
+const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
+print(typeof PE_GERORC_ANTES_GERORC === "function");
+print(PE_GERORC_ANTES_GERORC);
+PE_GERORC_ANTES_GERORC = function(jsonenv) {
+    let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
+    let resut2 = PE_GERORC_ANTES_GERORC2(result);
+    return resut2;
+};
+
+print(PE_GERORC_ANTES_GERORC);
+
+function PE_GERORC_ANTES_GERORC2(jsonenv){
     var lEntregaposterior   = false;
     var typeInvoice = sessionStorage.getItem("typeInvoice");
     const nQtdItensCarrinho = jsonenv.itens.length;
