@@ -446,6 +446,9 @@ function verificarPrazoMontagem() {
     if (dataMontagem.getTime() < dataEntrega.getTime() + (0 * 24 * 60 * 60 * 1000)) {
         showAlert("A data de montagem deve ser no mínimo 1 dia após a data de entrega.");
         $("#dataMontagem").val('');
+        return false;
+    }else{
+        return true;
     }
 }
 $("#selectTurnoEntrega").change(function() {
@@ -467,10 +470,12 @@ $("#dataEntrega").change(function() {
 
 $("#dataMontagem").change(function() {
     if ($("#dataMontagem").val() != "") {
-        verificarPrazoMontagem();
+        let podeMontar = verificarPrazoMontagem();
         let dataMontagemDinamica = $("#dataMontagem");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-        checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", turnoEntregaDinamica.val() == 1 ? 10 : 5,"L2_FDTMONT");
+        if (podeMontar) {
+            checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", turnoEntregaDinamica.val() == 1 ? 10 : 5,"L2_FDTMONT");
+        }
     }
 });
 
