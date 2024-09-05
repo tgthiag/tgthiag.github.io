@@ -428,6 +428,9 @@ function verificarPrazoEntrega() {
     if (dataEntrega.getTime() < dataAtual.getTime() + (1 * 24 * 60 * 60 * 1000)) {
         showAlert("A data de entrega deve ser no mínimo 2 dias após a data de compra.");
         $("#dataEntrega").val('');
+        return false;
+    }else{
+        return true;
     }
 }
 
@@ -452,11 +455,13 @@ $("#selectTurnoEntrega").change(function() {
 
 $("#dataEntrega").change(function() {
     if ($("#dataEntrega").val() != "") {
-        verificarPrazoEntrega();
+        let podeEntregar = verificarPrazoEntrega();
         verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-        checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5);
+        if(podeEntregar){
+            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5);
+        }
     }
 });
 
