@@ -460,7 +460,7 @@ $("#dataEntrega").change(function() {
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
         if(podeEntregar){
-            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5);
+            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5, "L2_FDTENTR");
         }
     }
 });
@@ -470,11 +470,11 @@ $("#dataMontagem").change(function() {
         verificarPrazoMontagem();
         let dataMontagemDinamica = $("#dataMontagem");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-        checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", 10);
+        checarDisponibilidadeNoDia(dataMontagemDinamica, turnoEntregaDinamica, "montagens", turnoEntregaDinamica.val() == 1 ? 10 : 5,"L2_FDTMONT");
     }
 });
 
-function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdLimite){
+function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdLimite, campo){
     $.ajax({
         url: url + "QueryResult",
         type: 'POST',
@@ -482,7 +482,7 @@ function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdL
         dataType: 'json',
         data: JSON.stringify({
             "cnpj_empresa": cCnpj,
-            "query": "SELECT COUNT(DISTINCT L2_RESERVA) AS totalCount FROM xEmp('SL2') WHERE L2_FDTENTR LIKE '%" + dataEntregaOuMontagem.val().replaceAll("-","") + "%' AND (L2_XTURNO LIKE '%" + turno.val() + "%')"
+            "query": "SELECT COUNT(DISTINCT L2_RESERVA) AS totalCount FROM xEmp('SL2') WHERE "+ campo +" LIKE '%" + dataEntregaOuMontagem.val().replaceAll("-","") + "%' AND (L2_XTURNO LIKE '%" + turno.val() + "%')"
         }),
         success: function(response) {
             if (response && response.Dados && response.Dados.length > 0) {
