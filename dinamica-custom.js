@@ -485,7 +485,7 @@ function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdL
                 console.log("Total entries found: " + count);
                 if (count >= qtdLimite) {
                     dataEntregaOuMontagem.val("");
-                    showAlert(`O limite de ${qtdLimite} ${processo} para essa data no turno ${turno.val()} já foi atingido, \nEscolha outra data ou altere o turno.`)
+                    showAlert(`O limite de ${processo} para essa data no turno ${turno.val()} já foi atingido, \nEscolha outra data ou altere o turno.`)
                 }
                 return count;
             } else {
