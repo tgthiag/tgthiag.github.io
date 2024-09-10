@@ -35,3 +35,22 @@ function verificandoProdutoControlado(codProdToCheck) {
         }
     });
 }
+
+function PE_BUSCA_GRID_CLIENTE() {
+    let clienteAgro = $("#cliente").data("codigo");
+    let lojaAgro = $("#cliente").data("loja");
+
+    let url = `https://mingle.agroamazonia.com/dev/api/aasa/v1/agrotis/easy/produtorRural/${clienteAgro}/${lojaAgro}`;
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+        }
+    });
+}
