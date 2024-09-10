@@ -52,7 +52,7 @@ function PE_BUSCA_GRID_CLIENTE() {
     .then(data => {
         let produtorRural = data.produtorRuralApi;
 
-        if (produtorRural.ativo) {
+        if (produtorRural == undefined || !produtorRural.ativo) {
             if (!document.getElementById('labelProdutorRural')) {
                 let div = document.createElement('div');
                 div.className = 'col-lg-12 col-md-12 col-sm-12 col-xs-12';
