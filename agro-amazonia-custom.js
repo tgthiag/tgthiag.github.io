@@ -40,18 +40,52 @@ function PE_BUSCA_GRID_CLIENTE() {
     let clienteAgro = $("#cliente").data("codigo");
     let lojaAgro = $("#cliente").data("loja");
 
-    let encodedAuth = 'Basic ' + btoa('api.easy:!@eas255');
-
     let url = `https://mingle.agroamazonia.com/dev/api/aasa/v1/agrotis/easy/produtorRural/${clienteAgro}/${lojaAgro}`;
 
     fetch(url, {
         method: 'GET',
         headers: {
-            'Authorization': encodedAuth
+            'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         }
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        let produtorRural = data.produtorRuralApi;
+
+        if (produtorRural.ativo) {
+            if (!document.getElementById('labelProdutorRural')) {
+                let div = document.createElement('div');
+                div.className = 'col-lg-12 col-md-12 col-sm-12 col-xs-12';
+
+                let label = document.createElement('label');
+                label.id = 'labelProdutorRural';
+                label.style.color = 'green';
+                label.style.fontSize = 'small';
+                label.style.fontWeight = 'bold';
+                label.innerText = 'Produtor Rural: ';
+
+                let span = document.createElement('span');
+                span.id = 'produtorRuralCode';
+                span.style.color = 'green';
+                span.style.fontSize = 'small';
+                span.style.fontWeight = 'bold';
+                span.innerText = produtorRural.id;
+                div.appendChild(label);
+                div.appendChild(span);
+
+                let clienteDiv = document.getElementById('labelCliente').parentNode;
+                clienteDiv.appendChild(div);
+            } else {
+                document.getElementById('produtorRuralCode').innerText = produtorRural.id;
+            }
+        } else {
+            let labelProdutorRural = document.getElementById('labelProdutorRural');
+            if (labelProdutorRural) {
+                labelProdutorRural.parentNode.remove();
+            }
+        }
+    })
     .catch(error => console.error('Error:', error));
 }
+
 
