@@ -513,6 +513,10 @@ function checarDisponibilidadeNoDia(dataEntregaOuMontagem, turno, processo, qtdL
 
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     $("#Dinamica_ModalAposAddCarrinho").modal({backdrop: "static"});
+    if ($("#Dinamica_ModalAposAddCarrinho").css('display') === 'block' && $("#vendedorInput").val() != "" && $("#vendedorInput").val().trim().length <= 6) {
+        $("#vendedorInput").trigger('input'); 
+    }
+    
     nQtditemCarrinhoEntrega = 0;
 
     var produtoSelecionado = $("#codigo").val().trim();
