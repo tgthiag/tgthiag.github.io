@@ -325,7 +325,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                 // ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
-                    ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
+                    // ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
                         '" href="javascript:void(0);" class="list-group-item" '+'ondblclick="deleta(this);" onclick="selline(this);" id="itens"';
     
     var divCarrinho = '<div class="row" style="font-size: 12px;">'+
@@ -373,7 +373,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                         ' data-estoque="'			+ cQtdEstoque + '"' +
                         ' data-itempro="'			+ cItem + '"' +
                         ' data-ctipoentrega="'      + "2"+ '"' +
-                        ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
+                        // ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
                             '" href="javascript:void(0);" class="list-group-item" '+'ondblclick="deleta(this);" onclick="selline(this);" id="itens"';
         
         var divCarrinho = '<div class="row" style="font-size: 12px;">'+
