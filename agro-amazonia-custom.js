@@ -242,7 +242,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var nItem   = 0;
     var cItem   = '';
     const codCulturaAgroAmazonia = $("#selectCultura").find(':selected').val();
-    const codProblemaAgroAmazonia = $("#selectCultura").find(':selected').val();
+    const codProblemaAgroAmazonia = $("#selectProblema").find(':selected').val();
 
     // var AgroAmazonia_turno = $("#selectTurnoEntrega").val();
     // var AgroAmazonia_dataEntrega = $("#dataEntrega").val();
