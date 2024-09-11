@@ -159,9 +159,8 @@ function populateCultura() {
     });
 }
 
-// Function to populate Problema dropdown based on selected Cultura
 function populateProblema(codCultura) {
-    const produtoCodigo = $("#codigo").data("codigo"); // Get produto code from element
+    const produtoCodigo = $("#codigo").data("codigo");
 
     $.ajax({
         url: `https://mingle.agroamazonia.com/dev/api/aasa/v1/agrotis/easy/problemas/${produtoCodigo}/${codCultura}`,
@@ -176,7 +175,7 @@ function populateProblema(codCultura) {
                     `<option value="${problema.codigoSiagroPR}">${problema.nomeVulgar}</option>`
                 );
             });
-            $('#selectProblema').prop('disabled', false); // Enable Problema dropdown
+            $('#selectProblema').prop('disabled', false);
         },
         error: function (error) {
             console.error("Erro ao carregar problemas:", error);
@@ -184,7 +183,6 @@ function populateProblema(codCultura) {
     });
 }
 
-// Event listener for Cultura selection to load Problema options
 $('#selectCultura').on('change', function () {
     const codCultura = $(this).find(':selected').data('codCultura');
     if (codCultura) {
@@ -195,13 +193,11 @@ $('#selectCultura').on('change', function () {
 });
     
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
-    populateCultura();
-    $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
-    setTimeout(function() {
-        if ($("#AgroAmazonia_ModalAposAddCarrinho").css('display') === 'block' && $("#vendedorInput").val() != "" && $("#vendedorInput").val().trim().length <= 6) {
-            $("#vendedorInput").trigger('input'); 
-        }
-    }, 1500);
+    if (item.includes("Produto Controlado")) {
+        populateCultura();
+        $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
+    }
+
     
     nQtditemCarrinhoEntrega = 0;
 
@@ -242,12 +238,12 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var Som2    = "somatorio";
     var nItem   = 0;
     var cItem   = '';
-    var dropdownGarantia = document.getElementById("AgroAmazoniaCustomerOrder");
-    var dropdownTurno = document.getElementById("selectTurnoEntrega");
-    var AgroAmazonia_turno = $("#selectTurnoEntrega").val();
-    var AgroAmazonia_dataEntrega = $("#dataEntrega").val();
-    var AgroAmazonia_dataMontagem = $("#dataMontagem").val();
-    var vendorCodeAgroAmazonia = $('#vendedorInput').data('codevendedor').trim();
+    // var dropdownGarantia = document.getElementById("AgroAmazoniaCustomerOrder");
+    // var dropdownTurno = document.getElementById("selectTurnoEntrega");
+    // var AgroAmazonia_turno = $("#selectTurnoEntrega").val();
+    // var AgroAmazonia_dataEntrega = $("#dataEntrega").val();
+    // var AgroAmazonia_dataMontagem = $("#dataMontagem").val();
+    // var vendorCodeAgroAmazonia = $('#vendedorInput').data('codevendedor').trim();
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -318,10 +314,10 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-qtde="'				+ nQuantidade + '"' +
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
-                ' data-turno="'			+ AgroAmazonia_turno + '"' +
-                ' data-dataentrega="'			+ AgroAmazonia_dataEntrega + '"' +
-                ' data-datamontagem="'			+ AgroAmazonia_dataMontagem + '"' +
-                ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
+                // ' data-turno="'			+ AgroAmazonia_turno + '"' +
+                // ' data-dataentrega="'			+ AgroAmazonia_dataEntrega + '"' +
+                // ' data-datamontagem="'			+ AgroAmazonia_dataMontagem + '"' +
+                // ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
                     ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
