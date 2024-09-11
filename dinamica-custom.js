@@ -602,7 +602,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_dataEntrega = $("#dataEntrega").val();
     var dinamica_dataMontagem = $("#dataMontagem").val();
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
-var dinamica_codLista = $("#codigo").data("codlista") || "";
+    var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")

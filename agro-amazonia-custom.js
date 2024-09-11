@@ -212,6 +212,22 @@ $('#AgroAmazonia_ModalAposAddCarrinho').on('shown.bs.modal', function () {
 });
 
 
+function PE_FECHAR_PEDIDO() {
+    let hasProdutoControlado = false;
+    $(".list-group-item").each(function(index) {
+        let desc = $(this).data('desc');
+
+        if (typeof desc === 'string' && desc.includes("Produto Controlado")) {
+            hasProdutoControlado = true;
+            return false;
+        }
+    });
+    if (hasProdutoControlado) {
+        $('#btnmfecharped').css('display', 'none');
+    } else {
+        $('#btnmfecharped').css('display', 'block');
+    }
+}
 
     
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
