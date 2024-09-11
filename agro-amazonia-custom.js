@@ -147,11 +147,28 @@ function populateCultura() {
         },
         success: function (data) {
             $('#selectCultura').empty().append('<option value="">Selecione uma Cultura</option>');
-            data.forEach(cultura => {
-                $('#selectCultura').append(
-                    `<option value="${cultura.creaSc}" data-codCultura="${cultura.codCultura}">${cultura.nomeComum}</option>`
-                );
-            });
+        
+            function processData() {
+                try {
+                    if (Array.isArray(data)) {
+                        data.forEach(cultura => {
+                            $('#selectCultura').append(
+                                `<option value="${cultura.creaSc}" data-codCultura="${cultura.codCultura}">${cultura.nomeComum}</option>`
+                            );
+                        });
+                    } else {
+                        console.error("Unexpected data format, expected an array:", data);
+                        $('#selectCultura').append('<option value="">Erro ao carregar culturas</option>');
+                    }
+                } catch (error) {
+                    console.error("Error during data.forEach execution:", error);
+        
+                    // Retry processing the data after 1 second if it fails
+                    setTimeout(processData, 1000);  // Retry after 1 second
+                }
+            }
+        
+            processData();  // First attempt to process the data
         },
         error: function (error) {
             console.error("Erro ao carregar culturas:", error);
