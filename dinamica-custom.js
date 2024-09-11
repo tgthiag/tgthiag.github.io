@@ -1,5 +1,12 @@
-console.log("Hello world2!");
+/**
+ * Customização feita por:
+ * 
+ * Matheus Okamoto Soós - Plentech LTDA.
+ */
+
 /* LISTA DE PRESENTES */
+
+let guardarLista = false
 
 $(document).ready(function () {
     const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`
@@ -8,6 +15,10 @@ $(document).ready(function () {
 
     $("#btnListaPresentes").on("click", function () {
         $("#modalListaPresentes").modal({ backdrop: "static" });
+
+        if (guardarLista) {
+            $("#modalProdutosLista").modal({ backdrop: "static" });
+        }
     })
 })
 
@@ -51,11 +62,11 @@ $("body").append(
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <table id="dtPresentes" class="table display table-striped" style="display: none">
+                                <table id="dtPresentes" class="table display table-striped" style="display: none; overflow: auto; max-height: 75vh;">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Cod.Lista</th>
-                                            <th scope="col">Cod.Organizador</th>
+                                            <th scope="col">Cod. Lista</th>
+                                            <th scope="col">Cod. Organizador</th>
                                             <th scope="col">Nome Organizador</th>
                                             <th scope="col">Evento</th>
                                             <th scope="col">Data Evento</th>
@@ -90,18 +101,17 @@ $("body").append(
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <table id="dtProdutos" class="table display table-striped" style="display: block">
+                            <table id="dtProdutos" class="table display table-striped" style="display: block; overflow: auto; max-height: 75vh;">
                                 <thead>
                                     <tr>
                                         <th scope="col"></th>
-                                        <th scope="col"></th>
                                         <th scope="col">Item</th>
-                                        <th scope="col">Cod.Produto</th>
-                                        <th scope="col">Desc.Prod.</th>
-                                        <th scope="col">Val.Unitario</th>
+                                        <th scope="col">Cod. Produto</th>
+                                        <th scope="col">Desc. Prod.</th>
+                                        <th scope="col">Val. Unitario</th>
                                         <th scope="col">Unidade</th>
-                                        <th scope="col">Qtd.Disponivel</th>
-                                        <th scope="col">Qtd.Solicitada</th>
+                                        <th scope="col">Qtd. Disponivel</th>
+                                        <th scope="col">Qtd. Solicitada</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodydtProdutos">
@@ -110,9 +120,7 @@ $("body").append(
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer" id="buttons">
-                    <button class="btn" data-dismiss="modal">Selecionar</button>
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>`
@@ -132,7 +140,7 @@ $(document).ready(function () {
 })
 
 function insertData() {
-    clearListas();
+    clearListas()
 
     const $table = $("#dtPresentes");
     const $tbody = $("#bodydtPresentes");
@@ -173,7 +181,7 @@ function insertData() {
 
             const data = response.ListaPresentes;
 
-            data.forEach((lista) => {
+            data.forEach(function (lista) {
                 const $row = $("<tr>").css({
                     cursor: "pointer",
                     transition: "0.2s"
@@ -191,18 +199,16 @@ function insertData() {
                 );
 
                 $row.on("click", function () {
-                    lista.Produtos.forEach((produto) => {
+                    lista.Produtos.forEach(function (produto) {
                         const $produtosRow = $("<tr>");
                         const $imgElement = $('<img>').attr({
                             src: 'data:image/png;base64,' + produto.ImagemBase64,
                             width: 100,
                             height: 100
                         });
-                        const $checkbox = $("<input>").attr('type', 'checkbox');
 
                         $("#bodydtProdutos").append(
                             $produtosRow.append(
-                                $("<td>").append($checkbox),
                                 $("<td>").append($imgElement),
                                 $(`
                                     <td>${produto.Item}</td>
@@ -215,13 +221,45 @@ function insertData() {
                                 `)
                             )
                         );
+
+                        $produtosRow.on("click", function () {
+                            $("#codigo").val(produto.DescProduto);
+                            $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+                            $("#codigo").data("codigo", produto.CodigoProduto);
+                            $("#codigo").data("estoque", 10);
+                            $("#codigo").data("imagem", "img/semimage.png");
+                            $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2))
+
+                            //LR_CODLPRE
+                            $("#codigo").data("codlista", lista.Codigo)
+                            //LR_ITLPRE
+                            $("#codigo").data("itemlista", produto.Item)
+
+                            $("#modalProdutosLista").modal('hide')
+                            $("#modalListaPresentes").modal('hide')
+
+                            guardarLista = true
+                        })
+
+                        if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                            $produtosRow.css("backgroundColor", "#a9a9a9");
+                        }
+                        else {
+                            $produtosRow.on("mouseover", function () {
+                                $produtosRow.css("backgroundColor", "#e3e3e3");
+                            });
+
+                            $produtosRow.on("mouseout", function () {
+                                $produtosRow.css("backgroundColor", "");
+                            });
+                        }
                     });
 
                     $("#modalProdutosLista").modal({ backdrop: "static" });
                 });
 
                 $row.on("mouseover", function () {
-                    $row.css("backgroundColor", "#00000024");
+                    $row.css("backgroundColor", "#dcdcdc");
                 });
 
                 $row.on("mouseout", function () {
@@ -245,6 +283,8 @@ function clearListas() {
 
 function clearProdutos() {
     $("#bodydtProdutos tr").remove();
+
+    guardarLista = false
 }
 
 /* CAMPOS "NOME CLIENTE" E "DOCUMENTO CLIENTE" */
@@ -278,17 +318,15 @@ $(document).ready(function () {
     $(divInputClienteHtml).insertBefore($divBuscaProduto);
 })
 
-$('#divAddProd button').on('click', function() {
+$('#divAddProd button').on('click', function () {
     const nomeCliente = $('#nomeCliente').val();
     const documentoCliente = $('#documentoCliente').val();
 
     jsonorc.cabecalho[0].LQ_OBS1 = nomeCliente
     jsonorc.cabecalho[0].LQ_OBS2 = documentoCliente
-
-    // if (typeof PE_GERORC_ANTES_GERORC === 'function') {
-    //     PE_GERORC_ANTES_GERORC(jsonorc);
-    // }
 });
+
+
 // THIAGO CARVALHO
 $("body").append(`
     <div class="modal fade" id="Dinamica_ModalAposAddCarrinho" role="dialog">
@@ -564,6 +602,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_dataEntrega = $("#dataEntrega").val();
     var dinamica_dataMontagem = $("#dataMontagem").val();
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
+var dinamica_codLista = $("#codigo").data("codlista") || "";
+    var dinamica_itemLista = $("#codigo").data("itemlista") || "";
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -638,6 +678,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
+                ' data-codlista="' + dinamica_codLista + '"' +
+                ' data-itemlista="' + dinamica_itemLista + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
                     ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
@@ -745,6 +787,10 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
             
         }
+        if ($(this).data("codlista") && $(this).data("itemlista")) {
+            jsonenv.itens[index]["LR_CODLPRE"] = $(this).data("codlista").toString();
+            jsonenv.itens[index]["LR_ITLPRE"] = $(this).data("itemlista").toString();
+        }
     });
 
     return jsonenv;
@@ -781,6 +827,13 @@ function PE_ANTES_PAGARORCAMENTO(orcamentosSelecionados){
     let sellerCodeDinamica = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L2_VEND.trim();
     $('#vendedorInput').val(sellerCodeDinamica);
     $('#vendedorInput').data('codevendedor', sellerCodeDinamica);
+
+    const obs1 = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L1_OBS1.trim();
+    const obs2 = JSON.parse(atob($(orcamentosSelecionados).data("orcamento")))[0].L1_OBS2.trim();
+    $('#nomeCliente').val(obs1);
+    $('#documentoCliente').val(obs2);
+    jsonorc.cabecalho[0].LQ_OBS1 = obs1;
+    jsonorc.cabecalho[0].LQ_OBS2 = obs2;
 }
 
 function pagarOrcamento(){
@@ -944,6 +997,10 @@ function PE_ANT_buscaNrOrcamento(cQuery) {
     cQuery = cQuery.replace(
         "L2_LOCAL",
         "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT"
+    );
+    cQuery = cQuery.replace(
+        "L1_LOJA",
+        "L1_LOJA, L1_OBS1, L1_OBS2"
     );
         console.log(cQuery);
 	return cQuery;
