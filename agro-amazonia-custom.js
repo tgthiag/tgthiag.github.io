@@ -183,14 +183,17 @@ function populateProblema(codCultura) {
     });
 }
 
-$(document).on('change', '#selectCultura', function () {
-    const codCultura = $(this).find(':selected').data('codCultura');
-    if (codCultura) {
-        populateProblema(codCultura);
-    } else {
-        $('#selectProblema').prop('disabled', true).empty().append('<option value="">Selecione um Problema</option>');
-    }
+$(document).ready(function() {
+    $('#selectCultura').on('change', function () {
+        const codCultura = $(this).find(':selected').data('codCultura');
+        if (codCultura) {
+            populateProblema(codCultura);
+        } else {
+            $('#selectProblema').prop('disabled', true).empty().append('<option value="">Selecione um Problema</option>');
+        }
+    });
 });
+
 
     
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
