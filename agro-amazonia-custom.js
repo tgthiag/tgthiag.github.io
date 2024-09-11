@@ -199,12 +199,16 @@ $('#AgroAmazonia_ModalAposAddCarrinho').on('shown.bs.modal', function () {
     
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     if (item.includes("Produto Controlado")) {
+        if ($("#produtorRuralCode").text() != "") {
         populateCultura();
         $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
         document.getElementById("AgroAmazoniaBtnCustomerOrderItem").onclick = function(){
             aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
             }
             somatorio();//Executa a atualização dos totais
+        }else{
+            showAlert("O produto é controlado, e o cliente não está cadastrado como produtor rural.");
+        }
     }else{
         aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
 
@@ -219,8 +223,9 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var Som2    = "somatorio";
     var nItem   = 0;
     var cItem   = '';
-    // var dropdownGarantia = document.getElementById("AgroAmazoniaCustomerOrder");
-    // var dropdownTurno = document.getElementById("selectTurnoEntrega");
+    const codCulturaAgroAmazonia = $("#selectCultura").find(':selected').val();
+    const codProblemaAgroAmazonia = $("#selectCultura").find(':selected').val();
+
     // var AgroAmazonia_turno = $("#selectTurnoEntrega").val();
     // var AgroAmazonia_dataEntrega = $("#dataEntrega").val();
     // var AgroAmazonia_dataMontagem = $("#dataMontagem").val();
@@ -296,8 +301,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 // ' data-turno="'			+ AgroAmazonia_turno + '"' +
-                // ' data-dataentrega="'			+ AgroAmazonia_dataEntrega + '"' +
-                // ' data-datamontagem="'			+ AgroAmazonia_dataMontagem + '"' +
+                item.includes("Produto Controlado") ? ' data-culturaAgro="'			+ codCulturaAgroAmazonia + '"' : '' +
+                item.includes("Produto Controlado") ? ' data-problemaAgro="'			+ codProblemaAgroAmazonia + '"': '' +
                 // ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
@@ -397,3 +402,21 @@ function showAlert(message) {
     document.getElementById("alertMessageAgroAmazonia").innerText = message;
     $("#alertModalAgroAmazonia").modal({ backdrop: "static" });
 }
+
+function PE_GERORC_ANTES_GERORC2(jsonenv){
+    // var lEntregaposterior   = false;
+    // var typeInvoice = sessionStorage.getItem("typeInvoice");
+    // const nQtdItensCarrinho = jsonenv.itens.length;
+    // jsonenv.cabecalho[0].LQ_IMPNF = (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
+
+    $(".list-group-item").each(function(index) {
+        if ($("#produtorRuralCode").text() != "") {
+            jsonenv.cabecalho[0]["LQ_YAGRONO"]  =  $("#produtorRuralCode").text();
+        }
+        
+        jsonenv.itens[index]["LR_YCULTUR"] =  $(this).data("culturaAgro").toString();
+        jsonenv.itens[index]["L2_YPROBLE"] = $(this).data("problemaAgro").toString();
+    });
+
+    return jsonenv;
+} 
