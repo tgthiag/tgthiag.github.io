@@ -291,7 +291,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
          
     }
     
-    cTipoEntrega = $("#selectTipoEntrega").val()
+    cTipoEntrega = "2";
     
     cValsemDescont= $("#codigo").data("valor");
     cCodProduto   = $("#codigo").data("codigo");
@@ -323,7 +323,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                 ' data-problemaAgro="' + (item.includes("Produto Controlado") ? codProblemaAgroAmazonia : "") + '"' +
                 // ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
                     ' data-itempro="'			+ cItem + '"' +
-                    ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
+                    ' data-ctipoentrega="'      + "2"+ '"' +
                     // ' data-cmesesdegarantia="'  + dropdownGarantia.value+ '"' +
                         '" href="javascript:void(0);" class="list-group-item" '+'ondblclick="deleta(this);" onclick="selline(this);" id="itens"';
     
