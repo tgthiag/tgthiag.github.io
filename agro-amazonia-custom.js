@@ -403,7 +403,7 @@ function showAlert(message) {
     $("#alertModalAgroAmazonia").modal({ backdrop: "static" });
 }
 
-function PE_GERORC_ANTES_GERORC2(jsonenv){
+function PE_GERORC_ANTES_GERORC(jsonenv){
     // var lEntregaposterior   = false;
     // var typeInvoice = sessionStorage.getItem("typeInvoice");
     // const nQtdItensCarrinho = jsonenv.itens.length;
@@ -414,8 +414,15 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.cabecalho[0]["LQ_YAGRONO"]  =  $("#produtorRuralCode").text();
         }
         
-        jsonenv.itens[index]["LR_YCULTUR"] =  $(this).data("culturaAgro").toString();
-        jsonenv.itens[index]["L2_YPROBLE"] = $(this).data("problemaAgro").toString();
+        let culturaAgro = $(this).data("culturaAgro");
+        let problemaAgro = $(this).data("problemaAgro");
+    
+        if (culturaAgro) {
+            jsonenv.itens[index]["LR_YCULTUR"] = culturaAgro.toString();
+        }
+        if (problemaAgro) {
+            jsonenv.itens[index]["L2_YPROBLE"] = problemaAgro.toString();
+        }
     });
 
     return jsonenv;
