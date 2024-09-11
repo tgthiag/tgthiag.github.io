@@ -196,19 +196,26 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     if (item.includes("Produto Controlado")) {
         populateCultura();
         $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
-    }
-
+        document.getElementById("AgroAmazoniaBtnCustomerOrderItem").onclick = function(){
+            aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
     
-    nQtditemCarrinhoEntrega = 0;
-
-    var produtoSelecionado = $("#codigo").val().trim();
-    if (produtoSelecionado.includes("GARANTIA ESTENDIDA AVULSA")) {
-        checkForGarantiaEstendida();
+            $(".list-group-item").each(function() {
+                if ($(this).data("ctipoentrega") == 3){
+                    nQtditemCarrinhoEntrega++;
+                }
+                
+            });
+            if (nQtditemCarrinhoEntrega > 0){
+                if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
+                    nQtditemCarrinhoEntrega = 2;
+                }
+                
+                // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
+                // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
+            }
+            somatorio();//Executa a atualização dos totais
+            }
     }else{
-    // $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
-    //     populateGarantiaDropdown(item);
-    // };
-    document.getElementById("AgroAmazoniaBtnCustomerOrderItem").onclick = function(){
         aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
 
         $(".list-group-item").each(function() {
@@ -226,9 +233,7 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
             // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
         }
         somatorio();//Executa a atualização dos totais
-
-    }
-}
+    };
 }
 
 function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
