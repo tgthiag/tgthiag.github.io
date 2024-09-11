@@ -301,8 +301,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 // ' data-turno="'			+ AgroAmazonia_turno + '"' +
-                item.includes("Produto Controlado") ? ' data-culturaAgro="'			+ codCulturaAgroAmazonia + '"' : '' +
-                item.includes("Produto Controlado") ? ' data-problemaAgro="'			+ codProblemaAgroAmazonia + '"': '' +
+                ' data-culturaAgro="'			+ item.includes("Produto Controlado") ? codCulturaAgroAmazonia : "" + '"' +
+                ' data-problemaAgro="'			+ item.includes("Produto Controlado") ? codProblemaAgroAmazonia : "" + '"' +
                 // ' data-vendcod="'			+ vendorCodeAgroAmazonia + '"' +
                     ' data-itempro="'			+ cItem + '"' +
                     ' data-ctipoentrega="'      + cTipoEntrega+ '"' +
