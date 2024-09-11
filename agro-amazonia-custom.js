@@ -183,9 +183,9 @@ function populateProblema(codCultura) {
     });
 }
 
-$(document).ready(function() {
+$('#AgroAmazonia_ModalAposAddCarrinho').on('shown.bs.modal', function () {
     $('#selectCultura').on('change', function () {
-        const codCultura = $(this).find(':selected').data('codCultura');
+        const codCultura = $(this).find(':selected').data('codcultura');
         if (codCultura) {
             populateProblema(codCultura);
         } else {
@@ -193,6 +193,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 
     
