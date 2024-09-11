@@ -193,15 +193,9 @@ $('#selectCultura').on('change', function () {
         $('#selectProblema').prop('disabled', true).empty().append('<option value="">Selecione um Problema</option>');
     }
 });
-
-// Call function to populate Cultura dropdown on page load
-$(document).ready(function () {
-    populateCultura();
-});
-
-
     
 function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
+    populateCultura();
     $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
     setTimeout(function() {
         if ($("#AgroAmazonia_ModalAposAddCarrinho").css('display') === 'block' && $("#vendedorInput").val() != "" && $("#vendedorInput").val().trim().length <= 6) {
