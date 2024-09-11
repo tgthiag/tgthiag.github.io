@@ -203,6 +203,7 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
         populateCultura();
         $("#AgroAmazonia_ModalAposAddCarrinho").modal({backdrop: "static"});
         document.getElementById("AgroAmazoniaBtnCustomerOrderItem").onclick = function(){
+            $(".mm").remove()
             aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
             }
             somatorio();//Executa a atualização dos totais
@@ -414,8 +415,8 @@ function PE_GERORC_ANTES_GERORC(jsonenv){
             jsonenv.cabecalho[0]["LQ_YAGRONO"]  =  $("#produtorRuralCode").text();
         }
         
-        let culturaAgro = $(this).data("culturaAgro");
-        let problemaAgro = $(this).data("problemaAgro");
+        let culturaAgro = $(this).data("culturaagro");
+        let problemaAgro = $(this).data("problemaagro");
     
         if (culturaAgro) {
             jsonenv.itens[index]["LR_YCULTUR"] = culturaAgro.toString();
