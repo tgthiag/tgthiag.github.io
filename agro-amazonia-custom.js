@@ -152,8 +152,10 @@ function populateCultura() {
                 try {
                     if (Array.isArray(data)) {
                         data.forEach(cultura => {
+                            let bytes = new Uint8Array(cultura.nomeComum.split('').map(char => char.charCodeAt(0)));
+                            let correctString = decoder.decode(bytes);
                             $('#selectCultura').append(
-                                `<option value="${cultura.creaSc}" data-codCultura="${cultura.codCultura}">${cultura.nomeComum}</option>`
+                                `<option value="${cultura.codCultura}" data-codCultura="${cultura.codCultura}">${correctString}</option>`
                             );
                         });
                     } else {
@@ -188,8 +190,10 @@ function populateProblema(codCultura) {
         success: function (data) {
             $('#selectProblema').empty().append('<option value="">Selecione um Problema</option>');
             data.forEach(problema => {
+                let bytes = new Uint8Array(problema.nomeVulgar.split('').map(char => char.charCodeAt(0)));
+                let correctString = decoder.decode(bytes);
                 $('#selectProblema').append(
-                    `<option value="${problema.codigoSiagroPR}">${problema.nomeVulgar}</option>`
+                    `<option value="${problema.codProblema}">${correctString}</option>`
                 );
             });
             $('#selectProblema').prop('disabled', false);
