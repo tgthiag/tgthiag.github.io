@@ -160,8 +160,9 @@ function populateCultura() {
                             );
                         });
                     } else {
-                        console.error("Unexpected data format, expected an array:", data);
-                        $('#selectCultura').append('<option value="">Erro ao carregar culturas</option>');
+                        console.error("Unexpected data format, expected an array");
+                        // $('#selectCultura').append('<option value="">Erro ao carregar culturas</option>');
+                        setTimeout(processData, 1000);
                     }
                 } catch (error) {
                     console.error("Error during data.forEach execution:", error);
