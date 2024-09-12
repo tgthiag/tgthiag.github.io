@@ -147,7 +147,8 @@ function populateCultura() {
         headers: {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
-        success: function (data) {
+        success: function (response) {
+            let data = JSON.parse(response);
             function processData() {
                 if ($('#selectCultura').find('option').length > 1) {
                     console.log("Dropdown already populated, stopping retries.");
@@ -194,7 +195,8 @@ function populateProblema(codCultura) {
         headers: {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
-        success: function (data) {
+        success: function (response) {
+            let data = JSON.parse(response);
             function processData() {
                 if ($('#selectProblema').find('option').length > 1) {
                     console.log("Dropdown already populated, stopping retries.");
