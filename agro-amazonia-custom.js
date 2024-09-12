@@ -153,6 +153,7 @@ function populateCultura() {
                     if (Array.isArray(data)) {
                         data.forEach(cultura => {
                             let bytes = new Uint8Array(cultura.nomeComum.split('').map(char => char.charCodeAt(0)));
+                            let decoder = new TextDecoder('utf-8');
                             let correctString = decoder.decode(bytes);
                             $('#selectCultura').append(
                                 `<option value="${cultura.codCultura}" data-codCultura="${cultura.codCultura}">${correctString}</option>`
@@ -191,6 +192,7 @@ function populateProblema(codCultura) {
             $('#selectProblema').empty().append('<option value="">Selecione um Problema</option>');
             data.forEach(problema => {
                 let bytes = new Uint8Array(problema.nomeVulgar.split('').map(char => char.charCodeAt(0)));
+                let decoder = new TextDecoder('utf-8');
                 let correctString = decoder.decode(bytes);
                 $('#selectProblema').append(
                     `<option value="${problema.codProblema}">${correctString}</option>`
