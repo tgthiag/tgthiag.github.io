@@ -1,7 +1,8 @@
 console.log("Hello world! teste");
+$("#textSelectTypeInvoice").html("<p>Selecione o tipo de operação a ser executado:.</p>");
+
 
 function PE_BUSCA_GRID_PROD(ui){
-    console.log(ui);
     verificandoProdutoControlado(ui.item);
 }
 
@@ -461,10 +462,8 @@ function showAlert(message) {
 }
 
 function PE_GERORC_ANTES_GERORC(jsonenv){
-    // var lEntregaposterior   = false;
-    // var typeInvoice = sessionStorage.getItem("typeInvoice");
-    // const nQtdItensCarrinho = jsonenv.itens.length;
-    // jsonenv.cabecalho[0].LQ_IMPNF = (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
+    var typeInvoice = sessionStorage.getItem("typeInvoice");
+    jsonenv.cabecalho[0].LQ_IMPNF =  (typeInvoice=="1" ? ".F." : ".T."); //1=NFC-e ; 2=NF-e
 
     $(".list-group-item").each(function(index) {
         if ($("#produtorRuralCode").text() != "") {
