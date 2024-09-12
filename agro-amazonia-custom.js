@@ -166,12 +166,11 @@ function populateCultura() {
                 } catch (error) {
                     console.error("Error during data.forEach execution:", error);
         
-                    // Retry processing the data after 1 second if it fails
-                    setTimeout(processData, 1000);  // Retry after 1 second
+                    setTimeout(processData, 1000);
                 }
             }
         
-            processData();  // First attempt to process the data
+            processData();
         },
         error: function (error) {
             console.error("Erro ao carregar culturas:", error);
@@ -190,14 +189,30 @@ function populateProblema(codCultura) {
         },
         success: function (data) {
             $('#selectProblema').empty().append('<option value="">Selecione um Problema</option>');
-            data.forEach(problema => {
-                let bytes = new Uint8Array(problema.nomeVulgar.split('').map(char => char.charCodeAt(0)));
-                let decoder = new TextDecoder('utf-8');
-                let correctString = decoder.decode(bytes);
-                $('#selectProblema').append(
-                    `<option value="${problema.codProblema}">${correctString}</option>`
-                );
-            });
+
+            function processData() {
+                try {
+                    if (Array.isArray(data)) {
+                        data.forEach(problema => {
+                            let bytes = new Uint8Array(problema.nomeVulgar.split('').map(char => char.charCodeAt(0)));
+                            let decoder = new TextDecoder('utf-8');
+                            let correctString = decoder.decode(bytes);
+                            $('#selectProblema').append(
+                                `<option value="${problema.codProblema}">${correctString}</option>`
+                            );
+                        });
+                    } else {
+                        console.error("Unexpected data format, expected an array:", data);
+                        $('#selectProblema').append('<option value="">Erro ao carregar problemas</option>');
+                    }
+                } catch (error) {
+                    console.error("Error during data.forEach execution:", error);
+
+                    setTimeout(processData, 1000);
+                }
+            }
+
+            processData();  // First attempt to process the data
             $('#selectProblema').prop('disabled', false);
         },
         error: function (error) {
