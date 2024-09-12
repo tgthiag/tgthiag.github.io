@@ -282,6 +282,7 @@ function PE_FECHAR_PEDIDO() {
     } else {
         $('#btnmfecharped').css('display', 'block');
     }
+    $("#modalSelectTypeInvoice").modal({backdrop: "static"});
 }
 
     
