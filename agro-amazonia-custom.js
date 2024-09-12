@@ -148,7 +148,18 @@ function populateCultura() {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
         success: function (response) {
-            let data = JSON.parse(response);
+            let data;
+
+            if (typeof response === 'string') {
+                try {
+                    data = JSON.parse(response);
+                } catch (e) {
+                    console.error("Error parsing JSON response:", e);
+                    return; 
+                }
+            } else {
+                data = response;
+            }
             function processData() {
                 if ($('#selectCultura').find('option').length > 1) {
                     console.log("Dropdown already populated, stopping retries.");
@@ -196,7 +207,18 @@ function populateProblema(codCultura) {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
         success: function (response) {
-            let data = JSON.parse(response);
+            let data;
+
+            if (typeof response === 'string') {
+                try {
+                    data = JSON.parse(response);
+                } catch (e) {
+                    console.error("Error parsing JSON response:", e);
+                    return;
+                }
+            } else {
+                data = response;
+            }
             function processData() {
                 if ($('#selectProblema').find('option').length > 1) {
                     console.log("Dropdown already populated, stopping retries.");
