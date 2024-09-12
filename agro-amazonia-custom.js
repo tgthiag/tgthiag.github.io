@@ -202,8 +202,9 @@ function populateProblema(codCultura) {
                             );
                         });
                     } else {
-                        console.error("Unexpected data format, expected an array:", data);
-                        $('#selectProblema').append('<option value="">Erro ao carregar problemas</option>');
+                        console.error("Unexpected data format, expected an array");
+                        // $('#selectProblema').append('<option value="">Erro ao carregar problemas</option>');
+                        setTimeout(processData, 1000);
                     }
                 } catch (error) {
                     console.error("Error during data.forEach execution:", error);
