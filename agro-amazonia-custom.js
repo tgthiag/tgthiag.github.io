@@ -136,9 +136,10 @@ $("body").append(`
     </div>
 `);
 
-// Function to populate Cultura dropdown
 function populateCultura() {
-    const produtoCodigo = $("#codigo").data("codigo"); // Get produto code from element
+    const produtoCodigo = $("#codigo").data("codigo");
+
+    $('#selectCultura').empty().append('<option value="">Selecione uma Cultura</option>');
 
     $.ajax({
         url: `https://mingle.agroamazonia.com/dev/api/aasa/v1/agrotis/easy/culturas/${produtoCodigo}`,
@@ -147,9 +148,12 @@ function populateCultura() {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
         success: function (data) {
-            $('#selectCultura').empty().append('<option value="">Selecione uma Cultura</option>');
-        
             function processData() {
+                if ($('#selectCultura').find('option').length > 1) {
+                    console.log("Dropdown already populated, stopping retries.");
+                    return;
+                }
+
                 try {
                     if (Array.isArray(data)) {
                         data.forEach(cultura => {
@@ -162,16 +166,14 @@ function populateCultura() {
                         });
                     } else {
                         console.error("Unexpected data format, expected an array");
-                        // $('#selectCultura').append('<option value="">Erro ao carregar culturas</option>');
                         setTimeout(processData, 1000);
                     }
                 } catch (error) {
                     console.error("Error during data.forEach execution:", error);
-        
                     setTimeout(processData, 1000);
                 }
             }
-        
+
             processData();
         },
         error: function (error) {
@@ -180,8 +182,11 @@ function populateCultura() {
     });
 }
 
+
 function populateProblema(codCultura) {
     const produtoCodigo = $("#codigo").data("codigo");
+
+    $('#selectProblema').empty().append('<option value="">Selecione um Problema</option>');
 
     $.ajax({
         url: `https://mingle.agroamazonia.com/dev/api/aasa/v1/agrotis/easy/problemas/${produtoCodigo}/${codCultura}`,
@@ -190,9 +195,12 @@ function populateProblema(codCultura) {
             'Authorization': 'Basic ' + btoa('api.easy:!@eas255')
         },
         success: function (data) {
-            $('#selectProblema').empty().append('<option value="">Selecione um Problema</option>');
-
             function processData() {
+                if ($('#selectProblema').find('option').length > 1) {
+                    console.log("Dropdown already populated, stopping retries.");
+                    return;
+                }
+
                 try {
                     if (Array.isArray(data)) {
                         data.forEach(problema => {
@@ -203,20 +211,19 @@ function populateProblema(codCultura) {
                                 `<option value="${problema.codProblema}">${correctString}</option>`
                             );
                         });
+                        $('#selectProblema').prop('disabled', false);
                     } else {
                         console.error("Unexpected data format, expected an array");
-                        // $('#selectProblema').append('<option value="">Erro ao carregar problemas</option>');
                         setTimeout(processData, 1000);
                     }
                 } catch (error) {
                     console.error("Error during data.forEach execution:", error);
-
                     setTimeout(processData, 1000);
                 }
             }
 
-            processData();  // First attempt to process the data
-            $('#selectProblema').prop('disabled', false);
+            processData();
+
         },
         error: function (error) {
             console.error("Erro ao carregar problemas:", error);
