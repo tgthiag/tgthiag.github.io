@@ -1,4 +1,10 @@
 console.log("Hello world! teste");
+maxParcelas = 7;
+logoHeader.src = "../../images/logopdv_agroamazonia.png";
+sessionStorage.setItem("cloteproduto",'');
+$("#cliente").data("codigo","999999");
+$("#cliente").val("999999: CLIENTE PADRAO");
+$("#cliente").data("loja","01");
 // document.getElementById("btnBudgetType").style.display  = "block";//Salva Orçamento
 $("#textSelectTypeInvoice").html("<p>Selecione o tipo de operação a ser executado:.</p>");
 
