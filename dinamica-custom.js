@@ -80,7 +80,7 @@ $("body").append(
                         </div>
                 </div>
                 <div class="modal-footer" id="buttons">
-                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                
                 </div>
             </div>
         </div>
@@ -121,7 +121,9 @@ $("body").append(
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer"></div>
+                <div class="modal-footer">
+                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                </div>
             </div>
         </div>
     </div>`
