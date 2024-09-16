@@ -80,6 +80,7 @@ $("body").append(
                         </div>
                 </div>
                 <div class="modal-footer" id="buttons">
+                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
                 </div>
             </div>
         </div>
@@ -1005,3 +1006,134 @@ function PE_ANT_buscaNrOrcamento(cQuery) {
         console.log(cQuery);
 	return cQuery;
 }
+
+//============================================
+$("body").append(
+    `<div class="modal fade" id="modalAdicionarItem" tabindex="-1" role="dialog" aria-labelledby="modalAdicionarItemLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="border-radius: 10px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAdicionarItemLabel">Adicionar Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAdicionarItemModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnIncluirItem" class="btn btn-primary">Incluir Item</button>
+                </div>
+            </div>
+        </div>
+    </div>`
+);
+
+$('#modalProdutosLista').on('shown.bs.modal', function () {
+    $('#btnAdicionar').off('click').on('click', function() {
+        $('#modalAdicionarItem').modal('show');
+    });
+});
+
+$('#modalAdicionarItem').on('shown.bs.modal', function () {
+    $('#produtoSearch').val('');
+    $('#produtoSearch').data('selectedItem', null);
+
+    $('#produtoSearch').autocomplete({
+        minLength: 3,
+        source: function(request, response) {
+            var tbSelect = $("#cliente").data("tabela");
+            var cCliente = $("#cliente").data("codigo");
+            var cLoja = $("#cliente").data("loja");
+            var cCnpj = cCnpj;
+            var cJsonBody = {
+                "cnpj_empresa": cCnpj,
+                "ctype": "BUSCA_GRID_PROD",
+                "cBusca": request.term.toUpperCase(),
+                "cCliente": (cCliente ? cCliente : ""),
+                "lojacli": (cLoja ? cLoja : ""),
+                "cTabPadrao": (tbSelect ? tbSelect : "")
+            };
+
+            $.ajax({
+                url: url + "EASY_RESULT",
+                type: "POST",
+                async: true,
+                data: JSON.stringify(cJsonBody),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data) {
+                    var retorno = [];
+
+                    if (typeof PE_POS_BUSCA_PROD === 'function') {
+                        retorno = PE_POS_BUSCA_PROD(data);
+                    } else {
+                        $(data.Dados).each(function(index) {
+                            retorno.push({
+                                label: data.Dados[index].NOME,
+                                value: data.Dados[index].CODIGO,
+                                valor: data.Dados[index].VALOR,
+                                estoque: data.Dados[index].ESTOQUE,
+                                peso: data.Dados[index].PESO,
+                                filial: data.Dados[index].FILIAL_EST,
+                                local: data.Dados[index].LOCAL_EST,
+                                imagem: (data.Dados[index].IMAGEM ? "data:image/png;base64," + data.Dados[index].IMAGEM : "img/semimagem.png"),
+                                obs: data.Dados[index].OBS,
+                                cTabSelect: data.Dados[index].CODTAB
+                            });
+                        });
+                    }
+
+                    response(retorno);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching products:', error);
+                }
+            });
+        },
+        select: function(event, ui) {
+            $('#produtoSearch').val(ui.item.label);
+            $('#produtoSearch').data('selectedItem', ui.item);
+            return false;
+        }
+    });
+
+    $('#btnIncluirItem').off('click').on('click', function() {
+        var selectedItem = $('#produtoSearch').data('selectedItem');
+
+        if (!selectedItem) {
+            alert('Por favor, selecione um produto.');
+            return;
+        }
+
+        var object = {
+            produtoId: selectedItem.value,
+            quantidade: 1,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: url + '/easymobile/INSERIR/LISTAPRESENTES',
+            data: JSON.stringify(object),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function(response) {
+                alert("Em desenvolvimento");
+                console.log('Item incluído com sucesso:', response);
+                $('#modalAdicionarItem').modal('hide');
+                $('#modalProdutosLista').modal('hide');
+            },
+            error: function(xhr, status, error) {
+                alert("Em desenvolvimento");
+                console.error('Erro ao incluir item:', error);
+                alert('Ocorreu um erro ao incluir o item.');
+            }
+        });
+    });
+});
+
+
+$('#modalAdicionarItem').on('hidden.bs.modal', function () {
+    $('#produtoSearch').val('');
+    $('#produtoSearch').data('selectedItem', null);
+});
