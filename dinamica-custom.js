@@ -755,19 +755,8 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
         next(item)
     }
 }
-setTimeout(function() {
-    console.log(typeof PE_GERORC_ANTES_GERORC === "function");
-    const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
-    console.log(PE_GERORC_ANTES_GERORC);
-    PE_GERORC_ANTES_GERORC = function(jsonenv) {
-        let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
-        let resut2 = PE_GERORC_ANTES_GERORC2(result);
-        return resut2;
-    };
-}, 5000);
 
 
-console.log(PE_GERORC_ANTES_GERORC);
 
 function PE_GERORC_ANTES_GERORC2(jsonenv){
     var lEntregaposterior   = false;
@@ -1044,24 +1033,23 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
     $('#produtoSearch').autocomplete({
         minLength: 3,
         source: function(request, response) {
-            var tbSelect = $("#cliente").data("tabela");
-            var cCliente = $("#cliente").data("codigo");
-            var cLoja = $("#cliente").data("loja");
-            var cCnpj = cCnpj;
-            var cJsonBody = {
+            let tbSelectDinamica = $("#cliente").data("tabela");
+            let cClienteDinamica = $("#cliente").data("codigo");
+            let cLojaDinamica = $("#cliente").data("loja");
+            let cJsonBodyDinamica = {
                 "cnpj_empresa": cCnpj,
                 "ctype": "BUSCA_GRID_PROD",
                 "cBusca": request.term.toUpperCase(),
-                "cCliente": (cCliente ? cCliente : ""),
-                "lojacli": (cLoja ? cLoja : ""),
-                "cTabPadrao": (tbSelect ? tbSelect : "")
+                "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
+                "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
+                "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
             };
 
             $.ajax({
                 url: url + "EASY_RESULT",
                 type: "POST",
                 async: true,
-                data: JSON.stringify(cJsonBody),
+                data: JSON.stringify(cJsonBodyDinamica),
                 dataType: "json",
                 contentType: "application/json",
                 success: function(data) {
@@ -1139,3 +1127,13 @@ $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
     $('#produtoSearch').data('selectedItem', null);
 });
+
+setTimeout(function() {
+    console.log(typeof PE_GERORC_ANTES_GERORC === "function");
+    const original_PE_GERORC_ANTES_GERORC = PE_GERORC_ANTES_GERORC;
+    PE_GERORC_ANTES_GERORC = function(jsonenv) {
+        let result = original_PE_GERORC_ANTES_GERORC(jsonenv);
+        let resut2 = PE_GERORC_ANTES_GERORC2(result);
+        return resut2;
+    };
+}, 3000);
