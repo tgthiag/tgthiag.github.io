@@ -1062,7 +1062,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                         $(data.Dados).each(function(index) {
                             const itemName = data.Dados[index].NOME.trim();
                             const itemCode = data.Dados[index].CODIGO.trim();
-                            const itemValue = data.Dados[index].VALOR.trim();
+                            const itemValue = data.Dados[index].VALOR;
                             $('#searchResults').append(
                                 `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}">${itemName}\n${itemValue}</a>`
                             );
