@@ -1011,6 +1011,7 @@ $("body").append(
                 </div>
                 <div class="modal-body">
                     <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                    <div id="searchResults" class="list-group" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="btnIncluirItem" class="btn btn-primary">Incluir Item</button>
@@ -1029,17 +1030,19 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
 $('#modalAdicionarItem').on('shown.bs.modal', function () {
     $('#produtoSearch').val('');
     $('#produtoSearch').data('selectedItem', null);
+    $('#searchResults').empty();
 
-    $('#produtoSearch').autocomplete({
-        minLength: 3,
-        source: function(request, response) {
+    $('#produtoSearch').on('input', function() {
+        const searchTerm = $(this).val().trim();
+        
+        if (searchTerm.length >= 3) {
             let tbSelectDinamica = $("#cliente").data("tabela");
             let cClienteDinamica = $("#cliente").data("codigo");
             let cLojaDinamica = $("#cliente").data("loja");
             let cJsonBodyDinamica = {
                 "cnpj_empresa": cCnpj,
                 "ctype": "BUSCA_GRID_PROD",
-                "cBusca": request.term.toUpperCase(),
+                "cBusca": searchTerm.toUpperCase(),
                 "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
                 "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
                 "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
@@ -1053,26 +1056,38 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                 dataType: "json",
                 contentType: "application/json",
                 success: function(data) {
-                    var retorno = [];
+                    $('#searchResults').empty();
 
-                    $(data.Dados).each(function(index) {
-                        retorno.push({
-                            label: data.Dados[index].NOME.trim(),
-                            value: data.Dados[index].CODIGO.trim()
+                    if (data.Dados && data.Dados.length > 0) {
+                        $(data.Dados).each(function(index) {
+                            const itemName = data.Dados[index].NOME.trim();
+                            const itemCode = data.Dados[index].CODIGO.trim();
+                            $('#searchResults').append(
+                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}">${itemName}</a>`
+                            );
                         });
-                    });
 
-                    response(retorno);
+                        $('#searchResults a').on('click', function(e) {
+                            e.preventDefault();
+                            const selectedLabel = $(this).text();
+                            const selectedValue = $(this).data('code');
+                            $('#produtoSearch').val(selectedLabel);
+                            $('#produtoSearch').data('selectedItem', {
+                                label: selectedLabel,
+                                value: selectedValue
+                            });
+                            $('#searchResults').empty();
+                        });
+                    } else {
+                        $('#searchResults').append('<div class="list-group-item">No results found</div>');
+                    }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error fetching products:', error);
                 }
             });
-        },
-        select: function(event, ui) {
-            $('#produtoSearch').val(ui.item.label);
-            $('#produtoSearch').data('selectedItem', ui.item);
-            return false;
+        } else {
+            $('#searchResults').empty();
         }
     });
 
@@ -1114,6 +1129,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
     $('#produtoSearch').data('selectedItem', null);
+    $('#searchResults').empty();  // Clear search results
 });
 
 setTimeout(function() {
