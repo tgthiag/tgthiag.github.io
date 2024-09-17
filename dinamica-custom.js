@@ -141,7 +141,7 @@ $(document).ready(function () {
         }
     })
 })
-
+var listaPresenteDinamica;
 function insertData() {
     clearListas()
 
@@ -183,7 +183,7 @@ function insertData() {
             if (!response || !response.ListaPresentes) return;
 
             const data = response.ListaPresentes;
-
+            listaPresenteDinamica = data;
             data.forEach(function (lista) {
                 const $row = $("<tr>").css({
                     cursor: "pointer",
@@ -1099,15 +1099,25 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             return;
         }
 
-        var object = {
-            produtoId: selectedItem.value,
-            quantidade: 1,
-        };
+    
+    let listaPresenteToSend = JSON.parse(JSON.stringify(listaPresenteDinamica)); // Deep copy
+
+    
+    listaPresenteToSend[0].Produtos = [
+        {
+            CodigoProduto: selectedItem.value, 
+            DescProduto: selectedItem.label,   
+            QtdSolicitada: 1,                 
+            ValorUnitario: 0,                 
+            UnidadeMedida: "",                
+            ImagemBase64: "",                 
+        }
+    ];
 
         $.ajax({
             type: 'POST',
             url: url + '/easymobile/INSERIR/LISTAPRESENTES',
-            data: JSON.stringify(object),
+            data: JSON.stringify(listaPresenteToSend),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function(response) {
