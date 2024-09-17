@@ -54,7 +54,7 @@ $("body").append(
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                            <button class="btn" onclick="insertData()">Pesquisar</button>
+                            <button class="btn" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
                         </div>
                     </div>
 
@@ -1128,14 +1128,17 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             async: true,
             dataType: 'json',
             success: function(response) {
-                alert("Em desenvolvimento");
-                console.log('Item incluído com sucesso:', response);
+                // alert("Em desenvolvimento");
+                showAlert('Item incluído com sucesso:', response);
+                
+
                 $('#modalAdicionarItem').modal('hide');
                 $('#modalProdutosLista').modal('hide');
+                $('#btn_pesquisar_dinamica').click();
             },
             error: function(xhr, status, error) {
-                alert("Em desenvolvimento");
-                console.error('Erro ao incluir item:', error);
+                // alert("Em desenvolvimento");
+                showAlert('Erro ao incluir item:', error);
                 alert('Ocorreu um erro ao incluir o item.');
             }
         });
