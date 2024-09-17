@@ -1064,7 +1064,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                             const itemCode = data.Dados[index].CODIGO.trim();
                             const itemValue = data.Dados[index].VALOR;
                             $('#searchResults').append(
-                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode} data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
+                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
                             );
                         });
 
