@@ -183,7 +183,6 @@ function insertData() {
             if (!response || !response.ListaPresentes) return;
 
             const data = response.ListaPresentes;
-            listaPresenteDinamica = data;
             data.forEach(function (lista) {
                 const $row = $("<tr>").css({
                     cursor: "pointer",
@@ -202,6 +201,7 @@ function insertData() {
                 );
 
                 $row.on("click", function () {
+                    listaPresenteDinamica = lista;
                     lista.Produtos.forEach(function (produto) {
                         const $produtosRow = $("<tr>");
                         const $imgElement = $('<img>').attr({
@@ -1103,7 +1103,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
         }
 
     
-        const listaPresente = listaPresenteDinamica[0];
+        const listaPresente = listaPresenteDinamica;
 
         const finalDataToSend = {
             "ListaPresentes": [
