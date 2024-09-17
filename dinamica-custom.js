@@ -1062,8 +1062,9 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                         $(data.Dados).each(function(index) {
                             const itemName = data.Dados[index].NOME.trim();
                             const itemCode = data.Dados[index].CODIGO.trim();
+                            const itemValue = data.Dados[index].VALOR.trim();
                             $('#searchResults').append(
-                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}">${itemName}</a>`
+                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}">${itemName}\n${itemValue}</a>`
                             );
                         });
 
@@ -1071,10 +1072,12 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                             e.preventDefault();
                             const selectedLabel = $(this).text();
                             const selectedValue = $(this).data('code');
+                            const selectedPrice = $(this).data('price');
                             $('#produtoSearch').val(selectedLabel);
                             $('#produtoSearch').data('selectedItem', {
                                 label: selectedLabel,
-                                value: selectedValue
+                                value: selectedValue,
+                                price: selectedPrice
                             });
                             $('#searchResults').empty();
                         });
@@ -1110,7 +1113,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                         {
                             "CodigoProduto": selectedItem.value.trim(),  
                             "QtdSolicitada": 1,
-                            "ValorUnitario": 0 
+                            "ValorUnitario": selectedItem.price 
                         }
                     ]
                 }
