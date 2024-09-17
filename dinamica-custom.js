@@ -1119,7 +1119,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
 
         $.ajax({
             type: 'POST',
-            url: url + '/easymobile/INSERIR/LISTAPRESENTES',
+            url: url + 'easymobile/INSERIR/LISTAPRESENTES',
             data: JSON.stringify(finalDataToSend),
             contentType: 'application/json',
             async: true,
