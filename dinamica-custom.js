@@ -1100,25 +1100,22 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
         }
 
     
-    let listaPresenteToSend = JSON.parse(JSON.stringify(listaPresenteDinamica)); // Deep copy
+        const listaPresente = listaPresenteDinamica[0];
 
-    
-    listaPresenteToSend[0].Produtos = [
-        {
-            // "Item": "001", 
-            "CodigoProduto": selectedItem.value.trim(),  
-            "DescProduto": selectedItem.label.trim(),    
-            // "UnidadeMedida": "UN",  
-            // "QtdSolicitada": 1,
-            // "QtdAtendida": 0, 
-            // "ValorUnitario": 0 
-        }
-    ];
-
-
-    const finalDataToSend = {
-        "ListaPresentes": listaPresenteToSend
-    };
+        const finalDataToSend = {
+            "ListaPresentes": [
+                {
+                    "Codigo": listaPresente.Codigo,  
+                    "Produtos": [
+                        {
+                            "CodigoProduto": selectedItem.value.trim(),  
+                            "QtdSolicitada": 1,
+                            "ValorUnitario": 0 
+                        }
+                    ]
+                }
+            ]
+        };
 
         $.ajax({
             type: 'POST',
