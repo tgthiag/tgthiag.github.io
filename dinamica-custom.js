@@ -1124,8 +1124,9 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             type: 'POST',
             url: url + '/easymobile/INSERIR/LISTAPRESENTES',
             data: JSON.stringify(finalDataToSend),
-            contentType: 'application/json; charset=utf-8',
-            // dataType: 'json',
+            contentType: 'application/json',
+            async: true,
+            dataType: 'json',
             success: function(response) {
                 alert("Em desenvolvimento");
                 console.log('Item incluído com sucesso:', response);
