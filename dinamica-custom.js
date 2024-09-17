@@ -1055,24 +1055,12 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                 success: function(data) {
                     var retorno = [];
 
-                    if (typeof PE_POS_BUSCA_PROD === 'function') {
-                        retorno = PE_POS_BUSCA_PROD(data);
-                    } else {
-                        $(data.Dados).each(function(index) {
-                            retorno.push({
-                                label: data.Dados[index].NOME,
-                                value: data.Dados[index].CODIGO,
-                                valor: data.Dados[index].VALOR,
-                                estoque: data.Dados[index].ESTOQUE,
-                                peso: data.Dados[index].PESO,
-                                filial: data.Dados[index].FILIAL_EST,
-                                local: data.Dados[index].LOCAL_EST,
-                                imagem: (data.Dados[index].IMAGEM ? "data:image/png;base64," + data.Dados[index].IMAGEM : "img/semimagem.png"),
-                                obs: data.Dados[index].OBS,
-                                cTabSelect: data.Dados[index].CODTAB
-                            });
+                    $(data.Dados).each(function(index) {
+                        retorno.push({
+                            label: data.Dados[index].NOME.trim(),
+                            value: data.Dados[index].CODIGO.trim()
                         });
-                    }
+                    });
 
                     response(retorno);
                 },
