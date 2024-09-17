@@ -1105,21 +1105,27 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
     
     listaPresenteToSend[0].Produtos = [
         {
-            CodigoProduto: selectedItem.value, 
-            DescProduto: selectedItem.label,   
-            QtdSolicitada: 1,                 
-            ValorUnitario: 0,                 
-            UnidadeMedida: "",                
-            ImagemBase64: "",                 
+            // "Item": "001", 
+            "CodigoProduto": selectedItem.value.trim(),  
+            "DescProduto": selectedItem.label.trim(),    
+            // "UnidadeMedida": "UN",  
+            // "QtdSolicitada": 1,
+            // "QtdAtendida": 0, 
+            // "ValorUnitario": 0 
         }
     ];
+
+
+    const finalDataToSend = {
+        "ListaPresentes": listaPresenteToSend
+    };
 
         $.ajax({
             type: 'POST',
             url: url + '/easymobile/INSERIR/LISTAPRESENTES',
-            data: JSON.stringify(listaPresenteToSend),
+            data: JSON.stringify(finalDataToSend),
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
+            // dataType: 'json',
             success: function(response) {
                 alert("Em desenvolvimento");
                 console.log('Item incluído com sucesso:', response);
