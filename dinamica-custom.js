@@ -1111,7 +1111,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             alert('Por favor, insira uma quantidade válida.');
             return;
         }
-        selectedItem.quantity = parseInt(quantity, 10);
+        selectedItem.quantity = parseInt(quantityItems, 10);
         const listaPresente = listaPresenteDinamica;
         const finalDataToSend = {
             "ListaPresentes": [
