@@ -1012,6 +1012,7 @@ $("body").append(
                 <div class="modal-body">
                     <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
                     <div id="searchResults" class="list-group" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
+                    <input type="number" id="produtoQuantidade" class="form-control" placeholder="Quantidade" style="margin-top: 10px; border-radius: 10px;">
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="btnIncluirItem" class="btn btn-primary">Incluir Item</button>
@@ -1031,8 +1032,10 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
     $('#produtoSearch').val('');
     $('#produtoSearch').data('selectedItem', null);
     $('#searchResults').empty();
+    $('#produtoQuantidade').val('');
 
     $('#produtoSearch').on('input', function() {
+        // $('#searchResults').empty();
         const searchTerm = $(this).val().trim();
         
         if (searchTerm.length >= 3) {
@@ -1077,7 +1080,8 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                             $('#produtoSearch').data('selectedItem', {
                                 label: selectedLabel,
                                 value: selectedValue,
-                                price: selectedPrice
+                                price: selectedPrice,
+                                quantity: 1
                             });
                             $('#searchResults').empty();
                         });
@@ -1095,16 +1099,20 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
     });
 
     $('#btnIncluirItem').off('click').on('click', function() {
-        var selectedItem = $('#produtoSearch').data('selectedItem');
+        let selectedItem = $('#produtoSearch').data('selectedItem');
+        let quantityItems = $('#produtoQuantidade').val();
 
         if (!selectedItem) {
             alert('Por favor, selecione um produto.');
             return;
         }
 
-    
+        if (!quantityItems || quantityItems <= 0) {
+            alert('Por favor, insira uma quantidade válida.');
+            return;
+        }
+        selectedItem.quantity = parseInt(quantity, 10);
         const listaPresente = listaPresenteDinamica;
-
         const finalDataToSend = {
             "ListaPresentes": [
                 {
@@ -1112,7 +1120,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                     "Produtos": [
                         {
                             "CodigoProduto": selectedItem.value.trim(),  
-                            "QtdSolicitada": 1,
+                            "QtdSolicitada": selectedItem.quantity,
                             "ValorUnitario": selectedItem.price 
                         }
                     ]
