@@ -1,4 +1,4 @@
-const Map<String, Map<String, String>> languages = {
+{
     "en_us": {
       "language_code": "en-US",
       "idioma": "English",
