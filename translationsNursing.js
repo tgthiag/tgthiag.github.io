@@ -1,4 +1,4 @@
-{
+const Map<String, Map<String, String>> languages = {
     "en_us": {
       "language_code": "en-US",
       "idioma": "English",
@@ -17,8 +17,7 @@
       "say_goodbye_to_ads": "Say goodbye to ads!",
       "fetching_products": "Fetching products...",
       "subscriptions": "Subscriptions",
-      "free_trial_description":
-          "5 days free trial, no ads, all features available. You can cancel before the trial ends.",
+      "yearly_price": "Yearly price:",
       "monthly_price": "Monthly price:",
       "premium_required": "Premium Required",
       "premium_required_message":
@@ -34,8 +33,8 @@
     },
     "pt_br": {
       "language_code": "pt-BR",
-      "idioma": "Portuguese",
-      "pais": "Brazil",
+      "idioma": "Português",
+      "pais": "Brasil",
       "flag": "br",
       "short": "pt",
       "your_native_language": "Seu Idioma Nativo",
@@ -50,10 +49,9 @@
       "say_goodbye_to_ads": "Diga adeus aos anúncios!",
       "fetching_products": "Buscando produtos...",
       "subscriptions": "Assinaturas",
-      "free_trial_description":
-          "5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine.",
+      "yearly_price": "Preço anual:",
       "monthly_price": "Preço mensal:",
-      "premium_required": "Requerido Premium",
+      "premium_required": "Premium Requerido",
       "premium_required_message":
           "Você precisa ser um usuário premium para acessar este recurso.",
       "write_your_question": "Escreva sua pergunta",
@@ -83,8 +81,7 @@
       "say_goodbye_to_ads": "¡Despídete de los anuncios!",
       "fetching_products": "Obteniendo productos...",
       "subscriptions": "Suscripciones",
-      "free_trial_description":
-          "5 días de prueba gratis, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que termine la prueba.",
+      "yearly_price": "Precio anual:",
       "monthly_price": "Precio mensual:",
       "premium_required": "Se requiere Premium",
       "premium_required_message":
@@ -116,8 +113,7 @@
       "say_goodbye_to_ads": "Dites adieu aux publicités!",
       "fetching_products": "Récupération des produits...",
       "subscriptions": "Abonnements",
-      "free_trial_description":
-          "5 jours d'essai gratuit, sans publicités, toutes les fonctionnalités disponibles. Vous pouvez annuler avant la fin de l'essai.",
+      "yearly_price": "Prix annuel:",
       "monthly_price": "Prix mensuel:",
       "premium_required": "Premium Requis",
       "premium_required_message":
@@ -149,8 +145,7 @@
       "say_goodbye_to_ads": "Verabschieden Sie sich von Werbung!",
       "fetching_products": "Produkte werden abgerufen...",
       "subscriptions": "Abonnements",
-      "free_trial_description":
-          "5 Tage kostenlose Testversion, keine Werbung, alle Funktionen verfügbar. Sie können vor Ablauf des Tests kündigen.",
+      "yearly_price": "Jahrespreis:",
       "monthly_price": "Monatlicher Preis:",
       "premium_required": "Premium erforderlich",
       "premium_required_message":
@@ -183,8 +178,7 @@
       "say_goodbye_to_ads": "Dì addio alle pubblicità!",
       "fetching_products": "Recupero dei prodotti in corso...",
       "subscriptions": "Abbonamenti",
-      "free_trial_description":
-          "5 giorni di prova gratuita, senza pubblicità, tutte le funzionalità disponibili. Puoi annullare prima della fine della prova.",
+      "yearly_price": "Prezzo annuale:",
       "monthly_price": "Prezzo mensile:",
       "premium_required": "Premium richiesto",
       "premium_required_message":
@@ -219,12 +213,11 @@
       "say_goodbye_to_ads": "Скажите рекламе «до свидания»!",
       "fetching_products": "Получение продуктов...",
       "subscriptions": "Подписки",
-      "free_trial_description":
-          "5 дней бесплатного пробного периода, без рекламы, все функции доступны. Вы можете отменить до окончания пробного периода.",
+      "yearly_price": "Годовая цена:",
       "monthly_price": "Ежемесячная цена:",
-      "premium_required": "Требуется премиум",
+      "premium_required": "Требуется Premium",
       "premium_required_message":
-          "Вам необходимо быть премиум-пользователем, чтобы получить доступ к этой функции.",
+          "Вам необходимо быть Premium-пользователем, чтобы получить доступ к этой функции.",
       "write_your_question": "Напишите ваш вопрос",
       "nurse_1": "Медсестра 1:",
       "nurse_2": "Медсестра 2:",
@@ -253,7 +246,7 @@
       "say_goodbye_to_ads": "告别广告！",
       "fetching_products": "获取产品中...",
       "subscriptions": "订阅",
-      "free_trial_description": "5天免费试用，无广告，所有功能可用。您可在试用结束前取消。",
+      "yearly_price": "年价格：",
       "monthly_price": "月价格：",
       "premium_required": "需要高级会员",
       "premium_required_message": "您需要成为高级会员才能访问此功能。",
@@ -284,11 +277,11 @@
       "say_goodbye_to_ads": "広告にさようなら！",
       "fetching_products": "製品を取得中...",
       "subscriptions": "サブスクリプション",
-      "free_trial_description":
-          "5日間の無料トライアル、広告なし、すべての機能が利用可能。トライアル終了前にキャンセルできます。",
+      "yearly_price": "年間価格：",
       "monthly_price": "月額料金：",
       "premium_required": "プレミアムが必要です",
-      "premium_required_message": "この機能にアクセスするには、プレミアムユーザーである必要があります。",
+      "premium_required_message":
+          "この機能にアクセスするには、プレミアムユーザーである必要があります。",
       "write_your_question": "質問を書いてください",
       "nurse_1": "看護師1：",
       "nurse_2": "看護師2：",
@@ -316,11 +309,11 @@
       "say_goodbye_to_ads": "광고와 작별하세요!",
       "fetching_products": "제품을 가져오는 중...",
       "subscriptions": "구독",
-      "free_trial_description":
-          "5일 무료 체험, 광고 없음, 모든 기능 사용 가능. 체험 종료 전에 취소할 수 있습니다.",
+      "yearly_price": "연간 가격:",
       "monthly_price": "월 가격:",
       "premium_required": "프리미엄 필요",
-      "premium_required_message": "이 기능에 액세스하려면 프리미엄 사용자가 되어야 합니다.",
+      "premium_required_message":
+          "이 기능에 액세스하려면 프리미엄 사용자가 되어야 합니다.",
       "write_your_question": "질문을 작성하세요",
       "nurse_1": "간호사 1:",
       "nurse_2": "간호사 2:",
@@ -348,8 +341,7 @@
       "say_goodbye_to_ads": "قل وداعاً للإعلانات!",
       "fetching_products": "جارٍ جلب المنتجات...",
       "subscriptions": "الاشتراكات",
-      "free_trial_description":
-          "5 أيام تجربة مجانية، بدون إعلانات، جميع الميزات متاحة. يمكنك الإلغاء قبل نهاية الفترة التجريبية.",
+      "yearly_price": "السعر السنوي:",
       "monthly_price": "السعر الشهري:",
       "premium_required": "مطلوب بريميوم",
       "premium_required_message":
@@ -381,8 +373,7 @@
       "say_goodbye_to_ads": "विज्ञापनों को अलविदा कहें!",
       "fetching_products": "उत्पाद ला रहा है...",
       "subscriptions": "सदस्यताएँ",
-      "free_trial_description":
-          "5 दिन की मुफ्त परीक्षण अवधि, कोई विज्ञापन नहीं, सभी सुविधाएँ उपलब्ध। आप परीक्षण समाप्त होने से पहले रद्द कर सकते हैं।",
+      "yearly_price": "वार्षिक मूल्य:",
       "monthly_price": "मासिक मूल्य:",
       "premium_required": "प्रीमियम आवश्यक",
       "premium_required_message":
@@ -414,8 +405,7 @@
       "say_goodbye_to_ads": "Reklamlara elveda deyin!",
       "fetching_products": "Ürünler getiriliyor...",
       "subscriptions": "Abonelikler",
-      "free_trial_description":
-          "5 günlük ücretsiz deneme, reklamsız, tüm özellikler kullanılabilir. Deneme bitmeden önce iptal edebilirsiniz.",
+      "yearly_price": "Yıllık fiyat:",
       "monthly_price": "Aylık fiyat:",
       "premium_required": "Premium Gerekli",
       "premium_required_message":
@@ -447,8 +437,7 @@
       "say_goodbye_to_ads": "Zeg vaarwel tegen advertenties!",
       "fetching_products": "Producten ophalen...",
       "subscriptions": "Abonnementen",
-      "free_trial_description":
-          "5 dagen gratis proefperiode, geen advertenties, alle functies beschikbaar. U kunt annuleren voordat de proefperiode eindigt.",
+      "yearly_price": "Jaarlijkse prijs:",
       "monthly_price": "Maandelijkse prijs:",
       "premium_required": "Premium vereist",
       "premium_required_message":
@@ -461,5 +450,37 @@
       "loading_gemini_response": "Antwoord van verpleegkundige 2 laden...",
       "microphone_permission_required": "Microfoon toestemming vereist",
       "rate_us": "Kunt u ons alstublieft beoordelen in de Play Store?"
-    }
-  }
+    },
+    "uk_ua": {
+  "language_code": "uk-UA",
+  "idioma": "Українська",
+  "pais": "Україна",
+  "flag": "ua",
+  "short": "uk",
+  "your_native_language": "Ваша рідна мова",
+  "select_your_native_language": "Виберіть вашу рідну мову:",
+  "your_first_name": "Ваше ім'я",
+  "first_name_placeholder": "Введіть ваше ім'я",
+  "continue": "Продовжити",
+  "please_enter_username": "Будь ласка, введіть ваше ім'я користувача.",
+  "please_select_language": "Будь ласка, виберіть мову.",
+  "no_cost_option": "Безкоштовна опція:",
+  "free_user_with_ads": "Безкоштовний користувач з рекламою",
+  "say_goodbye_to_ads": "Попрощайтеся з рекламою!",
+  "fetching_products": "Отримання продуктів...",
+  "subscriptions": "Підписки",
+  "yearly_price": "Річна ціна:",
+  "monthly_price": "Місячна ціна:",
+  "premium_required": "Потрібен Premium",
+  "premium_required_message": "Вам потрібно бути Premium користувачем для доступу до цієї функції.",
+  "write_your_question": "Напишіть ваше запитання",
+  "nurse_1": "Медсестра 1:",
+  "nurse_2": "Медсестра 2:",
+  "submit": "Відправити",
+  "loading_chatgpt_response": "Завантаження відповіді від медсестри 1...",
+  "loading_gemini_response": "Завантаження відповіді від медсестри 2...",
+  "microphone_permission_required": "Необхідний дозвіл на мікрофон",
+  "rate_us": "Чи можете ви оцінити нас у Play Store?"
+}
+  };
+  
