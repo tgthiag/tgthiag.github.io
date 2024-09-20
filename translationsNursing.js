@@ -482,5 +482,5 @@
   "microphone_permission_required": "Необхідний дозвіл на мікрофон",
   "rate_us": "Чи можете ви оцінити нас у Play Store?"
 }
-  };
+  }
   
