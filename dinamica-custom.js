@@ -227,7 +227,7 @@ function insertData() {
 
                         $produtosRow.on("click", function () {
                             if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                                showAlert("Não é possível adicionar esta quantidade");
+                                showAlert("A quantidade solicitada deste produto já foi atendida.");
                             }
                             $("#codigo").val(produto.DescProduto);
                             $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
