@@ -1139,9 +1139,11 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             async: true,
             dataType: 'json',
             success: function(response) {
-                // alert("Em desenvolvimento");
-                showAlert('Item incluído com sucesso:', response);
-                
+                    if(response.message){
+                        showAlert(response.message);
+                    }else{
+                        showAlert('Item incluído com sucesso:', response);
+                    }
 
                 $('#modalAdicionarItem').modal('hide');
                 $('#modalProdutosLista').modal('hide');
