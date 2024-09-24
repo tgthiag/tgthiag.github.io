@@ -1122,7 +1122,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                     "Codigo": listaPresente.Codigo,  
                     "Produtos": [
                         {
-                            "CodigoProduto": selectedItem.value,  
+                            "CodigoProduto": String(selectedItem.value).trim(),  
                             "QtdSolicitada": selectedItem.quantity,
                             "ValorUnitario": selectedItem.price 
                         }
