@@ -47,6 +47,7 @@
     "free_user_with_ads":"Free user with ads",
     "say_goodbye_to_ads":"Say goodbye to ads! We rely on a small yearly fee to cover server costs and improve your experience.",
     "monthly_price":"Monthly price:",
+    "yearly_price": "Yearly price:",
     "free_trial_description":"5 days free trial, no ads, all features available. You can cancel before the trial ends."
   },
   "pt_br":{
@@ -97,6 +98,7 @@
     "free_user_with_ads":"Usuário gratuito com anúncios",
     "say_goodbye_to_ads":"Diga adeus aos anúncios! Contamos com uma pequena taxa anual para cobrir os custos do servidor e melhorar sua experiência.",
     "monthly_price":"Preço mensal:",
+    "yearly_price": "Preço anual:",
     "free_trial_description":"5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine."
   },
   "de_de":{
@@ -147,6 +149,7 @@
     "free_user_with_ads":"Kostenloser Benutzer mit Werbung",
     "say_goodbye_to_ads":"Verabschieden Sie sich von Werbung! Wir sind auf eine kleine jährliche Gebühr angewiesen, um die Serverkosten zu decken und Ihr Erlebnis zu verbessern.",
     "monthly_price":"Monatlicher Preis:",
+    "yearly_price": "Jährlicher Preis:",
     "free_trial_description":"5 Tage kostenlos testen, keine Werbung, alle Funktionen verfügbar. Sie können vor Ablauf des Testzeitraums kündigen."
   },
   "hi_in":{
@@ -197,6 +200,7 @@
     "free_user_with_ads":"विज्ञापनों के साथ मुफ्त उपयोगकर्ता",
     "say_goodbye_to_ads":"विज्ञापनों को अलविदा कहें! सर्वर लागत को कवर करने और आपके अनुभव को बेहतर बनाने के लिए हम एक छोटी वार्षिक शुल्क पर निर्भर हैं।",
     "monthly_price":"मासिक मूल्य:",
+    "yearly_price": "वार्षिक मूल्य:",
     "free_trial_description":"5 दिन का मुफ्त परीक्षण, कोई विज्ञापन नहीं, सभी सुविधाएँ उपलब्ध। आप परीक्षण समाप्त होने से पहले रद्द कर सकते हैं।"
   },
   "es_es":{
@@ -247,6 +251,7 @@
     "free_user_with_ads":"Usuario gratuito con anuncios",
     "say_goodbye_to_ads":"¡Despídete de los anuncios! Dependemos de una pequeña tarifa anual para cubrir los costos del servidor y mejorar tu experiencia.",
     "monthly_price":"Precio mensual:",
+    "yearly_price": "Precio anual:",
     "free_trial_description":"5 días de prueba gratuita, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba."
   },
   "uk_ua":{
@@ -297,6 +302,7 @@
     "free_user_with_ads":"Безкоштовний користувач з рекламою",
     "say_goodbye_to_ads":"Скажіть прощай рекламі! Ми покладаємося на невелику річну плату, щоб покрити витрати на сервер і покращити ваш досвід.",
     "monthly_price":"Місячна ціна:",
+    "yearly_price": "Річна ціна:",
     "free_trial_description":"5 днів безкоштовного пробного періоду, без реклами, доступні всі функції. Ви можете скасувати до закінчення пробного періоду."
   },
   "ru_ru":{
@@ -347,6 +353,7 @@
     "free_user_with_ads":"Бесплатный пользователь с рекламой",
     "say_goodbye_to_ads":"Скажите прощай рекламе! Мы полагаемся на небольшую ежегодную плату, чтобы покрыть расходы на сервер и улучшить ваш опыт.",
     "monthly_price":"Месячная цена:",
+    "yearly_price": "Годовая цена:",
     "free_trial_description":"5 дней бесплатной пробной версии, без рекламы, все функции доступны. Вы можете отменить до окончания пробного периода."
   },
   "zh_cn":{
@@ -397,6 +404,7 @@
     "free_user_with_ads":"带广告的免费用户",
     "say_goodbye_to_ads":"告别广告！我们依靠一小笔年费来支付服务器成本并改善您的体验。",
     "monthly_price":"月费：",
+    "yearly_price": "年费：",
     "free_trial_description":"5天免费试用，无广告，所有功能可用。您可以在试用结束前取消。"
   },
   "ja_jp":{
@@ -447,6 +455,7 @@
     "free_user_with_ads":"広告付きの無料ユーザー",
     "say_goodbye_to_ads":"広告にさようなら！サーバーコストをカバーし、体験を向上させるために少額の年会費を頼りにしています。",
     "monthly_price":"月額料金：",
+    "yearly_price": "年額料金：",
     "free_trial_description":"5日間の無料トライアル、広告なし、すべての機能が利用可能です。試用期間が終了する前にキャンセルできます。"
   },
   "ur_pk":{
@@ -497,6 +506,7 @@
     "free_user_with_ads":"اشتہارات کے ساتھ مفت صارف",
     "say_goodbye_to_ads":"اشتہارات کو الوداع کہیں! سرور کے اخراجات کو پورا کرنے اور آپ کے تجربے کو بہتر بنانے کے لیے ہم ایک چھوٹی سالانہ فیس پر انحصار کرتے ہیں۔",
     "monthly_price":"ماہانہ قیمت:",
+    "yearly_price": "سالانہ قیمت:",
     "free_trial_description":"5 دن کی مفت آزمائش، کوئی اشتہار نہیں، تمام خصوصیات دستیاب ہیں۔ آپ آزمائش کے ختم ہونے سے پہلے منسوخ کر سکتے ہیں۔"
   },
   "fr_fr":{
@@ -547,6 +557,7 @@
     "free_user_with_ads":"Utilisateur gratuit avec publicités",
     "say_goodbye_to_ads":"Dites adieu aux publicités! Nous comptons sur une petite redevance annuelle pour couvrir les coûts des serveurs et améliorer votre expérience.",
     "monthly_price":"Prix mensuel:",
+    "yearly_price": "Prix annuel:",
     "free_trial_description":"5 jours d'essai gratuit, pas de publicités, toutes les fonctionnalités disponibles. Vous pouvez annuler avant la fin de l'essai."
   },
   "it_it":{
@@ -597,6 +608,7 @@
     "free_user_with_ads":"Utente gratuito con pubblicità",
     "say_goodbye_to_ads":"Dì addio agli annunci! Facciamo affidamento su una piccola tassa annuale per coprire i costi del server e migliorare la tua esperienza.",
     "monthly_price":"Prezzo mensile:",
+    "yearly_price": "Prezzo annuale:",
     "free_trial_description":"5 giorni di prova gratuita, senza pubblicità, tutte le funzionalità disponibili. Puoi annullare prima della fine della prova."
   },
   "nl_nl":{
@@ -647,6 +659,7 @@
     "free_user_with_ads":"Gratis gebruiker met advertenties",
     "say_goodbye_to_ads":"Zeg vaarwel tegen advertenties! We rekenen op een kleine jaarlijkse vergoeding om de serverkosten te dekken en je ervaring te verbeteren.",
     "monthly_price":"Maandelijkse prijs:",
+    "yearly_price": "Jaarlijkse prijs:",
     "free_trial_description":"5 dagen gratis proefversie, geen advertenties, alle functies beschikbaar. U kunt annuleren voordat de proefperiode afloopt."
   },
   "sv_se":{
@@ -697,6 +710,7 @@
     "free_user_with_ads":"Gratis användare med annonser",
     "say_goodbye_to_ads":"Säg adjö till annonser! Vi förlitar oss på en liten årlig avgift för att täcka serverkostnader och förbättra din upplevelse.",
     "monthly_price":"Månadspris:",
+    "yearly_price": "Årspris:",
     "free_trial_description":"5 dagars gratis provperiod, inga annonser, alla funktioner tillgängliga. Du kan avbryta innan provperioden löper ut."
   },
   "el_gr":{
@@ -747,6 +761,7 @@
     "free_user_with_ads":"Δωρεάν χρήστης με διαφημίσεις",
     "say_goodbye_to_ads":"Αποχαιρετήστε τις διαφημίσεις! Βασιζόμαστε σε μια μικρή ετήσια χρέωση για να καλύψουμε τα έξοδα του διακομιστή και να βελτιώσουμε την εμπειρία σας.",
     "monthly_price":"Μηνιαία τιμή:",
+    "yearly_price": "Ετήσια τιμή:",
     "free_trial_description":"5 ημέρες δωρεάν δοκιμή, χωρίς διαφημίσεις, όλες οι λειτουργίες διαθέσιμες. Μπορείτε να ακυρώσετε πριν λήξει η δοκιμή."
   },
   "ar_sa":{
@@ -797,6 +812,7 @@
     "free_user_with_ads":"مستخدم مجاني مع إعلانات",
     "say_goodbye_to_ads":"قل وداعًا للإعلانات! نحن نعتمد على رسوم سنوية صغيرة لتغطية تكاليف الخادم وتحسين تجربتك.",
     "monthly_price":"السعر الشهري:",
+    "yearly_price": "السعر السنوي:",
     "free_trial_description":"تجربة مجانية لمدة 5 أيام، بدون إعلانات، جميع الميزات متاحة. يمكنك الإلغاء قبل انتهاء الفترة التجريبية."
   },
   "km_kh":{
@@ -847,6 +863,7 @@
     "free_user_with_ads":"អ្នកប្រើប្រាស់ឥតគិតថ្លៃ មានការផ្សាយពាណិជ្ជកម្ម",
     "say_goodbye_to_ads":"សូមលាបភ្លៀងទៅជាផ្សាយពាណិជ្ជកម្ម! យើងពឹងផ្អែកលើការប្រាក់ខួបដើម្បីបង់តម្លៃសេវាកម្ម និងប្រសើរឡើងការប្រើប្រាស់របស់អ្នក។",
     "monthly_price":"តម្លៃប្រចាំខែ៖",
+    "yearly_price": "តម្លៃប្រចាំឆ្នាំ៖",
     "free_trial_description":"សាកល្បងដោយឥតគិតថ្លៃរយៈពេល ៥ ថ្ងៃ មិនមានការផ្សាយពាណិជ្ជកម្ម ផ្សេងៗទៀត។ អ្នកអាចលុបចោលមុនពេលការសាកល្បងបញ្ចប់។"
   },
   "th_th":{
@@ -897,6 +914,7 @@
     "free_user_with_ads":"ผู้ใช้ฟรีที่มีโฆษณา",
     "say_goodbye_to_ads":"บอกลาโฆษณา! เราพึ่งพาค่าธรรมเนียมรายปีเล็กน้อยเพื่อครอบคลุมค่าใช้จ่ายของเซิร์ฟเวอร์และปรับปรุงประสบการณ์ของคุณ",
     "monthly_price":"ราคาต่อเดือน:",
+    "yearly_price": "ราคาต่อปี:",
     "free_trial_description":"ทดลองใช้งานฟรี 5 วัน ไม่มีโฆษณา ฟีเจอร์ทั้งหมดใช้งานได้ คุณสามารถยกเลิกก่อนที่การทดลองใช้จะสิ้นสุด"
   },
   "ko_kr":{
@@ -947,6 +965,7 @@
     "free_user_with_ads":"광고가 있는 무료 사용자",
     "say_goodbye_to_ads":"광고와 작별하세요! 서버 비용을 충당하고 경험을 개선하기 위해 소액의 연간 요금에 의존합니다.",
     "monthly_price":"월 가격:",
+    "yearly_price": "연간 가격:",
     "free_trial_description":"광고 없이 5일 무료 체험, 모든 기능 이용 가능. 체험 종료 전에 취소할 수 있습니다."
   },
   "vi_vn":{
@@ -997,6 +1016,7 @@
     "free_user_with_ads":"Người dùng miễn phí với quảng cáo",
     "say_goodbye_to_ads":"Hãy nói lời tạm biệt với quảng cáo! Chúng tôi dựa vào một khoản phí hàng năm nhỏ để trang trải chi phí máy chủ và cải thiện trải nghiệm của bạn.",
     "monthly_price":"Giá hàng tháng:",
+    "yearly_price": "Giá hàng năm:",
     "free_trial_description":"Dùng thử miễn phí 5 ngày, không quảng cáo, tất cả các tính năng có sẵn. Bạn có thể hủy trước khi hết thời gian dùng thử."
   },
   "tr_tr":{
@@ -1047,6 +1067,7 @@
     "free_user_with_ads":"Reklamlı Ücretsiz Kullanıcı",
     "say_goodbye_to_ads":"Reklamlara elveda deyin! Sunucu maliyetlerini karşılamak ve deneyiminizi geliştirmek için küçük bir yıllık ücrete güveniyoruz.",
     "monthly_price":"Aylık fiyat:",
+    "yearly_price": "Yıllık fiyat:",
     "free_trial_description":"5 gün ücretsiz deneme, reklam yok, tüm özellikler kullanılabilir. Deneme süresi dolmadan iptal edebilirsiniz."
   },
   "he_il": {
@@ -1105,6 +1126,7 @@
   "say_goodbye_to_ads":
       "אמור שלום לפרסומות! אנו מסתמכים על תשלום שנתי קטן כדי לכסות את עלויות השרת ולשפר את החוויה שלך.",
   "monthly_price": "מחיר חודשי:",
+  "yearly_price": "מחיר שנתי:",
   "free_trial_description":
       "5 ימי ניסיון חינם, ללא פרסומות, כל התכונות זמינות. ניתן לבטל לפני תום הניסיון."
 },
@@ -1156,6 +1178,7 @@
   "free_user_with_ads": "Безплатен потребител с реклами",
   "say_goodbye_to_ads": "Кажете сбогом на рекламите! Ние разчитаме на малка годишна такса, за да покрием разходите за сървъра и да подобрим вашия опит.",
   "monthly_price": "Месечна цена:",
+  "yearly_price": "Годишна цена:",
   "free_trial_description": "5 дни безплатен пробен период, без реклами, всички функции са достъпни. Можете да отмените преди изтичане на пробния период."
 }
 }
