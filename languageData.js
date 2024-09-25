@@ -2333,7 +2333,7 @@
     "flag": "mx",
     "complete": "es-MX",
     "name": "Español",
-    "variant": "es-BR",
+    "variant": "es-US",
     "free_conversation": "Conversación",
     "job_interview": "Entrevista de trabajo",
     "choose_subject": "Elige un tema",
