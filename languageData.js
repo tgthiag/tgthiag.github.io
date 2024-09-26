@@ -815,7 +815,7 @@
     "complete":"ar-SA",
     "name":"العربية",
     "variant":"ar-SA",
-    "voice": "ar-SA",
+    "voice": "ar",
     "language_name_english": "Arabic",
     "translation_code": "ar",
     "free_conversation":"محادثة",
