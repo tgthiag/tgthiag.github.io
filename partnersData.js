@@ -1,9 +1,9 @@
 {
     "item1": {
-      "image": "https://example.com/images/spanish_group.jpg",
-      "name": "Spanish Language Group",
-      "description": "Join our Spanish language group to practice and improve your Spanish skills with native speakers and fellow learners.",
-      "url": "https://example.com/groups/spanish"
+      "image": "https://tgthiag.github.io/images/polyglots_community.jpg",
+      "name": "Polyglots (The Community)",
+      "description": "For polyglots and language learners.",
+      "url": "https://www.facebook.com/groups/polyglotcommunity"
     },
     "item2": {
       "image": "https://example.com/images/french_exchange.jpg",
