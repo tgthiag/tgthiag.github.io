@@ -2468,7 +2468,7 @@
     "flag": "mx",
     "complete": "es-MX",
     "name": "Español",
-    "variant": "es-US",
+    "variant": "es-MX",
     "voice": "es-US",
     "language_name_english": "Spanish",
     "translation_code": "es",
