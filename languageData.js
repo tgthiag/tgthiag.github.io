@@ -385,7 +385,7 @@
     "variant":"zh-CN",
     "voice": "zh-CN",
     "language_name_english": "Chinese",
-    "translation_code": "zh-CN",
+    "translation_code": "zh-cn",
     "free_conversation":"对话",
     "job_interview":"工作面试",
     "choose_subject":"选择一个主题",
