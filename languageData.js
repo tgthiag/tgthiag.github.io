@@ -437,7 +437,7 @@
     "complete": "zh-TW",
     "name": "繁體中文",
     "variant": "zh-TW",
-    "voice": "zh-CN",
+    "voice": "zh-TW",
     "language_name_english": "Chinese (Traditional)",
     "translation_code": "zh-tw",
     "free_conversation": "對話",
