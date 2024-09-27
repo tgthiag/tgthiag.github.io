@@ -23,7 +23,7 @@
         "1":{
             "name": "leaning languages",
             "description": "Follow us, send us a message.",
-            "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto"
+            "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
             "language": "all",
             "learning": "all"
         },
