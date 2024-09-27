@@ -4,7 +4,7 @@
       "name": "Polyglots (The Community)",
       "description": "For polyglots and language learners.",
       "url": "https://www.facebook.com/groups/polyglotcommunity"
-    }
+    },
     "item2": {
         "image": "https://tgthiag.github.io/images/mylogo.jpg",
         "name": "Any Language (Facebook Page)",
