@@ -21,10 +21,10 @@
     },
     "whatsapp": {
         "1":{
-            "name": "Learning languages",
-            "description": "Practice and exchange languages.",
+            "name": "English Hangouts",
+            "description": "Paerticipe! Pratique Inglês em um grupo bastante ativo.",
             "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
-            "language": "all",
+            "language": "pt",
             "learning": "all"
         }
     },
