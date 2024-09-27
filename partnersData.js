@@ -22,7 +22,7 @@
     "whatsapp": {
         "1":{
             "name": "English Hangouts",
-            "description": "Paerticipe! Pratique Inglês em um grupo bastante ativo.",
+            "description": "Participe! Pratique Inglês em um grupo bastante ativo.",
             "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
             "language": "pt",
             "learning": "all"
