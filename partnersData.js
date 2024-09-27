@@ -21,8 +21,8 @@
     },
     "whatsapp": {
         "1":{
-            "name": "learning languages",
-            "description": "Follow us, send us a message.",
+            "name": "Learning languages",
+            "description": "Practice and exchange languages.",
             "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
             "language": "all",
             "learning": "all"
@@ -31,7 +31,7 @@
     "telegram":{
         "1":{
             "name": "English practice",
-            "description": "Follow us, send us a message.",
+            "description": "Join our group.",
             "url": "https://tlgrm.eu/channels/politics",
             "language": "all",
             "learning": "all"
