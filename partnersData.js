@@ -12,7 +12,7 @@
         "item2": {
             "image": "https://tgthiag.github.io/images/mylogo.jpg",
             "name": "Any Language (Facebook Page)",
-            "description": "Follow us and send a message, your language groups and pages can also appear here.",
+            "description": "Follow us, your language groups and pages can also appear here. No payment required.",
             "url": "https://www.facebook.com/profile.php?id=61565091697441",
             "language": "all",
             "learning": "all",
