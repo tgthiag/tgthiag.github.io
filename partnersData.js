@@ -39,7 +39,7 @@
         "1":{
             "name": "Trump",
             "description": "Follow us, send us a message.",
-            "url": "https://tlgrm.eu/channels/politics"
+            "url": "https://tlgrm.eu/channels/politics",
             "language": "all",
             "learning": "all"
         },
