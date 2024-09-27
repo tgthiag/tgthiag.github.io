@@ -29,13 +29,7 @@
         }
     },
     "telegram":{
-        "1":{
-            "name": "English practice",
-            "description": "Join our group.",
-            "url": "https://tlgrm.eu/channels/politics",
-            "language": "all",
-            "learning": "all"
-        }
+
     }
 }
   
