@@ -5,7 +5,7 @@
             "name": "Polyglots (The Community)",
             "description": "For polyglots and language learners.",
             "url": "https://www.facebook.com/groups/polyglotcommunity",
-            "language": "en",
+            "language": "all",
             "learning": "all",
             "translated": "n"
         },
