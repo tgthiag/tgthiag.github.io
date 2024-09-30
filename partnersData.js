@@ -26,6 +26,13 @@
             "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
             "language": "pt",
             "learning": "all"
+        },
+        "2":{
+            "name": "Tamil Learning Group",
+            "description": "Learn and practice Tamil.",
+            "url": "https://chat.whatsapp.com/J9OArUHhTOs17CpvVkBgwg",
+            "language": "all",
+            "learning": "all"
         }
     },
     "telegram":{
