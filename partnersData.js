@@ -2,12 +2,12 @@
     "partners":{
         "item1": {
             "image": "https://tgthiag.github.io/images/polyglots_community.jpg",
-            "name": "Polyglots (The Community)",
-            "description": "For polyglots and language learners.",
-            "url": "https://www.facebook.com/groups/polyglotcommunity",
+            "name": "Polyglots & Language Learners",
+            "description": "Join our group",
+            "url": "https://www.facebook.com/groups/1600756550853915",
             "language": "all",
             "learning": "all",
-            "translated": "n"
+            "translated": "y"
         },
         "item2": {
             "image": "https://tgthiag.github.io/images/mylogo.jpg",
