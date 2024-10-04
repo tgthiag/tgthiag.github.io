@@ -1400,7 +1400,7 @@ function adicionaCampoFrete() {
     // Insere o botão "Reserva" logo após a tabela
     divAddProd.appendChild(botaoReserva);
 }
-$(document).ready(function () {   
+// $(document).ready(function () {   
        
-    adicionaCampoFrete();
-});
+//     adicionaCampoFrete();
+// });

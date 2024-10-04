@@ -32,7 +32,6 @@
         {
           "phrase": "Good Afternoon!",
           "words": [
-            {"word": "Good", "complete": false},
             {"word": "Afternoon", "complete": false}
           ],
           "complete": false
@@ -40,7 +39,6 @@
         {
           "phrase": "Good Night!",
           "words": [
-            {"word": "Good", "complete": false},
             {"word": "Night", "complete": false}
           ],
           "complete": false
@@ -365,7 +363,6 @@
         {
           "phrase": "Boa noite!",
           "words": [
-            {"word": "Boa", "complete": false},
             {"word": "Noite", "complete": false}
           ],
           "complete": false
@@ -628,15 +625,11 @@
         },
         {
           "phrase": "Guten Tag!",
-          "words": [
-            {"word": "Guten", "complete": false}
-          ],
           "complete": false
         },
         {
           "phrase": "Guten Abend!",
           "words": [
-            {"word": "Guten", "complete": false},
             {"word": "Abend", "complete": false}
           ],
           "complete": false
