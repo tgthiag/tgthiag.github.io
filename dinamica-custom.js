@@ -1318,88 +1318,88 @@ async function createModalReserva() {
     });
 }
 
-function adicionaCampoFrete() {
-    // Localiza a tabela onde o valor do produto está sendo exibido
-    var tabela = document.querySelector("#divAddProd table");
+// function adicionaCampoFrete() {
+//     // Localiza a tabela onde o valor do produto está sendo exibido
+//     var tabela = document.querySelector("#divAddProd table");
 
-    // Cria o elemento <td> para o valor do frete
-    var tdFrete = document.createElement("td");
+//     // Cria o elemento <td> para o valor do frete
+//     var tdFrete = document.createElement("td");
 
-    // Adiciona o conteúdo HTML dentro do <td>
-    tdFrete.innerHTML = `
-        <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
-        <div class="fonte-big fonte-gray-darken" align="right">
-            <strong id="valorFrete">0,00</strong>
-        </div>
-    `;
+//     // Adiciona o conteúdo HTML dentro do <td>
+//     tdFrete.innerHTML = `
+//         <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
+//         <div class="fonte-big fonte-gray-darken" align="right">
+//             <strong id="valorFrete">0,00</strong>
+//         </div>
+//     `;
 
-    // Insere o <td> na linha ao lado do valor do produto
-    var segundaLinha = tabela.querySelector("tr:nth-child(2)");
-    segundaLinha.appendChild(tdFrete);
+//     // Insere o <td> na linha ao lado do valor do produto
+//     var segundaLinha = tabela.querySelector("tr:nth-child(2)");
+//     segundaLinha.appendChild(tdFrete);
 
-    // Agora cria o botão "Reserva" logo após a tabela
-    var divAddProd = document.getElementById("bfechaorc");
+//     // Agora cria o botão "Reserva" logo após a tabela
+//     var divAddProd = document.getElementById("bfechaorc");
 
-    // Cria o botão "Reserva"
-    var botaoReserva = document.createElement("button");
-    botaoReserva.className = "btn btn-warning"; // Classe bootstrap para estilização
-    botaoReserva.style.height = "40px";
-    botaoReserva.style.width = "100%";
-    botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
+//     // Cria o botão "Reserva"
+//     var botaoReserva = document.createElement("button");
+//     botaoReserva.className = "btn btn-warning"; // Classe bootstrap para estilização
+//     botaoReserva.style.height = "40px";
+//     botaoReserva.style.width = "100%";
+//     botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
 
-    // Adiciona o evento de click com o alert
-    botaoReserva.addEventListener("click", function() {
+//     // Adiciona o evento de click com o alert
+//     botaoReserva.addEventListener("click", function() {
 
-        //if(document.getElementById("codigo").value!=''){
+//         //if(document.getElementById("codigo").value!=''){
 
-            var json = {
-                "cnpj": tbLogin[0].CNPJ,
-                "produto": $("#codigo").data("codigo")
-              };
+//             var json = {
+//                 "cnpj": tbLogin[0].CNPJ,
+//                 "produto": $("#codigo").data("codigo")
+//               };
               
-              var raw = JSON.stringify(json);
+//               var raw = JSON.stringify(json);
     
-              const myHeaders = new Headers();
-              myHeaders.append("tenantId", "01");
-              myHeaders.append("Content-Type", "application/json");
+//               const myHeaders = new Headers();
+//               myHeaders.append("tenantId", "01");
+//               myHeaders.append("Content-Type", "application/json");
               
-              const requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: raw,
-                redirect: "follow"
-              };
+//               const requestOptions = {
+//                 method: "POST",
+//                 headers: myHeaders,
+//                 body: raw,
+//                 redirect: "follow"
+//               };
               
-              fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-                .then((response) => response.text())
-                .then((result) => {    
+//               fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
+//                 .then((response) => response.text())
+//                 .then((result) => {    
     
-                    const jsonData = JSON.parse(result); // Converte a string JSON em objeto
+//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
 
-                    if(jsonData.status==true){
+//                     if(jsonData.status==true){
 
-                        createModalReserva(jsonData.valloja,jsonData.valcd);      
+//                         createModalReserva(jsonData.valloja,jsonData.valcd);      
 
-                    }else{
+//                     }else{
 
-                        $("#alerta").modal({backdrop: "static"});	
-                        document.getElementById("dmodal").innerHTML = 'Nenhum saldo a reservar';
+//                         $("#alerta").modal({backdrop: "static"});	
+//                         document.getElementById("dmodal").innerHTML = 'Nenhum saldo a reservar';
 
-                    }
+//                     }
                     
     
-                })
-                .catch((error) => console.error(error));                 
+//                 })
+//                 .catch((error) => console.error(error));                 
 
 
-        //}
+//         //}
         
-    });    
+//     });    
     
 
-    // Insere o botão "Reserva" logo após a tabela
-    divAddProd.appendChild(botaoReserva);
-}
+//     // Insere o botão "Reserva" logo após a tabela
+//     divAddProd.appendChild(botaoReserva);
+// }
 // $(document).ready(function () {   
        
 //     adicionaCampoFrete();
