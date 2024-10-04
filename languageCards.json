@@ -625,6 +625,8 @@
         },
         {
           "phrase": "Guten Tag!",
+          "words": [
+          ],
           "complete": false
         },
         {
