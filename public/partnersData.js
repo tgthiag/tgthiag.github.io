@@ -2,17 +2,17 @@
     "partners":{
         "item1": {
             "image": "https://tgthiag.github.io/images/polyglots_community.jpg",
-            "name": "Polyglots (The Community)",
-            "description": "For polyglots and language learners.",
-            "url": "https://www.facebook.com/groups/polyglotcommunity",
+            "name": "Polyglots & Language Learners",
+            "description": "Join our group",
+            "url": "https://www.facebook.com/groups/1600756550853915",
             "language": "all",
             "learning": "all",
-            "translated": "n"
+            "translated": "y"
         },
         "item2": {
             "image": "https://tgthiag.github.io/images/mylogo.jpg",
             "name": "Any Language (Facebook Page)",
-            "description": "Follow us and send a message, your language groups and pages can also appear here.",
+            "description": "Follow us, your language groups and pages can also appear here. No payment required.",
             "url": "https://www.facebook.com/profile.php?id=61565091697441",
             "language": "all",
             "learning": "all",
@@ -21,35 +21,22 @@
     },
     "whatsapp": {
         "1":{
-            "name": "leaning languages",
-            "description": "Follow us, send us a message.",
+            "name": "English Hangouts",
+            "description": "Participe! Pratique Inglês em um grupo bastante ativo.",
             "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
-            "language": "all",
+            "language": "pt",
             "learning": "all"
         },
         "2":{
-            "name": "teste whatsapp",
-            "description": "Follow us, send us a message.",
-            "url": "https://chat.whatsapp.com/KKO8PXzO3wx20ZxfpwNTto",
-            "language": "pt",
+            "name": "Tamil Learning Group",
+            "description": "Learn and practice Tamil.",
+            "url": "https://chat.whatsapp.com/J9OArUHhTOs17CpvVkBgwg",
+            "language": "all",
             "learning": "all"
         }
     },
     "telegram":{
-        "1":{
-            "name": "Trump",
-            "description": "Follow us, send us a message.",
-            "url": "https://tlgrm.eu/channels/politics",
-            "language": "all",
-            "learning": "all"
-        },
-        "2":{
-            "name": "teste telegram",
-            "description": "Follow us, send us a message.",
-            "url": "https://tlgrm.eu/channels/politics",
-            "language": "pt",
-            "learning": "all"
-        }
+
     }
 }
   

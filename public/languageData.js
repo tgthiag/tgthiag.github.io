@@ -51,7 +51,8 @@
     "say_goodbye_to_ads":"Say goodbye to ads! We rely on a small yearly fee to cover server costs and improve your experience.",
     "monthly_price":"Monthly price:",
     "yearly_price": "Yearly price:",
-    "free_trial_description":"5 days free trial, no ads, all features available. You can cancel before the trial ends."
+    "free_trial_description":"5 days free trial, no ads, all features available. You can cancel before the trial ends.",
+    "group_partners": "Our community"
   },
   "pt_br":{
     "short":"pt",
@@ -105,7 +106,8 @@
     "say_goodbye_to_ads":"Diga adeus aos anúncios! Contamos com uma pequena taxa anual para cobrir os custos do servidor e melhorar sua experiência.",
     "monthly_price":"Preço mensal:",
     "yearly_price": "Preço anual:",
-    "free_trial_description":"5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine."
+    "free_trial_description":"5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine.",
+    "group_partners": "Nossa comunidade"
   },
   "de_de":{
     "short":"de",
@@ -159,7 +161,8 @@
     "say_goodbye_to_ads":"Verabschieden Sie sich von Werbung! Wir sind auf eine kleine jährliche Gebühr angewiesen, um die Serverkosten zu decken und Ihr Erlebnis zu verbessern.",
     "monthly_price":"Monatlicher Preis:",
     "yearly_price": "Jährlicher Preis:",
-    "free_trial_description":"5 Tage kostenlos testen, keine Werbung, alle Funktionen verfügbar. Sie können vor Ablauf des Testzeitraums kündigen."
+    "free_trial_description":"5 Tage kostenlos testen, keine Werbung, alle Funktionen verfügbar. Sie können vor Ablauf des Testzeitraums kündigen.",
+    "group_partners": "Unsere Gemeinschaft"
   },
   "hi_in":{
     "short":"hi",
@@ -213,7 +216,8 @@
     "say_goodbye_to_ads":"विज्ञापनों को अलविदा कहें! सर्वर लागत को कवर करने और आपके अनुभव को बेहतर बनाने के लिए हम एक छोटी वार्षिक शुल्क पर निर्भर हैं।",
     "monthly_price":"मासिक मूल्य:",
     "yearly_price": "वार्षिक मूल्य:",
-    "free_trial_description":"5 दिन का मुफ्त परीक्षण, कोई विज्ञापन नहीं, सभी सुविधाएँ उपलब्ध। आप परीक्षण समाप्त होने से पहले रद्द कर सकते हैं।"
+    "free_trial_description":"5 दिन का मुफ्त परीक्षण, कोई विज्ञापन नहीं, सभी सुविधाएँ उपलब्ध। आप परीक्षण समाप्त होने से पहले रद्द कर सकते हैं।",
+    "group_partners": "हमारा समुदाय"
   },
   "es_es":{
     "short":"es",
@@ -267,7 +271,8 @@
     "say_goodbye_to_ads":"¡Despídete de los anuncios! Dependemos de una pequeña tarifa anual para cubrir los costos del servidor y mejorar tu experiencia.",
     "monthly_price":"Precio mensual:",
     "yearly_price": "Precio anual:",
-    "free_trial_description":"5 días de prueba gratuita, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba."
+    "free_trial_description":"5 días de prueba gratuita, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba.",
+    "group_partners": "Nuestra comunidad"
   },
   "uk_ua":{
     "short":"uk",
@@ -321,7 +326,8 @@
     "say_goodbye_to_ads":"Скажіть прощай рекламі! Ми покладаємося на невелику річну плату, щоб покрити витрати на сервер і покращити ваш досвід.",
     "monthly_price":"Місячна ціна:",
     "yearly_price": "Річна ціна:",
-    "free_trial_description":"5 днів безкоштовного пробного періоду, без реклами, доступні всі функції. Ви можете скасувати до закінчення пробного періоду."
+    "free_trial_description":"5 днів безкоштовного пробного періоду, без реклами, доступні всі функції. Ви можете скасувати до закінчення пробного періоду.",
+    "group_partners": "Наша спільнота"
   },
   "ru_ru":{
     "short":"ru",
@@ -375,7 +381,8 @@
     "say_goodbye_to_ads":"Скажите прощай рекламе! Мы полагаемся на небольшую ежегодную плату, чтобы покрыть расходы на сервер и улучшить ваш опыт.",
     "monthly_price":"Месячная цена:",
     "yearly_price": "Годовая цена:",
-    "free_trial_description":"5 дней бесплатной пробной версии, без рекламы, все функции доступны. Вы можете отменить до окончания пробного периода."
+    "free_trial_description":"5 дней бесплатной пробной версии, без рекламы, все функции доступны. Вы можете отменить до окончания пробного периода.",
+    "group_partners": "Наше сообщество"
   },
   "zh_cn":{
     "short":"zh",
@@ -429,7 +436,8 @@
     "say_goodbye_to_ads":"告别广告！我们依靠一小笔年费来支付服务器成本并改善您的体验。",
     "monthly_price":"月费：",
     "yearly_price": "年费：",
-    "free_trial_description":"5天免费试用，无广告，所有功能可用。您可以在试用结束前取消。"
+    "free_trial_description":"5天免费试用，无广告，所有功能可用。您可以在试用结束前取消。",
+    "group_partners": "我们的社区"
   },
   "zh_tw": {
     "short": "zh",
@@ -483,7 +491,8 @@
     "say_goodbye_to_ads": "告別廣告！我們依靠一小筆年費來支付伺服器成本並改善您的體驗。",
     "monthly_price": "月費：",
     "yearly_price": "年費：",
-    "free_trial_description": "5天免費試用，無廣告，所有功能可用。您可以在試用結束前取消。"
+    "free_trial_description": "5天免費試用，無廣告，所有功能可用。您可以在試用結束前取消。",
+    "group_partners": "我們的社區"
 },
   "ja_jp":{
     "short":"ja",
@@ -537,7 +546,8 @@
     "say_goodbye_to_ads":"広告にさようなら！サーバーコストをカバーし、体験を向上させるために少額の年会費を頼りにしています。",
     "monthly_price":"月額料金：",
     "yearly_price": "年額料金：",
-    "free_trial_description":"5日間の無料トライアル、広告なし、すべての機能が利用可能です。試用期間が終了する前にキャンセルできます。"
+    "free_trial_description":"5日間の無料トライアル、広告なし、すべての機能が利用可能です。試用期間が終了する前にキャンセルできます。",
+    "group_partners": "私たちのコミュニティ"
   },
   "ur_pk":{
     "short":"ur",
@@ -591,7 +601,8 @@
     "say_goodbye_to_ads":"اشتہارات کو الوداع کہیں! سرور کے اخراجات کو پورا کرنے اور آپ کے تجربے کو بہتر بنانے کے لیے ہم ایک چھوٹی سالانہ فیس پر انحصار کرتے ہیں۔",
     "monthly_price":"ماہانہ قیمت:",
     "yearly_price": "سالانہ قیمت:",
-    "free_trial_description":"5 دن کی مفت آزمائش، کوئی اشتہار نہیں، تمام خصوصیات دستیاب ہیں۔ آپ آزمائش کے ختم ہونے سے پہلے منسوخ کر سکتے ہیں۔"
+    "free_trial_description":"5 دن کی مفت آزمائش، کوئی اشتہار نہیں، تمام خصوصیات دستیاب ہیں۔ آپ آزمائش کے ختم ہونے سے پہلے منسوخ کر سکتے ہیں۔",
+    "group_partners": "ہماری کمیونٹی"
   },
   "fr_fr":{
     "short":"fr",
@@ -645,7 +656,8 @@
     "say_goodbye_to_ads":"Dites adieu aux publicités! Nous comptons sur une petite redevance annuelle pour couvrir les coûts des serveurs et améliorer votre expérience.",
     "monthly_price":"Prix mensuel:",
     "yearly_price": "Prix annuel:",
-    "free_trial_description":"5 jours d'essai gratuit, pas de publicités, toutes les fonctionnalités disponibles. Vous pouvez annuler avant la fin de l'essai."
+    "free_trial_description":"5 jours d'essai gratuit, pas de publicités, toutes les fonctionnalités disponibles. Vous pouvez annuler avant la fin de l'essai.",
+    "group_partners": "Notre communauté"
   },
   "it_it":{
     "short":"it",
@@ -699,7 +711,8 @@
     "say_goodbye_to_ads":"Dì addio agli annunci! Facciamo affidamento su una piccola tassa annuale per coprire i costi del server e migliorare la tua esperienza.",
     "monthly_price":"Prezzo mensile:",
     "yearly_price": "Prezzo annuale:",
-    "free_trial_description":"5 giorni di prova gratuita, senza pubblicità, tutte le funzionalità disponibili. Puoi annullare prima della fine della prova."
+    "free_trial_description":"5 giorni di prova gratuita, senza pubblicità, tutte le funzionalità disponibili. Puoi annullare prima della fine della prova.",
+    "group_partners": "La nostra comunità"
   },
   "nl_nl":{
     "short":"nl",
@@ -753,7 +766,8 @@
     "say_goodbye_to_ads":"Zeg vaarwel tegen advertenties! We rekenen op een kleine jaarlijkse vergoeding om de serverkosten te dekken en je ervaring te verbeteren.",
     "monthly_price":"Maandelijkse prijs:",
     "yearly_price": "Jaarlijkse prijs:",
-    "free_trial_description":"5 dagen gratis proefversie, geen advertenties, alle functies beschikbaar. U kunt annuleren voordat de proefperiode afloopt."
+    "free_trial_description":"5 dagen gratis proefversie, geen advertenties, alle functies beschikbaar. U kunt annuleren voordat de proefperiode afloopt.",
+    "group_partners": "Onze gemeenschap"
   },
   "sv_se":{
     "short":"sv",
@@ -807,7 +821,8 @@
     "say_goodbye_to_ads":"Säg adjö till annonser! Vi förlitar oss på en liten årlig avgift för att täcka serverkostnader och förbättra din upplevelse.",
     "monthly_price":"Månadspris:",
     "yearly_price": "Årspris:",
-    "free_trial_description":"5 dagars gratis provperiod, inga annonser, alla funktioner tillgängliga. Du kan avbryta innan provperioden löper ut."
+    "free_trial_description":"5 dagars gratis provperiod, inga annonser, alla funktioner tillgängliga. Du kan avbryta innan provperioden löper ut.",
+    "group_partners": "Vårt samhälle"
   },
   "el_gr":{
     "short":"el",
@@ -861,7 +876,8 @@
     "say_goodbye_to_ads":"Αποχαιρετήστε τις διαφημίσεις! Βασιζόμαστε σε μια μικρή ετήσια χρέωση για να καλύψουμε τα έξοδα του διακομιστή και να βελτιώσουμε την εμπειρία σας.",
     "monthly_price":"Μηνιαία τιμή:",
     "yearly_price": "Ετήσια τιμή:",
-    "free_trial_description":"5 ημέρες δωρεάν δοκιμή, χωρίς διαφημίσεις, όλες οι λειτουργίες διαθέσιμες. Μπορείτε να ακυρώσετε πριν λήξει η δοκιμή."
+    "free_trial_description":"5 ημέρες δωρεάν δοκιμή, χωρίς διαφημίσεις, όλες οι λειτουργίες διαθέσιμες. Μπορείτε να ακυρώσετε πριν λήξει η δοκιμή.",
+    "group_partners": "Η κοινότητά μας"
   },
   "ar_sa":{
     "short":"ar",
@@ -915,7 +931,8 @@
     "say_goodbye_to_ads":"قل وداعًا للإعلانات! نحن نعتمد على رسوم سنوية صغيرة لتغطية تكاليف الخادم وتحسين تجربتك.",
     "monthly_price":"السعر الشهري:",
     "yearly_price": "السعر السنوي:",
-    "free_trial_description":"تجربة مجانية لمدة 5 أيام، بدون إعلانات، جميع الميزات متاحة. يمكنك الإلغاء قبل انتهاء الفترة التجريبية."
+    "free_trial_description":"تجربة مجانية لمدة 5 أيام، بدون إعلانات، جميع الميزات متاحة. يمكنك الإلغاء قبل انتهاء الفترة التجريبية.",
+    "group_partners": "مجتمعنا"
   },
   "km_kh":{
     "short":"km",
@@ -969,7 +986,8 @@
     "say_goodbye_to_ads":"សូមលាបភ្លៀងទៅជាផ្សាយពាណិជ្ជកម្ម! យើងពឹងផ្អែកលើការប្រាក់ខួបដើម្បីបង់តម្លៃសេវាកម្ម និងប្រសើរឡើងការប្រើប្រាស់របស់អ្នក។",
     "monthly_price":"តម្លៃប្រចាំខែ៖",
     "yearly_price": "តម្លៃប្រចាំឆ្នាំ៖",
-    "free_trial_description":"សាកល្បងដោយឥតគិតថ្លៃរយៈពេល ៥ ថ្ងៃ មិនមានការផ្សាយពាណិជ្ជកម្ម ផ្សេងៗទៀត។ អ្នកអាចលុបចោលមុនពេលការសាកល្បងបញ្ចប់។"
+    "free_trial_description":"សាកល្បងដោយឥតគិតថ្លៃរយៈពេល ៥ ថ្ងៃ មិនមានការផ្សាយពាណិជ្ជកម្ម ផ្សេងៗទៀត។ អ្នកអាចលុបចោលមុនពេលការសាកល្បងបញ្ចប់។",
+    "group_partners": "សហគមន៍របស់យើង"
   },
   "th_th":{
     "short":"th",
@@ -1023,7 +1041,8 @@
     "say_goodbye_to_ads":"บอกลาโฆษณา! เราพึ่งพาค่าธรรมเนียมรายปีเล็กน้อยเพื่อครอบคลุมค่าใช้จ่ายของเซิร์ฟเวอร์และปรับปรุงประสบการณ์ของคุณ",
     "monthly_price":"ราคาต่อเดือน:",
     "yearly_price": "ราคาต่อปี:",
-    "free_trial_description":"ทดลองใช้งานฟรี 5 วัน ไม่มีโฆษณา ฟีเจอร์ทั้งหมดใช้งานได้ คุณสามารถยกเลิกก่อนที่การทดลองใช้จะสิ้นสุด"
+    "free_trial_description":"ทดลองใช้งานฟรี 5 วัน ไม่มีโฆษณา ฟีเจอร์ทั้งหมดใช้งานได้ คุณสามารถยกเลิกก่อนที่การทดลองใช้จะสิ้นสุด",
+    "group_partners": "ชุมชนของเรา"
   },
   "ko_kr":{
     "short":"ko",
@@ -1077,7 +1096,8 @@
     "say_goodbye_to_ads":"광고와 작별하세요! 서버 비용을 충당하고 경험을 개선하기 위해 소액의 연간 요금에 의존합니다.",
     "monthly_price":"월 가격:",
     "yearly_price": "연간 가격:",
-    "free_trial_description":"광고 없이 5일 무료 체험, 모든 기능 이용 가능. 체험 종료 전에 취소할 수 있습니다."
+    "free_trial_description":"광고 없이 5일 무료 체험, 모든 기능 이용 가능. 체험 종료 전에 취소할 수 있습니다.",
+    "group_partners": "우리 커뮤니티"
   },
   "vi_vn":{
     "short":"vi",
@@ -1131,7 +1151,8 @@
     "say_goodbye_to_ads":"Hãy nói lời tạm biệt với quảng cáo! Chúng tôi dựa vào một khoản phí hàng năm nhỏ để trang trải chi phí máy chủ và cải thiện trải nghiệm của bạn.",
     "monthly_price":"Giá hàng tháng:",
     "yearly_price": "Giá hàng năm:",
-    "free_trial_description":"Dùng thử miễn phí 5 ngày, không quảng cáo, tất cả các tính năng có sẵn. Bạn có thể hủy trước khi hết thời gian dùng thử."
+    "free_trial_description":"Dùng thử miễn phí 5 ngày, không quảng cáo, tất cả các tính năng có sẵn. Bạn có thể hủy trước khi hết thời gian dùng thử.",
+    "group_partners": "Cộng đồng của chúng tôi"
   },
   "tr_tr":{
     "short":"tr",
@@ -1185,7 +1206,8 @@
     "say_goodbye_to_ads":"Reklamlara elveda deyin! Sunucu maliyetlerini karşılamak ve deneyiminizi geliştirmek için küçük bir yıllık ücrete güveniyoruz.",
     "monthly_price":"Aylık fiyat:",
     "yearly_price": "Yıllık fiyat:",
-    "free_trial_description":"5 gün ücretsiz deneme, reklam yok, tüm özellikler kullanılabilir. Deneme süresi dolmadan iptal edebilirsiniz."
+    "free_trial_description":"5 gün ücretsiz deneme, reklam yok, tüm özellikler kullanılabilir. Deneme süresi dolmadan iptal edebilirsiniz.",
+    "group_partners": "Bizim topluluğumuz"
   },
   "he_il": {
   "short": "he",
@@ -1248,7 +1270,8 @@
   "monthly_price": "מחיר חודשי:",
   "yearly_price": "מחיר שנתי:",
   "free_trial_description":
-      "5 ימי ניסיון חינם, ללא פרסומות, כל התכונות זמינות. ניתן לבטל לפני תום הניסיון."
+      "5 ימי ניסיון חינם, ללא פרסומות, כל התכונות זמינות. ניתן לבטל לפני תום הניסיון.",
+      "group_partners": "הקהילה שלנו"
 },
 "bg_bg": {
   "short": "bg",
@@ -1302,7 +1325,8 @@
   "say_goodbye_to_ads": "Кажете сбогом на рекламите! Ние разчитаме на малка годишна такса, за да покрием разходите за сървъра и да подобрим вашия опит.",
   "monthly_price": "Месечна цена:",
   "yearly_price": "Годишна цена:",
-  "free_trial_description": "5 дни безплатен пробен период, без реклами, всички функции са достъпни. Можете да отмените преди изтичане на пробния период."
+  "free_trial_description": "5 дни безплатен пробен период, без реклами, всички функции са достъпни. Можете да отмените преди изтичане на пробния период.",
+  "group_partners": "Нашата общност"
 },
 "pl_pl": {
   "short": "pl",
@@ -1364,7 +1388,8 @@
   "monthly_price": "Cena miesięczna:",
   "yearly_price": "Cena roczna:",
   "free_trial_description":
-      "5 dni darmowej próby, bez reklam, wszystkie funkcje dostępne. Możesz anulować przed zakończeniem okresu próbnego."
+      "5 dni darmowej próby, bez reklam, wszystkie funkcje dostępne. Możesz anulować przed zakończeniem okresu próbnego.",
+      "group_partners": "Nasza społeczność"
 },
 "id_id": {
   "short": "id",
@@ -1426,7 +1451,8 @@
   "monthly_price": "Harga bulanan:",
   "yearly_price": "Harga tahunan:",
   "free_trial_description":
-      "5 hari uji coba gratis, tanpa iklan, semua fitur tersedia. Anda dapat membatalkan sebelum uji coba berakhir."
+      "5 hari uji coba gratis, tanpa iklan, semua fitur tersedia. Anda dapat membatalkan sebelum uji coba berakhir.",
+      "group_partners": "Komunitas kami"
 },
 "fil_ph": {
   "short": "fil",
@@ -1488,7 +1514,8 @@
   "monthly_price": "Buwanang presyo:",
   "yearly_price": "Taunang presyo:",
   "free_trial_description":
-      "5 araw na libreng pagsubok, walang ad, lahat ng mga tampok ay magagamit. Maaari kang mag-kansela bago matapos ang pagsubok."
+      "5 araw na libreng pagsubok, walang ad, lahat ng mga tampok ay magagamit. Maaari kang mag-kansela bago matapos ang pagsubok.",
+      "group_partners": "Ang aming komunidad"
 },
 
   "pt_pt": {
@@ -1543,7 +1570,8 @@
     "say_goodbye_to_ads": "Diga adeus aos anúncios! Rely on a small yearly fee to cover server costs and improve your experience.",
     "monthly_price": "Preço mensal:",
     "yearly_price": "Preço anual:",
-    "free_trial_description": "5 dias de teste grátis, sem anúncios, com todas as funcionalidades. Pode cancelar antes do fim do período de teste."
+    "free_trial_description": "5 dias de teste grátis, sem anúncios, com todas as funcionalidades. Pode cancelar antes do fim do período de teste.",
+    "group_partners": "A nossa comunidade"
   },
   "da_dk": {
     "short": "da",
@@ -1597,7 +1625,8 @@
     "say_goodbye_to_ads": "Sig farvel til annoncer! Rely on a small yearly fee to cover server costs and improve your experience.",
     "monthly_price": "Månedlig pris:",
     "yearly_price": "Årlig pris:",
-    "free_trial_description": "5 dages gratis prøveperiode, ingen annoncer, alle funktioner tilgængelige. Du kan annullere, inden prøveperioden slutter."
+    "free_trial_description": "5 dages gratis prøveperiode, ingen annoncer, alle funktioner tilgængelige. Du kan annullere, inden prøveperioden slutter.",
+    "group_partners": "Vores samfund"
   },
   "bn_bd": {
     "short": "bn",
@@ -1651,7 +1680,8 @@
     "say_goodbye_to_ads": "বিজ্ঞাপনকে বিদায় বলুন! সার্ভারের খরচ মেটাতে এবং আপনার অভিজ্ঞতা উন্নত করতে আমরা একটি ছোট বার্ষিক ফিতে নির্ভর করি।",
     "monthly_price": "মাসিক মূল্য:",
     "yearly_price": "বার্ষিক মূল্য:",
-    "free_trial_description": "৫ দিনের ফ্রি ট্রায়াল, কোনও বিজ্ঞাপন নেই, সমস্ত বৈশিষ্ট্য উপলব্ধ। আপনি ট্রায়াল শেষ হওয়ার আগে বাতিল করতে পারেন।"
+    "free_trial_description": "৫ দিনের ফ্রি ট্রায়াল, কোনও বিজ্ঞাপন নেই, সমস্ত বৈশিষ্ট্য উপলব্ধ। আপনি ট্রায়াল শেষ হওয়ার আগে বাতিল করতে পারেন।",
+    "group_partners": "আমাদের সম্প্রদায়"
   },
   "te_in":{
     "short":"te",
@@ -1705,7 +1735,8 @@
     "say_goodbye_to_ads":"విజ్ఞాపనలకు గుడ్‌బై చెప్పండి! సర్వర్ ఖర్చులను కవర్ చేయడానికి మరియు మీ అనుభవాన్ని మెరుగుపరచడానికి మేము చిన్న వార్షిక ఫీజుపై ఆధారపడి ఉంటాము.",
     "monthly_price":"నెలసరి ధర:",
     "yearly_price": "వార్షిక ధర:",
-    "free_trial_description":"5 రోజుల ఉచిత ట్రయల్, ఎటువంటి ప్రకటనలు లేవు, అన్ని ఫీచర్లు అందుబాటులో ఉన్నాయి. మీరు ట్రయల్ ముగియకముందు రద్దు చేయవచ్చు."
+    "free_trial_description":"5 రోజుల ఉచిత ట్రయల్, ఎటువంటి ప్రకటనలు లేవు, అన్ని ఫీచర్లు అందుబాటులో ఉన్నాయి. మీరు ట్రయల్ ముగియకముందు రద్దు చేయవచ్చు.",
+    "group_partners": "మా కమ్యూనిటీ"
 },
 "hr_hr":{
     "short":"hr",
@@ -1759,7 +1790,8 @@
     "say_goodbye_to_ads":"Recite zbogom oglasima! Oslanjamo se na malu godišnju naknadu kako bismo pokrili troškove servera i poboljšali vaše iskustvo.",
     "monthly_price":"Mjesečna cijena:",
     "yearly_price": "Godišnja cijena:",
-    "free_trial_description":"5 dana besplatnog probnog razdoblja, bez oglasa, sve značajke dostupne. Možete otkazati prije završetka probnog razdoblja."
+    "free_trial_description":"5 dana besplatnog probnog razdoblja, bez oglasa, sve značajke dostupne. Možete otkazati prije završetka probnog razdoblja.",
+    "group_partners": "Naša zajednica"
 },
 "ms_my":{
     "short":"ms",
@@ -1813,7 +1845,8 @@
     "say_goodbye_to_ads":"Ucapkan selamat tinggal kepada iklan! Kami bergantung pada bayaran tahunan yang kecil untuk menampung kos pelayan dan meningkatkan pengalaman anda.",
     "monthly_price":"Harga bulanan:",
     "yearly_price": "Harga tahunan:",
-    "free_trial_description":"5 hari percubaan percuma, tiada iklan, semua ciri tersedia. Anda boleh membatalkan sebelum percubaan berakhir."
+    "free_trial_description":"5 hari percubaan percuma, tiada iklan, semua ciri tersedia. Anda boleh membatalkan sebelum percubaan berakhir.",
+    "group_partners": "Komuniti kami"
 },
 "ro_ro":{
     "short":"ro",
@@ -1867,7 +1900,8 @@
     "say_goodbye_to_ads":"Spuneți adio reclamelor! Ne bazăm pe o mică taxă anuală pentru a acoperi costurile serverului și pentru a vă îmbunătăți experiența.",
     "monthly_price":"Preț lunar:",
     "yearly_price": "Preț anual:",
-    "free_trial_description":"5 zile de probă gratuită, fără reclame, toate funcțiile disponibile. Puteți anula înainte de încheierea perioadei de probă."
+    "free_trial_description":"5 zile de probă gratuită, fără reclame, toate funcțiile disponibile. Puteți anula înainte de încheierea perioadei de probă.",
+    "group_partners": "Comunitatea noastră"
 },
 "bs_ba":{
     "short":"bs",
@@ -1921,7 +1955,8 @@
     "say_goodbye_to_ads":"Recite zbogom oglasima! Oslanjamo se na malu godišnju naknadu kako bismo pokrili troškove servera i poboljšali vaše iskustvo.",
     "monthly_price":"Mjesečna cijena:",
     "yearly_price": "Godišnja cijena:",
-    "free_trial_description":"5 dana besplatnog probnog perioda, bez oglasa, sve funkcije dostupne. Možete otkazati prije završetka probnog perioda."
+    "free_trial_description":"5 dana besplatnog probnog perioda, bez oglasa, sve funkcije dostupne. Možete otkazati prije završetka probnog perioda.",
+    "group_partners": "Naša zajednica"
 },
 "hu_hu":{
     "short":"hu",
@@ -1975,7 +2010,8 @@
     "say_goodbye_to_ads":"Mondjon búcsút a hirdetéseknek! Egy kis éves díjra támaszkodunk a szerver költségek fedezésére és az élmény javítására.",
     "monthly_price":"Havi ár:",
     "yearly_price": "Éves ár:",
-    "free_trial_description":"5 nap ingyenes próbaidőszak, nincs hirdetés, minden funkció elérhető. A próbaidőszak lejárta előtt lemondhatja."
+    "free_trial_description":"5 nap ingyenes próbaidőszak, nincs hirdetés, minden funkció elérhető. A próbaidőszak lejárta előtt lemondhatja.",
+    "group_partners": "Közösségünk"
 },
 "gu_in":{
     "short":"gu",
@@ -2029,7 +2065,8 @@
     "say_goodbye_to_ads":"જાહેરાતોને અલવિદા કહો! અમે સર્વર ખર્ચને આવરી લેવા અને તમારા અનુભવને સુધારવા માટે નાની વાર્ષિક ફી પર નિર્ભર છીએ.",
     "monthly_price":"માસિક કિંમત:",
     "yearly_price": "વાર્ષિક કિંમત:",
-    "free_trial_description":"5 દિવસની મફત ટ્રાયલ, કોઈ જાહેરાતો નથી, બધી સુવિધાઓ ઉપલબ્ધ છે. તમે ટ્રાયલ સમાપ્ત થતાં પહેલાં રદ કરી શકો છો."
+    "free_trial_description":"5 દિવસની મફત ટ્રાયલ, કોઈ જાહેરાતો નથી, બધી સુવિધાઓ ઉપલબ્ધ છે. તમે ટ્રાયલ સમાપ્ત થતાં પહેલાં રદ કરી શકો છો.",
+    "group_partners": "અમારા સમુદાય"
 },
 "pa_in":{
     "short":"pa",
@@ -2083,7 +2120,8 @@
     "say_goodbye_to_ads":"ਇਸ਼ਤਿਹਾਰਾਂ ਨੂੰ ਅਲਵਿਦਾ ਕਹੋ! ਸਾਡਾ ਸਰਵਰ ਖਰਚੇ ਨੂੰ ਕਵਰ ਕਰਨ ਅਤੇ ਤੁਹਾਡੇ ਅਨੁਭਵ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਲਈ ਅਸੀਂ ਇੱਕ ਛੋਟੀ ਵਰ੍ਹੇ ਵਾਰੀ ਫੀਸ ਤੇ ਨਿਰਭਰ ਹਾਂ।",
     "monthly_price":"ਮਾਸਿਕ ਕੀਮਤ:",
     "yearly_price": "ਸਾਲਾਨਾ ਕੀਮਤ:",
-    "free_trial_description":"5 ਦਿਨ ਦੀ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ, ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਸਾਰੇ ਫੀਚਰ ਉਪਲਬਧ ਹਨ। ਤੁਸੀਂ ਟ੍ਰਾਇਲ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ।"
+    "free_trial_description":"5 ਦਿਨ ਦੀ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ, ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਸਾਰੇ ਫੀਚਰ ਉਪਲਬਧ ਹਨ। ਤੁਸੀਂ ਟ੍ਰਾਇਲ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ।",
+    "group_partners": "ਸਾਡੀ ਕਮਿਊਨਟੀ"
 },
 "si_lk":{
     "short":"si",
@@ -2137,7 +2175,8 @@
     "say_goodbye_to_ads":"දැන්වීම්ට ගුඩ්බයි කිවන්න! සේවාදායක පිරිවැය ආවරණය කිරීමට සහ ඔබගේ අත්දැකීම සංවර්ධනය කිරීමට අපි සසුන් කුඩා වාර්ෂික ගාස්තුවක් රඳා පවතිමු.",
     "monthly_price":"මාසික මිල:",
     "yearly_price": "වාර්ෂික මිල:",
-    "free_trial_description":"දින 5 නොමිලේ අත්හදා බැලීමක්, දැන්වීම් නොමැත, සියලු විශේෂාංග ලබා ගත හැකිය. අත්හදා බැලීම අවසාන වීමට පෙර ඔබ අවලංගු කළ හැකිය."
+    "free_trial_description":"දින 5 නොමිලේ අත්හදා බැලීමක්, දැන්වීම් නොමැත, සියලු විශේෂාංග ලබා ගත හැකිය. අත්හදා බැලීම අවසාන වීමට පෙර ඔබ අවලංගු කළ හැකිය.",
+    "group_partners": "අපේ ප්රජාව"
 },
 "sw_ke":{
     "short":"sw",
@@ -2191,7 +2230,8 @@
     "say_goodbye_to_ads":"Sema kwaheri kwa matangazo! Tunategemea ada ndogo ya kila mwaka kufidia gharama za seva na kuboresha uzoefu wako.",
     "monthly_price":"Bei ya kila mwezi:",
     "yearly_price": "Bei ya kila mwaka:",
-    "free_trial_description":"Siku 5 za jaribio la bure, hakuna matangazo, vipengele vyote vinapatikana. Unaweza kughairi kabla ya jaribio kumalizika."
+    "free_trial_description":"Siku 5 za jaribio la bure, hakuna matangazo, vipengele vyote vinapatikana. Unaweza kughairi kabla ya jaribio kumalizika.",
+    "group_partners": "Jumuiya yetu"
 },
 "ta_in":{
     "short":"ta",
@@ -2245,7 +2285,8 @@
     "say_goodbye_to_ads":"விளம்பரங்களுக்கு கடைசி சொல்லுங்கள்! சர்வர் செலவுகளை ஈடுகட்ட மற்றும் உங்கள் அனுபவத்தை மேம்படுத்த நாங்கள் ஒரு சிறிய ஆண்டு கட்டணத்தை நம்புகிறோம்.",
     "monthly_price":"மாத விலை:",
     "yearly_price": "ஆண்டு விலை:",
-    "free_trial_description":"5 நாட்கள் இலவச சோதனை, விளம்பரங்கள் இல்லை, அனைத்து அம்சங்களும் கிடைக்கின்றன. நீங்கள் சோதனை முடிவதற்கு முன் ரத்து செய்யலாம்."
+    "free_trial_description":"5 நாட்கள் இலவச சோதனை, விளம்பரங்கள் இல்லை, அனைத்து அம்சங்களும் கிடைக்கின்றன. நீங்கள் சோதனை முடிவதற்கு முன் ரத்து செய்யலாம்.",
+    "group_partners": "எங்கள் சமூகம்"
 },
 "jv_id":{
     "short":"jv",
@@ -2299,7 +2340,8 @@
     "say_goodbye_to_ads":"Ucapake pamit marang iklan! Kita ngandelake biaya tahunan cilik kanggo nutupi biaya server lan nambah pengalaman panjenengan.",
     "monthly_price":"Rega saben wulan:",
     "yearly_price": "Rega tahunan:",
-    "free_trial_description":"5 dina uji coba gratis, tanpa iklan, kabeh fitur kasedhiya. Panjenengan bisa mbatalake sadurunge uji coba rampung."
+    "free_trial_description":"5 dina uji coba gratis, tanpa iklan, kabeh fitur kasedhiya. Panjenengan bisa mbatalake sadurunge uji coba rampung.",
+    "group_partners": "Komunitas kita"
 },
 "ne_np":{
     "short":"ne",
@@ -2353,7 +2395,8 @@
     "say_goodbye_to_ads":"विज्ञापनहरूलाई बिदाइ गर्नुहोस्! सर्भर खर्चहरू कभर गर्न र तपाईंको अनुभव सुधार गर्न हामी सानो वार्षिक शुल्कमा निर्भर गर्दछौं।",
     "monthly_price":"मासिक मूल्य:",
     "yearly_price": "वार्षिक मूल्य:",
-    "free_trial_description":"5 दिनको निःशुल्क परीक्षण, कुनै विज्ञापन छैन, सबै सुविधाहरू उपलब्ध छन्। तपाईं परीक्षण समाप्त हुनु अघि रद्द गर्न सक्नुहुन्छ।"
+    "free_trial_description":"5 दिनको निःशुल्क परीक्षण, कुनै विज्ञापन छैन, सबै सुविधाहरू उपलब्ध छन्। तपाईं परीक्षण समाप्त हुनु अघि रद्द गर्न सक्नुहुन्छ।",
+    "group_partners": "हाम्रो समुदाय"
 },
 "et_ee":{
     "short":"et",
@@ -2407,7 +2450,8 @@
     "say_goodbye_to_ads":"Ütle reklaamidele hüvasti! Serverikulude katmiseks ja teie kogemuse parandamiseks toetume väikesele aastatasule.",
     "monthly_price":"Kuuhind:",
     "yearly_price": "Aastahind:",
-    "free_trial_description":"5-päevane tasuta prooviperiood, reklaamid puuduvad, kõik funktsioonid saadaval. Võite tühistada enne prooviperioodi lõppu."
+    "free_trial_description":"5-päevane tasuta prooviperiood, reklaamid puuduvad, kõik funktsioonid saadaval. Võite tühistada enne prooviperioodi lõppu.",
+    "group_partners": "Meie kogukond"
 },
 "is_is":{
     "short":"is",
@@ -2461,7 +2505,8 @@
     "say_goodbye_to_ads":"Kveddu auglýsingar! Við treystum á lítið árlegt gjald til að standa undir þjónustukostnaði og bæta upplifun þína.",
     "monthly_price":"Mánaðarverð:",
     "yearly_price": "Árlegt verð:",
-    "free_trial_description":"5 daga ókeypis prufuáskrift, engar auglýsingar, allar aðgerðir í boði. Þú getur sagt upp áður en prufutímabilinu lýkur."
+    "free_trial_description":"5 daga ókeypis prufuáskrift, engar auglýsingar, allar aðgerðir í boði. Þú getur sagt upp áður en prufutímabilinu lýkur.",
+    "group_partners": "Samfélag okkar"
 },
 "cs_cz":{
     "short":"cs",
@@ -2515,7 +2560,8 @@
     "say_goodbye_to_ads":"Řekněte sbohem reklamám! Spoléháme na malý roční poplatek k pokrytí nákladů na server a zlepšení vašeho zážitku.",
     "monthly_price":"Měsíční cena:",
     "yearly_price": "Roční cena:",
-    "free_trial_description":"5 dní bezplatné zkušební verze, žádné reklamy, všechny funkce k dispozici. Můžete zrušit před koncem zkušebního období."
+    "free_trial_description":"5 dní bezplatné zkušební verze, žádné reklamy, všechny funkce k dispozici. Můžete zrušit před koncem zkušebního období.",
+    "group_partners": "Naše komunita"
 },
 "es_mx": {
     "short": "es",
@@ -2569,6 +2615,337 @@
     "say_goodbye_to_ads": "¡Despídete de los anuncios! Dependemos de una pequeña tarifa anual para cubrir los costos del servidor y mejorar tu experiencia.",
     "monthly_price": "Precio mensual:",
     "yearly_price": "Precio anual:",
-    "free_trial_description": "5 días de prueba gratis, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba."
-  }
+    "free_trial_description": "5 días de prueba gratis, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba.",
+    "group_partners": "Nuestra comunidad"
+  },
+  "su_id": {
+    "short": "su",
+    "flag": "id",
+    "complete": "su-ID",
+    "name": "Basa Sunda",
+    "variant": "su-ID",
+    "voice": "su-ID",
+    "language_name_english": "Sundanese",
+    "translation_code": "su",
+    "free_conversation": "Ngobrol",
+    "job_interview": "Wawancara gawe",
+    "choose_subject": "Pilih topik",
+    "choose_language": "Pilih basa anjeun",
+    "choose_username": "Lebetkeun ngaran pangguna anjeun",
+    "username": "Ngaran pangguna",
+    "proceed": "Teruskeun",
+    "please_enter_username": "Mangga lebetkeun ngaran pangguna anjeun.",
+    "please_choose_language": "Mangga pilih basa.",
+    "listening_status": "Ngadenge",
+    "wait_status": "Antosan...",
+    "speaking_status": "Nyarios",
+    "waiting_your_answer_status": "Ngantosan jawaban anjeun",
+    "tap_mic": "Ketok mikropon kanggo nyarios...",
+    "conversation_history": "Riwayat obrolan abdi",
+    "manual_mode_text": "Mode Manual",
+    "automatic_mode_text": "Mode Otomatis",
+    "manual_mode_description": "Ketok tombol mikropon di handap kanggo nyarios.",
+    "automatic_mode_description": "Anjeun tiasa nyarios ayeuna, antosan jawaban, teras mimitian nyarios deui.",
+    "messages": "Pesen",
+    "evaluate_conversation": "Évaluasi obrolan",
+    "premium_notice": "Anjeun kedah janten pangguna premium; évaluasi gaduh biaya kanggo kami, janten teu mungkin ngagunakeunana sacara gratis.",
+    "see_options": "Tingali pilihan",
+    "please_choose_language_to_learn": "Basa anu anjeun pelajari ayeuna:",
+    "learn_according_level": "Diajar nurutkeun tingkat anjeun",
+    "choose_level": "Pilih tingkat anjeun",
+    "select_level_message": "Mangga pilih tingkat anu anjeun hoyong pelajari:",
+    "basic_level": "Tingkat dasar",
+    "intermediate_level": "Tingkat tengah",
+    "advanced_level": "Tingkat lanjut",
+    "custom_prompt": "Topik khusus",
+    "custom_prompt_description": "Anggo ieu pikeun latihan kaayaan sapopoé, sapertos di toko roti, di réstoran, atanapi skenario séjén, netelakeun saloba mungkin.",
+    "interview_training": "Latihan wawancara",
+    "interview_training_description": "Lebetkeun posisi dina kolom di handap, sareng latihan anu saé!",
+    "premium_required": "Perlu Premium",
+    "premium_required_message": "Anjeun kedah janten pangguna premium pikeun ngakses fitur ieu.",
+    "fetching_products": "Ngundeur produk...",
+    "subscriptions": "Langganan",
+    "no_cost_option": "Pilihan gratis:",
+    "free_user_with_ads": "Pangguna gratis kalayan iklan",
+    "say_goodbye_to_ads": "Pamit ka iklan! Kami ngandelkeun biaya taunan leutik pikeun nutupan biaya server sareng ningkatkeun pangalaman anjeun.",
+    "monthly_price": "Harga bulanan:",
+    "yearly_price": "Harga taunan:",
+    "free_trial_description": "5 dinten uji coba gratis, teu aya iklan, sadaya fitur sayogi. Anjeun tiasa ngabatalkeun saencan uji coba mungkas.",
+    "group_partners": "Komunitas kami"
+},
+"ca_es": {
+    "short": "ca",
+    "flag": "es",
+    "complete": "ca-ES",
+    "name": "Català",
+    "variant": "ca-ES",
+    "voice": "ca-ES",
+    "language_name_english": "Catalan",
+    "translation_code": "ca",
+    "free_conversation": "Conversa",
+    "job_interview": "Entrevista de feina",
+    "choose_subject": "Tria un tema personalitzat",
+    "choose_language": "Tria el teu idioma",
+    "choose_username": "Introdueix el teu nom d'usuari",
+    "username": "Nom d'usuari",
+    "proceed": "Continuar",
+    "please_enter_username": "Si us plau, introdueix el teu nom d'usuari.",
+    "please_choose_language": "Si us plau, selecciona un idioma.",
+    "listening_status": "Escoltant",
+    "wait_status": "Espera...",
+    "speaking_status": "Parlant",
+    "waiting_your_answer_status": "Esperant la teva resposta",
+    "tap_mic": "Toca el micròfon per parlar...",
+    "conversation_history": "El meu historial de converses",
+    "manual_mode_text": "Mode Manual",
+    "automatic_mode_text": "Mode Automàtic",
+    "manual_mode_description": "Toca el botó del micròfon a la part inferior per parlar.",
+    "automatic_mode_description": "Pots parlar ara, després espera la resposta i comença a parlar de nou.",
+    "messages": "Missatges",
+    "evaluate_conversation": "Avaluar la conversa",
+    "premium_notice": "Necessites ser un usuari premium; les avaluacions tenen un cost per a nosaltres, per tant no és possible utilitzar-les gratuïtament.",
+    "see_options": "Veure opcions",
+    "please_choose_language_to_learn": "L'idioma que estàs aprenent en aquest moment:",
+    "learn_according_level": "Aprèn segons el teu nivell",
+    "choose_level": "Tria el teu nivell",
+    "select_level_message": "Si us plau, selecciona el nivell que vols aprendre:",
+    "basic_level": "Nivell bàsic",
+    "intermediate_level": "Nivell intermedi",
+    "advanced_level": "Nivell avançat",
+    "custom_prompt": "Tema personalitzat",
+    "custom_prompt_description": "Utilitza això per practicar situacions quotidianes, com en una fleca, en un restaurant o qualsevol altre escenari, especificant tant com sigui possible.",
+    "interview_training": "Entrenament d'entrevista",
+    "interview_training_description": "Introdueix la posició en el camp de sota, i bona pràctica!",
+    "premium_required": "Es requereix Premium",
+    "premium_required_message": "Necessites ser un usuari premium per accedir a aquesta funció.",
+    "fetching_products": "Recuperant productes...",
+    "subscriptions": "Subscripcions",
+    "no_cost_option": "Opció sense cost:",
+    "free_user_with_ads": "Usuari gratuït amb anuncis",
+    "say_goodbye_to_ads": "Digueu adéu als anuncis! Confiem en una petita quota anual per cobrir els costos del servidor i millorar la vostra experiència.",
+    "monthly_price": "Preu mensual:",
+    "yearly_price": "Preu anual:",
+    "free_trial_description": "5 dies de prova gratuïta, sense anuncis, totes les funcions disponibles. Pots cancel·lar abans que acabi la prova.",
+    "group_partners": "La nostra comunitat"
+},
+"lt_lt": {
+    "short": "lt",
+    "flag": "lt",
+    "complete": "lt-LT",
+    "name": "Lietuvių",
+    "variant": "lt-LT",
+    "voice": "lt-LT",
+    "language_name_english": "Lithuanian",
+    "translation_code": "lt",
+    "free_conversation": "Pokalbis",
+    "job_interview": "Darbo pokalbis",
+    "choose_subject": "Pasirinkite temą",
+    "choose_language": "Pasirinkite savo kalbą",
+    "choose_username": "Įveskite savo vartotojo vardą",
+    "username": "Vartotojo vardas",
+    "proceed": "Tęsti",
+    "please_enter_username": "Prašome įvesti savo vartotojo vardą.",
+    "please_choose_language": "Prašome pasirinkti kalbą.",
+    "listening_status": "Klausomasi",
+    "wait_status": "Palaukite...",
+    "speaking_status": "Kalbama",
+    "waiting_your_answer_status": "Laukiama jūsų atsakymo",
+    "tap_mic": "Bakstelėkite mikrofoną norėdami kalbėti...",
+    "conversation_history": "Mano pokalbių istorija",
+    "manual_mode_text": "Rankinis režimas",
+    "automatic_mode_text": "Automatinis režimas",
+    "manual_mode_description": "Bakstelėkite apačioje esantį mikrofono mygtuką norėdami kalbėti.",
+    "automatic_mode_description": "Dabar galite kalbėti, palaukite atsakymo ir pradėkite kalbėti iš naujo.",
+    "messages": "Žinutės",
+    "evaluate_conversation": "Įvertinkite pokalbį",
+    "premium_notice": "Jums reikia būti premium vartotoju; vertinimai mums kainuoja, todėl negalima jų naudoti nemokamai.",
+    "see_options": "Žiūrėti parinktis",
+    "please_choose_language_to_learn": "Kalba, kurią šiuo metu mokotės:",
+    "learn_according_level": "Mokykitės pagal savo lygį",
+    "choose_level": "Pasirinkite savo lygį",
+    "select_level_message": "Prašome pasirinkti lygį, kurį norite mokytis:",
+    "basic_level": "Pagrindinis lygis",
+    "intermediate_level": "Vidutinis lygis",
+    "advanced_level": "Pažengęs lygis",
+    "custom_prompt": "Pasirinkta tema",
+    "custom_prompt_description": "Naudokite tai praktikuoti kasdienes situacijas, pvz., kepykloje, restorane ar bet kurioje kitoje situacijoje, nurodydami kiek įmanoma tiksliau.",
+    "interview_training": "Pokalbio treniruotė",
+    "interview_training_description": "Įveskite poziciją žemiau esančiame lauke ir geros praktikos!",
+    "premium_required": "Reikalingas Premium",
+    "premium_required_message": "Jums reikia būti premium vartotoju, kad galėtumėte pasiekti šią funkciją.",
+    "fetching_products": "Gaunami produktai...",
+    "subscriptions": "Prenumeratos",
+    "no_cost_option": "Be kainos pasirinkimas:",
+    "free_user_with_ads": "Nemokamas vartotojas su reklamomis",
+    "say_goodbye_to_ads": "Atsisveikinkite su reklamomis! Mes pasitikime mažu metiniu mokesčiu padengti serverio išlaidas ir pagerinti jūsų patirtį.",
+    "monthly_price": "Mėnesio kaina:",
+    "yearly_price": "Metinė kaina:",
+    "free_trial_description": "5 dienų nemokamas bandomasis laikotarpis, nėra reklamų, visos funkcijos prieinamos. Galite atšaukti prieš pasibaigiant bandomajam laikotarpiui.",
+    "group_partners": "Mūsų bendruomenė"
+},
+"sq_al": {
+    "short": "sq",
+    "flag": "al",
+    "complete": "sq-AL",
+    "name": "Shqip",
+    "variant": "sq-AL",
+    "voice": "sq-AL",
+    "language_name_english": "Albanian",
+    "translation_code": "sq",
+    "free_conversation": "Bisedë",
+    "job_interview": "Intervistë pune",
+    "choose_subject": "Zgjidh një temë",
+    "choose_language": "Zgjidh gjuhën tënde",
+    "choose_username": "Shkruani emrin tuaj të përdoruesit",
+    "username": "Emri i përdoruesit",
+    "proceed": "Vazhdo",
+    "please_enter_username": "Ju lutemi shkruani emrin tuaj të përdoruesit.",
+    "please_choose_language": "Ju lutemi zgjidhni një gjuhë.",
+    "listening_status": "Duke dëgjuar",
+    "wait_status": "Prisni...",
+    "speaking_status": "Duke folur",
+    "waiting_your_answer_status": "Duke pritur përgjigjen tuaj",
+    "tap_mic": "Prekni mikrofonin për të folur...",
+    "conversation_history": "Historia ime e bisedave",
+    "manual_mode_text": "Mënyra Manuale",
+    "automatic_mode_text": "Mënyra Automatike",
+    "manual_mode_description": "Prekni butonin e mikrofonit në fund për të folur.",
+    "automatic_mode_description": "Mund të flisni tani, prisni përgjigjen dhe filloni të flisni përsëri.",
+    "messages": "Mesazhe",
+    "evaluate_conversation": "Vlerëso bisedën",
+    "premium_notice": "Duhet të jeni një përdorues premium; vlerësimet kanë një kosto për ne, kështu që nuk është e mundur t'i përdorni ato falas.",
+    "see_options": "Shih opsionet",
+    "please_choose_language_to_learn": "Gjuha që po mësoni në këtë moment:",
+    "learn_according_level": "Mësoni sipas nivelit tuaj",
+    "choose_level": "Zgjidh nivelin tënd",
+    "select_level_message": "Ju lutemi zgjidhni nivelin që dëshironi të mësoni:",
+    "basic_level": "Niveli Bazë",
+    "intermediate_level": "Niveli Mesatar",
+    "advanced_level": "Niveli i Avancuar",
+    "custom_prompt": "Temë e Personalizuar",
+    "custom_prompt_description": "Përdorni këtë për të praktikuar situata të përditshme, si në një furrë, në një restorant apo çdo skenar tjetër, duke specifikuar sa më shumë që të jetë e mundur.",
+    "interview_training": "Trajnim për intervistë",
+    "interview_training_description": "Shkruani pozicionin në fushën më poshtë dhe praktikë të mbarë!",
+    "premium_required": "Kërkohet Premium",
+    "premium_required_message": "Duhet të jeni një përdorues premium për të hyrë në këtë veçori.",
+    "fetching_products": "Duke marrë produktet...",
+    "subscriptions": "Abonimet",
+    "no_cost_option": "Opsion pa kosto:",
+    "free_user_with_ads": "Përdorues falas me reklama",
+    "say_goodbye_to_ads": "Thuaj lamtumirë reklamave! Ne mbështetemi në një tarifë të vogël vjetore për të mbuluar kostot e serverit dhe për të përmirësuar përvojën tuaj.",
+    "monthly_price": "Çmimi mujor:",
+    "yearly_price": "Çmimi vjetor:",
+    "free_trial_description": "5 ditë provë falas, pa reklama, të gjitha veçoritë në dispozicion. Mund të anuloni para se të përfundojë periudha e provës.",
+    "group_partners": "Komuniteti ynë"
+},
+"fi_fi": {
+    "short": "fi",
+    "flag": "fi",
+    "complete": "fi-FI",
+    "name": "Suomi",
+    "variant": "fi-FI",
+    "voice": "fi-FI",
+    "language_name_english": "Finnish",
+    "translation_code": "fi",
+    "free_conversation": "Keskustelu",
+    "job_interview": "Työhaastattelu",
+    "choose_subject": "Valitse aihe",
+    "choose_language": "Valitse kielesi",
+    "choose_username": "Syötä käyttäjänimesi",
+    "username": "Käyttäjänimi",
+    "proceed": "Jatka",
+    "please_enter_username": "Ole hyvä ja syötä käyttäjänimesi.",
+    "please_choose_language": "Ole hyvä ja valitse kieli.",
+    "listening_status": "Kuuntelee",
+    "wait_status": "Odota...",
+    "speaking_status": "Puhuu",
+    "waiting_your_answer_status": "Odotetaan vastaustasi",
+    "tap_mic": "Napauta mikkiä puhuaksesi...",
+    "conversation_history": "Keskusteluhistoriani",
+    "manual_mode_text": "Manuaalinen tila",
+    "automatic_mode_text": "Automaattinen tila",
+    "manual_mode_description": "Napauta alhaalla olevaa mikrofoni-painiketta puhuaksesi.",
+    "automatic_mode_description": "Voit puhua nyt, odota vastausta ja aloita sitten puhuminen uudelleen.",
+    "messages": "Viestit",
+    "evaluate_conversation": "Arvioi keskustelu",
+    "premium_notice": "Sinun täytyy olla premium-käyttäjä; arvioinneista aiheutuu meille kustannuksia, joten niitä ei voi käyttää ilmaiseksi.",
+    "see_options": "Katso vaihtoehdot",
+    "please_choose_language_to_learn": "Kieli, jota opiskelet tällä hetkellä:",
+    "learn_according_level": "Opiskele tasosi mukaisesti",
+    "choose_level": "Valitse tasosi",
+    "select_level_message": "Ole hyvä ja valitse taso, jonka haluat oppia:",
+    "basic_level": "Perustaso",
+    "intermediate_level": "Keskitaso",
+    "advanced_level": "Edistynyt taso",
+    "custom_prompt": "Mukautettu aihe",
+    "custom_prompt_description": "Käytä tätä harjoitellaksesi jokapäiväisiä tilanteita, kuten leipomossa, ravintolassa tai missä tahansa muussa tilanteessa, määritellen mahdollisimman tarkasti.",
+    "interview_training": "Haastatteluharjoittelu",
+    "interview_training_description": "Syötä alla olevaan kenttään tehtävänimike ja hyvää harjoittelua!",
+    "premium_required": "Vaatii Premiumin",
+    "premium_required_message": "Sinun täytyy olla premium-käyttäjä päästäksesi tähän ominaisuuteen.",
+    "fetching_products": "Haetaan tuotteita...",
+    "subscriptions": "Tilaukset",
+    "no_cost_option": "Ilmainen vaihtoehto:",
+    "free_user_with_ads": "Ilmainen käyttäjä mainoksilla",
+    "say_goodbye_to_ads": "Sano hyvästit mainoksille! Luotamme pieneen vuosimaksuun kattaaksemme palvelinkustannukset ja parantaaksemme kokemustasi.",
+    "monthly_price": "Kuukausihinta:",
+    "yearly_price": "Vuosihinta:",
+    "free_trial_description": "5 päivän ilmainen kokeilu, ei mainoksia, kaikki ominaisuudet käytettävissä. Voit peruuttaa ennen kokeilun päättymistä.",
+    "group_partners": "Yhteisömme"
+},
+"nb_no": {
+    "short": "nb",
+    "flag": "no",
+    "complete": "nb-NO",
+    "name": "Norsk Bokmål",
+    "variant": "nb-NO",
+    "voice": "nb-NO",
+    "language_name_english": "Norwegian",
+    "translation_code": "no",
+    "free_conversation": "Samtale",
+    "job_interview": "Jobbintervju",
+    "choose_subject": "Velg et emne",
+    "choose_language": "Velg ditt språk",
+    "choose_username": "Skriv inn brukernavnet ditt",
+    "username": "Brukernavn",
+    "proceed": "Fortsett",
+    "please_enter_username": "Vennligst skriv inn brukernavnet ditt.",
+    "please_choose_language": "Vennligst velg et språk.",
+    "listening_status": "Lytter",
+    "wait_status": "Vent...",
+    "speaking_status": "Snakker",
+    "waiting_your_answer_status": "Venter på svaret ditt",
+    "tap_mic": "Trykk på mikrofonen for å snakke...",
+    "conversation_history": "Min samtalehistorikk",
+    "manual_mode_text": "Manuell modus",
+    "automatic_mode_text": "Automatisk modus",
+    "manual_mode_description": "Trykk på mikrofonknappen nederst for å snakke.",
+    "automatic_mode_description": "Du kan snakke nå, vent på svar, og begynn å snakke igjen.",
+    "messages": "Meldinger",
+    "evaluate_conversation": "Vurder samtalen",
+    "premium_notice": "Du må være premium-bruker; evalueringer koster oss penger, så det er ikke mulig å bruke dem gratis.",
+    "see_options": "Se alternativer",
+    "please_choose_language_to_learn": "Språket du lærer for øyeblikket:",
+    "learn_according_level": "Lær i henhold til ditt nivå",
+    "choose_level": "Velg nivå",
+    "select_level_message": "Vennligst velg nivået du vil lære:",
+    "basic_level": "Grunnleggende nivå",
+    "intermediate_level": "Mellomnivå",
+    "advanced_level": "Avansert nivå",
+    "custom_prompt": "Tilpasset emne",
+    "custom_prompt_description": "Bruk dette til å øve på hverdagslige situasjoner, som på et bakeri, en restaurant eller et annet scenario, spesifiser så mye som mulig.",
+    "interview_training": "Intervjutrening",
+    "interview_training_description": "Skriv inn stillingen i feltet nedenfor, og lykke til med treningen!",
+    "premium_required": "Premium påkrevd",
+    "premium_required_message": "Du må være premium-bruker for å få tilgang til denne funksjonen.",
+    "fetching_products": "Henter produkter...",
+    "subscriptions": "Abonnementer",
+    "no_cost_option": "Kostnadsfritt alternativ:",
+    "free_user_with_ads": "Gratis bruker med annonser",
+    "say_goodbye_to_ads": "Si farvel til annonser! Vi er avhengige av et lite årlig gebyr for å dekke serverkostnader og forbedre opplevelsen din.",
+    "monthly_price": "Månedlig pris:",
+    "yearly_price": "Årlig pris:",
+    "free_trial_description": "5 dagers gratis prøveperiode, ingen annonser, alle funksjoner tilgjengelig. Du kan kansellere før prøveperioden utløper.",
+    "group_partners": "Vårt fellesskap"
+}
 }
