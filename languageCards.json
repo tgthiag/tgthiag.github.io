@@ -592,5 +592,239 @@
       ],
       "complete": false
     }
+  ],
+  "de-DE": [
+    {
+      "id": 1,
+      "title": "Sag Hallo!",
+      "description": "Lerne grundlegende Begrüßungen.",
+      "phrases": [
+        {
+          "phrase": "Hallo, wie geht's?",
+          "words": [
+            {"word": "Hallo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mir geht's gut, danke!",
+          "words": [
+            {"word": "Mir", "complete": false},
+            {"word": "Geht's", "complete": false},
+            {"word": "Gut", "complete": false},
+            {"word": "Danke", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Guten Morgen!",
+          "words": [
+            {"word": "Guten", "complete": false},
+            {"word": "Morgen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Guten Tag!",
+          "words": [
+            {"word": "Guten", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Guten Abend!",
+          "words": [
+            {"word": "Guten", "complete": false},
+            {"word": "Abend", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Schön, dich kennenzulernen!",
+          "words": [
+            {"word": "Schön", "complete": false},
+            {"word": "Kennenzulernen", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Stell dich vor",
+      "description": "Lerne, dich vorzustellen.",
+      "phrases": [
+        {
+          "phrase": "Mein Name ist Hans.",
+          "words": [
+            {"word": "Mein Name", "complete": false},
+            {"word": "ist Hans", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich wohne in Berlin.",
+          "words": [
+            {"word": "Ich wohne", "complete": false},
+            {"word": "Berlin", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich bin 30 Jahre alt.",
+          "words": [
+            {"word": "Ich bin", "complete": false},
+            {"word": "Jahre alt", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich arbeite als Lehrer.",
+          "words": [
+            {"word": "Arbeite", "complete": false},
+            {"word": "Lehrer", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Nach dem Weg fragen",
+      "description": "Lerne, nach dem Weg zu fragen.",
+      "phrases": [
+        {
+          "phrase": "Wo ist das nächste Krankenhaus?",
+          "words": [
+            {"word": "Wo ist", "complete": false},
+            {"word": "das nächste", "complete": false},
+            {"word": "Krankenhaus", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Wie komme ich zum Bahnhof?",
+          "words": [
+            {"word": "Bahnhof", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Können Sie mir den Weg zeigen?",
+          "words": [
+            {"word": "Können Sie", "complete": false},
+            {"word": "Weg zeigen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ist es weit von hier?",
+          "words": [
+            {"word": "Ist es weit", "complete": false},
+            {"word": "von hier", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Essen bestellen",
+      "description": "Lerne, Essen zu bestellen.",
+      "phrases": [
+        {
+          "phrase": "Kann ich die Speisekarte haben, bitte?",
+          "words": [
+            {"word": "Kann ich", "complete": false},
+            {"word": "Speisekarte", "complete": false},
+            {"word": "Bitte", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich hätte gerne einen Kaffee.",
+          "words": [
+            {"word": "Hätte gerne", "complete": false},
+            {"word": "einen Kaffee", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Einkäufe machen",
+      "description": "Lerne, wie man Dinge kauft.",
+      "phrases": [
+        {
+          "phrase": "Wie viel kostet das?",
+          "words": [
+            {"word": "Wie viel", "complete": false},
+            {"word": "Kostet", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich möchte das kaufen.",
+          "words": [
+            {"word": "Ich möchte", "complete": false},
+            {"word": "das kaufen", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Am Flughafen",
+      "description": "Lerne, Sätze am Flughafen zu benutzen.",
+      "phrases": [
+        {
+          "phrase": "Wo ist das Abflugtor?",
+          "words": [
+            {"word": "Abflugtor", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Wann geht der Flug?",
+          "words": [
+            {"word": "der Flug", "complete": false},
+            {"word": "Wann geht", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Im Restaurant",
+      "description": "Lerne gängige Sätze im Restaurant.",
+      "phrases": [
+        {
+          "phrase": "Kann ich die Weinkarte sehen?",
+          "words": [
+            {"word": "Weinkarte", "complete": false},
+            {"word": "Sehen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ich hätte das Steak, medium rare.",
+          "words": [
+            {"word": "Steak", "complete": false},
+            {"word": "Medium rare", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
