@@ -390,14 +390,14 @@
           "phrase": "Meu nome é João.",
           "words": [
             {"word": "Meu nome", "complete": false},
-            {"word": "João", "complete": false}
+            {"word": "é João", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Eu moro em São Paulo.",
           "words": [
-            {"word": "Moro", "complete": false},
+            {"word": "Eu moro", "complete": false},
             {"word": "São Paulo", "complete": false}
           ],
           "complete": false
@@ -406,7 +406,7 @@
           "phrase": "Tenho 30 anos.",
           "words": [
             {"word": "Tenho", "complete": false},
-            {"word": "30 anos", "complete": false}
+            {"word": "anos", "complete": false}
           ],
           "complete": false
         },
@@ -446,7 +446,8 @@
         {
           "phrase": "Você pode me mostrar o caminho?",
           "words": [
-            {"word": "Pode", "complete": false},
+            {"word": "Você pode", "complete": false},
+            {"word": "mostrar", "complete": false},
             {"word": "Caminho", "complete": false}
           ],
           "complete": false
@@ -480,7 +481,7 @@
           "phrase": "Eu gostaria de um café.",
           "words": [
             {"word": "Gostaria", "complete": false},
-            {"word": "Café", "complete": false}
+            {"word": "um café", "complete": false}
           ],
           "complete": false
         },
@@ -505,7 +506,7 @@
           "phrase": "Quanto custa isto?",
           "words": [
             {"word": "Quanto", "complete": false},
-            {"word": "Custa", "complete": false}
+            {"word": "Custa isto", "complete": false}
           ],
           "complete": false
         },
@@ -513,7 +514,7 @@
           "phrase": "Gostaria de comprar isso.",
           "words": [
             {"word": "Gostaria", "complete": false},
-            {"word": "Comprar", "complete": false}
+            {"word": "Comprar isso", "complete": false}
           ],
           "complete": false
         },
@@ -536,6 +537,7 @@
         {
           "phrase": "Onde fica o portão de embarque?",
           "words": [
+            {"word": "Onde fica", "complete": false},
             {"word": "Portão", "complete": false},
             {"word": "Embarque", "complete": false}
           ],
@@ -545,7 +547,7 @@
           "phrase": "Que horas sai o voo?",
           "words": [
             {"word": "Que horas", "complete": false},
-            {"word": "Voo", "complete": false}
+            {"word": "sai o vôo", "complete": false}
           ],
           "complete": false
         },
