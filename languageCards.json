@@ -15,7 +15,7 @@
         {
           "phrase": "I am fine, thanks!",
           "words": [
-            {"word": "I am", "complete": false},
+            {"word": "I am feeling", "complete": false},
             {"word": "Fine", "complete": false},
             {"word": "Thanks", "complete": false}
           ],
@@ -72,7 +72,7 @@
         {
           "phrase": "I live in New York.",
           "words": [
-            {"word": "Live", "complete": false},
+            {"word": "I live in", "complete": false},
             {"word": "New York", "complete": false}
           ],
           "complete": false
@@ -80,15 +80,15 @@
         {
           "phrase": "I am 30 years old.",
           "words": [
-            {"word": "30 years", "complete": false},
-            {"word": "Old", "complete": false}
+            {"word": "I am", "complete": false},
+            {"word": "30 years old", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "I work as a teacher.",
           "words": [
-            {"word": "Work", "complete": false},
+            {"word": "I work as", "complete": false},
             {"word": "Teacher", "complete": false}
           ],
           "complete": false
@@ -113,6 +113,7 @@
         {
           "phrase": "How do I get to the station?",
           "words": [
+            {"word": "How do I", "complete": false},
             {"word": "Station", "complete": false}
           ],
           "complete": false
@@ -120,7 +121,7 @@
         {
           "phrase": "Can you show me the way?",
           "words": [
-            {"word": "Show", "complete": false},
+            {"word": "Show me", "complete": false},
             {"word": "Way", "complete": false}
           ],
           "complete": false
@@ -128,7 +129,7 @@
         {
           "phrase": "Is it far from here?",
           "words": [
-            {"word": "Far", "complete": false},
+            {"word": "Far from", "complete": false},
             {"word": "Here", "complete": false}
           ],
           "complete": false
@@ -161,6 +162,7 @@
         {
           "phrase": "Could I get a glass of water?",
           "words": [
+            {"word": "Could I", "complete": false},
             {"word": "Glass", "complete": false},
             {"word": "Water", "complete": false}
           ],
@@ -169,7 +171,7 @@
         {
           "phrase": "I’m allergic to peanuts.",
           "words": [
-            {"word": "Allergic", "complete": false},
+            {"word": "Allergic to", "complete": false},
             {"word": "Peanuts", "complete": false}
           ],
           "complete": false
@@ -185,23 +187,24 @@
         {
           "phrase": "How much does this cost?",
           "words": [
-            {"word": "How Much", "complete": false},
-            {"word": "Cost", "complete": false}
+            {"word": "How much does", "complete": false},
+            {"word": "This cost", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "I would like to buy this.",
           "words": [
-            {"word": "Would like", "complete": false},
-            {"word": "Buy This", "complete": false}
+            {"word": "I would like to", "complete": false},
+            {"word": "Buy this", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Do you accept credit cards?",
           "words": [
-            {"word": "Credit", "complete": false},
+            {"word": "Do you", "complete": false},
+            {"word": "Accept credit", "complete": false},
             {"word": "Cards", "complete": false}
           ],
           "complete": false
@@ -209,6 +212,7 @@
         {
           "phrase": "Can I have a receipt, please?",
           "words": [
+            {"word": "Can I have", "complete": false},
             {"word": "Receipt", "complete": false},
             {"word": "Please", "complete": false}
           ],
@@ -225,7 +229,7 @@
         {
           "phrase": "Where is the departure gate?",
           "words": [
-            {"word": "Where", "complete": false},
+            {"word": "Where is", "complete": false},
             {"word": "Departure gate", "complete": false}
           ],
           "complete": false
@@ -233,15 +237,15 @@
         {
           "phrase": "What time does the flight leave?",
           "words": [
-            {"word": "Time", "complete": false},
-            {"word": "Flight", "complete": false},
-            {"word": "Leave", "complete": false}
+            {"word": "What time does", "complete": false},
+            {"word": "Flight leave", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "I need to check in my luggage.",
           "words": [
+            {"word": "I need to", "complete": false},
             {"word": "Check in", "complete": false},
             {"word": "Luggage", "complete": false}
           ],
@@ -250,6 +254,7 @@
         {
           "phrase": "Can I get a window seat, please?",
           "words": [
+            {"word": "Can I get", "complete": false},
             {"word": "Window seat", "complete": false},
             {"word": "Please", "complete": false}
           ],
@@ -258,8 +263,8 @@
         {
           "phrase": "Is the flight delayed?",
           "words": [
-            {"word": "Flight", "complete": false},
-            {"word": "Delayed", "complete": false}
+            {"word": "Is the", "complete": false},
+            {"word": "Flight delayed", "complete": false}
           ],
           "complete": false
         }
@@ -274,15 +279,17 @@
         {
           "phrase": "Could I see the wine list?",
           "words": [
-            {"word": "Wine list", "complete": false},
-            {"word": "See", "complete": false}
+            {"word": "Could I", "complete": false},
+            {"word": "See the", "complete": false},
+            {"word": "Wine list", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "I’ll have the steak, medium rare.",
           "words": [
-            {"word": "Steak", "complete": false},
+            {"word": "I'll have", "complete": false},
+            {"word": "The steak", "complete": false},
             {"word": "Medium rare", "complete": false}
           ],
           "complete": false
@@ -290,7 +297,8 @@
         {
           "phrase": "Can we get the check, please?",
           "words": [
-            {"word": "Check", "complete": false},
+            {"word": "Can we get", "complete": false},
+            {"word": "The check", "complete": false},
             {"word": "Please", "complete": false}
           ],
           "complete": false
@@ -298,23 +306,25 @@
         {
           "phrase": "Do you have any vegetarian options?",
           "words": [
-            {"word": "Vegetarian", "complete": false},
-            {"word": "Options", "complete": false}
+            {"word": "Do you have", "complete": false},
+            {"word": "Vegetarian options", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "What would you recommend from the menu?",
           "words": [
-            {"word": "Recommend", "complete": false},
-            {"word": "Menu", "complete": false}
+            {"word": "What would you", "complete": false},
+            {"word": "Recommend from", "complete": false},
+            {"word": "The menu", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Is there a special for today?",
           "words": [
-            {"word": "Special", "complete": false},
+            {"word": "Is there", "complete": false},
+            {"word": "Special for", "complete": false},
             {"word": "Today", "complete": false}
           ],
           "complete": false
@@ -341,7 +351,7 @@
         {
           "phrase": "Estou bem, obrigado!",
           "words": [
-            {"word": "Estou bem", "complete": false},
+            {"word": "Estou muito bem", "complete": false},
             {"word": "Obrigado", "complete": false}
           ],
           "complete": false
@@ -349,7 +359,7 @@
         {
           "phrase": "Bom dia!",
           "words": [
-            {"word": "Bom", "complete": false},
+            {"word": "Tenha um bom", "complete": false},
             {"word": "Dia", "complete": false}
           ],
           "complete": false
@@ -357,7 +367,7 @@
         {
           "phrase": "Boa tarde!",
           "words": [
-            {"word": "Boa", "complete": false},
+            {"word": "Tenha uma boa", "complete": false},
             {"word": "Tarde", "complete": false}
           ],
           "complete": false
@@ -365,7 +375,7 @@
         {
           "phrase": "Boa noite!",
           "words": [
-            {"word": "Boa", "complete": false},
+            {"word": "Tenha uma boa", "complete": false},
             {"word": "Noite", "complete": false}
           ],
           "complete": false
@@ -397,7 +407,7 @@
         {
           "phrase": "Eu moro em São Paulo.",
           "words": [
-            {"word": "Eu moro", "complete": false},
+            {"word": "Eu moro em", "complete": false},
             {"word": "São Paulo", "complete": false}
           ],
           "complete": false
@@ -406,14 +416,14 @@
           "phrase": "Tenho 30 anos.",
           "words": [
             {"word": "Tenho", "complete": false},
-            {"word": "anos", "complete": false}
+            {"word": "30 anos", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Trabalho como professor.",
           "words": [
-            {"word": "Trabalho", "complete": false},
+            {"word": "Trabalho como", "complete": false},
             {"word": "Professor", "complete": false}
           ],
           "complete": false
@@ -431,15 +441,15 @@
           "words": [
             {"word": "Onde fica", "complete": false},
             {"word": "Hospital", "complete": false},
-            {"word": "Próximo", "complete": false}
+            {"word": "Mais próximo", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Como chego à estação?",
           "words": [
-            {"word": "Chego", "complete": false},
-            {"word": "Estação", "complete": false}
+            {"word": "Como chego", "complete": false},
+            {"word": "À estação", "complete": false}
           ],
           "complete": false
         },
@@ -447,15 +457,15 @@
           "phrase": "Você pode me mostrar o caminho?",
           "words": [
             {"word": "Você pode", "complete": false},
-            {"word": "mostrar", "complete": false},
-            {"word": "Caminho", "complete": false}
+            {"word": "Me mostrar", "complete": false},
+            {"word": "O caminho", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "É longe daqui?",
           "words": [
-            {"word": "Longe", "complete": false},
+            {"word": "É muito longe", "complete": false},
             {"word": "Daqui", "complete": false}
           ],
           "complete": false
@@ -472,7 +482,7 @@
           "phrase": "Posso ver o menu, por favor?",
           "words": [
             {"word": "Posso ver", "complete": false},
-            {"word": "Menu", "complete": false},
+            {"word": "O menu", "complete": false},
             {"word": "Por favor", "complete": false}
           ],
           "complete": false
@@ -480,16 +490,16 @@
         {
           "phrase": "Eu gostaria de um café.",
           "words": [
-            {"word": "Gostaria", "complete": false},
-            {"word": "um café", "complete": false}
+            {"word": "Eu gostaria de", "complete": false},
+            {"word": "Um café", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Você aceita cartão de crédito?",
           "words": [
-            {"word": "Aceita", "complete": false},
-            {"word": "Cartão", "complete": false},
+            {"word": "Você aceita", "complete": false},
+            {"word": "Cartão de", "complete": false},
             {"word": "Crédito", "complete": false}
           ],
           "complete": false
@@ -505,15 +515,15 @@
         {
           "phrase": "Quanto custa isto?",
           "words": [
-            {"word": "Quanto", "complete": false},
-            {"word": "Custa isto", "complete": false}
+            {"word": "Quanto custa", "complete": false},
+            {"word": "Isto", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Gostaria de comprar isso.",
           "words": [
-            {"word": "Gostaria", "complete": false},
+            {"word": "Gostaria de", "complete": false},
             {"word": "Comprar isso", "complete": false}
           ],
           "complete": false
@@ -522,7 +532,8 @@
           "phrase": "Aceitam cartões?",
           "words": [
             {"word": "Aceitam", "complete": false},
-            {"word": "Cartões", "complete": false}
+            {"word": "Cartões de", "complete": false},
+            {"word": "Crédito", "complete": false}
           ],
           "complete": false
         }
@@ -538,7 +549,7 @@
           "phrase": "Onde fica o portão de embarque?",
           "words": [
             {"word": "Onde fica", "complete": false},
-            {"word": "Portão", "complete": false},
+            {"word": "Portão de", "complete": false},
             {"word": "Embarque", "complete": false}
           ],
           "complete": false
@@ -547,14 +558,15 @@
           "phrase": "Que horas sai o voo?",
           "words": [
             {"word": "Que horas", "complete": false},
-            {"word": "sai o vôo", "complete": false}
+            {"word": "Sai o voo", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Preciso despachar minha bagagem.",
           "words": [
-            {"word": "Despachar", "complete": false},
+            {"word": "Preciso", "complete": false},
+            {"word": "Despachar minha", "complete": false},
             {"word": "Bagagem", "complete": false}
           ],
           "complete": false
@@ -570,7 +582,8 @@
         {
           "phrase": "Posso ver a lista de vinhos?",
           "words": [
-            {"word": "Lista de", "complete": false},
+            {"word": "Posso ver", "complete": false},
+            {"word": "A lista de", "complete": false},
             {"word": "Vinhos", "complete": false}
           ],
           "complete": false
@@ -578,8 +591,8 @@
         {
           "phrase": "Eu quero o bife mal passado.",
           "words": [
-            {"word": "Bife", "complete": false},
-            {"word": "Mal passado", "complete": false}
+            {"word": "Eu quero o", "complete": false},
+            {"word": "Bife mal passado", "complete": false}
           ],
           "complete": false
         },
@@ -604,7 +617,8 @@
         {
           "phrase": "Hallo, wie geht's?",
           "words": [
-            {"word": "Hallo", "complete": false}
+            {"word": "Hallo", "complete": false},
+            {"word": "Wie geht's", "complete": false}
           ],
           "complete": false
         },
@@ -612,8 +626,8 @@
           "phrase": "Mir geht's gut, danke!",
           "words": [
             {"word": "Mir geht's", "complete": false},
-            {"word": "Gut", "complete": false},
-            {"word": "gut, danke", "complete": false}
+            {"word": "Sehr gut", "complete": false},
+            {"word": "Danke", "complete": false}
           ],
           "complete": false
         },
@@ -628,7 +642,8 @@
         {
           "phrase": "Guten Tag!",
           "words": [
-            {"word": "Guten", "complete": false}
+            {"word": "Guten", "complete": false},
+            {"word": "Tag", "complete": false}
           ],
           "complete": false
         },
@@ -644,7 +659,7 @@
           "phrase": "Schön, dich kennenzulernen!",
           "words": [
             {"word": "Schön", "complete": false},
-            {"word": "Kennenzulernen", "complete": false}
+            {"word": "Dich kennenzulernen", "complete": false}
           ],
           "complete": false
         }
@@ -660,7 +675,7 @@
           "phrase": "Mein Name ist Hans.",
           "words": [
             {"word": "Mein Name", "complete": false},
-            {"word": "ist Hans", "complete": false}
+            {"word": "Ist Hans", "complete": false}
           ],
           "complete": false
         },
@@ -668,7 +683,7 @@
           "phrase": "Ich wohne in Berlin.",
           "words": [
             {"word": "Ich wohne", "complete": false},
-            {"word": "Berlin", "complete": false}
+            {"word": "In Berlin", "complete": false}
           ],
           "complete": false
         },
@@ -676,15 +691,15 @@
           "phrase": "Ich bin 30 Jahre alt.",
           "words": [
             {"word": "Ich bin", "complete": false},
-            {"word": "Jahre alt", "complete": false}
+            {"word": "30 Jahre alt", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Ich arbeite als Lehrer.",
           "words": [
-            {"word": "Arbeite", "complete": false},
-            {"word": "Lehrer", "complete": false}
+            {"word": "Ich arbeite", "complete": false},
+            {"word": "Als Lehrer", "complete": false}
           ],
           "complete": false
         }
@@ -700,7 +715,7 @@
           "phrase": "Wo ist das nächste Krankenhaus?",
           "words": [
             {"word": "Wo ist", "complete": false},
-            {"word": "das nächste", "complete": false},
+            {"word": "Das nächste", "complete": false},
             {"word": "Krankenhaus", "complete": false}
           ],
           "complete": false
@@ -708,7 +723,8 @@
         {
           "phrase": "Wie komme ich zum Bahnhof?",
           "words": [
-            {"word": "Bahnhof", "complete": false}
+            {"word": "Wie komme", "complete": false},
+            {"word": "Zum Bahnhof", "complete": false}
           ],
           "complete": false
         },
@@ -716,15 +732,16 @@
           "phrase": "Können Sie mir den Weg zeigen?",
           "words": [
             {"word": "Können Sie", "complete": false},
-            {"word": "Weg zeigen", "complete": false}
+            {"word": "Den Weg", "complete": false},
+            {"word": "Zeigen", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Ist es weit von hier?",
           "words": [
-            {"word": "Ist es weit", "complete": false},
-            {"word": "von hier", "complete": false}
+            {"word": "Ist es", "complete": false},
+            {"word": "Weit von hier", "complete": false}
           ],
           "complete": false
         }
@@ -740,7 +757,7 @@
           "phrase": "Kann ich die Speisekarte haben, bitte?",
           "words": [
             {"word": "Kann ich", "complete": false},
-            {"word": "Speisekarte", "complete": false},
+            {"word": "Die Speisekarte", "complete": false},
             {"word": "Bitte", "complete": false}
           ],
           "complete": false
@@ -748,8 +765,8 @@
         {
           "phrase": "Ich hätte gerne einen Kaffee.",
           "words": [
-            {"word": "Hätte gerne", "complete": false},
-            {"word": "einen Kaffee", "complete": false}
+            {"word": "Ich hätte gerne", "complete": false},
+            {"word": "Einen Kaffee", "complete": false}
           ],
           "complete": false
         }
@@ -765,7 +782,7 @@
           "phrase": "Wie viel kostet das?",
           "words": [
             {"word": "Wie viel", "complete": false},
-            {"word": "Kostet", "complete": false}
+            {"word": "Kostet das", "complete": false}
           ],
           "complete": false
         },
@@ -773,7 +790,7 @@
           "phrase": "Ich möchte das kaufen.",
           "words": [
             {"word": "Ich möchte", "complete": false},
-            {"word": "das kaufen", "complete": false}
+            {"word": "Das kaufen", "complete": false}
           ],
           "complete": false
         }
@@ -788,15 +805,16 @@
         {
           "phrase": "Wo ist das Abflugtor?",
           "words": [
-            {"word": "Abflugtor", "complete": false}
+            {"word": "Wo ist", "complete": false},
+            {"word": "Das Abflugtor", "complete": false}
           ],
           "complete": false
         },
         {
           "phrase": "Wann geht der Flug?",
           "words": [
-            {"word": "der Flug", "complete": false},
-            {"word": "Wann geht", "complete": false}
+            {"word": "Wann geht", "complete": false},
+            {"word": "Der Flug", "complete": false}
           ],
           "complete": false
         }
@@ -811,7 +829,8 @@
         {
           "phrase": "Kann ich die Weinkarte sehen?",
           "words": [
-            {"word": "Weinkarte", "complete": false},
+            {"word": "Kann ich", "complete": false},
+            {"word": "Die Weinkarte", "complete": false},
             {"word": "Sehen", "complete": false}
           ],
           "complete": false
@@ -819,7 +838,8 @@
         {
           "phrase": "Ich hätte das Steak, medium rare.",
           "words": [
-            {"word": "Steak", "complete": false},
+            {"word": "Ich hätte", "complete": false},
+            {"word": "Das Steak", "complete": false},
             {"word": "Medium rare", "complete": false}
           ],
           "complete": false
