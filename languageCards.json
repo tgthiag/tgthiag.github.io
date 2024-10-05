@@ -847,5 +847,308 @@
       ],
       "complete": false
     }
+  ],
+  "hi-IN": [
+    {
+      "id": 1,
+      "title": "नमस्ते कहें!",
+      "description": "मूल अभिवादन सीखें।",
+      "phrases": [
+        {
+          "phrase": "नमस्ते, आप कैसे हैं?",
+          "words": [
+            {"word": "नमस्ते", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं ठीक हूँ, धन्यवाद!",
+          "words": [
+            {"word": "मैं ठीक", "complete": false},
+            {"word": "धन्यवाद", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "सुप्रभात!",
+          "words": [
+            {"word": "सुप्रभात", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "शुभ अपराह्न!",
+          "words": [
+            {"word": "शुभ", "complete": false},
+            {"word": "अपराह्न", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "शुभ रात्रि!",
+          "words": [
+            {"word": "शुभ", "complete": false},
+            {"word": "रात्रि", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "आपसे मिलकर अच्छा लगा!",
+          "words": [
+            {"word": "मिलकर", "complete": false},
+            {"word": "अच्छा लगा", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "अपना परिचय दें",
+      "description": "अपने बारे में बताने का तरीका सीखें।",
+      "phrases": [
+        {
+          "phrase": "मेरा नाम राहुल है।",
+          "words": [
+            {"word": "मेरा नाम", "complete": false},
+            {"word": "राहुल", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं दिल्ली में रहता हूँ।",
+          "words": [
+            {"word": "दिल्ली में", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं 30 साल का हूँ।",
+          "words": [
+            {"word": "साल का हूँ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं शिक्षक के रूप में काम करता हूँ।",
+          "words": [
+            {"word": "शिक्षक के", "complete": false},
+            {"word": "रूप में", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "दिशा पूछें",
+      "description": "दिशा पूछने का तरीका सीखें।",
+      "phrases": [
+        {
+          "phrase": "निकटतम अस्पताल कहाँ है?",
+          "words": [
+            {"word": "निकटतम", "complete": false},
+            {"word": "अस्पताल", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं स्टेशन कैसे पहुँचूँ?",
+          "words": [
+            {"word": "कैसे पहुँचूँ", "complete": false},
+            {"word": "स्टेशन", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या आप मुझे रास्ता दिखा सकते हैं?",
+          "words": [
+            {"word": "रास्ता दिखा", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या यह यहाँ से दूर है?",
+          "words": [
+            {"word": "यह दूर", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "खाना मँगाएँ",
+      "description": "खाना मँगाने का तरीका सीखें।",
+      "phrases": [
+        {
+          "phrase": "क्या मुझे मेनू मिल सकता है?",
+          "words": [
+            {"word": "मेनू मिल", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मुझे एक कॉफी चाहिए।",
+          "words": [
+            {"word": "कॉफी चाहिए", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या मुझे एक गिलास पानी मिल सकता है?",
+          "words": [
+            {"word": "गिलास पानी", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मुझे मूँगफली से एलर्जी है।",
+          "words": [
+            {"word": "एलर्जी है", "complete": false},
+            {"word": "मूँगफली", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "खरीदारी करें",
+      "description": "खरीदारी कैसे करें, यह सीखें।",
+      "phrases": [
+        {
+          "phrase": "इसकी कीमत कितनी है?",
+          "words": [
+            {"word": "कीमत कितनी", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं यह खरीदना चाहता हूँ।",
+          "words": [
+            {"word": "खरीदना चाहता", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या आप क्रेडिट कार्ड स्वीकार करते हैं?",
+          "words": [
+            {"word": "क्रेडिट कार्ड", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या मुझे रसीद मिल सकती है?",
+          "words": [
+            {"word": "रसीद मिल", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "हवाई अड्डे पर",
+      "description": "हवाई अड्डे के लिए वाक्य सीखें।",
+      "phrases": [
+        {
+          "phrase": "प्रस्थान द्वार कहाँ है?",
+          "words": [
+            {"word": "प्रस्थान द्वार", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "फ्लाइट कब छूटेगी?",
+          "words": [
+            {"word": "फ्लाइट छूटेगी", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मुझे अपना सामान चेक-इन करना है।",
+          "words": [
+            {"word": "सामान चेक-इन", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या मुझे खिड़की वाली सीट मिल सकती है?",
+          "words": [
+            {"word": "खिड़की वाली", "complete": false},
+            {"word": "सीट मिल", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या फ्लाइट में देरी है?",
+          "words": [
+            {"word": "फ्लाइट में", "complete": false},
+            {"word": "देरी है", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "रेस्तरां में",
+      "description": "रेस्तरां के लिए सामान्य वाक्य सीखें।",
+      "phrases": [
+        {
+          "phrase": "क्या मुझे वाइन सूची देख सकते हैं?",
+          "words": [
+            {"word": "वाइन सूची", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मैं स्टीक लेना चाहूँगा, मध्यम पकाया हुआ।",
+          "words": [
+            {"word": "स्टीक लेना", "complete": false},
+            {"word": "मध्यम पकाया", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या हम बिल ले सकते हैं?",
+          "words": [
+            {"word": "हम बिल", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या आपके पास शाकाहारी विकल्प हैं?",
+          "words": [
+            {"word": "शाकाहारी विकल्प", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "आप मेनू से क्या अनुशंसा करेंगे?",
+          "words": [
+            {"word": "मेनू से", "complete": false},
+            {"word": "अनुशंसा करेंगे", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "क्या आज का कोई विशेष है?",
+          "words": [
+            {"word": "विशेष", "complete": false},
+            {"word": "आज का", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
