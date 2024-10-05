@@ -1150,5 +1150,322 @@
       ],
       "complete": false
     }
+  ],
+  "es-ES": [
+    {
+      "id": 1,
+      "title": "¡Di Hola!",
+      "description": "Aprende saludos básicos.",
+      "phrases": [
+        {
+          "phrase": "Hola, ¿cómo estás?",
+          "words": [
+            {"word": "Hola", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Estoy bien, gracias.",
+          "words": [
+            {"word": "Estoy bien", "complete": false},
+            {"word": "Gracias", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¡Buenos días!",
+          "words": [
+            {"word": "Buenos días", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¡Buenas tardes!",
+          "words": [
+            {"word": "Buenas tardes", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¡Buenas noches!",
+          "words": [
+            {"word": "Buenas noches", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Encantado de conocerte.",
+          "words": [
+            {"word": "Encantado de", "complete": false},
+            {"word": "Conocerte", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Preséntate",
+      "description": "Aprende cómo presentarte.",
+      "phrases": [
+        {
+          "phrase": "Me llamo Juan.",
+          "words": [
+            {"word": "Me llamo", "complete": false},
+            {"word": "Juan", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Vivo en Madrid.",
+          "words": [
+            {"word": "Vivo en", "complete": false},
+            {"word": "Madrid", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Tengo 30 años.",
+          "words": [
+            {"word": "Tengo 30", "complete": false},
+            {"word": "Años", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Trabajo como profesor.",
+          "words": [
+            {"word": "Trabajo como", "complete": false},
+            {"word": "Profesor", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Pide Direcciones",
+      "description": "Aprende cómo pedir direcciones.",
+      "phrases": [
+        {
+          "phrase": "¿Dónde está el hospital más cercano?",
+          "words": [
+            {"word": "Hospital más", "complete": false},
+            {"word": "Cercano", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Cómo llego a la estación?",
+          "words": [
+            {"word": "Llego a la", "complete": false},
+            {"word": "Estación", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Puedes mostrarme el camino?",
+          "words": [
+            {"word": "Mostrarme el", "complete": false},
+            {"word": "Camino", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Está lejos de aquí?",
+          "words": [
+            {"word": "Lejos de", "complete": false},
+            {"word": "Aquí", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Pedir Comida",
+      "description": "Aprende cómo pedir comida.",
+      "phrases": [
+        {
+          "phrase": "¿Puedo ver el menú, por favor?",
+          "words": [
+            {"word": "Ver el", "complete": false},
+            {"word": "Menú", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Quiero un café.",
+          "words": [
+            {"word": "Quiero un", "complete": false},
+            {"word": "Café", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Puedo pedir un vaso de agua?",
+          "words": [
+            {"word": "Pedir un", "complete": false},
+            {"word": "Vaso de agua", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Soy alérgico a los cacahuetes.",
+          "words": [
+            {"word": "Soy alérgico", "complete": false},
+            {"word": "Cacahuetes", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Hacer Compras",
+      "description": "Aprende cómo comprar artículos.",
+      "phrases": [
+        {
+          "phrase": "¿Cuánto cuesta esto?",
+          "words": [
+            {"word": "Cuánto cuesta", "complete": false},
+            {"word": "Esto", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Quiero comprar esto.",
+          "words": [
+            {"word": "Comprar esto", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Aceptan tarjetas de crédito?",
+          "words": [
+            {"word": "Tarjetas de", "complete": false},
+            {"word": "Crédito", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Puedo tener un recibo, por favor?",
+          "words": [
+            {"word": "Un recibo", "complete": false},
+            {"word": "Por favor", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "En el Aeropuerto",
+      "description": "Aprende frases para el aeropuerto.",
+      "phrases": [
+        {
+          "phrase": "¿Dónde está la puerta de embarque?",
+          "words": [
+            {"word": "Puerta de", "complete": false},
+            {"word": "Embarque", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿A qué hora sale el vuelo?",
+          "words": [
+            {"word": "Hora sale", "complete": false},
+            {"word": "El vuelo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Necesito facturar mi equipaje.",
+          "words": [
+            {"word": "Facturar mi", "complete": false},
+            {"word": "Equipaje", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Puedo tener un asiento junto a la ventana?",
+          "words": [
+            {"word": "Asiento junto", "complete": false},
+            {"word": "A la ventana", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿El vuelo está retrasado?",
+          "words": [
+            {"word": "Vuelo está", "complete": false},
+            {"word": "Retrasado", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "En un Restaurante",
+      "description": "Frases comunes en un restaurante.",
+      "phrases": [
+        {
+          "phrase": "¿Puedo ver la carta de vinos?",
+          "words": [
+            {"word": "Carta de", "complete": false},
+            {"word": "Vinos", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Voy a tomar el filete, a punto.",
+          "words": [
+            {"word": "Tomar el", "complete": false},
+            {"word": "Filete a punto", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Nos puede traer la cuenta, por favor?",
+          "words": [
+            {"word": "Traer la", "complete": false},
+            {"word": "Cuenta por favor", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Tiene opciones vegetarianas?",
+          "words": [
+            {"word": "Opciones", "complete": false},
+            {"word": "Vegetarianas", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Qué recomienda del menú?",
+          "words": [
+            {"word": "Recomienda del", "complete": false},
+            {"word": "Menú", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "¿Hay algún especial para hoy?",
+          "words": [
+            {"word": "Especial para", "complete": false},
+            {"word": "Hoy", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
