@@ -1467,5 +1467,646 @@
       ],
       "complete": false
     }
+  ],
+  "uk-UA": [
+    {
+      "id": 1,
+      "title": "Скажи Привіт!",
+      "description": "Вивчи базові привітання.",
+      "phrases": [
+        {
+          "phrase": "Привіт, як ти?",
+          "words": [
+            {"word": "Привіт", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "У мене все добре, дякую!",
+          "words": [
+            {"word": "У мене все", "complete": false},
+            {"word": "Добре", "complete": false},
+            {"word": "Дякую", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Доброго ранку!",
+          "words": [
+            {"word": "Доброго", "complete": false},
+            {"word": "Ранку", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Доброго дня!",
+          "words": [
+            {"word": "Доброго", "complete": false},
+            {"word": "Дня", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Доброї ночі!",
+          "words": [
+            {"word": "Доброї", "complete": false},
+            {"word": "Ночі", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Приємно познайомитися!",
+          "words": [
+            {"word": "Приємно", "complete": false},
+            {"word": "Познайомитися", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Представ себе",
+      "description": "Вивчи, як представитися.",
+      "phrases": [
+        {
+          "phrase": "Мене звуть Іван.",
+          "words": [
+            {"word": "Мене звуть", "complete": false},
+            {"word": "Іван", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я живу в Києві.",
+          "words": [
+            {"word": "Я живу в", "complete": false},
+            {"word": "Києві", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Мені 30 років.",
+          "words": [
+            {"word": "Мені", "complete": false},
+            {"word": "30 років", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я працюю вчителем.",
+          "words": [
+            {"word": "Я працюю", "complete": false},
+            {"word": "Вчителем", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Запитай Дорогу",
+      "description": "Вивчи, як запитати дорогу.",
+      "phrases": [
+        {
+          "phrase": "Де знаходиться найближча лікарня?",
+          "words": [
+            {"word": "Найближча", "complete": false},
+            {"word": "Лікарня", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Як дістатися до станції?",
+          "words": [
+            {"word": "Дістатися до", "complete": false},
+            {"word": "Станції", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи можете показати мені шлях?",
+          "words": [
+            {"word": "Показати мені", "complete": false},
+            {"word": "Шлях", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Це далеко звідси?",
+          "words": [
+            {"word": "Далеко звідси", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Замовлення Їжі",
+      "description": "Вивчи, як замовляти їжу.",
+      "phrases": [
+        {
+          "phrase": "Чи можна мені меню, будь ласка?",
+          "words": [
+            {"word": "Можна мені", "complete": false},
+            {"word": "Меню", "complete": false},
+            {"word": "Будь ласка", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я хотів би каву.",
+          "words": [
+            {"word": "Хотів би", "complete": false},
+            {"word": "Каву", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи можу я отримати склянку води?",
+          "words": [
+            {"word": "Отримати", "complete": false},
+            {"word": "Склянку води", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "У мене алергія на арахіс.",
+          "words": [
+            {"word": "Алергія на", "complete": false},
+            {"word": "Арахіс", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Здійснення Покупок",
+      "description": "Вивчи, як купувати товари.",
+      "phrases": [
+        {
+          "phrase": "Скільки це коштує?",
+          "words": [
+            {"word": "Скільки це", "complete": false},
+            {"word": "Коштує", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я хотів би купити це.",
+          "words": [
+            {"word": "Купити це", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи приймаєте ви кредитні картки?",
+          "words": [
+            {"word": "Кредитні", "complete": false},
+            {"word": "Картки", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи можна отримати чек, будь ласка?",
+          "words": [
+            {"word": "Отримати чек", "complete": false},
+            {"word": "Будь ласка", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "В Аеропорту",
+      "description": "Вивчи фрази для аеропорту.",
+      "phrases": [
+        {
+          "phrase": "Де знаходиться вихід на посадку?",
+          "words": [
+            {"word": "Вихід на", "complete": false},
+            {"word": "Посадку", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "О котрій годині відправляється рейс?",
+          "words": [
+            {"word": "Годині відправляється", "complete": false},
+            {"word": "Рейс", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Мені потрібно зареєструвати багаж.",
+          "words": [
+            {"word": "Зареєструвати", "complete": false},
+            {"word": "Багаж", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи можу я отримати місце біля вікна?",
+          "words": [
+            {"word": "Місце біля", "complete": false},
+            {"word": "Вікна", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи затримано рейс?",
+          "words": [
+            {"word": "Затримано", "complete": false},
+            {"word": "Рейс", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "У Ресторані",
+      "description": "Фрази для ресторану.",
+      "phrases": [
+        {
+          "phrase": "Чи можна побачити винну карту?",
+          "words": [
+            {"word": "Винну", "complete": false},
+            {"word": "Карту", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я буду стейк, середньої прожарки.",
+          "words": [
+            {"word": "Буду стейк", "complete": false},
+            {"word": "Середньої прожарки", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи можна рахунок, будь ласка?",
+          "words": [
+            {"word": "Рахунок", "complete": false},
+            {"word": "Будь ласка", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи є у вас вегетаріанські страви?",
+          "words": [
+            {"word": "Вегетаріанські", "complete": false},
+            {"word": "Страви", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Що б ви порекомендували з меню?",
+          "words": [
+            {"word": "Порекомендували з", "complete": false},
+            {"word": "Меню", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Чи є сьогодні якась спеціальна пропозиція?",
+          "words": [
+            {"word": "Спеціальна", "complete": false},
+            {"word": "Пропозиція", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "ru-RU": [
+    {
+      "id": 1,
+      "title": "Поздоровайся!",
+      "description": "Изучите основные приветствия.",
+      "phrases": [
+        {
+          "phrase": "Привет, как дела?",
+          "words": [
+            {"word": "Привет", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я в порядке, спасибо!",
+          "words": [
+            {"word": "Я в порядке", "complete": false},
+            {"word": "Спасибо", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Доброе утро!",
+          "words": [
+            {"word": "Доброе", "complete": false},
+            {"word": "Утро", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Добрый день!",
+          "words": [
+            {"word": "Добрый", "complete": false},
+            {"word": "День", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Доброй ночи!",
+          "words": [
+            {"word": "Доброй", "complete": false},
+            {"word": "Ночи", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Приятно познакомиться!",
+          "words": [
+            {"word": "Приятно", "complete": false},
+            {"word": "Познакомиться", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Представьтесь",
+      "description": "Изучите, как представиться.",
+      "phrases": [
+        {
+          "phrase": "Меня зовут Иван.",
+          "words": [
+            {"word": "Меня зовут", "complete": false},
+            {"word": "Иван", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я живу в Москве.",
+          "words": [
+            {"word": "Я живу в", "complete": false},
+            {"word": "Москве", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Мне 30 лет.",
+          "words": [
+            {"word": "Мне", "complete": false},
+            {"word": "30 лет", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я работаю учителем.",
+          "words": [
+            {"word": "Я работаю", "complete": false},
+            {"word": "Учителем", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Спросите дорогу",
+      "description": "Научитесь спрашивать дорогу.",
+      "phrases": [
+        {
+          "phrase": "Где находится ближайшая больница?",
+          "words": [
+            {"word": "Ближайшая", "complete": false},
+            {"word": "Больница", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Как добраться до станции?",
+          "words": [
+            {"word": "Добраться до", "complete": false},
+            {"word": "Станции", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Можете показать мне путь?",
+          "words": [
+            {"word": "Показать мне", "complete": false},
+            {"word": "Путь", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Это далеко отсюда?",
+          "words": [
+            {"word": "Далеко", "complete": false},
+            {"word": "Отсюда", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Заказ еды",
+      "description": "Научитесь заказывать еду.",
+      "phrases": [
+        {
+          "phrase": "Можно мне меню, пожалуйста?",
+          "words": [
+            {"word": "Можно мне", "complete": false},
+            {"word": "Меню", "complete": false},
+            {"word": "Пожалуйста", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я хочу кофе.",
+          "words": [
+            {"word": "Я хочу", "complete": false},
+            {"word": "Кофе", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Можно мне стакан воды?",
+          "words": [
+            {"word": "Стакан воды", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "У меня аллергия на орехи.",
+          "words": [
+            {"word": "Аллергия на", "complete": false},
+            {"word": "Орехи", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Совершение покупки",
+      "description": "Научитесь делать покупки.",
+      "phrases": [
+        {
+          "phrase": "Сколько это стоит?",
+          "words": [
+            {"word": "Сколько это", "complete": false},
+            {"word": "Стоит", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я хочу купить это.",
+          "words": [
+            {"word": "Купить это", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Вы принимаете кредитные карты?",
+          "words": [
+            {"word": "Кредитные", "complete": false},
+            {"word": "Карты", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Можно мне чек, пожалуйста?",
+          "words": [
+            {"word": "Чек", "complete": false},
+            {"word": "Пожалуйста", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "В аэропорту",
+      "description": "Изучите фразы для аэропорта.",
+      "phrases": [
+        {
+          "phrase": "Где находится выход на посадку?",
+          "words": [
+            {"word": "Выход на", "complete": false},
+            {"word": "Посадку", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Во сколько вылетает рейс?",
+          "words": [
+            {"word": "Во сколько", "complete": false},
+            {"word": "Рейс", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Мне нужно сдать багаж.",
+          "words": [
+            {"word": "Сдать", "complete": false},
+            {"word": "Багаж", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Можно мне место у окна, пожалуйста?",
+          "words": [
+            {"word": "Место у", "complete": false},
+            {"word": "Окна", "complete": false},
+            {"word": "Пожалуйста", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Рейс задержан?",
+          "words": [
+            {"word": "Рейс", "complete": false},
+            {"word": "Задержан", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "В ресторане",
+      "description": "Изучите фразы для ресторана.",
+      "phrases": [
+        {
+          "phrase": "Можно посмотреть винную карту?",
+          "words": [
+            {"word": "Винную карту", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Я буду стейк средней прожарки.",
+          "words": [
+            {"word": "Буду стейк", "complete": false},
+            {"word": "Средней прожарки", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Можно счёт, пожалуйста?",
+          "words": [
+            {"word": "Счёт", "complete": false},
+            {"word": "Пожалуйста", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "У вас есть вегетарианские блюда?",
+          "words": [
+            {"word": "Вегетарианские", "complete": false},
+            {"word": "Блюда", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Что бы вы порекомендовали из меню?",
+          "words": [
+            {"word": "Порекомендовали из", "complete": false},
+            {"word": "Меню", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Есть ли специальное предложение на сегодня?",
+          "words": [
+            {"word": "Специальное предложение", "complete": false},
+            {"word": "На сегодня", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
