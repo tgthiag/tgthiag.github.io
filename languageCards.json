@@ -3997,5 +3997,973 @@
       ],
       "complete": false
     }
+  ],
+  "nl-NL": [
+    {
+      "id": 1,
+      "title": "Zeg Hallo!",
+      "description": "Leer basisbegroetingen.",
+      "phrases": [
+        {
+          "phrase": "Hallo, hoe gaat het?",
+          "words": [
+            {"word": "Hallo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Het gaat goed, bedankt!",
+          "words": [
+            {"word": "Het gaat goed", "complete": false},
+            {"word": "Bedankt", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Goedemorgen!",
+          "words": [
+            {"word": "Goedemorgen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Goedemiddag!",
+          "words": [
+            {"word": "Goedemiddag", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Goedenacht!",
+          "words": [
+            {"word": "Goedenacht", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Leuk je te ontmoeten!",
+          "words": [
+            {"word": "Leuk je te", "complete": false},
+            {"word": "Ontmoeten", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Stel jezelf voor",
+      "description": "Leer hoe je jezelf kunt voorstellen.",
+      "phrases": [
+        {
+          "phrase": "Mijn naam is Jan.",
+          "words": [
+            {"word": "Mijn naam", "complete": false},
+            {"word": "Jan", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik woon in Amsterdam.",
+          "words": [
+            {"word": "Ik woon in", "complete": false},
+            {"word": "Amsterdam", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik ben 30 jaar oud.",
+          "words": [
+            {"word": "Ik ben", "complete": false},
+            {"word": "30 jaar oud", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik werk als leraar.",
+          "words": [
+            {"word": "Ik werk als", "complete": false},
+            {"word": "Leraar", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Vraag om de weg",
+      "description": "Leer hoe je om de weg kunt vragen.",
+      "phrases": [
+        {
+          "phrase": "Waar is het dichtstbijzijnde ziekenhuis?",
+          "words": [
+            {"word": "Waar is", "complete": false},
+            {"word": "Dichtstbijzijnde", "complete": false},
+            {"word": "Ziekenhuis", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hoe kom ik bij het station?",
+          "words": [
+            {"word": "Hoe kom ik", "complete": false},
+            {"word": "Bij het station", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kun je me de weg wijzen?",
+          "words": [
+            {"word": "De weg", "complete": false},
+            {"word": "Wijzen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Is het ver van hier?",
+          "words": [
+            {"word": "Ver van", "complete": false},
+            {"word": "Hier", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Eten bestellen",
+      "description": "Leer hoe je eten kunt bestellen.",
+      "phrases": [
+        {
+          "phrase": "Kan ik de menukaart krijgen, alstublieft?",
+          "words": [
+            {"word": "De menukaart", "complete": false},
+            {"word": "Krijgen", "complete": false},
+            {"word": "Alstublieft", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik wil graag een koffie.",
+          "words": [
+            {"word": "Wil graag", "complete": false},
+            {"word": "Een koffie", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan ik een glas water krijgen?",
+          "words": [
+            {"word": "Glas water", "complete": false},
+            {"word": "Krijgen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik ben allergisch voor pinda's.",
+          "words": [
+            {"word": "Allergisch voor", "complete": false},
+            {"word": "Pinda's", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Een aankoop doen",
+      "description": "Leer hoe je items kunt kopen.",
+      "phrases": [
+        {
+          "phrase": "Hoeveel kost dit?",
+          "words": [
+            {"word": "Hoeveel kost", "complete": false},
+            {"word": "Dit", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik wil dit kopen.",
+          "words": [
+            {"word": "Wil dit", "complete": false},
+            {"word": "Kopen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Accepteert u creditcards?",
+          "words": [
+            {"word": "Accepteert", "complete": false},
+            {"word": "Creditcards", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan ik een bon krijgen, alstublieft?",
+          "words": [
+            {"word": "Een bon", "complete": false},
+            {"word": "Krijgen", "complete": false},
+            {"word": "Alstublieft", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Op het vliegveld",
+      "description": "Leer zinnen voor op het vliegveld.",
+      "phrases": [
+        {
+          "phrase": "Waar is de vertrekhal?",
+          "words": [
+            {"word": "Waar is", "complete": false},
+            {"word": "Vertrekhal", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hoe laat vertrekt de vlucht?",
+          "words": [
+            {"word": "Hoe laat", "complete": false},
+            {"word": "Vertrekt de vlucht", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik moet mijn bagage inchecken.",
+          "words": [
+            {"word": "Mijn bagage", "complete": false},
+            {"word": "Inchecken", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan ik een stoel bij het raam krijgen, alstublieft?",
+          "words": [
+            {"word": "Stoel bij het raam", "complete": false},
+            {"word": "Krijgen", "complete": false},
+            {"word": "Alstublieft", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Is de vlucht vertraagd?",
+          "words": [
+            {"word": "Vlucht", "complete": false},
+            {"word": "Vertraagd", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "In een restaurant",
+      "description": "Leer veelvoorkomende zinnen voor in een restaurant.",
+      "phrases": [
+        {
+          "phrase": "Kan ik de wijnkaart zien?",
+          "words": [
+            {"word": "Wijnkaart", "complete": false},
+            {"word": "Zien", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ik neem de biefstuk, medium gaar.",
+          "words": [
+            {"word": "Neem de", "complete": false},
+            {"word": "Biefstuk", "complete": false},
+            {"word": "Medium gaar", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kunnen we de rekening krijgen, alstublieft?",
+          "words": [
+            {"word": "Rekening", "complete": false},
+            {"word": "Krijgen", "complete": false},
+            {"word": "Alstublieft", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hebt u vegetarische opties?",
+          "words": [
+            {"word": "Vegetarische", "complete": false},
+            {"word": "Opties", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Wat raad je aan van het menu?",
+          "words": [
+            {"word": "Raad je aan", "complete": false},
+            {"word": "Van het menu", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Is er een specialiteit voor vandaag?",
+          "words": [
+            {"word": "Specialiteit", "complete": false},
+            {"word": "Voor vandaag", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "sv-SE": [
+    {
+      "id": 1,
+      "title": "Säg Hej!",
+      "description": "Lär dig grundläggande hälsningar.",
+      "phrases": [
+        {
+          "phrase": "Hej, hur mår du?",
+          "words": [
+            {"word": "Hur mår du", "complete": false},
+            {"word": "Hej där", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag mår bra, tack!",
+          "words": [
+            {"word": "Mår toppen", "complete": false},
+            {"word": "Tack så mycket", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "God morgon!",
+          "words": [
+            {"word": "God morgon", "complete": false},
+            {"word": "Ha en god", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "God eftermiddag!",
+          "words": [
+            {"word": "God eftermiddag", "complete": false},
+            {"word": "Ha en trevlig", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "God natt!",
+          "words": [
+            {"word": "God natt", "complete": false},
+            {"word": "Ha en god", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Trevligt att träffas!",
+          "words": [
+            {"word": "Trevligt att", "complete": false},
+            {"word": "Träffa dig", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Presentera dig själv",
+      "description": "Lär dig att presentera dig själv.",
+      "phrases": [
+        {
+          "phrase": "Mitt namn är Johan.",
+          "words": [
+            {"word": "Mitt namn", "complete": false},
+            {"word": "Är Johan", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag bor i Stockholm.",
+          "words": [
+            {"word": "Bor i", "complete": false},
+            {"word": "Stockholm", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag är 30 år gammal.",
+          "words": [
+            {"word": "30 år gammal", "complete": false},
+            {"word": "Jag är", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag arbetar som lärare.",
+          "words": [
+            {"word": "Arbetar som", "complete": false},
+            {"word": "Lärare", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Fråga om vägen",
+      "description": "Lär dig att fråga om vägen.",
+      "phrases": [
+        {
+          "phrase": "Var är närmaste sjukhus?",
+          "words": [
+            {"word": "Var ligger", "complete": false},
+            {"word": "Närmaste sjukhus", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hur kommer jag till stationen?",
+          "words": [
+            {"word": "Kommer jag till", "complete": false},
+            {"word": "Stationen", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan du visa mig vägen?",
+          "words": [
+            {"word": "Visa mig vägen", "complete": false},
+            {"word": "Kan du", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Är det långt härifrån?",
+          "words": [
+            {"word": "Långt härifrån", "complete": false},
+            {"word": "Är det", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Beställa mat",
+      "description": "Lär dig att beställa mat.",
+      "phrases": [
+        {
+          "phrase": "Kan jag få menyn, tack?",
+          "words": [
+            {"word": "Få menyn", "complete": false},
+            {"word": "Tack så mycket", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag vill ha en kaffe.",
+          "words": [
+            {"word": "Vill ha", "complete": false},
+            {"word": "En kaffe", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan jag få ett glas vatten?",
+          "words": [
+            {"word": "Glas vatten", "complete": false},
+            {"word": "Kan jag få", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag är allergisk mot nötter.",
+          "words": [
+            {"word": "Allergisk mot nötter", "complete": false},
+            {"word": "Jag är", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Handla",
+      "description": "Lär dig att köpa varor.",
+      "phrases": [
+        {
+          "phrase": "Hur mycket kostar det?",
+          "words": [
+            {"word": "Kostar det", "complete": false},
+            {"word": "Hur mycket", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag vill köpa detta.",
+          "words": [
+            {"word": "Köpa detta", "complete": false},
+            {"word": "Jag vill", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Accepterar ni kreditkort?",
+          "words": [
+            {"word": "Ni accepterar", "complete": false},
+            {"word": "Kreditkort", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan jag få ett kvitto, tack?",
+          "words": [
+            {"word": "Få kvitto", "complete": false},
+            {"word": "Tack så mycket", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "På flygplatsen",
+      "description": "Lär dig fraser för flygplatsen.",
+      "phrases": [
+        {
+          "phrase": "Var är avgångsgaten?",
+          "words": [
+            {"word": "Avgångsgate", "complete": false},
+            {"word": "Var är", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "När avgår flyget?",
+          "words": [
+            {"word": "Avgår flyget", "complete": false},
+            {"word": "När", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag behöver checka in mitt bagage.",
+          "words": [
+            {"word": "Checka in bagage", "complete": false},
+            {"word": "Behöver göra det", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan jag få en fönsterplats, tack?",
+          "words": [
+            {"word": "Fönsterplats", "complete": false},
+            {"word": "Kan jag få", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Är flyget försenat?",
+          "words": [
+            {"word": "Flyget försenat", "complete": false},
+            {"word": "Är det", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "På en restaurang",
+      "description": "Lär dig vanliga fraser för en restaurang.",
+      "phrases": [
+        {
+          "phrase": "Kan jag få vinlistan?",
+          "words": [
+            {"word": "Vinlistan", "complete": false},
+            {"word": "Kan jag få", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jag tar steken, medium rare.",
+          "words": [
+            {"word": "Tar steken", "complete": false},
+            {"word": "Medium rare", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kan vi få notan, tack?",
+          "words": [
+            {"word": "Få notan", "complete": false},
+            {"word": "Tack så mycket", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Har ni några vegetariska alternativ?",
+          "words": [
+            {"word": "Vegetariska alternativ", "complete": false},
+            {"word": "Har ni", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Vad rekommenderar ni från menyn?",
+          "words": [
+            {"word": "Rekommenderar från menyn", "complete": false},
+            {"word": "Vad säger ni", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Finns det något speciellt för idag?",
+          "words": [
+            {"word": "Speciellt för idag", "complete": false},
+            {"word": "Finns det", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "el-GR": [
+    {
+      "id": 1,
+      "title": "Πες Γειά!",
+      "description": "Μάθε βασικούς χαιρετισμούς.",
+      "phrases": [
+        {
+          "phrase": "Γειά σου, πώς είσαι;",
+          "words": [
+            {"word": "Γειά σου", "complete": false},
+            {"word": "Πώς είσαι", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Είμαι καλά, ευχαριστώ!",
+          "words": [
+            {"word": "Είμαι καλά", "complete": false},
+            {"word": "Ευχαριστώ πολύ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Καλημέρα!",
+          "words": [
+            {"word": "Καλημέρα", "complete": false},
+            {"word": "Καλή ημέρα", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Καλησπέρα!",
+          "words": [
+            {"word": "Καλησπέρα", "complete": false},
+            {"word": "Καλή απόγευμα", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Καληνύχτα!",
+          "words": [
+            {"word": "Καληνύχτα", "complete": false},
+            {"word": "Καλή νύχτα", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Χάρηκα που σε γνώρισα!",
+          "words": [
+            {"word": "Χάρηκα", "complete": false},
+            {"word": "Σε γνώρισα", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Συστήσου",
+      "description": "Μάθε πώς να συστήνεσαι.",
+      "phrases": [
+        {
+          "phrase": "Το όνομά μου είναι Γιώργος.",
+          "words": [
+            {"word": "Το όνομά μου", "complete": false},
+            {"word": "Είναι Γιώργος", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μένω στην Αθήνα.",
+          "words": [
+            {"word": "Μένω στην", "complete": false},
+            {"word": "Αθήνα", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Είμαι 30 χρονών.",
+          "words": [
+            {"word": "Είμαι", "complete": false},
+            {"word": "30 χρονών", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Εργάζομαι ως δάσκαλος.",
+          "words": [
+            {"word": "Εργάζομαι ως", "complete": false},
+            {"word": "Δάσκαλος", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Ρώτα για οδηγίες",
+      "description": "Μάθε πώς να ζητάς οδηγίες.",
+      "phrases": [
+        {
+          "phrase": "Πού είναι το πλησιέστερο νοσοκομείο;",
+          "words": [
+            {"word": "Πού είναι", "complete": false},
+            {"word": "Πλησιέστερο νοσοκομείο", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Πώς θα πάω στο σταθμό;",
+          "words": [
+            {"word": "Πώς θα πάω", "complete": false},
+            {"word": "Στο σταθμό", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μπορείτε να μου δείξετε το δρόμο;",
+          "words": [
+            {"word": "Δείξετε το δρόμο", "complete": false},
+            {"word": "Μπορείτε να", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Είναι μακριά από εδώ;",
+          "words": [
+            {"word": "Μακριά από", "complete": false},
+            {"word": "Εδώ", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Παραγγελία φαγητού",
+      "description": "Μάθε πώς να παραγγέλνεις φαγητό.",
+      "phrases": [
+        {
+          "phrase": "Μπορώ να δω το μενού, παρακαλώ;",
+          "words": [
+            {"word": "Δω το μενού", "complete": false},
+            {"word": "Παρακαλώ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Θα ήθελα έναν καφέ.",
+          "words": [
+            {"word": "Θα ήθελα", "complete": false},
+            {"word": "Έναν καφέ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μπορώ να έχω ένα ποτήρι νερό;",
+          "words": [
+            {"word": "Ποτήρι νερό", "complete": false},
+            {"word": "Μπορώ να έχω", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Είμαι αλλεργικός στα φιστίκια.",
+          "words": [
+            {"word": "Αλλεργικός στα", "complete": false},
+            {"word": "Φιστίκια", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Αγορές",
+      "description": "Μάθε πώς να αγοράζεις πράγματα.",
+      "phrases": [
+        {
+          "phrase": "Πόσο κοστίζει αυτό;",
+          "words": [
+            {"word": "Πόσο κοστίζει", "complete": false},
+            {"word": "Αυτό", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Θα ήθελα να αγοράσω αυτό.",
+          "words": [
+            {"word": "Να αγοράσω", "complete": false},
+            {"word": "Αυτό", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Δέχεστε πιστωτικές κάρτες;",
+          "words": [
+            {"word": "Δέχεστε", "complete": false},
+            {"word": "Πιστωτικές κάρτες", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μπορώ να έχω απόδειξη, παρακαλώ;",
+          "words": [
+            {"word": "Απόδειξη", "complete": false},
+            {"word": "Παρακαλώ", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Στο αεροδρόμιο",
+      "description": "Μάθε φράσεις για το αεροδρόμιο.",
+      "phrases": [
+        {
+          "phrase": "Πού είναι η πύλη αναχώρησης;",
+          "words": [
+            {"word": "Πύλη αναχώρησης", "complete": false},
+            {"word": "Πού είναι", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Τι ώρα φεύγει η πτήση;",
+          "words": [
+            {"word": "Φεύγει η πτήση", "complete": false},
+            {"word": "Τι ώρα", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Χρειάζομαι να κάνω check-in τις αποσκευές μου.",
+          "words": [
+            {"word": "Check-in αποσκευές", "complete": false},
+            {"word": "Χρειάζομαι να", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μπορώ να έχω θέση στο παράθυρο, παρακαλώ;",
+          "words": [
+            {"word": "Θέση στο παράθυρο", "complete": false},
+            {"word": "Παρακαλώ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Η πτήση έχει καθυστέρηση;",
+          "words": [
+            {"word": "Πτήση", "complete": false},
+            {"word": "Καθυστέρηση", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Στο εστιατόριο",
+      "description": "Μάθε συνήθεις φράσεις για το εστιατόριο.",
+      "phrases": [
+        {
+          "phrase": "Μπορώ να δω τη λίστα κρασιών;",
+          "words": [
+            {"word": "Λίστα κρασιών", "complete": false},
+            {"word": "Μπορώ να δω", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Θα πάρω τη μπριζόλα, μέτρια ψημένη.",
+          "words": [
+            {"word": "Μπριζόλα", "complete": false},
+            {"word": "Μέτρια ψημένη", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Μπορούμε να έχουμε το λογαριασμό, παρακαλώ;",
+          "words": [
+            {"word": "Λογαριασμό", "complete": false},
+            {"word": "Παρακαλώ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Έχετε χορτοφαγικές επιλογές;",
+          "words": [
+            {"word": "Χορτοφαγικές επιλογές", "complete": false},
+            {"word": "Έχετε", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Τι θα προτείνατε από το μενού;",
+          "words": [
+            {"word": "Προτείνατε από το μενού", "complete": false},
+            {"word": "Τι", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Υπάρχει κάτι ειδικό για σήμερα;",
+          "words": [
+            {"word": "Κάτι ειδικό", "complete": false},
+            {"word": "Για σήμερα", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
