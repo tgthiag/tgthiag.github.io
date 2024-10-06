@@ -2108,5 +2108,1894 @@
       ],
       "complete": false
     }
+  ],
+  "zh-CN": [
+    {
+      "id": 1,
+      "title": "打招呼！",
+      "description": "学习基本问候语。",
+      "phrases": [
+        {
+          "phrase": "你好，你好吗？",
+          "words": [
+            {"word": "你好", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我很好，谢谢！",
+          "words": [
+            {"word": "我很好", "complete": false},
+            {"word": "谢谢", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "早上好！",
+          "words": [
+            {"word": "早上好", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "下午好！",
+          "words": [
+            {"word": "下午好", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "晚安！",
+          "words": [
+            {"word": "晚安", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "很高兴认识你！",
+          "words": [
+            {"word": "很高兴", "complete": false},
+            {"word": "认识你", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "自我介绍",
+      "description": "学习如何介绍自己。",
+      "phrases": [
+        {
+          "phrase": "我叫李明。",
+          "words": [
+            {"word": "我叫", "complete": false},
+            {"word": "李明", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我住在北京。",
+          "words": [
+            {"word": "我住在", "complete": false},
+            {"word": "北京", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我三十岁。",
+          "words": [
+            {"word": "我三十岁", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我是一名老师。",
+          "words": [
+            {"word": "我是一名", "complete": false},
+            {"word": "老师", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "问路",
+      "description": "学习如何问路。",
+      "phrases": [
+        {
+          "phrase": "最近的医院在哪里？",
+          "words": [
+            {"word": "最近的", "complete": false},
+            {"word": "医院", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我怎么去火车站？",
+          "words": [
+            {"word": "怎么去", "complete": false},
+            {"word": "火车站", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你能告诉我怎么走吗？",
+          "words": [
+            {"word": "告诉我", "complete": false},
+            {"word": "怎么走", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "离这里远吗？",
+          "words": [
+            {"word": "离这里", "complete": false},
+            {"word": "远吗", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "点餐",
+      "description": "学习如何点餐。",
+      "phrases": [
+        {
+          "phrase": "可以给我菜单吗？",
+          "words": [
+            {"word": "给我菜单", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我想要一杯咖啡。",
+          "words": [
+            {"word": "想要一杯", "complete": false},
+            {"word": "咖啡", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "可以给我一杯水吗？",
+          "words": [
+            {"word": "一杯水", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我对花生过敏。",
+          "words": [
+            {"word": "对花生", "complete": false},
+            {"word": "过敏", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "购物",
+      "description": "学习如何购物。",
+      "phrases": [
+        {
+          "phrase": "这个多少钱？",
+          "words": [
+            {"word": "多少钱", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我想买这个。",
+          "words": [
+            {"word": "想买", "complete": false},
+            {"word": "这个", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你们接受信用卡吗？",
+          "words": [
+            {"word": "接受", "complete": false},
+            {"word": "信用卡", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "可以给我发票吗？",
+          "words": [
+            {"word": "给我", "complete": false},
+            {"word": "发票", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "在机场",
+      "description": "学习在机场常用的句子。",
+      "phrases": [
+        {
+          "phrase": "登机口在哪里？",
+          "words": [
+            {"word": "登机口", "complete": false},
+            {"word": "在哪里", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "航班几点出发？",
+          "words": [
+            {"word": "航班", "complete": false},
+            {"word": "几点出发", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我需要托运行李。",
+          "words": [
+            {"word": "需要托运", "complete": false},
+            {"word": "行李", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我可以坐靠窗的位置吗？",
+          "words": [
+            {"word": "靠窗的位置", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "航班延误了吗？",
+          "words": [
+            {"word": "航班延误", "complete": false},
+            {"word": "了吗", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "在餐厅",
+      "description": "学习在餐厅常用的句子。",
+      "phrases": [
+        {
+          "phrase": "可以给我酒单吗？",
+          "words": [
+            {"word": "给我酒单", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我要一份五分熟的牛排。",
+          "words": [
+            {"word": "五分熟", "complete": false},
+            {"word": "牛排", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我们可以要账单吗？",
+          "words": [
+            {"word": "要账单", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你们有素食选项吗？",
+          "words": [
+            {"word": "素食选项", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你推荐什么菜？",
+          "words": [
+            {"word": "推荐什么", "complete": false},
+            {"word": "菜", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "今天有特价吗？",
+          "words": [
+            {"word": "有特价", "complete": false},
+            {"word": "今天", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "zh-TW": [
+    {
+      "id": 1,
+      "title": "打招呼！",
+      "description": "學習基本問候語。",
+      "phrases": [
+        {
+          "phrase": "你好，你好嗎？",
+          "words": [
+            {"word": "你好", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我很好，謝謝！",
+          "words": [
+            {"word": "我很好", "complete": false},
+            {"word": "謝謝", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "早安！",
+          "words": [
+            {"word": "早安", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "午安！",
+          "words": [
+            {"word": "午安", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "晚安！",
+          "words": [
+            {"word": "晚安", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "很高興認識你！",
+          "words": [
+            {"word": "很高興", "complete": false},
+            {"word": "認識你", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "自我介紹",
+      "description": "學習如何介紹自己。",
+      "phrases": [
+        {
+          "phrase": "我叫李明。",
+          "words": [
+            {"word": "我叫", "complete": false},
+            {"word": "李明", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我住在台北。",
+          "words": [
+            {"word": "我住在", "complete": false},
+            {"word": "台北", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我三十歲。",
+          "words": [
+            {"word": "我三十歲", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我是一名老師。",
+          "words": [
+            {"word": "我是一名", "complete": false},
+            {"word": "老師", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "問路",
+      "description": "學習如何問路。",
+      "phrases": [
+        {
+          "phrase": "最近的醫院在哪裡？",
+          "words": [
+            {"word": "最近的", "complete": false},
+            {"word": "醫院", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我怎麼去火車站？",
+          "words": [
+            {"word": "怎麼去", "complete": false},
+            {"word": "火車站", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你能告訴我怎麼走嗎？",
+          "words": [
+            {"word": "告訴我", "complete": false},
+            {"word": "怎麼走", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "離這裡遠嗎？",
+          "words": [
+            {"word": "離這裡", "complete": false},
+            {"word": "遠嗎", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "點餐",
+      "description": "學習如何點餐。",
+      "phrases": [
+        {
+          "phrase": "可以給我菜單嗎？",
+          "words": [
+            {"word": "給我菜單", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我想要一杯咖啡。",
+          "words": [
+            {"word": "想要一杯", "complete": false},
+            {"word": "咖啡", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "可以給我一杯水嗎？",
+          "words": [
+            {"word": "一杯水", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我對花生過敏。",
+          "words": [
+            {"word": "對花生", "complete": false},
+            {"word": "過敏", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "購物",
+      "description": "學習如何購物。",
+      "phrases": [
+        {
+          "phrase": "這個多少錢？",
+          "words": [
+            {"word": "多少錢", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我想買這個。",
+          "words": [
+            {"word": "想買", "complete": false},
+            {"word": "這個", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你們接受信用卡嗎？",
+          "words": [
+            {"word": "接受", "complete": false},
+            {"word": "信用卡", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "可以給我發票嗎？",
+          "words": [
+            {"word": "給我", "complete": false},
+            {"word": "發票", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "在機場",
+      "description": "學習在機場常用的句子。",
+      "phrases": [
+        {
+          "phrase": "登機口在哪裡？",
+          "words": [
+            {"word": "登機口", "complete": false},
+            {"word": "在哪裡", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "航班幾點出發？",
+          "words": [
+            {"word": "航班", "complete": false},
+            {"word": "幾點出發", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我需要托運行李。",
+          "words": [
+            {"word": "需要托運", "complete": false},
+            {"word": "行李", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我可以坐靠窗的位置嗎？",
+          "words": [
+            {"word": "靠窗的位置", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "航班延誤了嗎？",
+          "words": [
+            {"word": "航班延誤", "complete": false},
+            {"word": "了嗎", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "在餐廳",
+      "description": "學習在餐廳常用的句子。",
+      "phrases": [
+        {
+          "phrase": "可以給我酒單嗎？",
+          "words": [
+            {"word": "給我酒單", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我要一份五分熟的牛排。",
+          "words": [
+            {"word": "五分熟", "complete": false},
+            {"word": "牛排", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "我們可以要帳單嗎？",
+          "words": [
+            {"word": "要帳單", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你們有素食選項嗎？",
+          "words": [
+            {"word": "素食選項", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "你推薦什麼菜？",
+          "words": [
+            {"word": "推薦什麼", "complete": false},
+            {"word": "菜", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "今天有特價嗎？",
+          "words": [
+            {"word": "有特價", "complete": false},
+            {"word": "今天", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "ja-JP": [
+    {
+      "id": 1,
+      "title": "挨拶をしましょう！",
+      "description": "基本的な挨拶を学びましょう。",
+      "phrases": [
+        {
+          "phrase": "こんにちは、お元気ですか？",
+          "words": [
+            {"word": "こんにちは", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "私は元気です、ありがとう！",
+          "words": [
+            {"word": "私は元気です", "complete": false},
+            {"word": "ありがとう", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "おはようございます！",
+          "words": [
+            {"word": "おはようございます", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "こんにちは！",
+          "words": [
+            {"word": "こんにちは", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "こんばんは！",
+          "words": [
+            {"word": "こんばんは", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "はじめまして！",
+          "words": [
+            {"word": "はじめまして", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "自己紹介をしましょう",
+      "description": "自己紹介の仕方を学びましょう。",
+      "phrases": [
+        {
+          "phrase": "私の名前は太郎です。",
+          "words": [
+            {"word": "私の名前は", "complete": false},
+            {"word": "太郎", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "私は東京に住んでいます。",
+          "words": [
+            {"word": "私は東京に", "complete": false},
+            {"word": "住んでいます", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "私は30歳です。",
+          "words": [
+            {"word": "私は30歳です", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "私は教師です。",
+          "words": [
+            {"word": "私は", "complete": false},
+            {"word": "教師です", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "道を尋ねる",
+      "description": "道の尋ね方を学びましょう。",
+      "phrases": [
+        {
+          "phrase": "一番近い病院はどこですか？",
+          "words": [
+            {"word": "一番近い", "complete": false},
+            {"word": "病院", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "駅にはどうやって行きますか？",
+          "words": [
+            {"word": "どうやって", "complete": false},
+            {"word": "駅に行きますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "道を教えてもらえますか？",
+          "words": [
+            {"word": "道を教えて", "complete": false},
+            {"word": "もらえますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "ここから遠いですか？",
+          "words": [
+            {"word": "ここから", "complete": false},
+            {"word": "遠いですか", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "食べ物を注文する",
+      "description": "食べ物の注文の仕方を学びましょう。",
+      "phrases": [
+        {
+          "phrase": "メニューを見せていただけますか？",
+          "words": [
+            {"word": "メニューを", "complete": false},
+            {"word": "見せていただけますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "コーヒーを一杯ください。",
+          "words": [
+            {"word": "コーヒーを", "complete": false},
+            {"word": "一杯ください", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "お水を一杯もらえますか？",
+          "words": [
+            {"word": "お水を", "complete": false},
+            {"word": "一杯もらえますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "私はピーナッツアレルギーです。",
+          "words": [
+            {"word": "ピーナッツ", "complete": false},
+            {"word": "アレルギーです", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "買い物をする",
+      "description": "物を買う方法を学びましょう。",
+      "phrases": [
+        {
+          "phrase": "これはいくらですか？",
+          "words": [
+            {"word": "いくらですか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "これを買いたいです。",
+          "words": [
+            {"word": "これを", "complete": false},
+            {"word": "買いたいです", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "クレジットカードは使えますか？",
+          "words": [
+            {"word": "クレジットカード", "complete": false},
+            {"word": "使えますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "領収書をいただけますか？",
+          "words": [
+            {"word": "領収書を", "complete": false},
+            {"word": "いただけますか", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "空港で",
+      "description": "空港で使うフレーズを学びましょう。",
+      "phrases": [
+        {
+          "phrase": "出発ゲートはどこですか？",
+          "words": [
+            {"word": "出発ゲート", "complete": false},
+            {"word": "どこですか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "フライトは何時に出発しますか？",
+          "words": [
+            {"word": "フライト", "complete": false},
+            {"word": "何時に出発しますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "荷物をチェックインしたいです。",
+          "words": [
+            {"word": "荷物を", "complete": false},
+            {"word": "チェックイン", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "窓側の席に座れますか？",
+          "words": [
+            {"word": "窓側の", "complete": false},
+            {"word": "席に座れますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "フライトは遅れていますか？",
+          "words": [
+            {"word": "フライトは", "complete": false},
+            {"word": "遅れていますか", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "レストランで",
+      "description": "レストランで使う一般的なフレーズを学びましょう。",
+      "phrases": [
+        {
+          "phrase": "ワインリストを見せていただけますか？",
+          "words": [
+            {"word": "ワインリストを", "complete": false},
+            {"word": "見せていただけますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "ステーキをミディアムレアでお願いします。",
+          "words": [
+            {"word": "ステーキを", "complete": false},
+            {"word": "ミディアムレア", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "お会計をお願いします。",
+          "words": [
+            {"word": "お会計を", "complete": false},
+            {"word": "お願いします", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "ベジタリアンのメニューはありますか？",
+          "words": [
+            {"word": "ベジタリアンの", "complete": false},
+            {"word": "メニューはありますか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "メニューでおすすめは何ですか？",
+          "words": [
+            {"word": "おすすめは", "complete": false},
+            {"word": "何ですか", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "今日の特別料理はありますか？",
+          "words": [
+            {"word": "特別料理", "complete": false},
+            {"word": "今日", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "ur-PK": [
+    {
+      "id": 1,
+      "title": "سلام کہیں!",
+      "description": "بنیادی سلام سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "سلام، آپ کیسے ہیں؟",
+          "words": [
+            {"word": "سلام", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میں ٹھیک ہوں، شکریہ!",
+          "words": [
+            {"word": "میں ٹھیک ہوں", "complete": false},
+            {"word": "شکریہ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "صبح بخیر!",
+          "words": [
+            {"word": "صبح بخیر", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "دوپہر بخیر!",
+          "words": [
+            {"word": "دوپہر بخیر", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "شب بخیر!",
+          "words": [
+            {"word": "شب بخیر", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "آپ سے مل کر خوشی ہوئی!",
+          "words": [
+            {"word": "مل کر", "complete": false},
+            {"word": "خوشی ہوئی", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "اپنا تعارف کروائیں",
+      "description": "اپنا تعارف کروانے کا طریقہ سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "میرا نام علی ہے۔",
+          "words": [
+            {"word": "میرا نام", "complete": false},
+            {"word": "علی", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میں کراچی میں رہتا ہوں۔",
+          "words": [
+            {"word": "میں کراچی میں", "complete": false},
+            {"word": "رہتا ہوں", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میری عمر 30 سال ہے۔",
+          "words": [
+            {"word": "میری عمر", "complete": false},
+            {"word": "30 سال ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میں استاد ہوں۔",
+          "words": [
+            {"word": "میں استاد ہوں", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "راستہ پوچھیں",
+      "description": "راستہ پوچھنے کا طریقہ سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "قریبی ہسپتال کہاں ہے؟",
+          "words": [
+            {"word": "قریبی", "complete": false},
+            {"word": "ہسپتال", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میں اسٹیشن کیسے جاؤں؟",
+          "words": [
+            {"word": "کیسے جاؤں", "complete": false},
+            {"word": "اسٹیشن", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا آپ مجھے راستہ دکھا سکتے ہیں؟",
+          "words": [
+            {"word": "راستہ دکھا", "complete": false},
+            {"word": "سکتے ہیں", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا یہ یہاں سے دور ہے؟",
+          "words": [
+            {"word": "یہ دور", "complete": false},
+            {"word": "یہاں سے", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "کھانا آرڈر کریں",
+      "description": "کھانا آرڈر کرنے کا طریقہ سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "کیا مجھے مینو دکھا سکتے ہیں؟",
+          "words": [
+            {"word": "مینو دکھا", "complete": false},
+            {"word": "سکتے ہیں", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "مجھے ایک کافی چاہیے۔",
+          "words": [
+            {"word": "مجھے ایک", "complete": false},
+            {"word": "کافی چاہیے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا مجھے ایک گلاس پانی مل سکتا ہے؟",
+          "words": [
+            {"word": "گلاس پانی", "complete": false},
+            {"word": "مل سکتا ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "مجھے مونگ پھلی سے الرجی ہے۔",
+          "words": [
+            {"word": "مونگ پھلی", "complete": false},
+            {"word": "الرجی ہے", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "خریداری کریں",
+      "description": "خریداری کرنے کا طریقہ سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "یہ کتنے کا ہے؟",
+          "words": [
+            {"word": "کتنے کا ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "مجھے یہ خریدنا ہے۔",
+          "words": [
+            {"word": "یہ خریدنا ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا آپ کریڈٹ کارڈ قبول کرتے ہیں؟",
+          "words": [
+            {"word": "کریڈٹ کارڈ", "complete": false},
+            {"word": "قبول کرتے ہیں", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا مجھے رسید مل سکتی ہے؟",
+          "words": [
+            {"word": "رسید مل", "complete": false},
+            {"word": "سکتی ہے", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "ائرپورٹ پر",
+      "description": "ائرپورٹ کے لیے فقرے سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "روانگی کا گیٹ کہاں ہے؟",
+          "words": [
+            {"word": "روانگی کا", "complete": false},
+            {"word": "گیٹ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "پرواز کب روانہ ہوگی؟",
+          "words": [
+            {"word": "پرواز کب", "complete": false},
+            {"word": "روانہ ہوگی", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "مجھے اپنا سامان چیک ان کرنا ہے۔",
+          "words": [
+            {"word": "سامان", "complete": false},
+            {"word": "چیک ان کرنا ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا مجھے کھڑکی کے پاس کی سیٹ مل سکتی ہے؟",
+          "words": [
+            {"word": "کھڑکی کے", "complete": false},
+            {"word": "پاس کی سیٹ", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا پرواز میں تاخیر ہے؟",
+          "words": [
+            {"word": "پرواز میں", "complete": false},
+            {"word": "تاخیر ہے", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "ریستوران میں",
+      "description": "ریستوران کے عام فقرے سیکھیں۔",
+      "phrases": [
+        {
+          "phrase": "کیا مجھے وائن کی فہرست دیکھنے کو مل سکتی ہے؟",
+          "words": [
+            {"word": "وائن کی فہرست", "complete": false},
+            {"word": "دیکھنے کو", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "میں اسٹیک لوں گا، میڈیم ریئر۔",
+          "words": [
+            {"word": "اسٹیک لوں گا", "complete": false},
+            {"word": "میڈیم ریئر", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا ہمیں بل مل سکتا ہے؟",
+          "words": [
+            {"word": "ہمیں بل", "complete": false},
+            {"word": "مل سکتا ہے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا آپ کے پاس سبزی خور آپشن ہیں؟",
+          "words": [
+            {"word": "سبزی خور", "complete": false},
+            {"word": "آپشن ہیں", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "آپ مینو میں کیا سفارش کریں گے؟",
+          "words": [
+            {"word": "مینو میں", "complete": false},
+            {"word": "سفارش کریں گے", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "کیا آج کوئی خاص ڈش ہے؟",
+          "words": [
+            {"word": "خاص ڈش", "complete": false},
+            {"word": "آج", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "fr-FR": [
+    {
+      "id": 1,
+      "title": "Dites Bonjour!",
+      "description": "Apprenez les salutations de base.",
+      "phrases": [
+        {
+          "phrase": "Bonjour, comment allez-vous?",
+          "words": [
+            {"word": "Bonjour", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je vais bien, merci!",
+          "words": [
+            {"word": "Je vais bien", "complete": false},
+            {"word": "Merci", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Bon matin!",
+          "words": [
+            {"word": "Bon", "complete": false},
+            {"word": "Matin", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Bon après-midi!",
+          "words": [
+            {"word": "Bon", "complete": false},
+            {"word": "Après-midi", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Bonne nuit!",
+          "words": [
+            {"word": "Bonne", "complete": false},
+            {"word": "Nuit", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Enchanté de vous rencontrer!",
+          "words": [
+            {"word": "Enchanté", "complete": false},
+            {"word": "Rencontrer", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Présentez-vous",
+      "description": "Apprenez à vous présenter.",
+      "phrases": [
+        {
+          "phrase": "Je m'appelle Jean.",
+          "words": [
+            {"word": "Je m'appelle", "complete": false},
+            {"word": "Jean", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "J'habite à Paris.",
+          "words": [
+            {"word": "J'habite à", "complete": false},
+            {"word": "Paris", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "J'ai 30 ans.",
+          "words": [
+            {"word": "J'ai", "complete": false},
+            {"word": "30 ans", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je suis professeur.",
+          "words": [
+            {"word": "Je suis", "complete": false},
+            {"word": "Professeur", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Demander son chemin",
+      "description": "Apprenez à demander des directions.",
+      "phrases": [
+        {
+          "phrase": "Où est l'hôpital le plus proche?",
+          "words": [
+            {"word": "Où est", "complete": false},
+            {"word": "Hôpital", "complete": false},
+            {"word": "Plus proche", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Comment puis-je aller à la gare?",
+          "words": [
+            {"word": "Comment aller à", "complete": false},
+            {"word": "La gare", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Pouvez-vous me montrer le chemin?",
+          "words": [
+            {"word": "Montrer", "complete": false},
+            {"word": "Le chemin", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Est-ce loin d'ici?",
+          "words": [
+            {"word": "Loin d'ici", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Commander de la nourriture",
+      "description": "Apprenez à commander de la nourriture.",
+      "phrases": [
+        {
+          "phrase": "Puis-je avoir le menu, s'il vous plaît?",
+          "words": [
+            {"word": "Le menu", "complete": false},
+            {"word": "S'il vous plaît", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je voudrais un café.",
+          "words": [
+            {"word": "Je voudrais", "complete": false},
+            {"word": "Un café", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Puis-je avoir un verre d'eau?",
+          "words": [
+            {"word": "Verre d'eau", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je suis allergique aux cacahuètes.",
+          "words": [
+            {"word": "Allergique aux", "complete": false},
+            {"word": "Cacahuètes", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Faire des achats",
+      "description": "Apprenez à acheter des articles.",
+      "phrases": [
+        {
+          "phrase": "Combien cela coûte-t-il?",
+          "words": [
+            {"word": "Combien", "complete": false},
+            {"word": "Coûte-t-il", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je voudrais acheter cela.",
+          "words": [
+            {"word": "Acheter cela", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Acceptez-vous les cartes de crédit?",
+          "words": [
+            {"word": "Cartes de", "complete": false},
+            {"word": "Crédit", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Puis-je avoir un reçu, s'il vous plaît?",
+          "words": [
+            {"word": "Un reçu", "complete": false},
+            {"word": "S'il vous plaît", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "À l'aéroport",
+      "description": "Apprenez des phrases pour l'aéroport.",
+      "phrases": [
+        {
+          "phrase": "Où est la porte d'embarquement?",
+          "words": [
+            {"word": "Porte d'embarquement", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "À quelle heure décolle le vol?",
+          "words": [
+            {"word": "Quelle heure", "complete": false},
+            {"word": "Le vol", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je dois enregistrer mes bagages.",
+          "words": [
+            {"word": "Enregistrer", "complete": false},
+            {"word": "Mes bagages", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Puis-je avoir un siège côté fenêtre, s'il vous plaît?",
+          "words": [
+            {"word": "Siège côté", "complete": false},
+            {"word": "Fenêtre", "complete": false},
+            {"word": "S'il vous plaît", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Le vol est-il retardé?",
+          "words": [
+            {"word": "Vol", "complete": false},
+            {"word": "Retardé", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Au Restaurant",
+      "description": "Apprenez des phrases courantes pour un restaurant.",
+      "phrases": [
+        {
+          "phrase": "Puis-je voir la carte des vins?",
+          "words": [
+            {"word": "Carte des vins", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Je vais prendre le steak, saignant.",
+          "words": [
+            {"word": "Prendre le", "complete": false},
+            {"word": "Steak saignant", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Pouvez-vous apporter l'addition, s'il vous plaît?",
+          "words": [
+            {"word": "L'addition", "complete": false},
+            {"word": "S'il vous plaît", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Avez-vous des options végétariennes?",
+          "words": [
+            {"word": "Options", "complete": false},
+            {"word": "Végétariennes", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Que recommandez-vous du menu?",
+          "words": [
+            {"word": "Recommandez-vous", "complete": false},
+            {"word": "Du menu", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Y a-t-il un plat spécial aujourd'hui?",
+          "words": [
+            {"word": "Plat spécial", "complete": false},
+            {"word": "Aujourd'hui", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "it-IT": [
+    {
+      "id": 1,
+      "title": "Dì Ciao!",
+      "description": "Impara i saluti di base.",
+      "phrases": [
+        {
+          "phrase": "Ciao, come stai?",
+          "words": [
+            {"word": "Ciao", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sto bene, grazie!",
+          "words": [
+            {"word": "Sto bene", "complete": false},
+            {"word": "Grazie", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Buongiorno!",
+          "words": [
+            {"word": "Buongiorno", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Buon pomeriggio!",
+          "words": [
+            {"word": "Buon", "complete": false},
+            {"word": "Pomeriggio", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Buona notte!",
+          "words": [
+            {"word": "Buona", "complete": false},
+            {"word": "Notte", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Piacere di conoscerti!",
+          "words": [
+            {"word": "Piacere", "complete": false},
+            {"word": "Conoscerti", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Presentati",
+      "description": "Impara a presentarti.",
+      "phrases": [
+        {
+          "phrase": "Mi chiamo Marco.",
+          "words": [
+            {"word": "Mi chiamo", "complete": false},
+            {"word": "Marco", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Vivo a Roma.",
+          "words": [
+            {"word": "Vivo a", "complete": false},
+            {"word": "Roma", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ho 30 anni.",
+          "words": [
+            {"word": "Ho", "complete": false},
+            {"word": "30 anni", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Lavoro come insegnante.",
+          "words": [
+            {"word": "Lavoro come", "complete": false},
+            {"word": "Insegnante", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Chiedere indicazioni",
+      "description": "Impara a chiedere indicazioni.",
+      "phrases": [
+        {
+          "phrase": "Dov'è l'ospedale più vicino?",
+          "words": [
+            {"word": "Dov'è", "complete": false},
+            {"word": "Ospedale", "complete": false},
+            {"word": "Più vicino", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Come arrivo alla stazione?",
+          "words": [
+            {"word": "Come arrivo", "complete": false},
+            {"word": "Alla stazione", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Puoi mostrarmi la strada?",
+          "words": [
+            {"word": "Mostrarmi", "complete": false},
+            {"word": "La strada", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "È lontano da qui?",
+          "words": [
+            {"word": "Lontano da", "complete": false},
+            {"word": "Qui", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Ordinare cibo",
+      "description": "Impara a ordinare cibo.",
+      "phrases": [
+        {
+          "phrase": "Posso avere il menu, per favore?",
+          "words": [
+            {"word": "Avere il", "complete": false},
+            {"word": "Menu", "complete": false},
+            {"word": "Per favore", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Vorrei un caffè.",
+          "words": [
+            {"word": "Vorrei", "complete": false},
+            {"word": "Un caffè", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Posso avere un bicchiere d'acqua?",
+          "words": [
+            {"word": "Bicchiere d'acqua", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sono allergico alle arachidi.",
+          "words": [
+            {"word": "Allergico alle", "complete": false},
+            {"word": "Arachidi", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Fare acquisti",
+      "description": "Impara a fare acquisti.",
+      "phrases": [
+        {
+          "phrase": "Quanto costa questo?",
+          "words": [
+            {"word": "Quanto costa", "complete": false},
+            {"word": "Questo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Vorrei comprare questo.",
+          "words": [
+            {"word": "Comprare questo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Accettate carte di credito?",
+          "words": [
+            {"word": "Carte di", "complete": false},
+            {"word": "Credito", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Posso avere una ricevuta, per favore?",
+          "words": [
+            {"word": "Una ricevuta", "complete": false},
+            {"word": "Per favore", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "All'aeroporto",
+      "description": "Impara frasi per l'aeroporto.",
+      "phrases": [
+        {
+          "phrase": "Dov'è il gate di partenza?",
+          "words": [
+            {"word": "Gate di", "complete": false},
+            {"word": "Partenza", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A che ora parte il volo?",
+          "words": [
+            {"word": "A che ora", "complete": false},
+            {"word": "Parte il volo", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Devo fare il check-in del bagaglio.",
+          "words": [
+            {"word": "Check-in", "complete": false},
+            {"word": "Del bagaglio", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Posso avere un posto vicino al finestrino, per favore?",
+          "words": [
+            {"word": "Posto vicino", "complete": false},
+            {"word": "Al finestrino", "complete": false},
+            {"word": "Per favore", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Il volo è in ritardo?",
+          "words": [
+            {"word": "Volo", "complete": false},
+            {"word": "In ritardo", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Al ristorante",
+      "description": "Impara frasi comuni per un ristorante.",
+      "phrases": [
+        {
+          "phrase": "Posso vedere la lista dei vini?",
+          "words": [
+            {"word": "Lista dei vini", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Prenderò la bistecca, al sangue.",
+          "words": [
+            {"word": "Prenderò", "complete": false},
+            {"word": "Bistecca al sangue", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ci può portare il conto, per favore?",
+          "words": [
+            {"word": "Portare il", "complete": false},
+            {"word": "Conto", "complete": false},
+            {"word": "Per favore", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Avete piatti vegetariani?",
+          "words": [
+            {"word": "Piatti", "complete": false},
+            {"word": "Vegetariani", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Cosa consigliate dal menu?",
+          "words": [
+            {"word": "Consigliate dal", "complete": false},
+            {"word": "Menu", "complete": false}
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "C'è un piatto speciale per oggi?",
+          "words": [
+            {"word": "Piatto speciale", "complete": false},
+            {"word": "Per oggi", "complete": false}
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
