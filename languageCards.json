@@ -12595,5 +12595,371 @@
       ],
       "complete": false
     }
-  ]  
+  ],
+  "ta-IN": [
+    {
+      "id": 1,
+      "title": "வணக்கம் கூறுங்கள்!",
+      "description": "அடிப்படை வாழ்த்துகளை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?",
+          "words": [
+            { "word": "வணக்கம்", "complete": false },
+            { "word": "நீங்கள்", "complete": false },
+            { "word": "எப்படி இருக்கிறீர்கள்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் நலமாக இருக்கிறேன், நன்றி!",
+          "words": [
+            { "word": "நான் நலமாக இருக்கிறேன்", "complete": false },
+            { "word": "நன்றி", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "காலை வணக்கம்!",
+          "words": [
+            { "word": "வணக்கம்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "மதிய வணக்கம்!",
+          "words": [
+            { "word": "வணக்கம்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "மாலை வணக்கம்!",
+          "words": [
+            { "word": "வணக்கம்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "உங்களை சந்தித்ததில் மகிழ்ச்சி!",
+          "words": [
+            { "word": "உங்களை சந்தித்ததில்", "complete": false },
+            { "word": "மகிழ்ச்சி", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "உங்களை அறிமுகப்படுத்துங்கள்",
+      "description": "உங்களை எப்படி அறிமுகப்படுத்துவது என்பதை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "என் பெயர் ராஜ்.",
+          "words": [
+            { "word": "என் பெயர்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் சென்னைில் வசிக்கிறேன்.",
+          "words": [
+            { "word": "நான்", "complete": false },
+            { "word": "சென்னைில் வசிக்கிறேன்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "எனக்கு முப்பது வயது ஆகிறது.",
+          "words": [
+            { "word": "எனக்கு", "complete": false },
+            { "word": "முப்பது வயது", "complete": false },
+            { "word": "ஆகிறது", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் ஒரு ஆசிரியராக வேலை செய்கிறேன்.",
+          "words": [
+            { "word": "ஒரு ஆசிரியராக", "complete": false },
+            { "word": "வேலை செய்கிறேன்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் திருமணமானவன் மற்றும் இரண்டு குழந்தைகள் உள்ளனர்.",
+          "words": [
+            { "word": "நான் திருமணமானவன்", "complete": false },
+            { "word": "இரண்டு குழந்தைகள் உள்ளனர்", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "வழியை கேளுங்கள்",
+      "description": "வழியை எப்படி கேள்விக்கெடுக்க வேண்டும் என்பதை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "அருகிலுள்ள மருத்துவமனை எங்கே உள்ளது?",
+          "words": [
+            { "word": "அருகிலுள்ள", "complete": false },
+            { "word": "மருத்துவமனை எங்கே உள்ளது", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் நிலையத்திற்கு எப்படி செல்வது?",
+          "words": [
+            { "word": "நான்", "complete": false },
+            { "word": "நிலையத்திற்கு எப்படி செல்வது", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நீங்கள் எனக்கு வழியை காட்ட முடியுமா?",
+          "words": [
+            { "word": "நீங்கள்", "complete": false },
+            { "word": "எனக்கு வழியை", "complete": false },
+            { "word": "காட்ட முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "இது இங்கே இருந்து தூரமா?",
+          "words": [
+            { "word": "இங்கே இருந்து", "complete": false },
+            { "word": "தூரமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "இந்த பகுதியின் வரைபடம் எனக்கு தேவை.",
+          "words": [
+            { "word": "இந்த பகுதியின்", "complete": false },
+            { "word": "வரைபடம் எனக்கு", "complete": false },
+            { "word": "தேவை", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "உணவு ஆர்டர் செய்யுங்கள்",
+      "description": "உணவை எப்படி ஆர்டர் செய்வது என்பதை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "தயவுசெய்து எனக்கு மெனு கொடுக்க முடியுமா?",
+          "words": [
+            { "word": "தயவுசெய்து", "complete": false },
+            { "word": "எனக்கு மெனு", "complete": false },
+            { "word": "கொடுக்க முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் ஒரு காபி விரும்புகிறேன்.",
+          "words": [
+            { "word": "நான்", "complete": false },
+            { "word": "ஒரு காபி", "complete": false },
+            { "word": "விரும்புகிறேன்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் ஒரு ஜாடி தண்ணீர் பெற முடியுமா?",
+          "words": [
+            { "word": "ஒரு ஜாடி தண்ணீர்", "complete": false },
+            { "word": "பெற முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "எனக்கு கடலைகள் மீது அலர்ஜி உள்ளது.",
+          "words": [
+            { "word": "எனக்கு", "complete": false },
+            { "word": "கடலைகள் மீது", "complete": false },
+            { "word": "அலர்ஜி உள்ளது", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "இன்றைக்கு சிறப்பு உணவு ஏதேனும் உள்ளதா?",
+          "words": [
+            { "word": "இன்றைக்கு", "complete": false },
+            { "word": "சிறப்பு உணவு", "complete": false },
+            { "word": "ஏதேனும் உள்ளதா", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "வாங்குதல் செய்யுங்கள்",
+      "description": "பொருட்களை எப்படி வாங்குவது என்பதை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "இதன் விலை எவ்வளவு?",
+          "words": [
+            { "word": "இதன் விலை", "complete": false },
+            { "word": "எவ்வளவு", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் இதை வாங்க விரும்புகிறேன்.",
+          "words": [
+            { "word": "நான்", "complete": false },
+            { "word": "இதை வாங்க", "complete": false },
+            { "word": "விரும்புகிறேன்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நீங்கள் கிரெடிட் கார்டுகளை ஏற்றுக்கொள்கிறீர்களா?",
+          "words": [
+            { "word": "கிரெடிட் கார்டுகளை", "complete": false },
+            { "word": "ஏற்றுக்கொள்கிறீர்களா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "தயவுசெய்து எனக்கு ரசீது தர முடியுமா?",
+          "words": [
+            { "word": "தயவுசெய்து", "complete": false },
+            { "word": "எனக்கு ரசீது", "complete": false },
+            { "word": "தர முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "இங்கே ஏதேனும் தள்ளுபடி உள்ளதா?",
+          "words": [
+            { "word": "இங்கே", "complete": false },
+            { "word": "ஏதேனும் தள்ளுபடி", "complete": false },
+            { "word": "உள்ளதா", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "விமான நிலையத்தில்",
+      "description": "விமான நிலையத்திற்கு பயன்படும் சொற்கள் கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "புறப்படும் கேட் எங்கே உள்ளது?",
+          "words": [
+            { "word": "புறப்படும் கேட்", "complete": false },
+            { "word": "எங்கே உள்ளது", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "விமானம் எப்போது புறப்படும்?",
+          "words": [
+            { "word": "விமானம்", "complete": false },
+            { "word": "எப்போது புறப்படும்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் என் பயணப்பெட்டியை செக்-இன் செய்ய வேண்டும்.",
+          "words": [
+            { "word": "என் பயணப்பெட்டியை", "complete": false },
+            { "word": "செக்-இன் செய்ய வேண்டும்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "தயவுசெய்து எனக்கு ஜன்னல் இருக்கை தர முடியுமா?",
+          "words": [
+            { "word": "எனக்கு", "complete": false },
+            { "word": "ஜன்னல் இருக்கை", "complete": false },
+            { "word": "தர முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "விமானம் தாமதமாக இருக்கிறதா?",
+          "words": [
+            { "word": "விமானம்", "complete": false },
+            { "word": "தாமதமாக இருக்கிறதா", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "ஒரு உணவகத்தில்",
+      "description": "உணவகத்தில் பயன்படும் சொற்களை கற்றுக்கொள்ளுங்கள்.",
+      "phrases": [
+        {
+          "phrase": "நான் வைன் பட்டியல் பார்க்க முடியுமா?",
+          "words": [
+            { "word": "வைன் பட்டியல்", "complete": false },
+            { "word": "பார்க்க முடியுமா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "நான் மீடியம் ரேர் ஸ்டீக் கொள்கிறேன்.",
+          "words": [
+            { "word": "நான்", "complete": false },
+            { "word": "மீடியம் ரேர் ஸ்டீக்", "complete": false },
+            { "word": "கொள்கிறேன்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "தயவுசெய்து எங்களுக்கு பில் தர முடியுமா?",
+          "words": [
+            { "word": "எங்களுக்கு பில்", "complete": false },
+            { "word": "தர முடியுமா", "complete": false },
+            { "word": "தயவுசெய்து", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "உங்களிடம் சைவ விருப்பங்கள் உள்ளனவா?",
+          "words": [
+            { "word": "சைவ விருப்பங்கள்", "complete": false },
+            { "word": "உள்ளனவா", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "மெனுவில் இருந்து நீங்கள் என்ன பரிந்துரைக்கிறீர்கள்?",
+          "words": [
+            { "word": "மெனுவில் இருந்து", "complete": false },
+            { "word": "நீங்கள் என்ன", "complete": false },
+            { "word": "பரிந்துரைக்கிறீர்கள்", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "இன்று ஏதேனும் சிறப்பு உணவு உள்ளதா?",
+          "words": [
+            { "word": "இன்று", "complete": false },
+            { "word": "ஏதேனும் சிறப்பு உணவு", "complete": false },
+            { "word": "உள்ளதா", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ]
 }
