@@ -12961,5 +12961,932 @@
       ],
       "complete": false
     }
+  ],
+  "jv-ID": [
+    {
+      "id": 1,
+      "title": "Ucapna Salam!",
+      "description": "Sinau salam dhasar.",
+      "phrases": [
+        {
+          "phrase": "Sugeng, kepiye kabare?",
+          "words": [
+            { "word": "Sugeng", "complete": false },
+            { "word": "Kepi", "complete": false },
+            { "word": "Kabare", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku sehat, matur nuwun!",
+          "words": [
+            { "word": "Aku sehat", "complete": false },
+            { "word": "Matur nuwun", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sugeng enjang!",
+          "words": [
+            { "word": "Sugeng", "complete": false },
+            { "word": "Enjang", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sugeng siang!",
+          "words": [
+            { "word": "Sugeng", "complete": false },
+            { "word": "Siang", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sugeng dalu!",
+          "words": [
+            { "word": "Sugeng", "complete": false },
+            { "word": "Dalu", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Seneng ketemu sampeyan!",
+          "words": [
+            { "word": "Seneng ketemu", "complete": false },
+            { "word": "Sampeyan", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Kenalake Awakmu",
+      "description": "Sinau ngenalake awakmu.",
+      "phrases": [
+        {
+          "phrase": "Jenengku Budi.",
+          "words": [
+            { "word": "Jenengku", "complete": false },
+            { "word": "Budi", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku manggon ing Yogyakarta.",
+          "words": [
+            { "word": "Aku manggon", "complete": false },
+            { "word": "Ing Yogyakarta", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Umurku telung puluh taun.",
+          "words": [
+            { "word": "Umurku", "complete": false },
+            { "word": "Telung puluh taun", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku kerja dadi guru.",
+          "words": [
+            { "word": "Aku kerja", "complete": false },
+            { "word": "Dadi guru", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Takon Petunjuk",
+      "description": "Sinau carane takon petunjuk.",
+      "phrases": [
+        {
+          "phrase": "Ngendi rumah sakit sing cedhak?",
+          "words": [
+            { "word": "Ngendi", "complete": false },
+            { "word": "Rumah sakit", "complete": false },
+            { "word": "Cedhak", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kepiye carane aku menyang stasiun?",
+          "words": [
+            { "word": "Kepiye carane", "complete": false },
+            { "word": "Menyang stasiun", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sampeyan bisa nuduhake dalan?",
+          "words": [
+            { "word": "Sampeyan bisa", "complete": false },
+            { "word": "Nuduhake dalan", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Apa iki adoh saka kene?",
+          "words": [
+            { "word": "Ado", "complete": false },
+            { "word": "Saka kene", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Pesen Panganan",
+      "description": "Sinau carane pesen panganan.",
+      "phrases": [
+        {
+          "phrase": "Aku bisa entuk menu, tulung?",
+          "words": [
+            { "word": "Aku bisa", "complete": false },
+            { "word": "Entuk menu", "complete": false },
+            { "word": "Tulung", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku pengin kopi.",
+          "words": [
+            { "word": "Aku pengin", "complete": false },
+            { "word": "Kopi", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Bisa tak entuk gelas banyu?",
+          "words": [
+            { "word": "Tak entuk", "complete": false },
+            { "word": "Gelas banyu", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku alergi kacang.",
+          "words": [
+            { "word": "Alergi", "complete": false },
+            { "word": "Kacang", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Tuku Barang",
+      "description": "Sinau carane tuku barang.",
+      "phrases": [
+        {
+          "phrase": "Pira regane iki?",
+          "words": [
+            { "word": "Pira regane", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku pengin tuku iki.",
+          "words": [
+            { "word": "Aku pengin", "complete": false },
+            { "word": "Tuku iki", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sampeyan nampa kertu kredit?",
+          "words": [
+            { "word": "Nampa kertu", "complete": false },
+            { "word": "Kredit", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku bisa entuk kuitansi, tulung?",
+          "words": [
+            { "word": "Aku bisa", "complete": false },
+            { "word": "Entuk kuitansi", "complete": false },
+            { "word": "Tulung", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Ing Bandara",
+      "description": "Sinau ukara kanggo bandara.",
+      "phrases": [
+        {
+          "phrase": "Ngendi lawang boarding?",
+          "words": [
+            { "word": "Ngendi", "complete": false },
+            { "word": "Lawang boarding", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jam pinten pesawat budhal?",
+          "words": [
+            { "word": "Jam pinten", "complete": false },
+            { "word": "Pesawat budhal", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku kudu check-in barang-barang.",
+          "words": [
+            { "word": "Kudu check-in", "complete": false },
+            { "word": "Barang-barang", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku bisa entuk kursi jendhela, tulung?",
+          "words": [
+            { "word": "Kursi jendhela", "complete": false },
+            { "word": "Entuk", "complete": false },
+            { "word": "Tulung", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Ing Restoran",
+      "description": "Sinau ukara kanggo restoran.",
+      "phrases": [
+        {
+          "phrase": "Aku bisa weruh dhaptar anggur?",
+          "words": [
+            { "word": "Weruh dhaptar", "complete": false },
+            { "word": "Anggur", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aku pengin steak medium rare.",
+          "words": [
+            { "word": "Steak", "complete": false },
+            { "word": "Medium rare", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Tulung, pesen cek?",
+          "words": [
+            { "word": "Pesen cek", "complete": false },
+            { "word": "Tulung", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Sampeyan duwe opsi vegetarian?",
+          "words": [
+            { "word": "Opsi vegetarian", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Apa sing sampeyan saranke saka menu?",
+          "words": [
+            { "word": "Saranke saka", "complete": false },
+            { "word": "Menu", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ana sing spesial kanggo dina iki?",
+          "words": [
+            { "word": "Ana spesial", "complete": false },
+            { "word": "Kanggo dina iki", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "ne-NP": [
+    {
+      "id": 1,
+      "title": "नमस्ते भन्नुहोस्!",
+      "description": "आधारभूत अभिवादनहरू सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "नमस्ते, तपाईँलाई कस्तो छ?",
+          "words": [
+            { "word": "नमस्ते", "complete": false },
+            { "word": "तपाईँलाई कस्तो", "complete": false },
+            { "word": "कस्तो छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म ठीक छु, धन्यवाद!",
+          "words": [
+            { "word": "म ठीक छु", "complete": false },
+            { "word": "धन्यवाद", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "सुप्रभात!",
+          "words": [
+            { "word": "सुप्रभात", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "शुभ अपराह्न!",
+          "words": [
+            { "word": "शुभ अपराह्न", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "शुभ रात्रि!",
+          "words": [
+            { "word": "शुभ रात्रि", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "तपाईँलाई भेटेर खुशी लाग्यो!",
+          "words": [
+            { "word": "भेटेर खुशी", "complete": false },
+            { "word": "लाग्यो", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "आफ्नो परिचय दिनुहोस्",
+      "description": "आफ्नो परिचय दिने तरीका सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "मेरो नाम राम हो।",
+          "words": [
+            { "word": "मेरो नाम", "complete": false },
+            { "word": "राम हो", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म काठमाडौँमा बस्छु।",
+          "words": [
+            { "word": "काठमाडौँमा बस्छु", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मेरो उमेर तीस वर्ष हो।",
+          "words": [
+            { "word": "उमेर तीस वर्ष", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म शिक्षकको रूपमा काम गर्छु।",
+          "words": [
+            { "word": "शिक्षकको रूपमा", "complete": false },
+            { "word": "काम गर्छु", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "दिशानिर्देश सोध्नुहोस्",
+      "description": "दिशा सोध्ने तरिका सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "नजिकको अस्पताल कहाँ छ?",
+          "words": [
+            { "word": "नजिकको अस्पताल", "complete": false },
+            { "word": "कहाँ छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म स्टेशन कसरी पुग्न सक्छु?",
+          "words": [
+            { "word": "स्टेशन कसरी पुग्न", "complete": false },
+            { "word": "सक्छु", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "के तपाईँ मलाई बाटो देखाउन सक्नुहुन्छ?",
+          "words": [
+            { "word": "बाटो देखाउन", "complete": false },
+            { "word": "सक्नुहुन्छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "के यो यहाँबाट टाढा छ?",
+          "words": [
+            { "word": "यहाँबाट टाढा", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "खाना अर्डर गर्नुहोस्",
+      "description": "खाना अर्डर गर्ने तरिका सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "मलाई मेनु दिनुहोस्, कृपया?",
+          "words": [
+            { "word": "मेनु दिनुहोस्", "complete": false },
+            { "word": "कृपया", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म एक कप कफी चाहन्छु।",
+          "words": [
+            { "word": "कप कफी चाहन्छु", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मलाई पानीको गिलास दिनुहोस्?",
+          "words": [
+            { "word": "पानीको गिलास", "complete": false },
+            { "word": "दिनुहोस्", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मलाई बदामबाट एलर्जी छ।",
+          "words": [
+            { "word": "बदामबाट एलर्जी", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "किनमेल गर्नुहोस्",
+      "description": "चीजहरू किन्ने तरिका सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "यसको मूल्य कति हो?",
+          "words": [
+            { "word": "यसको मूल्य कति", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म यो किन्न चाहन्छु।",
+          "words": [
+            { "word": "यो किन्न चाहन्छु", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "के तपाईँले क्रेडिट कार्ड स्वीकार गर्नुहुन्छ?",
+          "words": [
+            { "word": "क्रेडिट कार्ड", "complete": false },
+            { "word": "स्वीकार गर्नुहुन्छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "के मलाई रसिद दिनुहुन्छ?",
+          "words": [
+            { "word": "रसिद दिनुहुन्छ", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "विमानस्थलमा",
+      "description": "विमानस्थलका वाक्य सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "उडान गेट कहाँ छ?",
+          "words": [
+            { "word": "उडान गेट", "complete": false },
+            { "word": "कहाँ छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "उडान कहिले प्रस्थान हुन्छ?",
+          "words": [
+            { "word": "उडान प्रस्थान", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "म मेरो सामान चेक-इन गर्न चाहन्छु।",
+          "words": [
+            { "word": "सामान चेक-इन", "complete": false },
+            { "word": "गर्न चाहन्छु", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मलाई झ्यालको सिट चाहिन्छ, कृपया?",
+          "words": [
+            { "word": "झ्यालको सिट", "complete": false },
+            { "word": "चाहिन्छ कृपया", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "भोजनालयमा",
+      "description": "भोजनालयमा सामान्य वाक्यहरू सिक्नुहोस्।",
+      "phrases": [
+        {
+          "phrase": "मलाई वाइन सूची देखाउनुस्?",
+          "words": [
+            { "word": "वाइन सूची", "complete": false },
+            { "word": "देखाउनुस्", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मलाई स्टेक मध्यम पकाएको चाहिन्छ।",
+          "words": [
+            { "word": "स्टेक मध्यम", "complete": false },
+            { "word": "पकाएको चाहिन्छ", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "हामीले बिल लिन सक्छौं?",
+          "words": [
+            { "word": "बिल लिन सक्छौं", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "तपाईँसँग शाकाहारी विकल्पहरू छन्?",
+          "words": [
+            { "word": "शाकाहारी विकल्प", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "मेनुबाट के तपाईँको सिफारिस छ?",
+          "words": [
+            { "word": "तपाईँको सिफारिस", "complete": false },
+            { "word": "मेनुबाट", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "आजको विशेष के छ?",
+          "words": [
+            { "word": "आजको विशेष", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "et-EE": [
+    {
+      "id": 1,
+      "title": "Tervita!",
+      "description": "Õpi põhilisi tervitusi.",
+      "phrases": [
+        {
+          "phrase": "Tere, kuidas sul läheb?",
+          "words": [
+            { "word": "Tere", "complete": false },
+            { "word": "Kuidas sul", "complete": false },
+            { "word": "Läheb", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mul läheb hästi, aitäh!",
+          "words": [
+            { "word": "Mul läheb", "complete": false },
+            { "word": "Hästi", "complete": false },
+            { "word": "Aitäh", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Tere hommikust!",
+          "words": [
+            { "word": "Tere hommikust", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Tere pärastlõunat!",
+          "words": [
+            { "word": "Tere pärastlõunat", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Head ööd!",
+          "words": [
+            { "word": "Head ööd", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Meeldiv kohtuda!",
+          "words": [
+            { "word": "Meeldiv", "complete": false },
+            { "word": "Kohtuda", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Tutvusta ennast",
+      "description": "Õpi, kuidas ennast tutvustada.",
+      "phrases": [
+        {
+          "phrase": "Minu nimi on Jaan.",
+          "words": [
+            { "word": "Minu nimi", "complete": false },
+            { "word": "On Jaan", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma elan Tallinnas.",
+          "words": [
+            { "word": "Ma elan", "complete": false },
+            { "word": "Tallinnas", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Olen kolmkümmend aastat vana.",
+          "words": [
+            { "word": "Olen kolmkümmend", "complete": false },
+            { "word": "Aastat vana", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma töötan õpetajana.",
+          "words": [
+            { "word": "Töötan", "complete": false },
+            { "word": "Õpetajana", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Küsi juhiseid",
+      "description": "Õpi, kuidas teed küsida.",
+      "phrases": [
+        {
+          "phrase": "Kus on lähim haigla?",
+          "words": [
+            { "word": "Lähim", "complete": false },
+            { "word": "Haigla", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kuidas ma saan jaama?",
+          "words": [
+            { "word": "Kuidas ma", "complete": false },
+            { "word": "Saan jaama", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas saate mulle teed näidata?",
+          "words": [
+            { "word": "Teed näidata", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas see on siit kaugel?",
+          "words": [
+            { "word": "On siit kaugel", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Toidu tellimine",
+      "description": "Õpi, kuidas tellida toitu.",
+      "phrases": [
+        {
+          "phrase": "Kas ma saaksin menüüd näha, palun?",
+          "words": [
+            { "word": "Menüüd näha", "complete": false },
+            { "word": "Palun", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma tahaksin kohvi.",
+          "words": [
+            { "word": "Tahaksin kohvi", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas ma saaksin klaasi vett?",
+          "words": [
+            { "word": "Klaasi vett", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mul on pähklite suhtes allergia.",
+          "words": [
+            { "word": "Pähklite suhtes", "complete": false },
+            { "word": "Allergia", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Ostu sooritamine",
+      "description": "Õpi, kuidas osta asju.",
+      "phrases": [
+        {
+          "phrase": "Kui palju see maksab?",
+          "words": [
+            { "word": "Kui palju", "complete": false },
+            { "word": "See maksab", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma tahan seda osta.",
+          "words": [
+            { "word": "Tahan seda", "complete": false },
+            { "word": "Osta", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas te võtate vastu krediitkaarte?",
+          "words": [
+            { "word": "Võtate vastu", "complete": false },
+            { "word": "Krediitkaarte", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas ma saaksin kviitungi, palun?",
+          "words": [
+            { "word": "Saaksin kviitungi", "complete": false },
+            { "word": "Palun", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Lennujaamas",
+      "description": "Õpi fraase lennujaamas.",
+      "phrases": [
+        {
+          "phrase": "Kus on väljumisvärav?",
+          "words": [
+            { "word": "Väljumisvärav", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mis kell lend väljub?",
+          "words": [
+            { "word": "Kell lend väljub", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma pean oma pagasi ära andma.",
+          "words": [
+            { "word": "Pagasi ära", "complete": false },
+            { "word": "Andma", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas ma saaksin aknaaluse koha?",
+          "words": [
+            { "word": "Aknaluse koha", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas lend on hilinenud?",
+          "words": [
+            { "word": "Lend on hilinenud", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Restoranis",
+      "description": "Õpi fraase restoranis.",
+      "phrases": [
+        {
+          "phrase": "Kas ma saaksin veinikaarti näha?",
+          "words": [
+            { "word": "Veinikaarti näha", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ma võtan praadi, keskmise küpsusega.",
+          "words": [
+            { "word": "Võtan praadi", "complete": false },
+            { "word": "Keskmise küpsusega", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas ma saaksin arve, palun?",
+          "words": [
+            { "word": "Saaksin arve", "complete": false },
+            { "word": "Palun", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas teil on taimetoitlaste valikuid?",
+          "words": [
+            { "word": "Taimetoitlaste valikuid", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mida te menüüst soovitaksite?",
+          "words": [
+            { "word": "Menüüst soovitaksite", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kas täna on eripakkumine?",
+          "words": [
+            { "word": "Eripakkumine", "complete": false },
+            { "word": "Täna", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
