@@ -15456,5 +15456,926 @@
       ],
       "complete": false
     }
+  ],
+  "lt-LT": [
+    {
+      "id": 1,
+      "title": "Pasakyk Labas!",
+      "description": "Išmokite pagrindinius pasisveikinimus.",
+      "phrases": [
+        {
+          "phrase": "Labas, kaip tu jautiesi?",
+          "words": [
+            { "word": "Labas", "complete": false },
+            { "word": "Kaip jautiesi", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Man viskas gerai, ačiū!",
+          "words": [
+            { "word": "Viskas gerai", "complete": false },
+            { "word": "Ačiū", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Labas rytas!",
+          "words": [
+            { "word": "Labas rytas", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Laba diena!",
+          "words": [
+            { "word": "Laba diena", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Labos nakties!",
+          "words": [
+            { "word": "Labos nakties", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Malonu susipažinti!",
+          "words": [
+            { "word": "Malonu", "complete": false },
+            { "word": "Susipažinti", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Prisistatyk",
+      "description": "Išmokite prisistatyti.",
+      "phrases": [
+        {
+          "phrase": "Mano vardas Jonas.",
+          "words": [
+            { "word": "Mano vardas", "complete": false },
+            { "word": "Jonas", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Aš gyvenu Vilniuje.",
+          "words": [
+            { "word": "Gyvenu Vilniuje", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Man trisdešimt metų.",
+          "words": [
+            { "word": "Trisdešimt metų", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Dirbu mokytoju.",
+          "words": [
+            { "word": "Dirbu mokytoju", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Klausk krypties",
+      "description": "Išmokite, kaip klausti krypties.",
+      "phrases": [
+        {
+          "phrase": "Kur yra artimiausia ligoninė?",
+          "words": [
+            { "word": "Artimiausia ligoninė", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kaip nuvykti į stotį?",
+          "words": [
+            { "word": "Nuvykti į stotį", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar galite parodyti kelią?",
+          "words": [
+            { "word": "Parodyti kelią", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar toli nuo čia?",
+          "words": [
+            { "word": "Toli nuo čia", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Užsisakyti Maistą",
+      "description": "Išmokite, kaip užsisakyti maistą.",
+      "phrases": [
+        {
+          "phrase": "Ar galiu gauti meniu, prašau?",
+          "words": [
+            { "word": "Gauti meniu", "complete": false },
+            { "word": "Prašau", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Norėčiau kavos.",
+          "words": [
+            { "word": "Norėčiau kavos", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar galiu gauti stiklinę vandens?",
+          "words": [
+            { "word": "Stiklinę vandens", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Esu alergiškas riešutams.",
+          "words": [
+            { "word": "Alergiškas riešutams", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Pirkimo Procesas",
+      "description": "Išmokite, kaip pirkti prekes.",
+      "phrases": [
+        {
+          "phrase": "Kiek tai kainuoja?",
+          "words": [
+            { "word": "Kiek kainuoja", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Norėčiau tai pirkti.",
+          "words": [
+            { "word": "Norėčiau pirkti", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar priimate kreditines korteles?",
+          "words": [
+            { "word": "Priimate kreditines", "complete": false },
+            { "word": "Korteles", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar galiu gauti kvitą, prašau?",
+          "words": [
+            { "word": "Gauti kvitą", "complete": false },
+            { "word": "Prašau", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Oro Uoste",
+      "description": "Išmokite frazes oro uostui.",
+      "phrases": [
+        {
+          "phrase": "Kur yra išvykimo vartai?",
+          "words": [
+            { "word": "Išvykimo vartai", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kada skrydis išvyksta?",
+          "words": [
+            { "word": "Skrydis išvyksta", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Man reikia užregistruoti bagažą.",
+          "words": [
+            { "word": "Užregistruoti bagažą", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar galiu gauti lango vietą?",
+          "words": [
+            { "word": "Lango vietą", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar skrydis atidėtas?",
+          "words": [
+            { "word": "Skrydis atidėtas", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Restorane",
+      "description": "Dažniausios frazės restorane.",
+      "phrases": [
+        {
+          "phrase": "Ar galiu pamatyti vynų sąrašą?",
+          "words": [
+            { "word": "Pamatyti vynų", "complete": false },
+            { "word": "Sąrašą", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Norėčiau kepsnį, vidutiniškai iškeptą.",
+          "words": [
+            { "word": "Norėčiau kepsnį", "complete": false },
+            { "word": "Vidutiniškai iškeptą", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar galime gauti sąskaitą, prašau?",
+          "words": [
+            { "word": "Gauti sąskaitą", "complete": false },
+            { "word": "Prašau", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar turite vegetariškų pasirinkimų?",
+          "words": [
+            { "word": "Vegetariškų pasirinkimų", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ką rekomenduotumėte iš meniu?",
+          "words": [
+            { "word": "Rekomenduotumėte iš", "complete": false },
+            { "word": "Meniu", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Ar yra šiandien kažkas ypatingo?",
+          "words": [
+            { "word": "Kažkas ypatingo", "complete": false },
+            { "word": "Šiandien", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "sq-AL": [
+    {
+      "id": 1,
+      "title": "Thuaj Përshëndetje!",
+      "description": "Mëso përshëndetjet bazë.",
+      "phrases": [
+        {
+          "phrase": "Përshëndetje, si ndihesh?",
+          "words": [
+            { "word": "Përshëndetje", "complete": false },
+            { "word": "Si ndihesh", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jam mirë, faleminderit!",
+          "words": [
+            { "word": "Jam mirë", "complete": false },
+            { "word": "Faleminderit", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mirëmëngjes!",
+          "words": [
+            { "word": "Mirëmëngjes", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mirëdita!",
+          "words": [
+            { "word": "Mirëdita", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mirëmbrëma!",
+          "words": [
+            { "word": "Mirëmbrëma", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kënaqësi që u njohëm!",
+          "words": [
+            { "word": "Kënaqësi", "complete": false },
+            { "word": "Që u njohëm", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Prezanto veten",
+      "description": "Mëso si të prezantohesh.",
+      "phrases": [
+        {
+          "phrase": "Emri im është Arben.",
+          "words": [
+            { "word": "Emri im", "complete": false },
+            { "word": "Është Arben", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Unë jetoj në Tiranë.",
+          "words": [
+            { "word": "Jetoj në Tiranë", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jam tridhjetë vjeç.",
+          "words": [
+            { "word": "Tridhjetë vjeç", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Punoj si mësues.",
+          "words": [
+            { "word": "Punoj si mësues", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Kërko për drejtimin",
+      "description": "Mëso si të kërkosh për drejtim.",
+      "phrases": [
+        {
+          "phrase": "Ku është spitali më i afërt?",
+          "words": [
+            { "word": "Spitali më i afërt", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Si shkoj në stacion?",
+          "words": [
+            { "word": "Shkoj në stacion", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mund të më tregoni rrugën?",
+          "words": [
+            { "word": "Tregoni rrugën", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A është larg nga këtu?",
+          "words": [
+            { "word": "Është larg", "complete": false },
+            { "word": "Nga këtu", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Porosit ushqim",
+      "description": "Mëso si të porosisësh ushqim.",
+      "phrases": [
+        {
+          "phrase": "Mund të shoh menynë, ju lutem?",
+          "words": [
+            { "word": "Shoh menynë", "complete": false },
+            { "word": "Ju lutem", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Dua një kafe.",
+          "words": [
+            { "word": "Dua një kafe", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mund të marr një gotë ujë?",
+          "words": [
+            { "word": "Marr një gotë ujë", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Jam alergjik ndaj kikirikëve.",
+          "words": [
+            { "word": "Alergjik ndaj kikirikëve", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Bëj një blerje",
+      "description": "Mëso si të blesh artikuj.",
+      "phrases": [
+        {
+          "phrase": "Sa kushton kjo?",
+          "words": [
+            { "word": "Sa kushton", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Dua të blej këtë.",
+          "words": [
+            { "word": "Të blej këtë", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A pranoni karta krediti?",
+          "words": [
+            { "word": "Pranoni karta krediti", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mund të marr faturën, ju lutem?",
+          "words": [
+            { "word": "Marr faturën", "complete": false },
+            { "word": "Ju lutem", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Në Aeroport",
+      "description": "Mëso frazat për në aeroport.",
+      "phrases": [
+        {
+          "phrase": "Ku është porta e nisjes?",
+          "words": [
+            { "word": "Porta e nisjes", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Në ç'orë largohet fluturimi?",
+          "words": [
+            { "word": "Largohet fluturimi", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kam nevojë të regjistroj bagazhin.",
+          "words": [
+            { "word": "Regjistroj bagazhin", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mund të marr një vend te dritarja?",
+          "words": [
+            { "word": "Vend te dritarja", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A është fluturimi vonuar?",
+          "words": [
+            { "word": "Fluturimi vonuar", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Në Restorant",
+      "description": "Fraza të zakonshme për restorant.",
+      "phrases": [
+        {
+          "phrase": "Mund të shoh listën e verërave?",
+          "words": [
+            { "word": "Listën e verërave", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Do të marr biftek, i pjekur mesatar.",
+          "words": [
+            { "word": "Marr biftek", "complete": false },
+            { "word": "I pjekur mesatar", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mund ta marrim faturën, ju lutem?",
+          "words": [
+            { "word": "Marrim faturën", "complete": false },
+            { "word": "Ju lutem", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A keni opsione vegjetariane?",
+          "words": [
+            { "word": "Opsione vegjetariane", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Çfarë do të rekomandonit nga menuja?",
+          "words": [
+            { "word": "Rekomandonit nga menuja", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "A ka diçka të veçantë për sot?",
+          "words": [
+            { "word": "Diçka të veçantë", "complete": false },
+            { "word": "Për sot", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "fi-FI": [
+    {
+      "id": 1,
+      "title": "Sano Hei!",
+      "description": "Opi perustervehdykset.",
+      "phrases": [
+        {
+          "phrase": "Hei, miten voit?",
+          "words": [
+            { "word": "Hei", "complete": false },
+            { "word": "Miten voit", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Olen kunnossa, kiitos!",
+          "words": [
+            { "word": "Olen kunnossa", "complete": false },
+            { "word": "Kiitos", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hyvää huomenta!",
+          "words": [
+            { "word": "Hyvää", "complete": false },
+            { "word": "Huomenta", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hyvää iltapäivää!",
+          "words": [
+            { "word": "Hyvää", "complete": false },
+            { "word": "Iltapäivää", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hyvää yötä!",
+          "words": [
+            { "word": "Hyvää", "complete": false },
+            { "word": "Yötä", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hauska tavata!",
+          "words": [
+            { "word": "Hauska", "complete": false },
+            { "word": "Tavata", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Esittele itsesi",
+      "description": "Opi esittelemään itsesi.",
+      "phrases": [
+        {
+          "phrase": "Minun nimeni on Mikko.",
+          "words": [
+            { "word": "Minun nimeni", "complete": false },
+            { "word": "On Mikko", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Asun Helsingissä.",
+          "words": [
+            { "word": "Asun", "complete": false },
+            { "word": "Helsingissä", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Olen kolmekymmentä vuotta vanha.",
+          "words": [
+            { "word": "Kolmekymmentä vuotta", "complete": false },
+            { "word": "Vanha", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Työskentelen opettajana.",
+          "words": [
+            { "word": "Työskentelen", "complete": false },
+            { "word": "Opettajana", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Kysy tietä",
+      "description": "Opi kysymään tietä.",
+      "phrases": [
+        {
+          "phrase": "Missä on lähin sairaala?",
+          "words": [
+            { "word": "Missä on", "complete": false },
+            { "word": "Lähin sairaala", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Kuinka pääsen asemalle?",
+          "words": [
+            { "word": "Kuinka pääsen", "complete": false },
+            { "word": "Asemalle", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Voitteko näyttää tien?",
+          "words": [
+            { "word": "Näyttää", "complete": false },
+            { "word": "Tien", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Onko se kaukana täältä?",
+          "words": [
+            { "word": "Kaukana", "complete": false },
+            { "word": "Täältä", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Tilaa ruokaa",
+      "description": "Opi tilaamaan ruokaa.",
+      "phrases": [
+        {
+          "phrase": "Saanko ruokalistan, kiitos?",
+          "words": [
+            { "word": "Saanko", "complete": false },
+            { "word": "Ruokalistan", "complete": false },
+            { "word": "Kiitos", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Haluaisin kahvin.",
+          "words": [
+            { "word": "Haluaisin", "complete": false },
+            { "word": "Kahvin", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Voinko saada lasin vettä?",
+          "words": [
+            { "word": "Lasin", "complete": false },
+            { "word": "Vettä", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Olen allerginen maapähkinöille.",
+          "words": [
+            { "word": "Allerginen", "complete": false },
+            { "word": "Maapähkinöille", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Ostosten tekeminen",
+      "description": "Opi ostamaan tavaroita.",
+      "phrases": [
+        {
+          "phrase": "Paljonko tämä maksaa?",
+          "words": [
+            { "word": "Paljonko tämä", "complete": false },
+            { "word": "Maksaa", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Haluaisin ostaa tämän.",
+          "words": [
+            { "word": "Ostaa", "complete": false },
+            { "word": "Tämän", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Hyväksyttekö luottokortit?",
+          "words": [
+            { "word": "Hyväksyttekö", "complete": false },
+            { "word": "Luottokortit", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Voinko saada kuitin, kiitos?",
+          "words": [
+            { "word": "Saada kuitin", "complete": false },
+            { "word": "Kiitos", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "title": "Lentokentällä",
+      "description": "Opi fraasit lentokentälle.",
+      "phrases": [
+        {
+          "phrase": "Missä on lähtöportti?",
+          "words": [
+            { "word": "Missä on", "complete": false },
+            { "word": "Lähtöportti", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mihin aikaan lento lähtee?",
+          "words": [
+            { "word": "Lento lähtee", "complete": false },
+            { "word": "Mihin aikaan", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Minun täytyy kirjata matkatavarani.",
+          "words": [
+            { "word": "Kirjata", "complete": false },
+            { "word": "Matkatavarani", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Saanko ikkunapaikan?",
+          "words": [
+            { "word": "Ikkunapaikan", "complete": false },
+            { "word": "Saanko", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Onko lento myöhässä?",
+          "words": [
+            { "word": "Lento", "complete": false },
+            { "word": "Myöhässä", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "title": "Ravintolassa",
+      "description": "Opi yleisiä fraaseja ravintolassa.",
+      "phrases": [
+        {
+          "phrase": "Voinko nähdä viinilistan?",
+          "words": [
+            { "word": "Nähdä viinilistan", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Otan pihvin puolikypsänä.",
+          "words": [
+            { "word": "Pihvin", "complete": false },
+            { "word": "Puolikypsänä", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Saammeko laskun, kiitos?",
+          "words": [
+            { "word": "Laskun", "complete": false },
+            { "word": "Kiitos", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Onko teillä kasvisruokavaihtoehtoja?",
+          "words": [
+            { "word": "Kasvisruokavaihtoehtoja", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Mitä suosittelisitte ruokalistalta?",
+          "words": [
+            { "word": "Suosittelisitte", "complete": false },
+            { "word": "Ruokalistalta", "complete": false }
+          ],
+          "complete": false
+        },
+        {
+          "phrase": "Onko tänään erikoistarjous?",
+          "words": [
+            { "word": "Erikoistarjous", "complete": false },
+            { "word": "Tänään", "complete": false }
+          ],
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
   ]
 }
