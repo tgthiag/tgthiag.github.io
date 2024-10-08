@@ -16377,5 +16377,325 @@
       ],
       "complete": false
     }
-  ]
+  ],
+  "nb-NO": [
+  {
+    "id": 1,
+    "title": "Si Hei!",
+    "description": "Lær grunnleggende hilsener.",
+    "phrases": [
+      {
+        "phrase": "Hei, hvordan har du det?",
+        "words": [
+          { "word": "Hei", "complete": false },
+          { "word": "Hvordan har du det", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg har det bra, takk!",
+        "words": [
+          { "word": "Jeg har det bra", "complete": false },
+          { "word": "Takk", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "God morgen!",
+        "words": [
+          { "word": "God", "complete": false },
+          { "word": "Morgen", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "God ettermiddag!",
+        "words": [
+          { "word": "God", "complete": false },
+          { "word": "Ettermiddag", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "God natt!",
+        "words": [
+          { "word": "God", "complete": false },
+          { "word": "Natt", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Hyggelig å møte deg!",
+        "words": [
+          { "word": "Hyggelig", "complete": false },
+          { "word": "Møte deg", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 2,
+    "title": "Presenter deg selv",
+    "description": "Lær hvordan du presenterer deg selv.",
+    "phrases": [
+      {
+        "phrase": "Jeg heter Hans.",
+        "words": [
+          { "word": "Jeg heter", "complete": false },
+          { "word": "Hans", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg bor i Oslo.",
+        "words": [
+          { "word": "Jeg bor", "complete": false },
+          { "word": "I Oslo", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg er 30 år gammel.",
+        "words": [
+          { "word": "Jeg er", "complete": false },
+          { "word": "30 år gammel", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg jobber som lærer.",
+        "words": [
+          { "word": "Jeg jobber som", "complete": false },
+          { "word": "Lærer", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 3,
+    "title": "Spør om veien",
+    "description": "Lær hvordan du spør om veien.",
+    "phrases": [
+      {
+        "phrase": "Hvor er nærmeste sykehus?",
+        "words": [
+          { "word": "Hvor er", "complete": false },
+          { "word": "Nærmeste sykehus", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Hvordan kommer jeg til stasjonen?",
+        "words": [
+          { "word": "Hvordan kommer jeg", "complete": false },
+          { "word": "Til stasjonen", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Kan du vise meg veien?",
+        "words": [
+          { "word": "Vise meg", "complete": false },
+          { "word": "Veien", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Er det langt herfra?",
+        "words": [
+          { "word": "Langt", "complete": false },
+          { "word": "Herfra", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 4,
+    "title": "Bestille mat",
+    "description": "Lær hvordan du bestiller mat.",
+    "phrases": [
+      {
+        "phrase": "Kan jeg få menyen, takk?",
+        "words": [
+          { "word": "Kan jeg få", "complete": false },
+          { "word": "Menyen", "complete": false },
+          { "word": "Takk", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg vil gjerne ha en kaffe.",
+        "words": [
+          { "word": "Vil gjerne ha", "complete": false },
+          { "word": "En kaffe", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Kan jeg få et glass vann?",
+        "words": [
+          { "word": "Et glass", "complete": false },
+          { "word": "Vann", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg er allergisk mot nøtter.",
+        "words": [
+          { "word": "Allergisk mot", "complete": false },
+          { "word": "Nøtter", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 5,
+    "title": "Gjøre et kjøp",
+    "description": "Lær hvordan du kjøper varer.",
+    "phrases": [
+      {
+        "phrase": "Hvor mye koster dette?",
+        "words": [
+          { "word": "Hvor mye", "complete": false },
+          { "word": "Koster dette", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg vil kjøpe dette.",
+        "words": [
+          { "word": "Vil kjøpe", "complete": false },
+          { "word": "Dette", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Tar du kredittkort?",
+        "words": [
+          { "word": "Tar du", "complete": false },
+          { "word": "Kredittkort", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Kan jeg få en kvittering, takk?",
+        "words": [
+          { "word": "Få en kvittering", "complete": false },
+          { "word": "Takk", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 6,
+    "title": "På flyplassen",
+    "description": "Lær setninger til flyplassen.",
+    "phrases": [
+      {
+        "phrase": "Hvor er avgangsporten?",
+        "words": [
+          { "word": "Hvor er", "complete": false },
+          { "word": "Avgangsporten", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Når går flyet?",
+        "words": [
+          { "word": "Når går", "complete": false },
+          { "word": "Flyet", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg må sjekke inn bagasjen min.",
+        "words": [
+          { "word": "Sjekke inn", "complete": false },
+          { "word": "Bagasjen min", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Kan jeg få et vindussete?",
+        "words": [
+          { "word": "Et vindussete", "complete": false },
+          { "word": "Kan jeg få", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Er flyet forsinket?",
+        "words": [
+          { "word": "Flyet", "complete": false },
+          { "word": "Forsinket", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  },
+  {
+    "id": 7,
+    "title": "På restaurant",
+    "description": "Lær vanlige setninger på en restaurant.",
+    "phrases": [
+      {
+        "phrase": "Kan jeg se vinlisten?",
+        "words": [
+          { "word": "Se vinlisten", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Jeg tar biffen, medium stekt.",
+        "words": [
+          { "word": "Biffen", "complete": false },
+          { "word": "Medium stekt", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Kan vi få regningen, takk?",
+        "words": [
+          { "word": "Få regningen", "complete": false },
+          { "word": "Takk", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Har dere vegetariske alternativer?",
+        "words": [
+          { "word": "Vegetariske alternativer", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Hva anbefaler dere fra menyen?",
+        "words": [
+          { "word": "Anbefaler", "complete": false },
+          { "word": "Fra menyen", "complete": false }
+        ],
+        "complete": false
+      },
+      {
+        "phrase": "Har dere dagens spesial?",
+        "words": [
+          { "word": "Dagens spesial", "complete": false }
+        ],
+        "complete": false
+      }
+    ],
+    "complete": false
+  }
+]
 }
