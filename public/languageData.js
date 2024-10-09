@@ -52,7 +52,8 @@
     "monthly_price":"Monthly price:",
     "yearly_price": "Yearly price:",
     "free_trial_description":"5 days free trial, no ads, all features available. You can cancel before the trial ends.",
-    "group_partners": "Our community"
+    "group_partners": "Our community",
+    "get_vocabulary": "Get Vocabulary"
   },
   "pt_br":{
     "short":"pt",
@@ -107,7 +108,8 @@
     "monthly_price":"Preço mensal:",
     "yearly_price": "Preço anual:",
     "free_trial_description":"5 dias de teste grátis, sem anúncios, todos os recursos disponíveis. Você pode cancelar antes que o teste termine.",
-    "group_partners": "Nossa comunidade"
+    "group_partners": "Nossa comunidade",
+    "get_vocabulary": "Obter Vocabulário"
   },
   "de_de":{
     "short":"de",
@@ -162,7 +164,8 @@
     "monthly_price":"Monatlicher Preis:",
     "yearly_price": "Jährlicher Preis:",
     "free_trial_description":"5 Tage kostenlos testen, keine Werbung, alle Funktionen verfügbar. Sie können vor Ablauf des Testzeitraums kündigen.",
-    "group_partners": "Unsere Gemeinschaft"
+    "group_partners": "Unsere Gemeinschaft",
+    "get_vocabulary": "Wortschatz abrufen"
   },
   "hi_in":{
     "short":"hi",
@@ -217,7 +220,8 @@
     "monthly_price":"मासिक मूल्य:",
     "yearly_price": "वार्षिक मूल्य:",
     "free_trial_description":"5 दिन का मुफ्त परीक्षण, कोई विज्ञापन नहीं, सभी सुविधाएँ उपलब्ध। आप परीक्षण समाप्त होने से पहले रद्द कर सकते हैं।",
-    "group_partners": "हमारा समुदाय"
+    "group_partners": "हमारा समुदाय",
+    "get_vocabulary": "शब्दावली प्राप्त करें"
   },
   "es_es":{
     "short":"es",
@@ -272,7 +276,8 @@
     "monthly_price":"Precio mensual:",
     "yearly_price": "Precio anual:",
     "free_trial_description":"5 días de prueba gratuita, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba.",
-    "group_partners": "Nuestra comunidad"
+    "group_partners": "Nuestra comunidad",
+    "get_vocabulary": "Obtener Vocabulario"
   },
   "uk_ua":{
     "short":"uk",
@@ -327,7 +332,8 @@
     "monthly_price":"Місячна ціна:",
     "yearly_price": "Річна ціна:",
     "free_trial_description":"5 днів безкоштовного пробного періоду, без реклами, доступні всі функції. Ви можете скасувати до закінчення пробного періоду.",
-    "group_partners": "Наша спільнота"
+    "group_partners": "Наша спільнота",
+    "get_vocabulary": "Отримати словниковий запас"
   },
   "ru_ru":{
     "short":"ru",
@@ -382,7 +388,8 @@
     "monthly_price":"Месячная цена:",
     "yearly_price": "Годовая цена:",
     "free_trial_description":"5 дней бесплатной пробной версии, без рекламы, все функции доступны. Вы можете отменить до окончания пробного периода.",
-    "group_partners": "Наше сообщество"
+    "group_partners": "Наше сообщество",
+    "get_vocabulary": "Получить словарный запас"
   },
   "zh_cn":{
     "short":"zh",
@@ -437,7 +444,8 @@
     "monthly_price":"月费：",
     "yearly_price": "年费：",
     "free_trial_description":"5天免费试用，无广告，所有功能可用。您可以在试用结束前取消。",
-    "group_partners": "我们的社区"
+    "group_partners": "我们的社区",
+    "get_vocabulary": "获取词汇"
   },
   "zh_tw": {
     "short": "zh",
@@ -492,7 +500,8 @@
     "monthly_price": "月費：",
     "yearly_price": "年費：",
     "free_trial_description": "5天免費試用，無廣告，所有功能可用。您可以在試用結束前取消。",
-    "group_partners": "我們的社區"
+    "group_partners": "我們的社區",
+    "get_vocabulary": "獲取詞彙"
 },
   "ja_jp":{
     "short":"ja",
@@ -547,7 +556,8 @@
     "monthly_price":"月額料金：",
     "yearly_price": "年額料金：",
     "free_trial_description":"5日間の無料トライアル、広告なし、すべての機能が利用可能です。試用期間が終了する前にキャンセルできます。",
-    "group_partners": "私たちのコミュニティ"
+    "group_partners": "私たちのコミュニティ",
+    "get_vocabulary": "語彙を取得"
   },
   "ur_pk":{
     "short":"ur",
@@ -602,7 +612,8 @@
     "monthly_price":"ماہانہ قیمت:",
     "yearly_price": "سالانہ قیمت:",
     "free_trial_description":"5 دن کی مفت آزمائش، کوئی اشتہار نہیں، تمام خصوصیات دستیاب ہیں۔ آپ آزمائش کے ختم ہونے سے پہلے منسوخ کر سکتے ہیں۔",
-    "group_partners": "ہماری کمیونٹی"
+    "group_partners": "ہماری کمیونٹی",
+    "get_vocabulary": "الفاظ حاصل کریں"
   },
   "fr_fr":{
     "short":"fr",
@@ -657,7 +668,8 @@
     "monthly_price":"Prix mensuel:",
     "yearly_price": "Prix annuel:",
     "free_trial_description":"5 jours d'essai gratuit, pas de publicités, toutes les fonctionnalités disponibles. Vous pouvez annuler avant la fin de l'essai.",
-    "group_partners": "Notre communauté"
+    "group_partners": "Notre communauté",
+    "get_vocabulary": "Obtenir Vocabulaire"
   },
   "it_it":{
     "short":"it",
@@ -712,7 +724,8 @@
     "monthly_price":"Prezzo mensile:",
     "yearly_price": "Prezzo annuale:",
     "free_trial_description":"5 giorni di prova gratuita, senza pubblicità, tutte le funzionalità disponibili. Puoi annullare prima della fine della prova.",
-    "group_partners": "La nostra comunità"
+    "group_partners": "La nostra comunità",
+    "get_vocabulary": "Ottieni Vocabolario"
   },
   "nl_nl":{
     "short":"nl",
@@ -767,7 +780,8 @@
     "monthly_price":"Maandelijkse prijs:",
     "yearly_price": "Jaarlijkse prijs:",
     "free_trial_description":"5 dagen gratis proefversie, geen advertenties, alle functies beschikbaar. U kunt annuleren voordat de proefperiode afloopt.",
-    "group_partners": "Onze gemeenschap"
+    "group_partners": "Onze gemeenschap",
+    "get_vocabulary": "Woordenschat ophalen"
   },
   "sv_se":{
     "short":"sv",
@@ -822,7 +836,8 @@
     "monthly_price":"Månadspris:",
     "yearly_price": "Årspris:",
     "free_trial_description":"5 dagars gratis provperiod, inga annonser, alla funktioner tillgängliga. Du kan avbryta innan provperioden löper ut.",
-    "group_partners": "Vårt samhälle"
+    "group_partners": "Vårt samhälle",
+    "get_vocabulary": "Hämta ordförråd"
   },
   "el_gr":{
     "short":"el",
@@ -877,7 +892,8 @@
     "monthly_price":"Μηνιαία τιμή:",
     "yearly_price": "Ετήσια τιμή:",
     "free_trial_description":"5 ημέρες δωρεάν δοκιμή, χωρίς διαφημίσεις, όλες οι λειτουργίες διαθέσιμες. Μπορείτε να ακυρώσετε πριν λήξει η δοκιμή.",
-    "group_partners": "Η κοινότητά μας"
+    "group_partners": "Η κοινότητά μας",
+    "get_vocabulary": "Λήψη Λεξιλογίου"
   },
   "ar_sa":{
     "short":"ar",
@@ -932,7 +948,8 @@
     "monthly_price":"السعر الشهري:",
     "yearly_price": "السعر السنوي:",
     "free_trial_description":"تجربة مجانية لمدة 5 أيام، بدون إعلانات، جميع الميزات متاحة. يمكنك الإلغاء قبل انتهاء الفترة التجريبية.",
-    "group_partners": "مجتمعنا"
+    "group_partners": "مجتمعنا",
+    "get_vocabulary": "احصل على المفردات"
   },
   "km_kh":{
     "short":"km",
@@ -987,7 +1004,8 @@
     "monthly_price":"តម្លៃប្រចាំខែ៖",
     "yearly_price": "តម្លៃប្រចាំឆ្នាំ៖",
     "free_trial_description":"សាកល្បងដោយឥតគិតថ្លៃរយៈពេល ៥ ថ្ងៃ មិនមានការផ្សាយពាណិជ្ជកម្ម ផ្សេងៗទៀត។ អ្នកអាចលុបចោលមុនពេលការសាកល្បងបញ្ចប់។",
-    "group_partners": "សហគមន៍របស់យើង"
+    "group_partners": "សហគមន៍របស់យើង",
+    "get_vocabulary": "ទទួលយកវាក្យសព្ទ"
   },
   "th_th":{
     "short":"th",
@@ -1042,7 +1060,8 @@
     "monthly_price":"ราคาต่อเดือน:",
     "yearly_price": "ราคาต่อปี:",
     "free_trial_description":"ทดลองใช้งานฟรี 5 วัน ไม่มีโฆษณา ฟีเจอร์ทั้งหมดใช้งานได้ คุณสามารถยกเลิกก่อนที่การทดลองใช้จะสิ้นสุด",
-    "group_partners": "ชุมชนของเรา"
+    "group_partners": "ชุมชนของเรา",
+    "get_vocabulary": "รับคำศัพท์"
   },
   "ko_kr":{
     "short":"ko",
@@ -1097,7 +1116,8 @@
     "monthly_price":"월 가격:",
     "yearly_price": "연간 가격:",
     "free_trial_description":"광고 없이 5일 무료 체험, 모든 기능 이용 가능. 체험 종료 전에 취소할 수 있습니다.",
-    "group_partners": "우리 커뮤니티"
+    "group_partners": "우리 커뮤니티",
+    "get_vocabulary": "어휘 얻기"
   },
   "vi_vn":{
     "short":"vi",
@@ -1152,7 +1172,8 @@
     "monthly_price":"Giá hàng tháng:",
     "yearly_price": "Giá hàng năm:",
     "free_trial_description":"Dùng thử miễn phí 5 ngày, không quảng cáo, tất cả các tính năng có sẵn. Bạn có thể hủy trước khi hết thời gian dùng thử.",
-    "group_partners": "Cộng đồng của chúng tôi"
+    "group_partners": "Cộng đồng của chúng tôi",
+    "get_vocabulary": "Lấy từ vựng"
   },
   "tr_tr":{
     "short":"tr",
@@ -1207,7 +1228,8 @@
     "monthly_price":"Aylık fiyat:",
     "yearly_price": "Yıllık fiyat:",
     "free_trial_description":"5 gün ücretsiz deneme, reklam yok, tüm özellikler kullanılabilir. Deneme süresi dolmadan iptal edebilirsiniz.",
-    "group_partners": "Bizim topluluğumuz"
+    "group_partners": "Bizim topluluğumuz",
+    "get_vocabulary": "Kelime dağarcığını al"
   },
   "he_il": {
   "short": "he",
@@ -1271,7 +1293,8 @@
   "yearly_price": "מחיר שנתי:",
   "free_trial_description":
       "5 ימי ניסיון חינם, ללא פרסומות, כל התכונות זמינות. ניתן לבטל לפני תום הניסיון.",
-      "group_partners": "הקהילה שלנו"
+      "group_partners": "הקהילה שלנו",
+      "get_vocabulary": "קבל אוצר מילים"
 },
 "bg_bg": {
   "short": "bg",
@@ -1326,7 +1349,8 @@
   "monthly_price": "Месечна цена:",
   "yearly_price": "Годишна цена:",
   "free_trial_description": "5 дни безплатен пробен период, без реклами, всички функции са достъпни. Можете да отмените преди изтичане на пробния период.",
-  "group_partners": "Нашата общност"
+  "group_partners": "Нашата общност",
+  "get_vocabulary": "Вземете речник"
 },
 "pl_pl": {
   "short": "pl",
@@ -1389,7 +1413,8 @@
   "yearly_price": "Cena roczna:",
   "free_trial_description":
       "5 dni darmowej próby, bez reklam, wszystkie funkcje dostępne. Możesz anulować przed zakończeniem okresu próbnego.",
-      "group_partners": "Nasza społeczność"
+      "group_partners": "Nasza społeczność",
+      "get_vocabulary": "Uzyskaj słownictwo"
 },
 "id_id": {
   "short": "id",
@@ -1452,7 +1477,8 @@
   "yearly_price": "Harga tahunan:",
   "free_trial_description":
       "5 hari uji coba gratis, tanpa iklan, semua fitur tersedia. Anda dapat membatalkan sebelum uji coba berakhir.",
-      "group_partners": "Komunitas kami"
+      "group_partners": "Komunitas kami",
+      "get_vocabulary": "Dapatkan Kosakata"
 },
 "fil_ph": {
   "short": "fil",
@@ -1515,7 +1541,8 @@
   "yearly_price": "Taunang presyo:",
   "free_trial_description":
       "5 araw na libreng pagsubok, walang ad, lahat ng mga tampok ay magagamit. Maaari kang mag-kansela bago matapos ang pagsubok.",
-      "group_partners": "Ang aming komunidad"
+      "group_partners": "Ang aming komunidad",
+      "get_vocabulary": "Kumuha ng Bokabularyo"
 },
 
   "pt_pt": {
@@ -1571,7 +1598,8 @@
     "monthly_price": "Preço mensal:",
     "yearly_price": "Preço anual:",
     "free_trial_description": "5 dias de teste grátis, sem anúncios, com todas as funcionalidades. Pode cancelar antes do fim do período de teste.",
-    "group_partners": "A nossa comunidade"
+    "group_partners": "A nossa comunidade",
+    "get_vocabulary": "Obter Vocabulário"
   },
   "da_dk": {
     "short": "da",
@@ -1626,7 +1654,8 @@
     "monthly_price": "Månedlig pris:",
     "yearly_price": "Årlig pris:",
     "free_trial_description": "5 dages gratis prøveperiode, ingen annoncer, alle funktioner tilgængelige. Du kan annullere, inden prøveperioden slutter.",
-    "group_partners": "Vores samfund"
+    "group_partners": "Vores samfund",
+    "get_vocabulary": "Hent Ordforråd"
   },
   "bn_bd": {
     "short": "bn",
@@ -1681,7 +1710,8 @@
     "monthly_price": "মাসিক মূল্য:",
     "yearly_price": "বার্ষিক মূল্য:",
     "free_trial_description": "৫ দিনের ফ্রি ট্রায়াল, কোনও বিজ্ঞাপন নেই, সমস্ত বৈশিষ্ট্য উপলব্ধ। আপনি ট্রায়াল শেষ হওয়ার আগে বাতিল করতে পারেন।",
-    "group_partners": "আমাদের সম্প্রদায়"
+    "group_partners": "আমাদের সম্প্রদায়",
+    "get_vocabulary": "শব্দভাণ্ডার পান"
   },
   "te_in":{
     "short":"te",
@@ -1736,7 +1766,8 @@
     "monthly_price":"నెలసరి ధర:",
     "yearly_price": "వార్షిక ధర:",
     "free_trial_description":"5 రోజుల ఉచిత ట్రయల్, ఎటువంటి ప్రకటనలు లేవు, అన్ని ఫీచర్లు అందుబాటులో ఉన్నాయి. మీరు ట్రయల్ ముగియకముందు రద్దు చేయవచ్చు.",
-    "group_partners": "మా కమ్యూనిటీ"
+    "group_partners": "మా కమ్యూనిటీ",
+    "get_vocabulary": "వాక్యపదాన్ని పొందండి"
 },
 "hr_hr":{
     "short":"hr",
@@ -1791,7 +1822,8 @@
     "monthly_price":"Mjesečna cijena:",
     "yearly_price": "Godišnja cijena:",
     "free_trial_description":"5 dana besplatnog probnog razdoblja, bez oglasa, sve značajke dostupne. Možete otkazati prije završetka probnog razdoblja.",
-    "group_partners": "Naša zajednica"
+    "group_partners": "Naša zajednica",
+    "get_vocabulary": "Dobij Rječnik"
 },
 "ms_my":{
     "short":"ms",
@@ -1846,7 +1878,8 @@
     "monthly_price":"Harga bulanan:",
     "yearly_price": "Harga tahunan:",
     "free_trial_description":"5 hari percubaan percuma, tiada iklan, semua ciri tersedia. Anda boleh membatalkan sebelum percubaan berakhir.",
-    "group_partners": "Komuniti kami"
+    "group_partners": "Komuniti kami",
+    "get_vocabulary": "Dapatkan Perbendaharaan Kata"
 },
 "ro_ro":{
     "short":"ro",
@@ -1901,7 +1934,8 @@
     "monthly_price":"Preț lunar:",
     "yearly_price": "Preț anual:",
     "free_trial_description":"5 zile de probă gratuită, fără reclame, toate funcțiile disponibile. Puteți anula înainte de încheierea perioadei de probă.",
-    "group_partners": "Comunitatea noastră"
+    "group_partners": "Comunitatea noastră",
+    "get_vocabulary": "Obțineți Vocabularul"
 },
 "bs_ba":{
     "short":"bs",
@@ -1956,7 +1990,8 @@
     "monthly_price":"Mjesečna cijena:",
     "yearly_price": "Godišnja cijena:",
     "free_trial_description":"5 dana besplatnog probnog perioda, bez oglasa, sve funkcije dostupne. Možete otkazati prije završetka probnog perioda.",
-    "group_partners": "Naša zajednica"
+    "group_partners": "Naša zajednica",
+    "get_vocabulary": "Preuzmi Rječnik"
 },
 "hu_hu":{
     "short":"hu",
@@ -2011,7 +2046,8 @@
     "monthly_price":"Havi ár:",
     "yearly_price": "Éves ár:",
     "free_trial_description":"5 nap ingyenes próbaidőszak, nincs hirdetés, minden funkció elérhető. A próbaidőszak lejárta előtt lemondhatja.",
-    "group_partners": "Közösségünk"
+    "group_partners": "Közösségünk",
+    "get_vocabulary": "Szerezd meg a Szókincset"
 },
 "gu_in":{
     "short":"gu",
@@ -2066,7 +2102,8 @@
     "monthly_price":"માસિક કિંમત:",
     "yearly_price": "વાર્ષિક કિંમત:",
     "free_trial_description":"5 દિવસની મફત ટ્રાયલ, કોઈ જાહેરાતો નથી, બધી સુવિધાઓ ઉપલબ્ધ છે. તમે ટ્રાયલ સમાપ્ત થતાં પહેલાં રદ કરી શકો છો.",
-    "group_partners": "અમારા સમુદાય"
+    "group_partners": "અમારા સમુદાય",
+    "get_vocabulary": "શબ્દભંડોળ મેળવો"
 },
 "pa_in":{
     "short":"pa",
@@ -2121,7 +2158,8 @@
     "monthly_price":"ਮਾਸਿਕ ਕੀਮਤ:",
     "yearly_price": "ਸਾਲਾਨਾ ਕੀਮਤ:",
     "free_trial_description":"5 ਦਿਨ ਦੀ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ, ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਸਾਰੇ ਫੀਚਰ ਉਪਲਬਧ ਹਨ। ਤੁਸੀਂ ਟ੍ਰਾਇਲ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ।",
-    "group_partners": "ਸਾਡੀ ਕਮਿਊਨਟੀ"
+    "group_partners": "ਸਾਡੀ ਕਮਿਊਨਟੀ",
+    "get_vocabulary": "ਸ਼ਬਦਾਵਲੀ ਪ੍ਰਾਪਤ ਕਰੋ"
 },
 "si_lk":{
     "short":"si",
@@ -2176,7 +2214,8 @@
     "monthly_price":"මාසික මිල:",
     "yearly_price": "වාර්ෂික මිල:",
     "free_trial_description":"දින 5 නොමිලේ අත්හදා බැලීමක්, දැන්වීම් නොමැත, සියලු විශේෂාංග ලබා ගත හැකිය. අත්හදා බැලීම අවසාන වීමට පෙර ඔබ අවලංගු කළ හැකිය.",
-    "group_partners": "අපේ ප්රජාව"
+    "group_partners": "අපේ ප්රජාව",
+    "get_vocabulary": "වචන සමුදාය ලබාගන්න"
 },
 "sw_ke":{
     "short":"sw",
@@ -2231,7 +2270,8 @@
     "monthly_price":"Bei ya kila mwezi:",
     "yearly_price": "Bei ya kila mwaka:",
     "free_trial_description":"Siku 5 za jaribio la bure, hakuna matangazo, vipengele vyote vinapatikana. Unaweza kughairi kabla ya jaribio kumalizika.",
-    "group_partners": "Jumuiya yetu"
+    "group_partners": "Jumuiya yetu",
+    "get_vocabulary": "Pata Msamiati"
 },
 "ta_in":{
     "short":"ta",
@@ -2286,7 +2326,8 @@
     "monthly_price":"மாத விலை:",
     "yearly_price": "ஆண்டு விலை:",
     "free_trial_description":"5 நாட்கள் இலவச சோதனை, விளம்பரங்கள் இல்லை, அனைத்து அம்சங்களும் கிடைக்கின்றன. நீங்கள் சோதனை முடிவதற்கு முன் ரத்து செய்யலாம்.",
-    "group_partners": "எங்கள் சமூகம்"
+    "group_partners": "எங்கள் சமூகம்",
+    "get_vocabulary": "சொற்பொருள் பெறுங்கள்"
 },
 "jv_id":{
     "short":"jv",
@@ -2341,7 +2382,8 @@
     "monthly_price":"Rega saben wulan:",
     "yearly_price": "Rega tahunan:",
     "free_trial_description":"5 dina uji coba gratis, tanpa iklan, kabeh fitur kasedhiya. Panjenengan bisa mbatalake sadurunge uji coba rampung.",
-    "group_partners": "Komunitas kita"
+    "group_partners": "Komunitas kita",
+    "get_vocabulary": "Entuk Kosa Kata"
 },
 "ne_np":{
     "short":"ne",
@@ -2396,7 +2438,8 @@
     "monthly_price":"मासिक मूल्य:",
     "yearly_price": "वार्षिक मूल्य:",
     "free_trial_description":"5 दिनको निःशुल्क परीक्षण, कुनै विज्ञापन छैन, सबै सुविधाहरू उपलब्ध छन्। तपाईं परीक्षण समाप्त हुनु अघि रद्द गर्न सक्नुहुन्छ।",
-    "group_partners": "हाम्रो समुदाय"
+    "group_partners": "हाम्रो समुदाय",
+    "get_vocabulary": "शब्दकोश प्राप्त गर्नुहोस्"
 },
 "et_ee":{
     "short":"et",
@@ -2451,7 +2494,8 @@
     "monthly_price":"Kuuhind:",
     "yearly_price": "Aastahind:",
     "free_trial_description":"5-päevane tasuta prooviperiood, reklaamid puuduvad, kõik funktsioonid saadaval. Võite tühistada enne prooviperioodi lõppu.",
-    "group_partners": "Meie kogukond"
+    "group_partners": "Meie kogukond",
+    "get_vocabulary": "Hankige Sõnavara"
 },
 "is_is":{
     "short":"is",
@@ -2506,7 +2550,8 @@
     "monthly_price":"Mánaðarverð:",
     "yearly_price": "Árlegt verð:",
     "free_trial_description":"5 daga ókeypis prufuáskrift, engar auglýsingar, allar aðgerðir í boði. Þú getur sagt upp áður en prufutímabilinu lýkur.",
-    "group_partners": "Samfélag okkar"
+    "group_partners": "Samfélag okkar",
+    "get_vocabulary": "Fá Orðaforða"
 },
 "cs_cz":{
     "short":"cs",
@@ -2561,7 +2606,8 @@
     "monthly_price":"Měsíční cena:",
     "yearly_price": "Roční cena:",
     "free_trial_description":"5 dní bezplatné zkušební verze, žádné reklamy, všechny funkce k dispozici. Můžete zrušit před koncem zkušebního období.",
-    "group_partners": "Naše komunita"
+    "group_partners": "Naše komunita",
+    "get_vocabulary": "Získat Slovník"
 },
 "es_mx": {
     "short": "es",
@@ -2616,7 +2662,8 @@
     "monthly_price": "Precio mensual:",
     "yearly_price": "Precio anual:",
     "free_trial_description": "5 días de prueba gratis, sin anuncios, todas las funciones disponibles. Puedes cancelar antes de que finalice la prueba.",
-    "group_partners": "Nuestra comunidad"
+    "group_partners": "Nuestra comunidad",
+    "get_vocabulary": "Obtener Vocabulario"
   },
   "su_id": {
     "short": "su",
@@ -2671,7 +2718,8 @@
     "monthly_price": "Harga bulanan:",
     "yearly_price": "Harga taunan:",
     "free_trial_description": "5 dinten uji coba gratis, teu aya iklan, sadaya fitur sayogi. Anjeun tiasa ngabatalkeun saencan uji coba mungkas.",
-    "group_partners": "Komunitas kami"
+    "group_partners": "Komunitas kami",
+    "get_vocabulary": "Entong Kosa Kata"
 },
 "ca_es": {
     "short": "ca",
@@ -2726,7 +2774,8 @@
     "monthly_price": "Preu mensual:",
     "yearly_price": "Preu anual:",
     "free_trial_description": "5 dies de prova gratuïta, sense anuncis, totes les funcions disponibles. Pots cancel·lar abans que acabi la prova.",
-    "group_partners": "La nostra comunitat"
+    "group_partners": "La nostra comunitat",
+    "get_vocabulary": "Obtenir Vocabulari"
 },
 "lt_lt": {
     "short": "lt",
@@ -2781,7 +2830,8 @@
     "monthly_price": "Mėnesio kaina:",
     "yearly_price": "Metinė kaina:",
     "free_trial_description": "5 dienų nemokamas bandomasis laikotarpis, nėra reklamų, visos funkcijos prieinamos. Galite atšaukti prieš pasibaigiant bandomajam laikotarpiui.",
-    "group_partners": "Mūsų bendruomenė"
+    "group_partners": "Mūsų bendruomenė",
+    "get_vocabulary": "Gauti Žodyną"
 },
 "sq_al": {
     "short": "sq",
@@ -2836,7 +2886,8 @@
     "monthly_price": "Çmimi mujor:",
     "yearly_price": "Çmimi vjetor:",
     "free_trial_description": "5 ditë provë falas, pa reklama, të gjitha veçoritë në dispozicion. Mund të anuloni para se të përfundojë periudha e provës.",
-    "group_partners": "Komuniteti ynë"
+    "group_partners": "Komuniteti ynë",
+    "get_vocabulary": "Merr Fjalorin"
 },
 "fi_fi": {
     "short": "fi",
@@ -2891,7 +2942,8 @@
     "monthly_price": "Kuukausihinta:",
     "yearly_price": "Vuosihinta:",
     "free_trial_description": "5 päivän ilmainen kokeilu, ei mainoksia, kaikki ominaisuudet käytettävissä. Voit peruuttaa ennen kokeilun päättymistä.",
-    "group_partners": "Yhteisömme"
+    "group_partners": "Yhteisömme",
+    "get_vocabulary": "Hanki Sanasto"
 },
 "nb_no": {
     "short": "nb",
@@ -2946,6 +2998,7 @@
     "monthly_price": "Månedlig pris:",
     "yearly_price": "Årlig pris:",
     "free_trial_description": "5 dagers gratis prøveperiode, ingen annonser, alle funksjoner tilgjengelig. Du kan kansellere før prøveperioden utløper.",
-    "group_partners": "Vårt fellesskap"
+    "group_partners": "Vårt fellesskap",
+    "get_vocabulary": "Få Ordforråd"
 }
 }
