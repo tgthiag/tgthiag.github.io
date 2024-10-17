@@ -1407,9 +1407,9 @@ function createModalReserva(listaLojas) {
 let isFetching = false;
 
 function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
-    if (selectedLoja && !isFetching) {
-        isFetching = true; // Prevent multiple requests
-        
+    if (selectedLoja && !isFetching) { 
+        isFetching = true;
+
         var requestBody = JSON.stringify({
             "Parametros": {
                 "Codigo": selectedLoja,
@@ -1417,27 +1417,25 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
             }
         });
 
-        $.ajax({
-            url: url + "easymobile/CONSULTAS/LISTASALDO",
+        fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
             method: "POST",
-            contentType: "application/json",
-            data: requestBody,
-            success: function(result) {
-                const saldoData = JSON.parse(result);
+            headers: { "Content-Type": "application/json" },
+            body: requestBody
+        })
+        .then(response => response.text())
+        .then(result => {
+            const saldoData = JSON.parse(result);
 
-                if (saldoData.ListaSaldos) {
-                    showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
-                } else {
-                    $("#alerta").modal({ backdrop: "static" });
-                    document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
-                }
-            },
-            error: function(error) {
-                console.error(error);
-            },
-            complete: function() {
-                isFetching = false; // Reset the fetching state when done
+            if (saldoData.ListaSaldos) {
+                showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
+            } else {
+                $("#alerta").modal({ backdrop: "static" });
+                document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
             }
+        })
+        .catch(error => console.error(error))
+        .finally(() => {
+            isFetching = false; 
         });
     }
 }
