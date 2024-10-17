@@ -1419,7 +1419,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
         const saldoData = JSON.parse(result);
 
         if (saldoData.ListaSaldos) {
-            showSaldoModal(saldoData.ListaSaldos[0], selectedLoja);
+            showSaldoModal(saldoData.ListaSaldos[0], selectedLoja,listaLojas);
         } else {
             $("#alerta").modal({ backdrop: "static" });
             document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
@@ -1428,7 +1428,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
     .catch(error => console.error(error));
 }
 
-function showSaldoModal(saldo, lojaCodigo) {
+function showSaldoModal(saldo, lojaCodigo,listaLojas) {
     var saldoModalHtml = `
         <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -1461,7 +1461,7 @@ function showSaldoModal(saldo, lojaCodigo) {
 
     $('#backToLoja').on('click', function() {
         $('#saldoModal').modal('hide');
-        createModalReserva(lojaCodigo);
+        createModalReserva(listaLojas);
     });
 
     $('#submitReserva').on('click', function() {
