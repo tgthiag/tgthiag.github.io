@@ -1434,7 +1434,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
 }
 
 function showSaldoModal(saldo, lojaCodigo,listaLojas) {
-    let podeReservar = saldo.QtdDisponivel == 0;
+    let podeReservar = saldo.QtdDisponivel == 0 ? "disabled" : "";
     var saldoModalHtml = `
         <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
