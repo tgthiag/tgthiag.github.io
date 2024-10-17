@@ -1317,7 +1317,7 @@ setTimeout(function() {
 //         modal.remove();
 //     });
 // }
-
+let filial_de_reserva = 
 function IniciarProcessoDeReserva() {
     var tabela = document.querySelector("#divAddProd table");
     var tdFrete = document.createElement("td");
@@ -1330,7 +1330,7 @@ function IniciarProcessoDeReserva() {
     var segundaLinha = tabela.querySelector("tr:nth-child(2)");
     segundaLinha.appendChild(tdFrete);
 
-    var divAddProd = document.getElementById("bfechaorc");
+    var divAddProd = document.getElementById("opcoesEntrega");
     var botaoReserva = document.createElement("button");
     botaoReserva.className = "btn btn-warning";
     botaoReserva.style.height = "40px";
@@ -1434,6 +1434,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
 }
 
 function showSaldoModal(saldo, lojaCodigo,listaLojas) {
+    let podeReservar = saldo.QtdDisponivel != 0;
     var saldoModalHtml = `
         <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -1452,7 +1453,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
                         <p>Quantidade Disponível: ${saldo.QtdDisponivel}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="submitReserva">Confirmar Reserva</button>
+                        <button type="button" class="btn btn-primary" disabled="{${podeReservar}}" id="submitReserva">Confirmar Reserva</button>
                         <button type="button" class="btn btn-secondary" id="backToLoja">Voltar</button>
                     </div>
                 </div>
