@@ -1394,8 +1394,79 @@ function createModalReserva(listaLojas) {
 
     $('#listaLojas .list-group-item').on('click', function () {
         var selectedLoja = $(this).data('codigo');
-        console.log('Loja selecionada:', selectedLoja);
+        var selectedProduto = $("#codigo").data("codigo");
+
         $('#reservaModal').modal('hide');
+        fetchSaldoInfo(selectedLoja, selectedProduto);
+    });
+}
+
+function fetchSaldoInfo(selectedLoja, selectedProduto) {
+    var requestBody = JSON.stringify({
+        "Parametros": {
+            "Codigo": selectedLoja,
+            "Produto": selectedProduto
+        }
+    });
+
+    fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: requestBody
+    })
+    .then(response => response.text())
+    .then(result => {
+        const saldoData = JSON.parse(result);
+
+        if (saldoData.ListaSaldos) {
+            showSaldoModal(saldoData.ListaSaldos[0], selectedLoja);
+        } else {
+            $("#alerta").modal({ backdrop: "static" });
+            document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
+        }
+    })
+    .catch(error => console.error(error));
+}
+
+function showSaldoModal(saldo, lojaCodigo) {
+    var saldoModalHtml = `
+        <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saldoModalLabel">Informações de Saldo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Produto: ${saldo.Produto}</p>
+                        <p>Armazém: ${saldo.Armazem}</p>
+                        <p>Quantidade Atual: ${saldo.QtdAtual}</p>
+                        <p>Quantidade Reservada: ${saldo.QtdReserva}</p>
+                        <p>Quantidade Disponível: ${saldo.QtdDisponivel}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="submitReserva">Confirmar Reserva</button>
+                        <button type="button" class="btn btn-secondary" id="backToLoja">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    $('body').append(saldoModalHtml);
+    $('#saldoModal').modal('show');
+
+
+    $('#backToLoja').on('click', function() {
+        $('#saldoModal').modal('hide');
+        createModalReserva();
+    });
+
+    $('#submitReserva').on('click', function() {
+        console.log('Reserva confirmada para a loja:', lojaCodigo);
+        $('#saldoModal').modal('hide');
     });
 }
 
