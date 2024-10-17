@@ -1343,19 +1343,22 @@ function IniciarProcessoDeReserva() {
             headers: { "Content-Type": "application/json" },
             redirect: "follow"
         };
-        
-        fetch(url + "easymobile/CONSULTAS/LISTALOJAS", requestOptions)
-            .then(response => response.text())
-            .then(result => {
-                const jsonData = JSON.parse(result);
-                if (jsonData.ListaLojas) {
-                    createModalReserva(jsonData.ListaLojas);
-                } else {
-                    $("#alerta").modal({ backdrop: "static" });
-                    document.getElementById("dmodal").innerHTML = 'Nenhuma loja encontrada.';
-                }
-            })
-            .catch(error => console.error(error));
+        if($("#codigo").data("codigo") != ""){
+            fetch(url + "easymobile/CONSULTAS/LISTALOJAS", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    const jsonData = JSON.parse(result);
+                    if (jsonData.ListaLojas) {
+                        createModalReserva(jsonData.ListaLojas);
+                    } else {
+                        $("#alerta").modal({ backdrop: "static" });
+                        document.getElementById("dmodal").innerHTML = 'Nenhuma loja encontrada.';
+                    }
+                })
+                .catch(error => console.error(error));
+        }else{
+            showAlert("Selecione um produto.");
+        }
     });
 
     divAddProd.appendChild(botaoReserva);
@@ -1402,30 +1405,32 @@ function createModalReserva(listaLojas) {
 }
 
 function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
-    var requestBody = JSON.stringify({
-        "Parametros": {
-            "Codigo": selectedLoja,
-            "Produto": selectedProduto
-        }
-    });
+    if(selectedLoja){
+        var requestBody = JSON.stringify({
+            "Parametros": {
+                "Codigo": selectedLoja,
+                "Produto": selectedProduto
+            }
+        });
 
-    fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: requestBody
-    })
-    .then(response => response.text())
-    .then(result => {
-        const saldoData = JSON.parse(result);
+        fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: requestBody
+        })
+        .then(response => response.text())
+        .then(result => {
+            const saldoData = JSON.parse(result);
 
-        if (saldoData.ListaSaldos) {
-            showSaldoModal(saldoData.ListaSaldos[0], selectedLoja,listaLojas);
-        } else {
-            $("#alerta").modal({ backdrop: "static" });
-            document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
-        }
-    })
-    .catch(error => console.error(error));
+            if (saldoData.ListaSaldos) {
+                showSaldoModal(saldoData.ListaSaldos[0], selectedLoja,listaLojas);
+            } else {
+                $("#alerta").modal({ backdrop: "static" });
+                document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
+            }
+        })
+        .catch(error => console.error(error));
+    }
 }
 
 function showSaldoModal(saldo, lojaCodigo,listaLojas) {
