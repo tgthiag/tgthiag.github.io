@@ -612,7 +612,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
-    let filial_reserva = $("#filial_reserva").text() || "";
+    let filial_reserva = $("#filial_reserva").val() || "";
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -684,7 +684,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
-                ' data-filialReserva="'			+ filial_reserva + '"' +
+                ' data-filialreserva="'			+ filial_reserva + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -784,8 +784,8 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
             jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
-            if ($(this).data("filialReserva") !== "" && $(this).data("filialReserva") != undefined){
-                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialReserva").toString();
+            if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
+                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString();
             }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
@@ -1488,6 +1488,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
     $('#submitReserva').on('click', function() {
         console.log('Reserva confirmada para a loja:', lojaCodigo);
         $("#filial_reserva").text(lojaCodigo);
+        $("#filial_reserva").val(lojaCodigo);
         $('#saldoModal').modal('hide');
     });
 }
