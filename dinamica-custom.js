@@ -1397,11 +1397,11 @@ function createModalReserva(listaLojas) {
         var selectedProduto = $("#codigo").data("codigo");
 
         $('#reservaModal').modal('hide');
-        fetchSaldoInfo(selectedLoja, selectedProduto);
+        fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas);
     });
 }
 
-function fetchSaldoInfo(selectedLoja, selectedProduto) {
+function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
     var requestBody = JSON.stringify({
         "Parametros": {
             "Codigo": selectedLoja,
@@ -1461,7 +1461,7 @@ function showSaldoModal(saldo, lojaCodigo) {
 
     $('#backToLoja').on('click', function() {
         $('#saldoModal').modal('hide');
-        createModalReserva();
+        createModalReserva(lojaCodigo);
     });
 
     $('#submitReserva').on('click', function() {
