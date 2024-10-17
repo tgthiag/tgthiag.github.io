@@ -1381,13 +1381,13 @@ function createModalReserva(listaLojas) {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <ul id="listaLojas" class="list-group">
+                        <div id="listaLojas">
                             ${listaLojas.map(loja => `
-                                <li class="list-group-item" data-codigo="${loja.Codigo}">
+                                <button type="button" class="btn btn-outline-primary loja-item" data-codigo="${loja.Codigo}">
                                     ${loja.Nome} - Filial: ${loja.Filial}
-                                </li>
+                                </button>
                             `).join('')}
-                        </ul>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -1400,7 +1400,8 @@ function createModalReserva(listaLojas) {
     $('body').append(modalHtml);
     $('#reservaModal').modal('show');
 
-    $('#listaLojas .list-group-item').on('click', function () {
+    // Handle button clicks
+    $('#listaLojas .loja-item').on('click', function () {
         var selectedLoja = $(this).data('codigo');
         var selectedProduto = $("#codigo").data("codigo");
 
@@ -1408,6 +1409,7 @@ function createModalReserva(listaLojas) {
         fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas);
     });
 }
+
 
 let isFetching = false;
 
