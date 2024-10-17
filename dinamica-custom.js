@@ -1317,7 +1317,7 @@ setTimeout(function() {
 //         modal.remove();
 //     });
 // }
-let filial_de_reserva = 
+
 function IniciarProcessoDeReserva() {
     var tabela = document.querySelector("#divAddProd table");
     var tdFrete = document.createElement("td");
