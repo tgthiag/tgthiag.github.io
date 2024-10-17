@@ -353,7 +353,7 @@ $("body").append(`
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
                                 <label id="DinamicaLabelCustomerOrder" class="fonte" for="DinamicaCustomerOrder">Valor Garantia</label><span id="DinamicaSpanCustomerOrder" style="color: red;font-size: small"></span>
                                 <div class="input-group input-group-lg clearable">
-                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" required>
+                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" name="customerOrder" required>
                                         <!-- Dropdown options will be populated here dynamically -->
                                     </select>
                                     <i class="clearable__clear">&times;</i>
