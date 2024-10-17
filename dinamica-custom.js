@@ -1453,7 +1453,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
                         <p>Quantidade Disponível: ${saldo.QtdDisponivel}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" disabled="{${podeReservar}}" id="submitReserva">Confirmar Reserva</button>
+                        <button type="button" class="btn btn-primary" ${podeReservar} id="submitReserva">Confirmar Reserva</button>
                         <button type="button" class="btn btn-secondary" id="backToLoja">Voltar</button>
                     </div>
                 </div>
