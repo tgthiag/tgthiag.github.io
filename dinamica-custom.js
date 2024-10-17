@@ -784,8 +784,8 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
             jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
-            if($(this).data("filial_reserva") != ""){
-                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filial_reserva").toString();
+            if ($(this).data("filialReserva") !== "" && $(this).data("filialReserva") != undefined){
+                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialReserva").toString();
             }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
