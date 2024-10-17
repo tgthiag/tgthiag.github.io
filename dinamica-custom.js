@@ -1176,231 +1176,229 @@ setTimeout(function() {
     };
 }, 3000);
 
-//----------------------------------------------------------------
-async function createModalReserva() {
+// //----------------------------------------------------------------
+// async function createModalReserva() {
 
-    let produtos = document.querySelectorAll('#nav1 .list-group-item');
-    let produtosHTML = '';
+//     let produtos = document.querySelectorAll('#nav1 .list-group-item');
+//     let produtosHTML = '';
 
-    let produtosArray = [];  
-    let saldoscdArray = [];
-    let saldosljArray = [];
+//     let produtosArray = [];  
+//     let saldoscdArray = [];
+//     let saldosljArray = [];
 
-    let fetchPromises = [];
+//     let fetchPromises = [];
 
-    produtos.forEach((produto) => {
-        let codprod = produto.getAttribute('data-codigo').trim();
+//     produtos.forEach((produto) => {
+//         let codprod = produto.getAttribute('data-codigo').trim();
 
-        var json = {
-            "cnpj": tbLogin[0].CNPJ,
-            "produto": codprod
-        };
+//         var json = {
+//             "cnpj": tbLogin[0].CNPJ,
+//             "produto": codprod
+//         };
 
-        var raw = JSON.stringify(json);
+//         var raw = JSON.stringify(json);
 
-        const myHeaders = new Headers();
-        myHeaders.append("tenantId", "01");
-        myHeaders.append("Content-Type", "application/json");
+//         const myHeaders = new Headers();
+//         myHeaders.append("tenantId", "01");
+//         myHeaders.append("Content-Type", "application/json");
 
+//         const requestOptions = {
+//             method: "POST",
+//             headers: myHeaders,
+//             body: raw,
+//             redirect: "follow"
+//         };
+
+//         // Adicionar a promessa da requisição fetch �  lista de promessas
+//         fetchPromises.push(
+//             fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
+//                 .then((response) => response.text())
+//                 .then((result) => {
+//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
+//                     if (jsonData.status == true) {
+//                         let nSaldoCd = jsonData.valcd;
+//                         let nSaldoLoja = jsonData.valloja;
+
+//                         // Adiciona os valores aos arrays
+//                         produtosArray.push(codprod);
+//                         saldoscdArray.push(nSaldoCd);
+//                         saldosljArray.push(nSaldoLoja);
+//                     }
+//                 })
+//                 .catch((error) => console.error(error))
+//         );
+//     });
+
+//     await Promise.all(fetchPromises);
+
+//     produtos.forEach((produto, index) => {
+//         const codigo = produto.getAttribute('data-codigo');
+//         const descricao = produto.getAttribute('data-desc');
+
+//         // Verifica se o produto existe nos arrays de saldo
+//         const produtoIndex = produtosArray.indexOf(codigo.trim());
+
+//         if (produtoIndex !== -1) {
+//             const saldoCD = saldoscdArray[produtoIndex];
+//             const saldoLoja = saldosljArray[produtoIndex];
+
+//             produtosHTML += `
+//                 <tr>
+//                     <td>${codigo} - ${descricao}</td>
+//                     <td>${saldoCD}</td>
+//                     <td>${saldoLoja}</td>
+//                     <td>
+//                         <div class="row">
+//                             <div class="col-6">
+//                                 <div class="form-check">
+//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
+//                                     <label class="form-check-label" for="produto${index}CD">CD</label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-6">
+//                                 <div class="form-check">
+//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
+//                                     <label class="form-check-label" for="produto${index}Loja">Loja</label>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </td>
+//                 </tr>
+//             `;
+//         }
+//     });
+
+//     const modalHTML = `
+//         <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+//             <div class="modal-dialog" role="document">
+//                 <div class="modal-content">
+//                     <div class="modal-header">
+//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//                             <span aria-hidden="true">&times;</span>
+//                         </button>
+//                     </div>
+//                     <div class="modal-body">
+//                         <!-- Tabela de produtos -->
+//                         <table class="table">
+//                             <thead>
+//                                 <tr>
+//                                     <th>Produto</th>
+//                                     <th>Saldo CD</th>
+//                                     <th>Saldo Loja</th>
+//                                     <th>Escolha Armazém</th>
+//                                 </tr>
+//                             </thead>
+//                             <tbody id="produto-lista">
+//                                 ${produtosHTML}
+//                             </tbody>
+//                         </table>
+//                     </div>
+//                     <div class="modal-footer">
+//                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
+//                         <button type="button" class="btn btn-success reservas">Salvar</button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     `;
+
+//     document.body.insertAdjacentHTML('beforeend', modalHTML);
+//     const modal = $('#reservaModal');
+//     modal.modal();
+
+//     $('.reservas').click(function () {
+//         const id = $(this).data('id');
+//         const quant = $(this).data('quant');
+//         modal.modal('hide');
+//     });
+
+
+//     modal.on('hidden.bs.modal', function () {
+//         modal.remove();
+//     });
+// }
+
+function IniciarProcessoDeReserva() {
+    var tabela = document.querySelector("#divAddProd table");
+    var tdFrete = document.createElement("td");
+    tdFrete.innerHTML = `
+        <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
+        <div class="fonte-big fonte-gray-darken" align="right">
+            <strong id="valorFrete">0,00</strong>
+        </div>
+    `;
+    var segundaLinha = tabela.querySelector("tr:nth-child(2)");
+    segundaLinha.appendChild(tdFrete);
+
+    var divAddProd = document.getElementById("bfechaorc");
+    var botaoReserva = document.createElement("button");
+    botaoReserva.className = "btn btn-warning";
+    botaoReserva.style.height = "40px";
+    botaoReserva.style.width = "100%";
+    botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
+
+    botaoReserva.addEventListener("click", function() {
         const requestOptions = {
             method: "POST",
-            headers: myHeaders,
-            body: raw,
+            headers: { "Content-Type": "application/json" },
             redirect: "follow"
         };
-
-        // Adicionar a promessa da requisição fetch �  lista de promessas
-        fetchPromises.push(
-            fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-                .then((response) => response.text())
-                .then((result) => {
-                    const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-                    if (jsonData.status == true) {
-                        let nSaldoCd = jsonData.valcd;
-                        let nSaldoLoja = jsonData.valloja;
-
-                        // Adiciona os valores aos arrays
-                        produtosArray.push(codprod);
-                        saldoscdArray.push(nSaldoCd);
-                        saldosljArray.push(nSaldoLoja);
-                    }
-                })
-                .catch((error) => console.error(error))
-        );
+        
+        fetch(url + "easymobile/CONSULTAS/LISTALOJAS", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                const jsonData = JSON.parse(result);
+                if (jsonData.ListaLojas) {
+                    createModalReserva(jsonData.ListaLojas);
+                } else {
+                    $("#alerta").modal({ backdrop: "static" });
+                    document.getElementById("dmodal").innerHTML = 'Nenhuma loja encontrada.';
+                }
+            })
+            .catch(error => console.error(error));
     });
 
-    await Promise.all(fetchPromises);
+    divAddProd.appendChild(botaoReserva);
+}
 
-    produtos.forEach((produto, index) => {
-        const codigo = produto.getAttribute('data-codigo');
-        const descricao = produto.getAttribute('data-desc');
-
-        // Verifica se o produto existe nos arrays de saldo
-        const produtoIndex = produtosArray.indexOf(codigo.trim());
-
-        if (produtoIndex !== -1) {
-            const saldoCD = saldoscdArray[produtoIndex];
-            const saldoLoja = saldosljArray[produtoIndex];
-
-            produtosHTML += `
-                <tr>
-                    <td>${codigo} - ${descricao}</td>
-                    <td>${saldoCD}</td>
-                    <td>${saldoLoja}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
-                                    <label class="form-check-label" for="produto${index}CD">CD</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
-                                    <label class="form-check-label" for="produto${index}Loja">Loja</label>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            `;
-        }
-    });
-
-    const modalHTML = `
-        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+function createModalReserva(listaLojas) {
+    var modalHtml = `
+        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="reservaModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <h5 class="modal-title" id="reservaModalLabel">Selecionar Loja</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- Tabela de produtos -->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Produto</th>
-                                    <th>Saldo CD</th>
-                                    <th>Saldo Loja</th>
-                                    <th>Escolha Armazém</th>
-                                </tr>
-                            </thead>
-                            <tbody id="produto-lista">
-                                ${produtosHTML}
-                            </tbody>
-                        </table>
+                        <ul id="listaLojas" class="list-group">
+                            ${listaLojas.map(loja => `
+                                <li class="list-group-item" data-codigo="${loja.Codigo}">
+                                    ${loja.Nome} - Filial: ${loja.Filial}
+                                </li>
+                            `).join('')}
+                        </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
-                        <button type="button" class="btn btn-success reservas">Salvar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
     `;
+    
+    $('body').append(modalHtml);
+    $('#reservaModal').modal('show');
 
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    const modal = $('#reservaModal');
-    modal.modal();
-
-    $('.reservas').click(function () {
-        const id = $(this).data('id');
-        const quant = $(this).data('quant');
-        modal.modal('hide');
-    });
-
-
-    modal.on('hidden.bs.modal', function () {
-        modal.remove();
+    $('#listaLojas .list-group-item').on('click', function () {
+        var selectedLoja = $(this).data('codigo');
+        console.log('Loja selecionada:', selectedLoja);
+        $('#reservaModal').modal('hide');
     });
 }
 
-// function adicionaCampoFrete() {
-//     // Localiza a tabela onde o valor do produto está sendo exibido
-//     var tabela = document.querySelector("#divAddProd table");
-
-//     // Cria o elemento <td> para o valor do frete
-//     var tdFrete = document.createElement("td");
-
-//     // Adiciona o conteúdo HTML dentro do <td>
-//     tdFrete.innerHTML = `
-//         <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
-//         <div class="fonte-big fonte-gray-darken" align="right">
-//             <strong id="valorFrete">0,00</strong>
-//         </div>
-//     `;
-
-//     // Insere o <td> na linha ao lado do valor do produto
-//     var segundaLinha = tabela.querySelector("tr:nth-child(2)");
-//     segundaLinha.appendChild(tdFrete);
-
-//     // Agora cria o botão "Reserva" logo após a tabela
-//     var divAddProd = document.getElementById("bfechaorc");
-
-//     // Cria o botão "Reserva"
-//     var botaoReserva = document.createElement("button");
-//     botaoReserva.className = "btn btn-warning"; // Classe bootstrap para estilização
-//     botaoReserva.style.height = "40px";
-//     botaoReserva.style.width = "100%";
-//     botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
-
-//     // Adiciona o evento de click com o alert
-//     botaoReserva.addEventListener("click", function() {
-
-//         //if(document.getElementById("codigo").value!=''){
-
-//             var json = {
-//                 "cnpj": tbLogin[0].CNPJ,
-//                 "produto": $("#codigo").data("codigo")
-//               };
-              
-//               var raw = JSON.stringify(json);
-    
-//               const myHeaders = new Headers();
-//               myHeaders.append("tenantId", "01");
-//               myHeaders.append("Content-Type", "application/json");
-              
-//               const requestOptions = {
-//                 method: "POST",
-//                 headers: myHeaders,
-//                 body: raw,
-//                 redirect: "follow"
-//               };
-              
-//               fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-//                 .then((response) => response.text())
-//                 .then((result) => {    
-    
-//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-
-//                     if(jsonData.status==true){
-
-//                         createModalReserva(jsonData.valloja,jsonData.valcd);      
-
-//                     }else{
-
-//                         $("#alerta").modal({backdrop: "static"});	
-//                         document.getElementById("dmodal").innerHTML = 'Nenhum saldo a reservar';
-
-//                     }
-                    
-    
-//                 })
-//                 .catch((error) => console.error(error));                 
-
-
-//         //}
-        
-//     });    
-    
-
-//     // Insere o botão "Reserva" logo após a tabela
-//     divAddProd.appendChild(botaoReserva);
-// }
-// $(document).ready(function () {   
-       
-//     adicionaCampoFrete();
-// });
+$(document).ready(function () {
+    IniciarProcessoDeReserva();
+});
