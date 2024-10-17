@@ -401,6 +401,7 @@ $("body").append(`
                                     <input type="date" id="dataMontagem" class="form-control">
                                 </div>
                             </div>
+                            <p id="filial_reserva"></p>
                         </div>
                     </form>
                 </div>
@@ -1480,6 +1481,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
 
     $('#submitReserva').on('click', function() {
         console.log('Reserva confirmada para a loja:', lojaCodigo);
+        $("#filial_reserva").text(lojaCodigo);
         $('#saldoModal').modal('hide');
     });
 }
