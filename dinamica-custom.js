@@ -612,7 +612,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
-    let filial_reserva = $("#filial_reserva").text();
+    let filial_reserva = $("#filial_reserva").text() || "";
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
