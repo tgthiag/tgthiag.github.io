@@ -612,6 +612,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
+    let filial_reserva = $("#filial_reserva").text();
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -683,6 +684,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
+                ' data-filialReserva="'			+ filial_reserva + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -782,7 +784,9 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
             jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
-            
+            if($(this).data("filial_reserva") != ""){
+                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filial_reserva").toString();
+            }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
             jsonenv.itens[index]["LR_CODLPRE"] = $(this).data("codlista").toString();
