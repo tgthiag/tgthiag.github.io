@@ -1381,9 +1381,9 @@ function createModalReserva(listaLojas) {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div id="listaLojas">
+                        <div id="listaLojas" style="display: grid;">
                             ${listaLojas.map(loja => `
-                                <button type="button" class="btn btn-outline-primary loja-item" data-codigo="${loja.Codigo}">
+                                <button type="button" style="margin: 10px;" class="btn btn-outline-primary loja-item" data-codigo="${loja.Codigo}">
                                     ${loja.Nome} - Filial: ${loja.Filial}
                                 </button>
                             `).join('')}
