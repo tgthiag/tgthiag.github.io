@@ -779,13 +779,13 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
              lEntregaposterior = true;
          }
         if (lEntregaposterior){
-            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
             jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
             jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
             if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
-                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString();
+                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
+                jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
             }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
