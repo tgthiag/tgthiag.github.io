@@ -406,7 +406,7 @@ $("body").append(`
                     </form>
                 </div>
                 <div class="modal-footer" id="buttons">
-                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
+                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success">Continuar <i class="fas fa-check"></i></button>
                 </div>
             </div>
         </div>
@@ -579,6 +579,7 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
         let validRetira = tipoEntrega == "2" && $("#vendedorInput").val() != "";
         let validEntrega = tipoEntrega == "3" && $("#vendedorInput").val() != "" && $("#dataEntrega").val() != "" && $("#dataMontagem").val() != "";
         if(validRetira || validEntrega){
+            $("#Dinamica_ModalAposAddCarrinho").modal('hide');
             aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
             $(".list-group-item").each(function() {
                 if ($(this).data("ctipoentrega") == 3){
