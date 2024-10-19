@@ -791,6 +791,9 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             jsonenv.itens[index]["LR_FDTENTR"] = dataEntregaFormatada.split('-').reverse().join('/');
             let dataMontagemFormatada = formatarData($(this).data("datamontagem").toString());
             jsonenv.itens[index]["LR_FDTMONT"] = dataMontagemFormatada.split('-').reverse().join('/');
+            if ($(this).data("reserva") != undefined) {
+                jsonenv.itens[index]["LR_RESERVA"] = $(this).data("reserva").trim();
+            }
             if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
                 jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
                 jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
@@ -946,6 +949,7 @@ function pagarOrcamento(){
                     let dinamica_dataEntrega = this.L2_FDTENTR;
                     let dinamica_dataMontagem = this.L2_FDTMONT;
                     let vendorCodeDinamica = this.L2_VEND;
+                    let reservaCodeDinamica = this.L2_RESERVA;
                     
                     var item = '<a data-acessorio="acessorio"'+
                                     //'" data-percent="' 		+ document.getElementById("percent").value + 
@@ -961,6 +965,7 @@ function pagarOrcamento(){
                                     ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                                     ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                                     ' data-vendcod="'			+ vendorCodeDinamica + '"' +
+                                    ' data-reserva="'			+ reservaCodeDinamica + '"' +
                                     ' data-reais="'				+ cDesconto+'"' +
                                     ' data-estoque="'			+ cQtdEstoque+'"' +
                                     ' data-cliente="'			+ this.L1_CLIENTE+ this.L1_LOJA+'"' +
@@ -1011,7 +1016,7 @@ function pagarOrcamento(){
 function PE_ANT_buscaNrOrcamento(cQuery) {
     cQuery = cQuery.replace(
         "L2_LOCAL",
-        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT"
+        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT, L2_RESERVA"
     );
     cQuery = cQuery.replace(
         "L1_LOJA",
