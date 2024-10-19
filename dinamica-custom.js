@@ -575,24 +575,29 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     //     populateGarantiaDropdown(item);
     // };
     document.getElementById("DinamicaBtnCustomerOrderItem").onclick = function(){
-        aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
-
-        $(".list-group-item").each(function() {
-            if ($(this).data("ctipoentrega") == 3){
-                nQtditemCarrinhoEntrega++;
+        let tipoEntrega = $("#selectTipoEntrega").val();
+        let validRetira = tipoEntrega == "2" && $("#vendedorInput").val() != "";
+        let validEntrega = tipoEntrega == "3" && $("#vendedorInput").val() != "" && $("#dataEntrega").val() != "" && $("#dataMontagem").val() != "";
+        if(validRetira || validEntrega){
+            aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
+            $(".list-group-item").each(function() {
+                if ($(this).data("ctipoentrega") == 3){
+                    nQtditemCarrinhoEntrega++;
+                }
+                
+            });
+            if (nQtditemCarrinhoEntrega > 0){
+                if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
+                    nQtditemCarrinhoEntrega = 2;
+                }
+                
+                // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
+                // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
             }
-            
-        });
-        if (nQtditemCarrinhoEntrega > 0){
-            if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
-                nQtditemCarrinhoEntrega = 2;
-            }
-            
-            // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
-            // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
+            somatorio();//Executa a atualização dos totais
+        }else{
+            showAlert("É necessário preencher os campos");
         }
-        somatorio();//Executa a atualização dos totais
-
     }
 }
 }
