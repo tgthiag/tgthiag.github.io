@@ -787,8 +787,10 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
         if (lEntregaposterior){
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
-            jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
-            jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
+            let dataEntregaFormatada = formatarData($(this).data("dataentrega").toString());
+            jsonenv.itens[index]["LR_FDTENTR"] = dataEntregaFormatada.split('-').reverse().join('/');
+            let dataMontagemFormatada = formatarData($(this).data("datamontagem").toString());
+            jsonenv.itens[index]["LR_FDTMONT"] = dataMontagemFormatada.split('-').reverse().join('/');
             if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
                 jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
                 jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
@@ -802,6 +804,12 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
 
     return jsonenv;
 } 
+function formatarData(data) {
+    if (data.length === 8 && !data.includes("-") && !data.includes("/")) {
+        return `${data.slice(0, 4)}-${data.slice(4, 6)}-${data.slice(6, 8)}`;
+    }
+    return data;
+}
 
 $("body").append(`
     <div class="modal fade" id="alertModalDinamica" role="dialog">
