@@ -1439,7 +1439,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
         var requestBody = JSON.stringify({
             "Parametros": {
                 "Codigo": selectedLoja,
-                "Produto": selectedProduto
+                "Produto": selectedProduto.trim()
             }
         });
 
