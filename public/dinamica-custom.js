@@ -353,7 +353,7 @@ $("body").append(`
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
                                 <label id="DinamicaLabelCustomerOrder" class="fonte" for="DinamicaCustomerOrder">Valor Garantia</label><span id="DinamicaSpanCustomerOrder" style="color: red;font-size: small"></span>
                                 <div class="input-group input-group-lg clearable">
-                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" required>
+                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" name="customerOrder" required>
                                         <!-- Dropdown options will be populated here dynamically -->
                                     </select>
                                     <i class="clearable__clear">&times;</i>
@@ -401,11 +401,12 @@ $("body").append(`
                                     <input type="date" id="dataMontagem" class="form-control">
                                 </div>
                             </div>
+                            <p id="filial_reserva"></p>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer" id="buttons">
-                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
+                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success">Continuar <i class="fas fa-check"></i></button>
                 </div>
             </div>
         </div>
@@ -574,24 +575,30 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     //     populateGarantiaDropdown(item);
     // };
     document.getElementById("DinamicaBtnCustomerOrderItem").onclick = function(){
-        aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
-
-        $(".list-group-item").each(function() {
-            if ($(this).data("ctipoentrega") == 3){
-                nQtditemCarrinhoEntrega++;
+        let tipoEntrega = $("#selectTipoEntrega").val();
+        let validRetira = tipoEntrega == "2" && $("#vendedorInput").val() != "";
+        let validEntrega = tipoEntrega == "3" && $("#vendedorInput").val() != "" && $("#dataEntrega").val() != "" && $("#dataMontagem").val() != "";
+        if(validRetira || validEntrega){
+            $("#Dinamica_ModalAposAddCarrinho").modal('hide');
+            aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
+            $(".list-group-item").each(function() {
+                if ($(this).data("ctipoentrega") == 3){
+                    nQtditemCarrinhoEntrega++;
+                }
+                
+            });
+            if (nQtditemCarrinhoEntrega > 0){
+                if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
+                    nQtditemCarrinhoEntrega = 2;
+                }
+                
+                // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
+                // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
             }
-            
-        });
-        if (nQtditemCarrinhoEntrega > 0){
-            if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
-                nQtditemCarrinhoEntrega = 2;
-            }
-            
-            // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
-            // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
+            somatorio();//Executa a atualização dos totais
+        }else{
+            showAlert("É necessário preencher os campos");
         }
-        somatorio();//Executa a atualização dos totais
-
     }
 }
 }
@@ -611,6 +618,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
+    let filial_reserva = $("#filial_reserva").val() || "";
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -682,6 +690,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
+                ' data-filialreserva="'			+ filial_reserva + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -776,12 +785,19 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
              lEntregaposterior = true;
          }
         if (lEntregaposterior){
-            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
-            jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
-            jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
-            
+            let dataEntregaFormatada = formatarData($(this).data("dataentrega").toString());
+            jsonenv.itens[index]["LR_FDTENTR"] = dataEntregaFormatada.split('-').reverse().join('/');
+            let dataMontagemFormatada = formatarData($(this).data("datamontagem").toString());
+            jsonenv.itens[index]["LR_FDTMONT"] = dataMontagemFormatada.split('-').reverse().join('/');
+            if ($(this).data("reserva") != undefined) {
+                jsonenv.itens[index]["LR_RESERVA"] = $(this).data("reserva").trim();
+            }
+            if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
+                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
+                jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
+            }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
             jsonenv.itens[index]["LR_CODLPRE"] = $(this).data("codlista").toString();
@@ -791,6 +807,12 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
 
     return jsonenv;
 } 
+function formatarData(data) {
+    if (data.length === 8 && !data.includes("-") && !data.includes("/")) {
+        return `${data.slice(0, 4)}-${data.slice(4, 6)}-${data.slice(6, 8)}`;
+    }
+    return data;
+}
 
 $("body").append(`
     <div class="modal fade" id="alertModalDinamica" role="dialog">
@@ -927,6 +949,7 @@ function pagarOrcamento(){
                     let dinamica_dataEntrega = this.L2_FDTENTR;
                     let dinamica_dataMontagem = this.L2_FDTMONT;
                     let vendorCodeDinamica = this.L2_VEND;
+                    let reservaCodeDinamica = this.L2_RESERVA;
                     
                     var item = '<a data-acessorio="acessorio"'+
                                     //'" data-percent="' 		+ document.getElementById("percent").value + 
@@ -942,6 +965,7 @@ function pagarOrcamento(){
                                     ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                                     ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                                     ' data-vendcod="'			+ vendorCodeDinamica + '"' +
+                                    ' data-reserva="'			+ reservaCodeDinamica + '"' +
                                     ' data-reais="'				+ cDesconto+'"' +
                                     ' data-estoque="'			+ cQtdEstoque+'"' +
                                     ' data-cliente="'			+ this.L1_CLIENTE+ this.L1_LOJA+'"' +
@@ -992,7 +1016,7 @@ function pagarOrcamento(){
 function PE_ANT_buscaNrOrcamento(cQuery) {
     cQuery = cQuery.replace(
         "L2_LOCAL",
-        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT"
+        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT, L2_RESERVA"
     );
     cQuery = cQuery.replace(
         "L1_LOJA",
@@ -1176,231 +1200,318 @@ setTimeout(function() {
     };
 }, 3000);
 
-//----------------------------------------------------------------
-async function createModalReserva() {
+// //----------------------------------------------------------------
+// async function createModalReserva() {
 
-    let produtos = document.querySelectorAll('#nav1 .list-group-item');
-    let produtosHTML = '';
+//     let produtos = document.querySelectorAll('#nav1 .list-group-item');
+//     let produtosHTML = '';
 
-    let produtosArray = [];  
-    let saldoscdArray = [];
-    let saldosljArray = [];
+//     let produtosArray = [];  
+//     let saldoscdArray = [];
+//     let saldosljArray = [];
 
-    let fetchPromises = [];
+//     let fetchPromises = [];
 
-    produtos.forEach((produto) => {
-        let codprod = produto.getAttribute('data-codigo').trim();
+//     produtos.forEach((produto) => {
+//         let codprod = produto.getAttribute('data-codigo').trim();
 
-        var json = {
-            "cnpj": tbLogin[0].CNPJ,
-            "produto": codprod
-        };
+//         var json = {
+//             "cnpj": tbLogin[0].CNPJ,
+//             "produto": codprod
+//         };
 
-        var raw = JSON.stringify(json);
+//         var raw = JSON.stringify(json);
 
-        const myHeaders = new Headers();
-        myHeaders.append("tenantId", "01");
-        myHeaders.append("Content-Type", "application/json");
+//         const myHeaders = new Headers();
+//         myHeaders.append("tenantId", "01");
+//         myHeaders.append("Content-Type", "application/json");
 
+//         const requestOptions = {
+//             method: "POST",
+//             headers: myHeaders,
+//             body: raw,
+//             redirect: "follow"
+//         };
+
+//         // Adicionar a promessa da requisição fetch �  lista de promessas
+//         fetchPromises.push(
+//             fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
+//                 .then((response) => response.text())
+//                 .then((result) => {
+//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
+//                     if (jsonData.status == true) {
+//                         let nSaldoCd = jsonData.valcd;
+//                         let nSaldoLoja = jsonData.valloja;
+
+//                         // Adiciona os valores aos arrays
+//                         produtosArray.push(codprod);
+//                         saldoscdArray.push(nSaldoCd);
+//                         saldosljArray.push(nSaldoLoja);
+//                     }
+//                 })
+//                 .catch((error) => console.error(error))
+//         );
+//     });
+
+//     await Promise.all(fetchPromises);
+
+//     produtos.forEach((produto, index) => {
+//         const codigo = produto.getAttribute('data-codigo');
+//         const descricao = produto.getAttribute('data-desc');
+
+//         // Verifica se o produto existe nos arrays de saldo
+//         const produtoIndex = produtosArray.indexOf(codigo.trim());
+
+//         if (produtoIndex !== -1) {
+//             const saldoCD = saldoscdArray[produtoIndex];
+//             const saldoLoja = saldosljArray[produtoIndex];
+
+//             produtosHTML += `
+//                 <tr>
+//                     <td>${codigo} - ${descricao}</td>
+//                     <td>${saldoCD}</td>
+//                     <td>${saldoLoja}</td>
+//                     <td>
+//                         <div class="row">
+//                             <div class="col-6">
+//                                 <div class="form-check">
+//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
+//                                     <label class="form-check-label" for="produto${index}CD">CD</label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-6">
+//                                 <div class="form-check">
+//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
+//                                     <label class="form-check-label" for="produto${index}Loja">Loja</label>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </td>
+//                 </tr>
+//             `;
+//         }
+//     });
+
+//     const modalHTML = `
+//         <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+//             <div class="modal-dialog" role="document">
+//                 <div class="modal-content">
+//                     <div class="modal-header">
+//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//                             <span aria-hidden="true">&times;</span>
+//                         </button>
+//                     </div>
+//                     <div class="modal-body">
+//                         <!-- Tabela de produtos -->
+//                         <table class="table">
+//                             <thead>
+//                                 <tr>
+//                                     <th>Produto</th>
+//                                     <th>Saldo CD</th>
+//                                     <th>Saldo Loja</th>
+//                                     <th>Escolha Armazém</th>
+//                                 </tr>
+//                             </thead>
+//                             <tbody id="produto-lista">
+//                                 ${produtosHTML}
+//                             </tbody>
+//                         </table>
+//                     </div>
+//                     <div class="modal-footer">
+//                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
+//                         <button type="button" class="btn btn-success reservas">Salvar</button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     `;
+
+//     document.body.insertAdjacentHTML('beforeend', modalHTML);
+//     const modal = $('#reservaModal');
+//     modal.modal();
+
+//     $('.reservas').click(function () {
+//         const id = $(this).data('id');
+//         const quant = $(this).data('quant');
+//         modal.modal('hide');
+//     });
+
+
+//     modal.on('hidden.bs.modal', function () {
+//         modal.remove();
+//     });
+// }
+
+function IniciarProcessoDeReserva() {
+    var tabela = document.querySelector("#divAddProd table");
+    var tdFrete = document.createElement("td");
+    tdFrete.innerHTML = `
+        <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
+        <div class="fonte-big fonte-gray-darken" align="right">
+            <strong id="valorFrete">0,00</strong>
+        </div>
+    `;
+    var segundaLinha = tabela.querySelector("tr:nth-child(2)");
+    segundaLinha.appendChild(tdFrete);
+
+    var divAddProd = document.getElementById("opcoesEntrega");
+    var botaoReserva = document.createElement("button");
+    botaoReserva.className = "btn btn-warning";
+    botaoReserva.style.height = "40px";
+    botaoReserva.style.width = "100%";
+    botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
+
+    botaoReserva.addEventListener("click", function() {
         const requestOptions = {
             method: "POST",
-            headers: myHeaders,
-            body: raw,
+            headers: { "Content-Type": "application/json" },
             redirect: "follow"
         };
-
-        // Adicionar a promessa da requisição fetch �  lista de promessas
-        fetchPromises.push(
-            fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-                .then((response) => response.text())
-                .then((result) => {
-                    const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-                    if (jsonData.status == true) {
-                        let nSaldoCd = jsonData.valcd;
-                        let nSaldoLoja = jsonData.valloja;
-
-                        // Adiciona os valores aos arrays
-                        produtosArray.push(codprod);
-                        saldoscdArray.push(nSaldoCd);
-                        saldosljArray.push(nSaldoLoja);
+        if($("#codigo").data("codigo") != ""){
+            fetch(url + "easymobile/CONSULTAS/LISTALOJAS", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    const jsonData = JSON.parse(result);
+                    if (jsonData.ListaLojas) {
+                        createModalReserva(jsonData.ListaLojas);
+                    } else {
+                        $("#alerta").modal({ backdrop: "static" });
+                        document.getElementById("dmodal").innerHTML = 'Nenhuma loja encontrada.';
                     }
                 })
-                .catch((error) => console.error(error))
-        );
-    });
-
-    await Promise.all(fetchPromises);
-
-    produtos.forEach((produto, index) => {
-        const codigo = produto.getAttribute('data-codigo');
-        const descricao = produto.getAttribute('data-desc');
-
-        // Verifica se o produto existe nos arrays de saldo
-        const produtoIndex = produtosArray.indexOf(codigo.trim());
-
-        if (produtoIndex !== -1) {
-            const saldoCD = saldoscdArray[produtoIndex];
-            const saldoLoja = saldosljArray[produtoIndex];
-
-            produtosHTML += `
-                <tr>
-                    <td>${codigo} - ${descricao}</td>
-                    <td>${saldoCD}</td>
-                    <td>${saldoLoja}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
-                                    <label class="form-check-label" for="produto${index}CD">CD</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
-                                    <label class="form-check-label" for="produto${index}Loja">Loja</label>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            `;
+                .catch(error => console.error(error));
+        }else{
+            showAlert("Selecione um produto.");
         }
     });
 
-    const modalHTML = `
-        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    divAddProd.appendChild(botaoReserva);
+}
+
+function createModalReserva(listaLojas) {
+    var modalHtml = `
+        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="reservaModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <h5 class="modal-title" id="reservaModalLabel">Selecionar Loja</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- Tabela de produtos -->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Produto</th>
-                                    <th>Saldo CD</th>
-                                    <th>Saldo Loja</th>
-                                    <th>Escolha Armazém</th>
-                                </tr>
-                            </thead>
-                            <tbody id="produto-lista">
-                                ${produtosHTML}
-                            </tbody>
-                        </table>
+                        <div id="listaLojas" style="display: grid;">
+                            ${listaLojas.map(loja => `
+                                <button type="button" style="margin: 10px;" class="btn btn-outline-primary loja-item" data-codigo="${loja.Codigo}">
+                                    ${loja.Nome} - Filial: ${loja.Filial}
+                                </button>
+                            `).join('')}
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
-                        <button type="button" class="btn btn-success reservas">Salvar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    $('body').append(modalHtml);
+    $('#reservaModal').modal('show');
+
+    // Handle button clicks
+    $('#listaLojas .loja-item').on('click', function () {
+        var selectedLoja = $(this).data('codigo');
+        var selectedProduto = $("#codigo").data("codigo");
+
+        $('#reservaModal').modal('hide');
+        fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas);
+    });
+}
+
+
+let isFetching = false;
+
+function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
+    if (selectedLoja && !isFetching) { 
+        isFetching = true;
+
+        var requestBody = JSON.stringify({
+            "Parametros": {
+                "Codigo": selectedLoja,
+                "Produto": selectedProduto.trim()
+            }
+        });
+
+        fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: requestBody
+        })
+        .then(response => response.text())
+        .then(result => {
+            const saldoData = JSON.parse(result);
+
+            if (saldoData.ListaSaldos) {
+                showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
+            } else {
+                $("#alerta").modal({ backdrop: "static" });
+                document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
+            }
+        })
+        .catch(error => console.error(error))
+        .finally(() => {
+            isFetching = false; 
+        });
+    }
+}
+
+
+function showSaldoModal(saldo, lojaCodigo,listaLojas) {
+    let podeReservar = saldo.QtdDisponivel == 0 ? "disabled" : "";
+    var saldoModalHtml = `
+        <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saldoModalLabel">Informações de Saldo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Produto: ${saldo.Produto}</p>
+                        <p>Armazém: ${saldo.Armazem}</p>
+                        <p>Quantidade Atual: ${saldo.QtdAtual}</p>
+                        <p>Quantidade Reservada: ${saldo.QtdReserva}</p>
+                        <p>Quantidade Disponível: ${saldo.QtdDisponivel}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" ${podeReservar} id="submitReserva">Confirmar Reserva</button>
+                        <button type="button" class="btn btn-secondary" id="backToLoja">Voltar</button>
                     </div>
                 </div>
             </div>
         </div>
     `;
 
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    const modal = $('#reservaModal');
-    modal.modal();
+    $('body').append(saldoModalHtml);
+    $('#saldoModal').modal('show');
 
-    $('.reservas').click(function () {
-        const id = $(this).data('id');
-        const quant = $(this).data('quant');
-        modal.modal('hide');
+
+    $('#backToLoja').on('click', function() {
+        $('#saldoModal').modal('hide');
+        createModalReserva(listaLojas);
     });
 
-
-    modal.on('hidden.bs.modal', function () {
-        modal.remove();
+    $('#submitReserva').on('click', function() {
+        console.log('Reserva confirmada para a loja:', lojaCodigo);
+        $("#filial_reserva").text(lojaCodigo);
+        $("#filial_reserva").val(lojaCodigo);
+        $('#saldoModal').modal('hide');
     });
 }
 
-// function adicionaCampoFrete() {
-//     // Localiza a tabela onde o valor do produto está sendo exibido
-//     var tabela = document.querySelector("#divAddProd table");
-
-//     // Cria o elemento <td> para o valor do frete
-//     var tdFrete = document.createElement("td");
-
-//     // Adiciona o conteúdo HTML dentro do <td>
-//     tdFrete.innerHTML = `
-//         <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
-//         <div class="fonte-big fonte-gray-darken" align="right">
-//             <strong id="valorFrete">0,00</strong>
-//         </div>
-//     `;
-
-//     // Insere o <td> na linha ao lado do valor do produto
-//     var segundaLinha = tabela.querySelector("tr:nth-child(2)");
-//     segundaLinha.appendChild(tdFrete);
-
-//     // Agora cria o botão "Reserva" logo após a tabela
-//     var divAddProd = document.getElementById("bfechaorc");
-
-//     // Cria o botão "Reserva"
-//     var botaoReserva = document.createElement("button");
-//     botaoReserva.className = "btn btn-warning"; // Classe bootstrap para estilização
-//     botaoReserva.style.height = "40px";
-//     botaoReserva.style.width = "100%";
-//     botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
-
-//     // Adiciona o evento de click com o alert
-//     botaoReserva.addEventListener("click", function() {
-
-//         //if(document.getElementById("codigo").value!=''){
-
-//             var json = {
-//                 "cnpj": tbLogin[0].CNPJ,
-//                 "produto": $("#codigo").data("codigo")
-//               };
-              
-//               var raw = JSON.stringify(json);
-    
-//               const myHeaders = new Headers();
-//               myHeaders.append("tenantId", "01");
-//               myHeaders.append("Content-Type", "application/json");
-              
-//               const requestOptions = {
-//                 method: "POST",
-//                 headers: myHeaders,
-//                 body: raw,
-//                 redirect: "follow"
-//               };
-              
-//               fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-//                 .then((response) => response.text())
-//                 .then((result) => {    
-    
-//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-
-//                     if(jsonData.status==true){
-
-//                         createModalReserva(jsonData.valloja,jsonData.valcd);      
-
-//                     }else{
-
-//                         $("#alerta").modal({backdrop: "static"});	
-//                         document.getElementById("dmodal").innerHTML = 'Nenhum saldo a reservar';
-
-//                     }
-                    
-    
-//                 })
-//                 .catch((error) => console.error(error));                 
-
-
-//         //}
-        
-//     });    
-    
-
-//     // Insere o botão "Reserva" logo após a tabela
-//     divAddProd.appendChild(botaoReserva);
-// }
-// $(document).ready(function () {   
-       
-//     adicionaCampoFrete();
-// });
+$(document).ready(function () {
+    IniciarProcessoDeReserva();
+});
