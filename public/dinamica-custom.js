@@ -1510,6 +1510,9 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
         $("#filial_reserva").val(lojaCodigo);
         $('#saldoModal').modal('hide');
     });
+    $('#saldoModal').on('hidden.bs.modal', function() {
+        $(this).remove();
+    });
 }
 
 $(document).ready(function () {
