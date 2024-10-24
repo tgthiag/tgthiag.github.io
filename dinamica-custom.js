@@ -516,15 +516,28 @@ $("#dataEntrega").change(function() {
 
         let dataString = dataEntregaDinamica.val();
         
+        // Extrair manualmente o ano, mês e dia da string
         let partesData = dataString.split("-");
         let ano = parseInt(partesData[0], 10);
-        let mes = parseInt(partesData[1], 10) - 1; // Mês é indexado de 0 a 11
+        let mes = parseInt(partesData[1], 10); // Mês agora é de 1 a 12
         let dia = parseInt(partesData[2], 10);
 
-        let dataEntrega = new Date(ano, mes, dia);
-        let diaSemana = dataEntrega.getDay();
+        // Função para calcular o dia da semana (0: domingo, 6: sábado)
+        function calcularDiaSemana(ano, mes, dia) {
+            // Ajuste do algoritmo Zeller’s Congruence para calcular o dia da semana
+            if (mes < 3) {
+                mes += 12;
+                ano -= 1;
+            }
+            let k = ano % 100;
+            let j = Math.floor(ano / 100);
+            let diaSemana = (dia + Math.floor((13 * (mes + 1)) / 5) + k + Math.floor(k / 4) + Math.floor(j / 4) - 2 * j) % 7;
+            return (diaSemana + 6) % 7; // Ajuste para que 0 seja domingo e 6 seja sábado
+        }
 
-        console.log("dataEntrega:", dataEntrega);
+        let diaSemana = calcularDiaSemana(ano, mes, dia);
+
+        console.log("dataEntrega:", dataString);
         console.log("diaSemana:", diaSemana);
 
         // Verificar se é sábado (6) e turno 2
@@ -545,8 +558,6 @@ $("#dataEntrega").change(function() {
         }
     }
 });
-
-
 
 $("#dataMontagem").change(function() {
     if ($("#dataMontagem").val() != "") {
