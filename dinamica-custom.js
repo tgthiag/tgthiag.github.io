@@ -1192,6 +1192,7 @@ function searchforproducts(){
         $('#searchResults').empty();
     }
 };
+
 $('#btnIncluirItem').off('click').on('click', function() {
     let selectedItem = $('#produtoSearch').data('selectedItem');
     let quantityItems = $('#produtoQuantidade').val();
