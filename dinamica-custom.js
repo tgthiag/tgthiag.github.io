@@ -1192,6 +1192,61 @@ function searchforproducts(){
         $('#searchResults').empty();
     }
 };
+$('#btnIncluirItem').off('click').on('click', function() {
+    let selectedItem = $('#produtoSearch').data('selectedItem');
+    let quantityItems = $('#produtoQuantidade').val();
+
+    if (!selectedItem) {
+        alert('Por favor, selecione um produto.');
+        return;
+    }
+
+    if (!quantityItems || quantityItems <= 0) {
+        alert('Por favor, insira uma quantidade válida.');
+        return;
+    }
+    selectedItem.quantity = parseInt(quantityItems, 10);
+    const listaPresente = listaPresenteDinamica;
+    const finalDataToSend = {
+        "ListaPresentes": [
+            {
+                "Codigo": listaPresente.Codigo,  
+                "Produtos": [
+                    {
+                        "CodigoProduto": String(selectedItem.value).trim(),  
+                        "QtdSolicitada": selectedItem.quantity,
+                        "ValorUnitario": selectedItem.price 
+                    }
+                ]
+            }
+        ]
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: url + 'easymobile/INSERIR/LISTAPRESENTES',
+        data: JSON.stringify(finalDataToSend),
+        contentType: 'application/json',
+        async: true,
+        dataType: 'json',
+        success: function(response) {
+                if(response.message){
+                    showAlert(response.message);
+                }else{
+                    showAlert('Item incluído com sucesso:', response);
+                }
+
+            $('#modalAdicionarItem').modal('hide');
+            $('#modalProdutosLista').modal('hide');
+            $('#btn_pesquisar_dinamica').click();
+        },
+        error: function(xhr, status, error) {
+            // alert("Em desenvolvimento");
+            showAlert('Erro ao incluir item:', error);
+            alert('Ocorreu um erro ao incluir o item.');
+        }
+    });
+});
 
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
@@ -1208,148 +1263,6 @@ setTimeout(function() {
         return resut2;
     };
 }, 3000);
-
-// //----------------------------------------------------------------
-// async function createModalReserva() {
-
-//     let produtos = document.querySelectorAll('#nav1 .list-group-item');
-//     let produtosHTML = '';
-
-//     let produtosArray = [];  
-//     let saldoscdArray = [];
-//     let saldosljArray = [];
-
-//     let fetchPromises = [];
-
-//     produtos.forEach((produto) => {
-//         let codprod = produto.getAttribute('data-codigo').trim();
-
-//         var json = {
-//             "cnpj": tbLogin[0].CNPJ,
-//             "produto": codprod
-//         };
-
-//         var raw = JSON.stringify(json);
-
-//         const myHeaders = new Headers();
-//         myHeaders.append("tenantId", "01");
-//         myHeaders.append("Content-Type", "application/json");
-
-//         const requestOptions = {
-//             method: "POST",
-//             headers: myHeaders,
-//             body: raw,
-//             redirect: "follow"
-//         };
-
-//         // Adicionar a promessa da requisição fetch �  lista de promessas
-//         fetchPromises.push(
-//             fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-//                 .then((response) => response.text())
-//                 .then((result) => {
-//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-//                     if (jsonData.status == true) {
-//                         let nSaldoCd = jsonData.valcd;
-//                         let nSaldoLoja = jsonData.valloja;
-
-//                         // Adiciona os valores aos arrays
-//                         produtosArray.push(codprod);
-//                         saldoscdArray.push(nSaldoCd);
-//                         saldosljArray.push(nSaldoLoja);
-//                     }
-//                 })
-//                 .catch((error) => console.error(error))
-//         );
-//     });
-
-//     await Promise.all(fetchPromises);
-
-//     produtos.forEach((produto, index) => {
-//         const codigo = produto.getAttribute('data-codigo');
-//         const descricao = produto.getAttribute('data-desc');
-
-//         // Verifica se o produto existe nos arrays de saldo
-//         const produtoIndex = produtosArray.indexOf(codigo.trim());
-
-//         if (produtoIndex !== -1) {
-//             const saldoCD = saldoscdArray[produtoIndex];
-//             const saldoLoja = saldosljArray[produtoIndex];
-
-//             produtosHTML += `
-//                 <tr>
-//                     <td>${codigo} - ${descricao}</td>
-//                     <td>${saldoCD}</td>
-//                     <td>${saldoLoja}</td>
-//                     <td>
-//                         <div class="row">
-//                             <div class="col-6">
-//                                 <div class="form-check">
-//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
-//                                     <label class="form-check-label" for="produto${index}CD">CD</label>
-//                                 </div>
-//                             </div>
-//                             <div class="col-6">
-//                                 <div class="form-check">
-//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
-//                                     <label class="form-check-label" for="produto${index}Loja">Loja</label>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </td>
-//                 </tr>
-//             `;
-//         }
-//     });
-
-//     const modalHTML = `
-//         <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-//             <div class="modal-dialog" role="document">
-//                 <div class="modal-content">
-//                     <div class="modal-header">
-//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-//                             <span aria-hidden="true">&times;</span>
-//                         </button>
-//                     </div>
-//                     <div class="modal-body">
-//                         <!-- Tabela de produtos -->
-//                         <table class="table">
-//                             <thead>
-//                                 <tr>
-//                                     <th>Produto</th>
-//                                     <th>Saldo CD</th>
-//                                     <th>Saldo Loja</th>
-//                                     <th>Escolha Armazém</th>
-//                                 </tr>
-//                             </thead>
-//                             <tbody id="produto-lista">
-//                                 ${produtosHTML}
-//                             </tbody>
-//                         </table>
-//                     </div>
-//                     <div class="modal-footer">
-//                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
-//                         <button type="button" class="btn btn-success reservas">Salvar</button>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     `;
-
-//     document.body.insertAdjacentHTML('beforeend', modalHTML);
-//     const modal = $('#reservaModal');
-//     modal.modal();
-
-//     $('.reservas').click(function () {
-//         const id = $(this).data('id');
-//         const quant = $(this).data('quant');
-//         modal.modal('hide');
-//     });
-
-
-//     modal.on('hidden.bs.modal', function () {
-//         modal.remove();
-//     });
-// }
 
 function IniciarProcessoDeReserva() {
     var tabela = document.querySelector("#divAddProd table");
