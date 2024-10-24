@@ -516,12 +516,13 @@ $("#dataEntrega").change(function() {
 
         // Obter o dia da semana (0: domingo, 6: sábado)
         let dataEntrega = new Date(dataEntregaDinamica.val());
+        dataEntrega.setHours(12, 0, 0, 0);
         let diaSemana = dataEntrega.getDay();
 
         // Verificar se é sábado (6) e turno tarde
         if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
             alert("Não é possível agendar entregas na tarde de sábado.");
-            turnoEntregaDinamica.val("");
+            dataEntregaDinamica.val("");
             return;
         }
 
