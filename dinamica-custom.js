@@ -664,6 +664,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
     let filial_reserva = $("#filial_reserva").val() || "";
+    let saldo_endereco = $("#filial_reserva").data("endereco")
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -736,7 +737,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
                 ' data-filialreserva="'			+ filial_reserva + '"' +
-                ' data-saldoendereco="'			+ filial_reserva.data("endereco") + '"' +
+                ' data-saldoendereco="'			+ saldo_endereco + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
