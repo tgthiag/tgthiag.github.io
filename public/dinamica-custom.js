@@ -1,3 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
 /**
  * Customização feita por:
  * 
@@ -508,8 +513,48 @@ $("#dataEntrega").change(function() {
         verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-        if(podeEntregar){
-            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5, "L2_FDTENTR");
+
+        let dataString = dataEntregaDinamica.val();
+        
+        // Extrair manualmente o ano, mês e dia da string
+        let partesData = dataString.split("-");
+        let ano = parseInt(partesData[0], 10);
+        let mes = parseInt(partesData[1], 10); // Mês agora é de 1 a 12
+        let dia = parseInt(partesData[2], 10);
+
+        // Função para calcular o dia da semana (0: domingo, 6: sábado)
+        function calcularDiaSemana(ano, mes, dia) {
+            // calcular o dia da semana
+            if (mes < 3) {
+                mes += 12;
+                ano -= 1;
+            }
+            let k = ano % 100;
+            let j = Math.floor(ano / 100);
+            let diaSemana = (dia + Math.floor((13 * (mes + 1)) / 5) + k + Math.floor(k / 4) + Math.floor(j / 4) - 2 * j) % 7;
+            return (diaSemana + 6) % 7; // Ajuste para que 0 seja domingo e 6 seja sábado
+        }
+
+        let diaSemana = calcularDiaSemana(ano, mes, dia);
+
+        console.log("dataEntrega:", dataString);
+        console.log("diaSemana:", diaSemana);
+
+        // Verificar se é sábado (6) e turno 2
+        if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
+            showAlert("Não é possível agendar entregas aos sábados no horário da tarde.");
+            dataEntregaDinamica.val("");
+            return;
+        }
+
+        if (podeEntregar) {
+            checarDisponibilidadeNoDia(
+                dataEntregaDinamica, 
+                turnoEntregaDinamica, 
+                "entregas", 
+                turnoEntregaDinamica.val() == 1 ? 10 : 5, 
+                "L2_FDTENTR"
+            );
         }
     }
 });
@@ -619,6 +664,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
     let filial_reserva = $("#filial_reserva").val() || "";
+    let saldo_endereco = $("#filial_reserva").data("endereco")
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -691,6 +737,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
                 ' data-filialreserva="'			+ filial_reserva + '"' +
+                ' data-saldoendereco="'			+ saldo_endereco + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -797,6 +844,9 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
                 jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
                 jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
+                if ($(this).data("saldoendereco") !== "") {
+                    jsonenv.itens[index]["LR_LOCALIZ"] = $(this).data("saldoendereco").toString();
+                }
             }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
@@ -1038,7 +1088,12 @@ $("body").append(
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                    <div style="display: flex; align-items: center;">
+                        <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                        <button type="button" class="btn btn-light" style="margin-left: 5px;" onclick="searchforproducts()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                     <div id="searchResults" class="list-group" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
                     <input type="number" id="produtoQuantidade" class="form-control" placeholder="Quantidade" style="margin-top: 10px; border-radius: 10px;">
                 </div>
@@ -1056,133 +1111,143 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
     });
 });
 
-$('#modalAdicionarItem').on('shown.bs.modal', function () {
-    $('#produtoSearch').val('');
-    $('#produtoSearch').data('selectedItem', null);
-    $('#searchResults').empty();
-    $('#produtoQuantidade').val('');
+let currentRequest = null;
 
-    $('#produtoSearch').on('input', function() {
-        // $('#searchResults').empty();
-        const searchTerm = $(this).val().trim();
-        
-        if (searchTerm.length >= 3) {
-            let tbSelectDinamica = $("#cliente").data("tabela");
-            let cClienteDinamica = $("#cliente").data("codigo");
-            let cLojaDinamica = $("#cliente").data("loja");
-            let cJsonBodyDinamica = {
-                "cnpj_empresa": cCnpj,
-                "ctype": "BUSCA_GRID_PROD",
-                "cBusca": searchTerm.toUpperCase(),
-                "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
-                "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
-                "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
-            };
+function searchforproducts(){
+    const searchTerm = $("#produtoSearch").val().trim();
 
-            $.ajax({
-                url: url + "EASY_RESULT",
-                type: "POST",
-                async: true,
-                data: JSON.stringify(cJsonBodyDinamica),
-                dataType: "json",
-                contentType: "application/json",
-                success: function(data) {
-                    $('#searchResults').empty();
-
-                    if (data.Dados && data.Dados.length > 0) {
-                        $(data.Dados).each(function(index) {
-                            const itemName = data.Dados[index].NOME.trim();
-                            const itemCode = data.Dados[index].CODIGO.trim();
-                            const itemValue = data.Dados[index].VALOR;
-                            $('#searchResults').append(
-                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
-                            );
-                        });
-
-                        $('#searchResults a').on('click', function(e) {
-                            e.preventDefault();
-                            const selectedLabel = $(this).text();
-                            const selectedValue = $(this).data('code');
-                            const selectedPrice = $(this).data('price');
-                            $('#produtoSearch').val(selectedLabel);
-                            $('#produtoSearch').data('selectedItem', {
-                                label: selectedLabel,
-                                value: selectedValue,
-                                price: selectedPrice,
-                                quantity: 1
-                            });
-                            $('#searchResults').empty();
-                        });
-                    } else {
-                        $('#searchResults').append('<div class="list-group-item">No results found</div>');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching products:', error);
-                }
-            });
-        } else {
-            $('#searchResults').empty();
-        }
-    });
-
-    $('#btnIncluirItem').off('click').on('click', function() {
-        let selectedItem = $('#produtoSearch').data('selectedItem');
-        let quantityItems = $('#produtoQuantidade').val();
-
-        if (!selectedItem) {
-            alert('Por favor, selecione um produto.');
-            return;
-        }
-
-        if (!quantityItems || quantityItems <= 0) {
-            alert('Por favor, insira uma quantidade válida.');
-            return;
-        }
-        selectedItem.quantity = parseInt(quantityItems, 10);
-        const listaPresente = listaPresenteDinamica;
-        const finalDataToSend = {
-            "ListaPresentes": [
-                {
-                    "Codigo": listaPresente.Codigo,  
-                    "Produtos": [
-                        {
-                            "CodigoProduto": String(selectedItem.value).trim(),  
-                            "QtdSolicitada": selectedItem.quantity,
-                            "ValorUnitario": selectedItem.price 
-                        }
-                    ]
-                }
-            ]
+    if (searchTerm.length >= 3) {
+        let tbSelectDinamica = $("#cliente").data("tabela");
+        let cClienteDinamica = $("#cliente").data("codigo");
+        let cLojaDinamica = $("#cliente").data("loja");
+        let cJsonBodyDinamica = {
+            "cnpj_empresa": cCnpj,
+            "ctype": "BUSCA_GRID_PROD",
+            "cBusca": searchTerm.toUpperCase(),
+            "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
+            "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
+            "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
         };
 
-        $.ajax({
-            type: 'POST',
-            url: url + 'easymobile/INSERIR/LISTAPRESENTES',
-            data: JSON.stringify(finalDataToSend),
-            contentType: 'application/json',
-            async: true,
-            dataType: 'json',
-            success: function(response) {
-                    if(response.message){
-                        showAlert(response.message);
-                    }else{
-                        showAlert('Item incluído com sucesso:', response);
-                    }
+        if (currentRequest) {
+            currentRequest.abort();
+        }
 
-                $('#modalAdicionarItem').modal('hide');
-                $('#modalProdutosLista').modal('hide');
-                $('#btn_pesquisar_dinamica').click();
+        const loadingOverlay = $(`<div id="loadingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255, 255, 255, 0.7);z-index:9999;display:flex;align-items:center;justify-content:center;">
+            <div style="font-size:24px;color:black;">Buscando...</div>
+          </div>`);
+
+        $("body").append(loadingOverlay);
+
+        currentRequest = $.ajax({
+            url: url + "EASY_RESULT",
+            type: "POST",
+            async: true,
+            data: JSON.stringify(cJsonBodyDinamica),
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                $('#searchResults').empty();
+
+                if (data.Dados && data.Dados.length > 0) {
+                    $(data.Dados).each(function(index) {
+                        const itemName = data.Dados[index].NOME.trim();
+                        const itemCode = data.Dados[index].CODIGO.trim();
+                        const itemValue = data.Dados[index].VALOR;
+                        $('#searchResults').append(
+                            `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
+                        );
+                    });
+
+                    $('#searchResults a').on('click', function(e) {
+                        e.preventDefault();
+                        const selectedLabel = $(this).text();
+                        const selectedValue = $(this).data('code');
+                        const selectedPrice = $(this).data('price');
+                        $('#produtoSearch').val(selectedLabel);
+                        $('#produtoSearch').data('selectedItem', {
+                            label: selectedLabel,
+                            value: selectedValue,
+                            price: selectedPrice,
+                            quantity: 1
+                        });
+                        $('#searchResults').empty();
+                    });
+                } else {
+                    $('#searchResults').append('<div class="list-group-item">No results found</div>');
+                }
             },
             error: function(xhr, status, error) {
-                // alert("Em desenvolvimento");
-                showAlert('Erro ao incluir item:', error);
-                alert('Ocorreu um erro ao incluir o item.');
+                if (status !== 'abort') {
+                    console.error('Error fetching products:', error);
+                }
+            },
+            complete: function() {
+                currentRequest = null;
+                // Remove loading overlay
+                $('#loadingOverlay').remove();
             }
         });
+    } else {
+        $('#searchResults').empty();
+    }
+};
+
+$('#btnIncluirItem').off('click').on('click', function() {
+    let selectedItem = $('#produtoSearch').data('selectedItem');
+    let quantityItems = $('#produtoQuantidade').val();
+
+    if (!selectedItem) {
+        alert('Por favor, selecione um produto.');
+        return;
+    }
+
+    if (!quantityItems || quantityItems <= 0) {
+        alert('Por favor, insira uma quantidade válida.');
+        return;
+    }
+    selectedItem.quantity = parseInt(quantityItems, 10);
+    const listaPresente = listaPresenteDinamica;
+    const finalDataToSend = {
+        "ListaPresentes": [
+            {
+                "Codigo": listaPresente.Codigo,  
+                "Produtos": [
+                    {
+                        "CodigoProduto": String(selectedItem.value).trim(),  
+                        "QtdSolicitada": selectedItem.quantity,
+                        "ValorUnitario": selectedItem.price 
+                    }
+                ]
+            }
+        ]
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: url + 'easymobile/INSERIR/LISTAPRESENTES',
+        data: JSON.stringify(finalDataToSend),
+        contentType: 'application/json',
+        async: true,
+        dataType: 'json',
+        success: function(response) {
+                if(response.message){
+                    showAlert(response.message);
+                }else{
+                    showAlert('Item incluído com sucesso:', response);
+                }
+
+            $('#modalAdicionarItem').modal('hide');
+            $('#modalProdutosLista').modal('hide');
+            $('#btn_pesquisar_dinamica').click();
+        },
+        error: function(xhr, status, error) {
+            // alert("Em desenvolvimento");
+            showAlert('Erro ao incluir item:', error);
+            alert('Ocorreu um erro ao incluir o item.');
+        }
     });
 });
-
 
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
@@ -1199,148 +1264,6 @@ setTimeout(function() {
         return resut2;
     };
 }, 3000);
-
-// //----------------------------------------------------------------
-// async function createModalReserva() {
-
-//     let produtos = document.querySelectorAll('#nav1 .list-group-item');
-//     let produtosHTML = '';
-
-//     let produtosArray = [];  
-//     let saldoscdArray = [];
-//     let saldosljArray = [];
-
-//     let fetchPromises = [];
-
-//     produtos.forEach((produto) => {
-//         let codprod = produto.getAttribute('data-codigo').trim();
-
-//         var json = {
-//             "cnpj": tbLogin[0].CNPJ,
-//             "produto": codprod
-//         };
-
-//         var raw = JSON.stringify(json);
-
-//         const myHeaders = new Headers();
-//         myHeaders.append("tenantId", "01");
-//         myHeaders.append("Content-Type", "application/json");
-
-//         const requestOptions = {
-//             method: "POST",
-//             headers: myHeaders,
-//             body: raw,
-//             redirect: "follow"
-//         };
-
-//         // Adicionar a promessa da requisição fetch �  lista de promessas
-//         fetchPromises.push(
-//             fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
-//                 .then((response) => response.text())
-//                 .then((result) => {
-//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
-//                     if (jsonData.status == true) {
-//                         let nSaldoCd = jsonData.valcd;
-//                         let nSaldoLoja = jsonData.valloja;
-
-//                         // Adiciona os valores aos arrays
-//                         produtosArray.push(codprod);
-//                         saldoscdArray.push(nSaldoCd);
-//                         saldosljArray.push(nSaldoLoja);
-//                     }
-//                 })
-//                 .catch((error) => console.error(error))
-//         );
-//     });
-
-//     await Promise.all(fetchPromises);
-
-//     produtos.forEach((produto, index) => {
-//         const codigo = produto.getAttribute('data-codigo');
-//         const descricao = produto.getAttribute('data-desc');
-
-//         // Verifica se o produto existe nos arrays de saldo
-//         const produtoIndex = produtosArray.indexOf(codigo.trim());
-
-//         if (produtoIndex !== -1) {
-//             const saldoCD = saldoscdArray[produtoIndex];
-//             const saldoLoja = saldosljArray[produtoIndex];
-
-//             produtosHTML += `
-//                 <tr>
-//                     <td>${codigo} - ${descricao}</td>
-//                     <td>${saldoCD}</td>
-//                     <td>${saldoLoja}</td>
-//                     <td>
-//                         <div class="row">
-//                             <div class="col-6">
-//                                 <div class="form-check">
-//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
-//                                     <label class="form-check-label" for="produto${index}CD">CD</label>
-//                                 </div>
-//                             </div>
-//                             <div class="col-6">
-//                                 <div class="form-check">
-//                                     <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
-//                                     <label class="form-check-label" for="produto${index}Loja">Loja</label>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </td>
-//                 </tr>
-//             `;
-//         }
-//     });
-
-//     const modalHTML = `
-//         <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-//             <div class="modal-dialog" role="document">
-//                 <div class="modal-content">
-//                     <div class="modal-header">
-//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-//                             <span aria-hidden="true">&times;</span>
-//                         </button>
-//                     </div>
-//                     <div class="modal-body">
-//                         <!-- Tabela de produtos -->
-//                         <table class="table">
-//                             <thead>
-//                                 <tr>
-//                                     <th>Produto</th>
-//                                     <th>Saldo CD</th>
-//                                     <th>Saldo Loja</th>
-//                                     <th>Escolha Armazém</th>
-//                                 </tr>
-//                             </thead>
-//                             <tbody id="produto-lista">
-//                                 ${produtosHTML}
-//                             </tbody>
-//                         </table>
-//                     </div>
-//                     <div class="modal-footer">
-//                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
-//                         <button type="button" class="btn btn-success reservas">Salvar</button>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     `;
-
-//     document.body.insertAdjacentHTML('beforeend', modalHTML);
-//     const modal = $('#reservaModal');
-//     modal.modal();
-
-//     $('.reservas').click(function () {
-//         const id = $(this).data('id');
-//         const quant = $(this).data('quant');
-//         modal.modal('hide');
-//     });
-
-
-//     modal.on('hidden.bs.modal', function () {
-//         modal.remove();
-//     });
-// }
 
 function IniciarProcessoDeReserva() {
     var tabela = document.querySelector("#divAddProd table");
@@ -1455,8 +1378,9 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
             if (saldoData.ListaSaldos) {
                 showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
             } else {
-                $("#alerta").modal({ backdrop: "static" });
-                document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
+                // $("#alerta").modal({ backdrop: "static" });
+                // document.getElementById("dmodal").innerHTML = 'Um erro ocorreu ao tentar listar saldos.';
+                showAlert("Um erro ocorreu ao tentar listar saldos.");
             }
         })
         .catch(error => console.error(error))
@@ -1508,6 +1432,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
         console.log('Reserva confirmada para a loja:', lojaCodigo);
         $("#filial_reserva").text(lojaCodigo);
         $("#filial_reserva").val(lojaCodigo);
+        $("#filial_reserva").data("endereco", saldo.Endereco);
         $('#saldoModal').modal('hide');
     });
     $('#saldoModal').on('hidden.bs.modal', function() {
