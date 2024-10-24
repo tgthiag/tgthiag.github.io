@@ -1106,143 +1106,88 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
     });
 });
 
-$('#modalAdicionarItem').on('shown.bs.modal', function () {
-    $('#produtoSearch').val('');
-    $('#produtoSearch').data('selectedItem', null);
-    $('#searchResults').empty();
-    $('#produtoQuantidade').val('');
+let currentRequest = null;
 
-    let currentRequest = null;
+$('#produtoSearch').on('input', function() {
+    const searchTerm = $(this).val().trim();
 
-    $('#produtoSearch').on('input', function() {
-        const searchTerm = $(this).val().trim();
-    
-        if (searchTerm.length >= 3) {
-            let tbSelectDinamica = $("#cliente").data("tabela");
-            let cClienteDinamica = $("#cliente").data("codigo");
-            let cLojaDinamica = $("#cliente").data("loja");
-            let cJsonBodyDinamica = {
-                "cnpj_empresa": cCnpj,
-                "ctype": "BUSCA_GRID_PROD",
-                "cBusca": searchTerm.toUpperCase(),
-                "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
-                "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
-                "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
-            };
-    
-            if (currentRequest) {
-                currentRequest.abort();
-            }
-            $('#searchResults').empty();
-            currentRequest = $.ajax({
-                url: url + "EASY_RESULT",
-                type: "POST",
-                async: true,
-                data: JSON.stringify(cJsonBodyDinamica),
-                dataType: "json",
-                contentType: "application/json",
-                success: function(data) {
-                    $('#searchResults').empty();
-    
-                    if (data.Dados && data.Dados.length > 0) {
-                        $(data.Dados).each(function(index) {
-                            const itemName = data.Dados[index].NOME.trim();
-                            const itemCode = data.Dados[index].CODIGO.trim();
-                            const itemValue = data.Dados[index].VALOR;
-                            $('#searchResults').append(
-                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
-                            );
-                        });
-    
-                        $('#searchResults a').on('click', function(e) {
-                            e.preventDefault();
-                            const selectedLabel = $(this).text();
-                            const selectedValue = $(this).data('code');
-                            const selectedPrice = $(this).data('price');
-                            $('#produtoSearch').val(selectedLabel);
-                            $('#produtoSearch').data('selectedItem', {
-                                label: selectedLabel,
-                                value: selectedValue,
-                                price: selectedPrice,
-                                quantity: 1
-                            });
-                            $('#searchResults').empty();
-                        });
-                    } else {
-                        $('#searchResults').append('<div class="list-group-item">No results found</div>');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    if (status !== 'abort') {
-                        console.error('Error fetching products:', error);
-                    }
-                },
-                complete: function() {
-                    currentRequest = null;
-                }
-            });
-        } else {
-            $('#searchResults').empty();
-        }
-    });
-    
-
-    $('#btnIncluirItem').off('click').on('click', function() {
-        let selectedItem = $('#produtoSearch').data('selectedItem');
-        let quantityItems = $('#produtoQuantidade').val();
-
-        if (!selectedItem) {
-            alert('Por favor, selecione um produto.');
-            return;
-        }
-
-        if (!quantityItems || quantityItems <= 0) {
-            alert('Por favor, insira uma quantidade válida.');
-            return;
-        }
-        selectedItem.quantity = parseInt(quantityItems, 10);
-        const listaPresente = listaPresenteDinamica;
-        const finalDataToSend = {
-            "ListaPresentes": [
-                {
-                    "Codigo": listaPresente.Codigo,  
-                    "Produtos": [
-                        {
-                            "CodigoProduto": String(selectedItem.value).trim(),  
-                            "QtdSolicitada": selectedItem.quantity,
-                            "ValorUnitario": selectedItem.price 
-                        }
-                    ]
-                }
-            ]
+    if (searchTerm.length >= 3) {
+        let tbSelectDinamica = $("#cliente").data("tabela");
+        let cClienteDinamica = $("#cliente").data("codigo");
+        let cLojaDinamica = $("#cliente").data("loja");
+        let cJsonBodyDinamica = {
+            "cnpj_empresa": cCnpj,
+            "ctype": "BUSCA_GRID_PROD",
+            "cBusca": searchTerm.toUpperCase(),
+            "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
+            "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
+            "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
         };
 
-        $.ajax({
-            type: 'POST',
-            url: url + 'easymobile/INSERIR/LISTAPRESENTES',
-            data: JSON.stringify(finalDataToSend),
-            contentType: 'application/json',
-            async: true,
-            dataType: 'json',
-            success: function(response) {
-                    if(response.message){
-                        showAlert(response.message);
-                    }else{
-                        showAlert('Item incluído com sucesso:', response);
-                    }
+        if (currentRequest) {
+            currentRequest.abort();
+        }
 
-                $('#modalAdicionarItem').modal('hide');
-                $('#modalProdutosLista').modal('hide');
-                $('#btn_pesquisar_dinamica').click();
+        // Create and show loading overlay
+        const loadingOverlay = $(`<div id="loadingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:white;z-index:9999;display:flex;align-items:center;justify-content:center;">
+                                    <div style="font-size:24px;color:black;">Loading...</div>
+                                  </div>`);
+        $("body").append(loadingOverlay);
+
+        currentRequest = $.ajax({
+            url: url + "EASY_RESULT",
+            type: "POST",
+            async: true,
+            data: JSON.stringify(cJsonBodyDinamica),
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                $('#searchResults').empty();
+
+                if (data.Dados && data.Dados.length > 0) {
+                    $(data.Dados).each(function(index) {
+                        const itemName = data.Dados[index].NOME.trim();
+                        const itemCode = data.Dados[index].CODIGO.trim();
+                        const itemValue = data.Dados[index].VALOR;
+                        $('#searchResults').append(
+                            `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
+                        );
+                    });
+
+                    $('#searchResults a').on('click', function(e) {
+                        e.preventDefault();
+                        const selectedLabel = $(this).text();
+                        const selectedValue = $(this).data('code');
+                        const selectedPrice = $(this).data('price');
+                        $('#produtoSearch').val(selectedLabel);
+                        $('#produtoSearch').data('selectedItem', {
+                            label: selectedLabel,
+                            value: selectedValue,
+                            price: selectedPrice,
+                            quantity: 1
+                        });
+                        $('#searchResults').empty();
+                    });
+                } else {
+                    $('#searchResults').append('<div class="list-group-item">No results found</div>');
+                }
             },
             error: function(xhr, status, error) {
-                // alert("Em desenvolvimento");
-                showAlert('Erro ao incluir item:', error);
-                alert('Ocorreu um erro ao incluir o item.');
+                if (status !== 'abort') {
+                    console.error('Error fetching products:', error);
+                }
+            },
+            complete: function() {
+                currentRequest = null;
+                // Remove loading overlay
+                $('#loadingOverlay').remove();
             }
         });
-    });
+    } else {
+        $('#searchResults').empty();
+    }
 });
+
 
 
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
