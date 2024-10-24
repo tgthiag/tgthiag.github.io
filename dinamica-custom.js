@@ -510,14 +510,33 @@ $("#selectTurnoEntrega").change(function() {
 $("#dataEntrega").change(function() {
     if ($("#dataEntrega").val() != "") {
         let podeEntregar = verificarPrazoEntrega();
-        verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
+        verificarPrazoMontagem();
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-        if(podeEntregar){
-            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5, "L2_FDTENTR");
+
+        // Obter o dia da semana (0: domingo, 6: sábado)
+        let dataEntrega = new Date(dataEntregaDinamica.val());
+        let diaSemana = dataEntrega.getDay();
+
+        // Verificar se é sábado (6) e turno tarde
+        if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
+            alert("Não é possível agendar entregas na tarde de sábado.");
+            turnoEntregaDinamica.val("");
+            return;
+        }
+
+        if (podeEntregar) {
+            checarDisponibilidadeNoDia(
+                dataEntregaDinamica, 
+                turnoEntregaDinamica, 
+                "entregas", 
+                turnoEntregaDinamica.val() == 1 ? 10 : 5, 
+                "L2_FDTENTR"
+            );
         }
     }
 });
+
 
 $("#dataMontagem").change(function() {
     if ($("#dataMontagem").val() != "") {
