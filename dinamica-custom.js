@@ -1114,7 +1114,7 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
 let currentRequest = null;
 
 function searchforproducts(){
-    const searchTerm = $(this).val().trim();
+    const searchTerm = $("#produtoSearch").val().trim();
 
     if (searchTerm.length >= 3) {
         let tbSelectDinamica = $("#cliente").data("tabela");
