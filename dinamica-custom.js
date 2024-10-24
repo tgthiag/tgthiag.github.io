@@ -1128,10 +1128,10 @@ $('#produtoSearch').on('input', function() {
             currentRequest.abort();
         }
 
-        // Create and show loading overlay
-        const loadingOverlay = $(`<div id="loadingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:white;z-index:9999;display:flex;align-items:center;justify-content:center;">
-                                    <div style="font-size:24px;color:black;">Loading...</div>
-                                  </div>`);
+        const loadingOverlay = $(`<div id="loadingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255, 255, 255, 0.7);z-index:9999;display:flex;align-items:center;justify-content:center;">
+            <div style="font-size:24px;color:black;">Buscando...</div>
+          </div>`);
+
         $("body").append(loadingOverlay);
 
         currentRequest = $.ajax({
