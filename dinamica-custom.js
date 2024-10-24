@@ -1460,8 +1460,9 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
             if (saldoData.ListaSaldos) {
                 showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
             } else {
-                $("#alerta").modal({ backdrop: "static" });
-                document.getElementById("dmodal").innerHTML = 'Um erro ocorreu ao tentar listar saldos.';
+                // $("#alerta").modal({ backdrop: "static" });
+                // document.getElementById("dmodal").innerHTML = 'Um erro ocorreu ao tentar listar saldos.';
+                showAlert("Um erro ocorreu ao tentar listar saldos.");
             }
         })
         .catch(error => console.error(error))
