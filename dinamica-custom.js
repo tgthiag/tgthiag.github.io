@@ -524,7 +524,7 @@ $("#dataEntrega").change(function() {
 
         // Função para calcular o dia da semana (0: domingo, 6: sábado)
         function calcularDiaSemana(ano, mes, dia) {
-            // Ajuste do algoritmo Zeller’s Congruence para calcular o dia da semana
+            // calcular o dia da semana
             if (mes < 3) {
                 mes += 12;
                 ano -= 1;
@@ -736,6 +736,7 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
                 ' data-filialreserva="'			+ filial_reserva + '"' +
+                ' data-saldoendereco="'			+ filial_reserva.data("endereco") + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -842,6 +843,9 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
             if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
                 jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
                 jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
+                if ($(this).data("saldoendereco") !== "") {
+                    jsonenv.itens[index]["LR_LOCALIZ"] = $(this).data("saldoendereco").toString();
+                }
             }
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
@@ -1554,6 +1558,7 @@ function showSaldoModal(saldo, lojaCodigo,listaLojas) {
         console.log('Reserva confirmada para a loja:', lojaCodigo);
         $("#filial_reserva").text(lojaCodigo);
         $("#filial_reserva").val(lojaCodigo);
+        $("#filial_reserva").data("endereco", saldo.Endereco);
         $('#saldoModal').modal('hide');
     });
     $('#saldoModal').on('hidden.bs.modal', function() {
