@@ -1,3 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
 /**
  * Customização feita por:
  * 
@@ -1456,7 +1461,7 @@ function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
                 showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
             } else {
                 $("#alerta").modal({ backdrop: "static" });
-                document.getElementById("dmodal").innerHTML = 'Nenhum saldo encontrado.';
+                document.getElementById("dmodal").innerHTML = 'Um erro ocorreu ao tentar listar saldos.';
             }
         })
         .catch(error => console.error(error))
