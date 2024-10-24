@@ -1088,7 +1088,12 @@ $("body").append(
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                    <div style="display: flex; align-items: center;">
+                        <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
+                        <button type="button" class="btn btn-light" style="margin-left: 5px;" onclick="searchforproducts()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                     <div id="searchResults" class="list-group" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
                     <input type="number" id="produtoQuantidade" class="form-control" placeholder="Quantidade" style="margin-top: 10px; border-radius: 10px;">
                 </div>
@@ -1108,7 +1113,7 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
 
 let currentRequest = null;
 
-$('#produtoSearch').on('input', function() {
+function searchforproducts(){
     const searchTerm = $(this).val().trim();
 
     if (searchTerm.length >= 3) {
@@ -1186,9 +1191,7 @@ $('#produtoSearch').on('input', function() {
     } else {
         $('#searchResults').empty();
     }
-});
-
-
+};
 
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
