@@ -1112,10 +1112,11 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
     $('#searchResults').empty();
     $('#produtoQuantidade').val('');
 
+    let currentRequest = null;
+
     $('#produtoSearch').on('input', function() {
-        // $('#searchResults').empty();
         const searchTerm = $(this).val().trim();
-        
+    
         if (searchTerm.length >= 3) {
             let tbSelectDinamica = $("#cliente").data("tabela");
             let cClienteDinamica = $("#cliente").data("codigo");
@@ -1128,8 +1129,12 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                 "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
                 "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
             };
-
-            $.ajax({
+    
+            if (currentRequest) {
+                currentRequest.abort();
+            }
+    
+            currentRequest = $.ajax({
                 url: url + "EASY_RESULT",
                 type: "POST",
                 async: true,
@@ -1138,7 +1143,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                 contentType: "application/json",
                 success: function(data) {
                     $('#searchResults').empty();
-
+    
                     if (data.Dados && data.Dados.length > 0) {
                         $(data.Dados).each(function(index) {
                             const itemName = data.Dados[index].NOME.trim();
@@ -1148,7 +1153,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                                 `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
                             );
                         });
-
+    
                         $('#searchResults a').on('click', function(e) {
                             e.preventDefault();
                             const selectedLabel = $(this).text();
@@ -1168,13 +1173,19 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
                     }
                 },
                 error: function(xhr, status, error) {
-                    console.error('Error fetching products:', error);
+                    if (status !== 'abort') {
+                        console.error('Error fetching products:', error);
+                    }
+                },
+                complete: function() {
+                    currentRequest = null;
                 }
             });
         } else {
             $('#searchResults').empty();
         }
     });
+    
 
     $('#btnIncluirItem').off('click').on('click', function() {
         let selectedItem = $('#produtoSearch').data('selectedItem');
