@@ -1133,7 +1133,7 @@ $('#modalAdicionarItem').on('shown.bs.modal', function () {
             if (currentRequest) {
                 currentRequest.abort();
             }
-    
+            $('#searchResults').empty();
             currentRequest = $.ajax({
                 url: url + "EASY_RESULT",
                 type: "POST",
