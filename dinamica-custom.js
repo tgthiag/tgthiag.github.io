@@ -510,18 +510,26 @@ $("#selectTurnoEntrega").change(function() {
 $("#dataEntrega").change(function() {
     if ($("#dataEntrega").val() != "") {
         let podeEntregar = verificarPrazoEntrega();
-        verificarPrazoMontagem();
+        verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
 
-        // Obter o dia da semana (0: domingo, 6: sábado)
-        let dataEntrega = new Date(dataEntregaDinamica.val());
-        dataEntrega.setHours(12, 0, 0, 0);
+        let dataString = dataEntregaDinamica.val();
+        
+        let partesData = dataString.split("-");
+        let ano = parseInt(partesData[0], 10);
+        let mes = parseInt(partesData[1], 10) - 1; // Mês é indexado de 0 a 11
+        let dia = parseInt(partesData[2], 10);
+
+        let dataEntrega = new Date(ano, mes, dia);
         let diaSemana = dataEntrega.getDay();
 
-        // Verificar se é sábado (6) e turno tarde
+        console.log("dataEntrega:", dataEntrega);
+        console.log("diaSemana:", diaSemana);
+
+        // Verificar se é sábado (6) e turno 2
         if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
-            alert("Não é possível agendar entregas na tarde de sábado.");
+            alert("Não é possível agendar entregas no turno 2 aos sábados.");
             dataEntregaDinamica.val("");
             return;
         }
@@ -537,6 +545,7 @@ $("#dataEntrega").change(function() {
         }
     }
 });
+
 
 
 $("#dataMontagem").change(function() {
