@@ -542,7 +542,7 @@ $("#dataEntrega").change(function() {
 
         // Verificar se é sábado (6) e turno 2
         if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
-            showAlert("Não é possível agendar entregas na tarde de sábado.");
+            showAlert("Não é possível agendar entregas aos sábados no horário da tarde.");
             dataEntregaDinamica.val("");
             return;
         }
