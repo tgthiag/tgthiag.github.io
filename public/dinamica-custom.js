@@ -235,6 +235,10 @@ function insertData() {
                                 showAlert("A quantidade solicitada deste produto já foi atendida.");
                                 return
                             }
+                            $("#cliente").data("codigo",lista.CodigoCliente);
+                            $("#cliente").val(lista.NomeCliente);
+                            $("#cliente").data("loja","01")
+                            
                             $("#codigo").val(produto.DescProduto);
                             $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
                             $("#codigo").data("codigo", produto.CodigoProduto);
