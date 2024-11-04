@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography, Link, Box } from "@mui/material";
+import Title from "../title";
 
 const ContactCard = () => (
   <Card
@@ -11,9 +12,7 @@ const ContactCard = () => (
     }}
   >
     <CardContent>
-      <Typography variant="h5" gutterBottom>
-        Contact
-      </Typography>
+      <Title text={"Contact"}/>
       <Typography variant="body1">
         Let's connect! Feel free to reach out to me via any of the following platforms:
       </Typography>

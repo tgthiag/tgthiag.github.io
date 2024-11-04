@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Card, CardContent, Typography, Box } from '@mui/material';
+import Title from '../title';
 
-// Data for programming languages
 const programmingLanguages = [
   {
     name: 'Dart',
@@ -26,7 +26,6 @@ const programmingLanguages = [
   }
 ];
 
-// Data for frameworks
 const frameworks = [
   {
     name: 'Flutter',
@@ -51,15 +50,14 @@ const frameworks = [
 ];
 
 const StacksCard = () => {
-  // Settings for both carousels
   const settings = {
     dots: true,
     infinite: true,
-    speed: 200,
-    slidesToShow: 4, // Show 3 items by default
+    speed: 1200,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -86,7 +84,7 @@ const StacksCard = () => {
     <Card sx={{ backgroundColor: '#f5f5f5', padding: 2, borderRadius: 2, boxShadow: 2 }}>
       <CardContent>
         <Typography variant="h5" gutterBottom align="center" sx={{ color: '#333' }}>
-          Stacks
+        <Title text={"Stacks"}/>
         </Typography>
 
         {/* Carousel for Programming Languages */}

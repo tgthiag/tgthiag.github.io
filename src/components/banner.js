@@ -14,7 +14,7 @@ const Banner = ({ onMenuClick }) => {
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        color: '#fff',
+        color: '#e5e4e9',
         paddingTop: 5,
         backgroundRepeat:"round"
       }}
