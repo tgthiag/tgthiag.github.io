@@ -10,12 +10,10 @@
  */
 
 /* LISTA DE PRESENTES */
-
-let guardarLista = false
+let guardarLista = false;
 
 $(document).ready(function () {
-    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`
-
+    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`;
     $('#divMenu').prepend(button);
 
     $("#btnListaPresentes").on("click", function () {
@@ -24,11 +22,20 @@ $(document).ready(function () {
         if (guardarLista) {
             $("#modalProdutosLista").modal({ backdrop: "static" });
         }
-    })
-})
+    });
 
-$("body").append(
-    `<div class="modal fade" id="modalListaPresentes" role="dialog">
+    $("#opcPresentes").on("change", function () {
+        const $opcVal = $("#opcPresentes").val();
+        if ($opcVal == "1") {
+            $("#txtPesquisa").attr('type', 'date');
+        } else {
+            $("#txtPesquisa").attr('type', 'text');
+        }
+    });
+});
+
+$("body").append(`
+    <div class="modal fade" id="modalListaPresentes" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,8 +47,8 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                    <div class="row mb-3">
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                             <div class="input-group input-group-lg">
                                 <select class="form-control" name="opcPresentes" id="opcPresentes">
                                     <option value="1">1 - Data do Evento</option>
@@ -51,49 +58,34 @@ $("body").append(
                                 </select>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                             <div class="input-group input-group-lg">
                                 <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                            <button class="btn" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+                            <button class="btn btn-primary" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
                         </div>
                     </div>
 
-                    <br>
-
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <table id="dtPresentes" class="table display table-striped" style="display: none; overflow: auto; max-height: 75vh;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Cod. Lista</th>
-                                            <th scope="col">Cod. Organizador</th>
-                                            <th scope="col">Nome Organizador</th>
-                                            <th scope="col">Evento</th>
-                                            <th scope="col">Data Evento</th>
-                                            <th scope="col">Local</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="bodydtPresentes">
-                                    </tbody>
-                                </table>
-                            </div>
+                    <div id="listContainer" class="list-group" style="max-height: 75vh; overflow-y: auto;">
+                        <!-- Dynamic content will be appended here -->
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Nome Organizador: Juan e Poli</h5>
+                            <p class="mb-1"><strong>Cod. Lista:</strong> 010968 | <strong>Cod. Organizador:</strong> 12345</p>
+                            <p class="mb-1"><strong>Evento:</strong> Casamento | <strong>Data:</strong> 26/07/2025</p>
+                            <p class="mb-1"><strong>Local:</strong> São Paulo</p>
                         </div>
-                </div>
-                <div class="modal-footer" id="buttons">
-                
+                        <!-- Additional list items can be appended here dynamically -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>`
-)
+    </div>
+`);
 
-$("body").append(
-    `<div class="modal fade" id="modalProdutosLista" role="dialog">
+$("body").append(`
+    <div class="modal fade" id="modalProdutosLista" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -105,47 +97,159 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <table id="dtProdutos" class="table display table-striped" style="display: block; overflow: auto; max-height: 75vh;">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Item</th>
-                                        <th scope="col">Cod. Produto</th>
-                                        <th scope="col">Desc. Prod.</th>
-                                        <th scope="col">Val. Unitario</th>
-                                        <th scope="col">Unidade</th>
-                                        <th scope="col">Qtd. Disponivel</th>
-                                        <th scope="col">Qtd. Solicitada</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bodydtProdutos">
-                                </tbody>
-                            </table>
+                    <div id="productListContainer" class="list-group" style="max-height: 75vh; overflow-y: auto;">
+                        <!-- Dynamic product list items will be populated here -->
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Item: Tábua de Cozinha 400x270</h5>
+                            <p class="mb-1"><strong>Código:</strong> 01113274051 | <strong>Preço:</strong> R$ 104,00</p>
+                            <p class="mb-1"><strong>Quantidade Solicitada:</strong> 1 | <strong>Quantidade Atendida:</strong> 0</p>
                         </div>
+                        <!-- Repeat for other product items -->
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
                 </div>
             </div>
         </div>
-    </div>`
-)
+    </div>
+`);
 
-$(document).ready(function () {
-    $("#opcPresentes").on("change", function () {
-        const $opcVal = $("#opcPresentes").val()
+// let guardarLista = false
 
-        if ($opcVal == "1") {
-            $("#txtPesquisa").attr('type', 'date');
-        }
-        else {
-            $("#txtPesquisa").attr('type', 'text');
-        }
-    })
-})
+// $(document).ready(function () {
+//     const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`
+
+//     $('#divMenu').prepend(button);
+
+//     $("#btnListaPresentes").on("click", function () {
+//         $("#modalListaPresentes").modal({ backdrop: "static" });
+
+//         if (guardarLista) {
+//             $("#modalProdutosLista").modal({ backdrop: "static" });
+//         }
+//     })
+// })
+
+// $("body").append(
+//     `<div class="modal fade" id="modalListaPresentes" role="dialog">
+//         <div class="modal-dialog modal-lg">
+//             <div class="modal-content">
+//                 <div class="modal-header">
+//                     <h4 class="modal-title">
+//                         Consultar Lista de Presentes
+//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearListas()">
+//                             <span aria-hidden="true">&times;</span>
+//                         </button>
+//                     </h4>
+//                 </div>
+//                 <div class="modal-body">
+//                     <div class="row">
+//                         <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+//                             <div class="input-group input-group-lg">
+//                                 <select class="form-control" name="opcPresentes" id="opcPresentes">
+//                                     <option value="1">1 - Data do Evento</option>
+//                                     <option value="2">2 - Nome do Evento</option>
+//                                     <option value="3">3 - Local de Evento</option>
+//                                     <option value="4">4 - Nome do organizador</option>
+//                                 </select>
+//                             </div>
+//                         </div>
+
+//                         <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+//                             <div class="input-group input-group-lg">
+//                                 <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
+//                             </div>
+//                         </div>
+
+//                         <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+//                             <button class="btn" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
+//                         </div>
+//                     </div>
+
+//                     <br>
+
+//                         <div class="row">
+//                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+//                                 <table id="dtPresentes" class="table display table-striped" style="display: none; overflow: auto; max-height: 75vh;">
+//                                     <thead>
+//                                         <tr>
+//                                             <th scope="col">Cod. Lista</th>
+//                                             <th scope="col">Cod. Organizador</th>
+//                                             <th scope="col">Nome Organizador</th>
+//                                             <th scope="col">Evento</th>
+//                                             <th scope="col">Data Evento</th>
+//                                             <th scope="col">Local</th>
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody id="bodydtPresentes">
+//                                     </tbody>
+//                                 </table>
+//                             </div>
+//                         </div>
+//                 </div>
+//                 <div class="modal-footer" id="buttons">
+                
+//                 </div>
+//             </div>
+//         </div>
+//     </div>`
+// )
+
+// $("body").append(
+//     `<div class="modal fade" id="modalProdutosLista" role="dialog">
+//         <div class="modal-dialog modal-lg">
+//             <div class="modal-content">
+//                 <div class="modal-header">
+//                     <h4 class="modal-title">
+//                         Selecionar Produto
+//                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProdutos()">
+//                             <span aria-hidden="true">&times;</span>
+//                         </button>
+//                     </h4>
+//                 </div>
+//                 <div class="modal-body">
+//                     <div class="row">
+//                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+//                             <table id="dtProdutos" class="table display table-striped" style="display: block; overflow: auto; max-height: 75vh;">
+//                                 <thead>
+//                                     <tr>
+//                                         <th scope="col"></th>
+//                                         <th scope="col">Item</th>
+//                                         <th scope="col">Cod. Produto</th>
+//                                         <th scope="col">Desc. Prod.</th>
+//                                         <th scope="col">Val. Unitario</th>
+//                                         <th scope="col">Unidade</th>
+//                                         <th scope="col">Qtd. Disponivel</th>
+//                                         <th scope="col">Qtd. Solicitada</th>
+//                                     </tr>
+//                                 </thead>
+//                                 <tbody id="bodydtProdutos">
+//                                 </tbody>
+//                             </table>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div class="modal-footer">
+//                 <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>`
+// )
+
+// $(document).ready(function () {
+//     $("#opcPresentes").on("change", function () {
+//         const $opcVal = $("#opcPresentes").val()
+
+//         if ($opcVal == "1") {
+//             $("#txtPesquisa").attr('type', 'date');
+//         }
+//         else {
+//             $("#txtPesquisa").attr('type', 'text');
+//         }
+//     })
+// })
 var listaPresenteDinamica;
 function insertData() {
     clearListas()
