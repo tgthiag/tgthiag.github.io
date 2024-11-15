@@ -205,13 +205,14 @@ data.forEach(function (lista) {
     `);
 
     $card.on("click", function () {
-        // Add your existing logic for handling the card click event
         listaPresenteDinamica = lista;
         lista.Produtos.forEach(function (produto) {
             const $prodCard = $(`
                 <div class="card mb-3">
                     <div class="card-body d-flex align-items-center">
-                        <img src="data:image/png;base64,${produto.ImagemBase64}" width="100" height="100" class="mr-3">
+                    ${produto.ImagemBase64 && produto.ImagemBase64 !== "" ? 
+                        `<img src="data:image/png;base64,${produto.ImagemBase64}" width="100" height="100" class="mr-3">` : 
+                        ""}
                         <div>
                             <p class="mb-1"><strong>Item:</strong> ${produto.Item}</p>
                             <p class="mb-1"><strong>Cod. Produto:</strong> ${produto.CodigoProduto}</p>
@@ -225,8 +226,41 @@ data.forEach(function (lista) {
             `);
 
             $prodCard.on("click", function () {
-                // Existing logic for product card click
+                if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                    showAlert("A quantidade solicitada deste produto já foi atendida.");
+                    return;
+                }
+                $("#cliente").data("codigo", lista.CodigoCliente);
+                $("#cliente").val(lista.NomeCliente);
+                $("#cliente").data("loja", "01");
+                
+                $("#codigo").val(produto.DescProduto);
+                $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+                $("#codigo").data("codigo", produto.CodigoProduto);
+                $("#codigo").data("estoque", 10);
+                $("#codigo").data("imagem", "img/semimage.png");
+                $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2));
+
+                $("#codigo").data("codlista", lista.Codigo);
+                $("#codigo").data("itemlista", produto.Item);
+
+                $("#modalProdutosLista").modal('hide');
+                $("#modalListaPresentes").modal('hide');
+
+                guardarLista = true;
             });
+
+            if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                $prodCard.css("backgroundColor", "#a9a9a9");
+            } else {
+                $prodCard.on("mouseover", function () {
+                    $prodCard.css("backgroundColor", "#e3e3e3");
+                });
+
+                $prodCard.on("mouseout", function () {
+                    $prodCard.css("backgroundColor", "");
+                });
+            }
 
             $("#bodydtProdutos").append($prodCard);
         });
