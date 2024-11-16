@@ -166,18 +166,7 @@ function insertData() {
                         </div>
                     </div>`
                 );
-                if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                    $card.css("backgroundColor", "#a9a9a9");
-                }
-                else {
-                    $card.on("mouseover", function () {
-                        $card.css("backgroundColor", "#e3e3e3");
-                    });
 
-                    $card.on("mouseout", function () {
-                        $card.css("backgroundColor", "");
-                    });
-                }
                 $card.on("click", function () {
                     listaPresenteDinamica = lista;
                     clearProdutos();
@@ -199,7 +188,18 @@ function insertData() {
                                 </div>
                             </div>`
                         );
-
+                        if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                            $cardProduto.css("backgroundColor", "#a9a9a9");
+                        }
+                        else {
+                            $cardProduto.on("mouseover", function () {
+                                $cardProduto.css("backgroundColor", "#e3e3e3");
+                            });
+        
+                            $cardProduto.on("mouseout", function () {
+                                $cardProduto.css("backgroundColor", "");
+                            });
+                        }
                         $cardProduto.on("click", function () {
                             selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item, produto, lista);
                         });
