@@ -211,6 +211,14 @@ function insertData() {
 }
 
 function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, itemLista) {
+    if (produto.QtdAtendida >= produto.QtdSolicitada) {
+        showAlert("A quantidade solicitada deste produto já foi atendida.");
+        return
+    }
+    $("#cliente").data("codigo",lista.CodigoCliente);
+    $("#cliente").val(lista.NomeCliente);
+    $("#cliente").data("loja","01")
+    
     $("#codigo").val(descProduto);
     $("#codigo").data("valor", valorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
     $("#codigo").data("codigo", codigoProduto);
