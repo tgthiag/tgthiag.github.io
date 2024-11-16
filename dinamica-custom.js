@@ -25,7 +25,7 @@ $(document).ready(function () {
 $("body").append(
     `<div class="modal fade" id="modalListaPresentes" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="border-radius: 15px;">
                 <div class="modal-header">
                     <h4 class="modal-title">
                         Consultar Lista de Presentes
@@ -34,9 +34,9 @@ $("body").append(
                         </button>
                     </h4>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
                             <div class="input-group input-group-lg">
                                 <select class="form-control" name="opcPresentes" id="opcPresentes">
                                     <option value="1">1 - Data do Evento</option>
@@ -47,24 +47,24 @@ $("body").append(
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
                             <div class="input-group input-group-lg">
                                 <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
                             <button class="btn btn-primary" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
                         </div>
                     </div>
 
                     <br>
 
-                    <div class="row" id="cardContainer" style="display: none;">
+                    <div class="row justify-content-center" id="cardContainer" style="display: none;">
                         <!-- Cards will be appended here dynamically -->
                     </div>
                 </div>
-                <div class="modal-footer" id="buttons">
+                <div class="modal-footer justify-content-center" id="buttons">
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@ $("body").append(
 $("body").append(
     `<div class="modal fade" id="modalProdutosLista" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="border-radius: 15px;">
                 <div class="modal-header">
                     <h4 class="modal-title">
                         Selecionar Produto
@@ -83,12 +83,12 @@ $("body").append(
                         </button>
                     </h4>
                 </div>
-                <div class="modal-body">
-                    <div class="row" id="productCardContainer">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row justify-content-center" id="productCardContainer">
                         <!-- Product cards will be appended here dynamically -->
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer justify-content-center">
                     <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
                 </div>
             </div>
@@ -150,9 +150,9 @@ function insertData() {
 
             const data = response.ListaPresentes;
             data.forEach(function (lista) {
-                const $card = $(`
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card" style="margin-bottom: 20px; cursor: pointer;">
+                const $card = $(
+                    `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                        <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px;">
                             <div class="card-body">
                                 <h5 class="card-title">Evento: ${lista.Nome}</h5>
                                 <p class="card-text">
@@ -164,17 +164,17 @@ function insertData() {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                `);
+                    </div>`
+                );
 
                 $card.on("click", function () {
                     listaPresenteDinamica = lista;
                     clearProdutos();
                     lista.Produtos.forEach(function (produto) {
-                        const $cardProduto = $(`
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="card" style="margin-bottom: 20px;">
-                                    <img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover;">
+                        const $cardProduto = $(
+                            `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                                <div class="card shadow-sm" style="margin-bottom: 20px; border-radius: 15px;">
+                                    ${produto.ImagemBase64 ? `<img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">` : ''}
                                     <div class="card-body">
                                         <h5 class="card-title">${produto.DescProduto}</h5>
                                         <p class="card-text">
@@ -188,8 +188,8 @@ function insertData() {
                                         <button class="btn btn-primary" onclick="selectProduct('${produto.CodigoProduto}', '${produto.DescProduto}', '${produto.ValorUnitario}', '${lista.Codigo}', '${produto.Item}')">Selecionar</button>
                                     </div>
                                 </div>
-                            </div>
-                        `);
+                            </div>`
+                        );
 
                         $("#productCardContainer").append($cardProduto);
                     });
