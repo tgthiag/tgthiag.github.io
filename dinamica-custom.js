@@ -11,10 +11,10 @@
 
 /* LISTA DE PRESENTES */
 
-let guardarLista = false
+let guardarLista = false;
 
 $(document).ready(function () {
-    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`
+    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`;
 
     $('#divMenu').prepend(button);
 
@@ -24,8 +24,8 @@ $(document).ready(function () {
         if (guardarLista) {
             $("#modalProdutosLista").modal({ backdrop: "static" });
         }
-    })
-})
+    });
+});
 
 $("body").append(
     `<div class="modal fade" id="modalListaPresentes" role="dialog">
@@ -50,7 +50,6 @@ $("body").append(
         </div>
     </div>`
 );
-
 
 $("body").append(
     `<div class="modal fade" id="modalProdutosLista" role="dialog">
@@ -77,25 +76,24 @@ $("body").append(
     </div>`
 );
 
-
 $(document).ready(function () {
     $("#opcPresentes").on("change", function () {
-        const $opcVal = $("#opcPresentes").val()
+        const $opcVal = $("#opcPresentes").val();
 
         if ($opcVal == "1") {
             $("#txtPesquisa").attr('type', 'date');
-        }
-        else {
+        } else {
             $("#txtPesquisa").attr('type', 'text');
         }
-    })
-})
+    });
+});
+
 var listaPresenteDinamica;
 function insertData() {
-    clearListas()
+    clearListas();
 
-    const $table = $("#dtPresentes");
-    const $tbody = $("#bodydtPresentes");
+    const $container = $("#bodydtPresentes");
+    $container.empty(); // Clear existing content
 
     const $opcPresentes = $("#opcPresentes");
     const $txtPesquisa = $("#txtPesquisa");
@@ -132,88 +130,87 @@ function insertData() {
             if (!response || !response.ListaPresentes) return;
 
             const data = response.ListaPresentes;
-data.forEach(function (lista) {
-    const $card = $(`
-        <div class="card mb-3" style="cursor: pointer; transition: 0.2s;">
-            <div class="card-body">
-                <h5 class="card-title">Evento: ${lista.Nome}</h5>
-                <p class="card-text">
-                    <strong>Cod. Lista:</strong> ${lista.Codigo} <br>
-                    <strong>Cod. Organizador:</strong> ${lista.CodigoCliente} <br>
-                    <strong>Nome Organizador:</strong> ${lista.NomeCliente} <br>
-                    <strong>Data Evento:</strong> ${lista.DataEvento} <br>
-                    <strong>Local:</strong> ${lista.LocalEvento}
-                </p>
-            </div>
-        </div>
-    `);
-
-    $card.on("click", function () {
-        listaPresenteDinamica = lista;
-        lista.Produtos.forEach(function (produto) {
-            const $prodCard = $(`
-                <div class="card mb-3 col-12">
-                    <div class="card-body">
-                        <p class="card-text">
-                            <strong>Código:</strong> ${produto.CodigoProduto}<br>
-                            <strong>Lista:</strong> ${produto.Lista}<br>
-                            <strong>Preço:</strong> R$ ${produto.ValorUnitario}<br>
-                            <strong>Atendida:</strong> ${produto.QtdAtendida}<br>
-                            <strong>Quantidade:</strong> ${produto.QtdSolicitada}
-                        </p>
+            data.forEach(function (lista) {
+                const $card = $(`
+                    <div class="card mb-3" style="cursor: pointer; transition: 0.2s;">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento: ${lista.Nome}</h5>
+                            <p class="card-text">
+                                <strong>Cod. Lista:</strong> ${lista.Codigo} <br>
+                                <strong>Cod. Organizador:</strong> ${lista.CodigoCliente} <br>
+                                <strong>Nome Organizador:</strong> ${lista.NomeCliente} <br>
+                                <strong>Data Evento:</strong> ${lista.DataEvento} <br>
+                                <strong>Local:</strong> ${lista.LocalEvento}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            `);
+                `);
 
-            $prodCard.on("click", function () {
-                if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                    showAlert("A quantidade solicitada deste produto já foi atendida.");
-                    return;
-                }
+                $card.on("click", function () {
+                    listaPresenteDinamica = lista;
+                    $("#bodydtProdutos").empty(); // Clear product cards before appending
 
-                $("#cliente").data("codigo", lista.CodigoCliente);
-                $("#cliente").val(lista.NomeCliente);
-                $("#cliente").data("loja", "01");
-                
-                $("#codigo").val(produto.DescProduto);
-                $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
-                $("#codigo").data("codigo", produto.CodigoProduto);
-                $("#codigo").data("estoque", 10);
-                $("#codigo").data("imagem", "img/semimage.png");
-                $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2));
+                    lista.Produtos.forEach(function (produto) {
+                        const $prodCard = $(`
+                            <div class="card mb-3 col-12">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <strong>Código:</strong> ${produto.CodigoProduto}<br>
+                                        <strong>Lista:</strong> ${produto.Lista}<br>
+                                        <strong>Preço:</strong> R$ ${produto.ValorUnitario}<br>
+                                        <strong>Atendida:</strong> ${produto.QtdAtendida}<br>
+                                        <strong>Quantidade:</strong> ${produto.QtdSolicitada}
+                                    </p>
+                                </div>
+                            </div>
+                        `);
 
-                $("#codigo").data("codlista", lista.Codigo);
-                $("#codigo").data("itemlista", produto.Item);
+                        $prodCard.on("click", function () {
+                            if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                                showAlert("A quantidade solicitada deste produto já foi atendida.");
+                                return;
+                            }
 
-                $("#modalProdutosLista").modal('hide');
-                $("#modalListaPresentes").modal('hide');
+                            $("#cliente").data("codigo", lista.CodigoCliente);
+                            $("#cliente").val(lista.NomeCliente);
+                            $("#cliente").data("loja", "01");
+                            
+                            $("#codigo").val(produto.DescProduto);
+                            $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+                            $("#codigo").data("codigo", produto.CodigoProduto);
+                            $("#codigo").data("estoque", 10);
+                            $("#codigo").data("imagem", "img/semimage.png");
+                            $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2));
 
-                guardarLista = true;
+                            $("#codigo").data("codlista", lista.Codigo);
+                            $("#codigo").data("itemlista", produto.Item);
+
+                            $("#modalProdutosLista").modal('hide');
+                            $("#modalListaPresentes").modal('hide');
+
+                            guardarLista = true;
+                        });
+
+                        if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                            $prodCard.css("backgroundColor", "#a9a9a9");
+                        } else {
+                            $prodCard.on("mouseover", function () {
+                                $prodCard.css("backgroundColor", "#e3e3e3");
+                            });
+
+                            $prodCard.on("mouseout", function () {
+                                $prodCard.css("backgroundColor", "");
+                            });
+                        }
+
+                        $("#bodydtProdutos").append($prodCard);
+                    });
+
+                    $("#modalProdutosLista").modal({ backdrop: "static" });
+                });
+
+                $container.append($card);
             });
-
-            if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                $prodCard.css("backgroundColor", "#a9a9a9");
-            } else {
-                $prodCard.on("mouseover", function () {
-                    $prodCard.css("backgroundColor", "#e3e3e3");
-                });
-
-                $prodCard.on("mouseout", function () {
-                    $prodCard.css("backgroundColor", "");
-                });
-            }
-
-            $("#bodydtProdutos").append($prodCard);
-        });
-
-        $("#modalProdutosLista").modal({ backdrop: "static" });
-    });
-
-    $("#bodydtPresentes").append($card);
-});
-
-
-            $table.show();
         },
         error: function () {
             window.alert("Erro ao carregar as listas de presentes");
@@ -222,16 +219,14 @@ data.forEach(function (lista) {
 }
 
 function clearListas() {
-    $("#bodydtPresentes tr").remove();
-    const table = document.getElementById("dtPresentes")
-    table.style.display = "none"
+    $("#bodydtPresentes").empty(); // Clear cards instead of rows
 }
 
 function clearProdutos() {
-    $("#bodydtProdutos tr").remove();
-
-    guardarLista = false
+    $("#bodydtProdutos").empty(); // Clear cards instead of rows
+    guardarLista = false;
 }
+
 
 /* CAMPOS "NOME CLIENTE" E "DOCUMENTO CLIENTE" */
 
