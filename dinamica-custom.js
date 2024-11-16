@@ -236,7 +236,10 @@ function clearProdutos() {
     $("#productCardContainer").empty();
     guardarLista = false;
 }
-
+function formatDate(dateStr) {
+    if (!dateStr || dateStr.length !== 8) return dateStr;
+    return `${dateStr.substring(6, 8)}/${dateStr.substring(4, 6)}/${dateStr.substring(0, 4)}`;
+}
 
 /* CAMPOS "NOME CLIENTE" E "DOCUMENTO CLIENTE" */
 
