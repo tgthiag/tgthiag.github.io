@@ -152,7 +152,7 @@ function insertData() {
             data.forEach(function (lista) {
                 const $card = $(
                     `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
-                        <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px;">
+                        <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="card-body">
                                 <h5 class="card-title">Evento: ${lista.Nome}</h5>
                                 <div class="row">
@@ -173,7 +173,7 @@ function insertData() {
                     lista.Produtos.forEach(function (produto) {
                         const $cardProduto = $(
                             `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
-                                <div class="card shadow-sm" style="margin-bottom: 20px; border-radius: 15px;">
+                                <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                                     ${produto.ImagemBase64 ? `<img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">` : ''}
                                     <div class="card-body">
                                         <h5 class="card-title">${produto.DescProduto}</h5>
@@ -184,11 +184,14 @@ function insertData() {
                                                 <p class="card-text"><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida} &nbsp;&nbsp; <strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary" onclick="selectProduct('${produto.CodigoProduto}', '${produto.DescProduto}', '${produto.ValorUnitario}', '${lista.Codigo}', '${produto.Item}')">Selecionar</button>
                                     </div>
                                 </div>
                             </div>`
                         );
+
+                        $cardProduto.on("click", function () {
+                            selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item);
+                        });
 
                         $("#productCardContainer").append($cardProduto);
                     });
