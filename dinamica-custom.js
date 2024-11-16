@@ -1,8 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-redeclare */
-/* eslint-disable no-useless-concat */
-/* eslint-disable no-unused-vars */
-/* eslint-disable eqeqeq */
 /**
  * Customização feita por:
  * 
@@ -27,8 +22,8 @@ $(document).ready(function () {
     });
 });
 
-$("body").append(
-    `<div class="modal fade" id="modalListaPresentes" role="dialog">
+$("body").append(`
+    <div class="modal fade" id="modalListaPresentes" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,19 +35,38 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row" id="bodydtPresentes" style="overflow: auto; max-height: 75vh;">
-                        <!-- Cards will be dynamically appended here -->
+                    <div class="row mb-3">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="input-group input-group-lg">
+                                <select class="form-control" name="opcPresentes" id="opcPresentes">
+                                    <option value="1">1 - Data do Evento</option>
+                                    <option value="2">2 - Nome do Evento</option>
+                                    <option value="3">3 - Local de Evento</option>
+                                    <option value="4">4 - Nome do organizador</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="input-group input-group-lg">
+                                <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <button class="btn btn-danger" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
+                        </div>
+                    </div>
+                    <div class="row" id="cardContainer" style="display: none; gap: 20px;">
                     </div>
                 </div>
                 <div class="modal-footer" id="buttons">
                 </div>
             </div>
         </div>
-    </div>`
-);
+    </div>
+`);
 
-$("body").append(
-    `<div class="modal fade" id="modalProdutosLista" role="dialog">
+$("body").append(`
+    <div class="modal fade" id="modalProdutosLista" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -64,8 +78,7 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row" id="bodydtProdutos" style="overflow: auto; max-height: 75vh;">
-                        <!-- Product cards will be dynamically appended here -->
+                    <div class="row" id="productCardContainer" style="gap: 20px;">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -73,13 +86,12 @@ $("body").append(
                 </div>
             </div>
         </div>
-    </div>`
-);
+    </div>
+`);
 
 $(document).ready(function () {
     $("#opcPresentes").on("change", function () {
         const $opcVal = $("#opcPresentes").val();
-
         if ($opcVal == "1") {
             $("#txtPesquisa").attr('type', 'date');
         } else {
@@ -92,9 +104,7 @@ var listaPresenteDinamica;
 function insertData() {
     clearListas();
 
-    const $container = $("#bodydtPresentes");
-    $container.empty(); // Clear existing content
-
+    const $cardContainer = $("#cardContainer");
     const $opcPresentes = $("#opcPresentes");
     const $txtPesquisa = $("#txtPesquisa");
 
@@ -130,58 +140,52 @@ function insertData() {
             if (!response || !response.ListaPresentes) return;
 
             const data = response.ListaPresentes;
+            $cardContainer.empty(); // Clear existing cards
+
             data.forEach(function (lista) {
                 const $card = $(`
-                    <div class="card mb-3" style="cursor: pointer; transition: 0.2s;">
+                    <div class="card border-danger" style="width: 18rem; cursor: pointer; transition: 0.2s;">
                         <div class="card-body">
                             <h5 class="card-title">Evento: ${lista.Nome}</h5>
-                            <p class="card-text">
-                                <strong>Cod. Lista:</strong> ${lista.Codigo} <br>
-                                <strong>Cod. Organizador:</strong> ${lista.CodigoCliente} <br>
-                                <strong>Nome Organizador:</strong> ${lista.NomeCliente} <br>
-                                <strong>Data Evento:</strong> ${lista.DataEvento} <br>
-                                <strong>Local:</strong> ${lista.LocalEvento}
-                            </p>
+                            <p class="card-text"><strong>Cód. Lista:</strong> ${lista.Codigo}</p>
+                            <p class="card-text"><strong>Organizador:</strong> ${lista.NomeCliente}</p>
+                            <p class="card-text"><strong>Data do Evento:</strong> ${lista.DataEvento}</p>
+                            <p class="card-text"><strong>Local:</strong> ${lista.LocalEvento}</p>
                         </div>
                     </div>
                 `);
 
                 $card.on("click", function () {
                     listaPresenteDinamica = lista;
-                    $("#bodydtProdutos").empty(); // Clear product cards before appending
+                    const $productCardContainer = $("#productCardContainer");
+                    $productCardContainer.empty(); // Clear existing products
 
                     lista.Produtos.forEach(function (produto) {
-                        const $prodCard = $(`
-                            <div class="card mb-3 col-12">
+                        const $productCard = $(`
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Imagem do produto" style="height: 150px;">
                                 <div class="card-body">
-                                    <p class="card-text">
-                                        <strong>Código:</strong> ${produto.CodigoProduto}<br>
-                                        <strong>Lista:</strong> ${produto.Lista}<br>
-                                        <strong>Preço:</strong> R$ ${produto.ValorUnitario}<br>
-                                        <strong>Atendida:</strong> ${produto.QtdAtendida}<br>
-                                        <strong>Quantidade:</strong> ${produto.QtdSolicitada}
-                                    </p>
+                                    <h5 class="card-title">${produto.DescProduto}</h5>
+                                    <p class="card-text"><strong>Cód. Produto:</strong> ${produto.CodigoProduto}</p>
+                                    <p class="card-text"><strong>Valor Unitário:</strong> R$ ${produto.ValorUnitario}</p>
+                                    <p class="card-text"><strong>Quantidade Disponível:</strong> ${produto.QtdAtendida}</p>
+                                    <p class="card-text"><strong>Quantidade Solicitada:</strong> ${produto.QtdSolicitada}</p>
                                 </div>
                             </div>
                         `);
 
-                        $prodCard.on("click", function () {
+                        $productCard.on("click", function () {
                             if (produto.QtdAtendida >= produto.QtdSolicitada) {
                                 showAlert("A quantidade solicitada deste produto já foi atendida.");
                                 return;
                             }
 
-                            $("#cliente").data("codigo", lista.CodigoCliente);
-                            $("#cliente").val(lista.NomeCliente);
-                            $("#cliente").data("loja", "01");
-                            
                             $("#codigo").val(produto.DescProduto);
-                            $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+                            $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
                             $("#codigo").data("codigo", produto.CodigoProduto);
                             $("#codigo").data("estoque", 10);
                             $("#codigo").data("imagem", "img/semimage.png");
                             $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2));
-
                             $("#codigo").data("codlista", lista.Codigo);
                             $("#codigo").data("itemlista", produto.Item);
 
@@ -192,25 +196,19 @@ function insertData() {
                         });
 
                         if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                            $prodCard.css("backgroundColor", "#a9a9a9");
-                        } else {
-                            $prodCard.on("mouseover", function () {
-                                $prodCard.css("backgroundColor", "#e3e3e3");
-                            });
-
-                            $prodCard.on("mouseout", function () {
-                                $prodCard.css("backgroundColor", "");
-                            });
+                            $productCard.css("backgroundColor", "#a9a9a9");
                         }
 
-                        $("#bodydtProdutos").append($prodCard);
+                        $productCardContainer.append($productCard);
                     });
 
                     $("#modalProdutosLista").modal({ backdrop: "static" });
                 });
 
-                $container.append($card);
+                $cardContainer.append($card);
             });
+
+            $cardContainer.show();
         },
         error: function () {
             window.alert("Erro ao carregar as listas de presentes");
@@ -219,11 +217,11 @@ function insertData() {
 }
 
 function clearListas() {
-    $("#bodydtPresentes").empty(); // Clear cards instead of rows
+    $("#cardContainer").empty().hide();
 }
 
 function clearProdutos() {
-    $("#bodydtProdutos").empty(); // Clear cards instead of rows
+    $("#productCardContainer").empty();
     guardarLista = false;
 }
 
@@ -287,7 +285,7 @@ $("body").append(`
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: none;">
                                 <label id="DinamicaLabelCustomerOrder" class="fonte" for="DinamicaCustomerOrder">Valor Garantia</label><span id="DinamicaSpanCustomerOrder" style="color: red;font-size: small"></span>
                                 <div class="input-group input-group-lg clearable">
-                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" name="customerOrder" required>
+                                    <select id="DinamicaCustomerOrder" class="form-control clearableInput" required>
                                         <!-- Dropdown options will be populated here dynamically -->
                                     </select>
                                     <i class="clearable__clear">&times;</i>
@@ -335,12 +333,11 @@ $("body").append(`
                                     <input type="date" id="dataMontagem" class="form-control">
                                 </div>
                             </div>
-                            <p id="filial_reserva"></p>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer" id="buttons">
-                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success">Continuar <i class="fas fa-check"></i></button>
+                    <button id="DinamicaBtnCustomerOrderItem" class="btn btn-success" data-dismiss="modal">Continuar <i class="fas fa-check"></i></button>
                 </div>
             </div>
         </div>
@@ -442,48 +439,8 @@ $("#dataEntrega").change(function() {
         verificarPrazoMontagem(); // Revalidar a data de montagem após a mudança na data de entrega
         let dataEntregaDinamica = $("#dataEntrega");
         let turnoEntregaDinamica = $("#selectTurnoEntrega");
-
-        let dataString = dataEntregaDinamica.val();
-        
-        // Extrair manualmente o ano, mês e dia da string
-        let partesData = dataString.split("-");
-        let ano = parseInt(partesData[0], 10);
-        let mes = parseInt(partesData[1], 10); // Mês agora é de 1 a 12
-        let dia = parseInt(partesData[2], 10);
-
-        // Função para calcular o dia da semana (0: domingo, 6: sábado)
-        function calcularDiaSemana(ano, mes, dia) {
-            // calcular o dia da semana
-            if (mes < 3) {
-                mes += 12;
-                ano -= 1;
-            }
-            let k = ano % 100;
-            let j = Math.floor(ano / 100);
-            let diaSemana = (dia + Math.floor((13 * (mes + 1)) / 5) + k + Math.floor(k / 4) + Math.floor(j / 4) - 2 * j) % 7;
-            return (diaSemana + 6) % 7; // Ajuste para que 0 seja domingo e 6 seja sábado
-        }
-
-        let diaSemana = calcularDiaSemana(ano, mes, dia);
-
-        console.log("dataEntrega:", dataString);
-        console.log("diaSemana:", diaSemana);
-
-        // Verificar se é sábado (6) e turno 2
-        if (diaSemana === 6 && turnoEntregaDinamica.val() == 2) {
-            showAlert("Não é possível agendar entregas aos sábados no horário da tarde.");
-            dataEntregaDinamica.val("");
-            return;
-        }
-
-        if (podeEntregar) {
-            checarDisponibilidadeNoDia(
-                dataEntregaDinamica, 
-                turnoEntregaDinamica, 
-                "entregas", 
-                turnoEntregaDinamica.val() == 1 ? 10 : 5, 
-                "L2_FDTENTR"
-            );
+        if(podeEntregar){
+            checarDisponibilidadeNoDia(dataEntregaDinamica, turnoEntregaDinamica, "entregas", turnoEntregaDinamica.val() == 1 ? 10 : 5, "L2_FDTENTR");
         }
     }
 });
@@ -549,30 +506,24 @@ function PE_DEPOIS_ADD_PRODUTO(item,divCarrinho,next)   {
     //     populateGarantiaDropdown(item);
     // };
     document.getElementById("DinamicaBtnCustomerOrderItem").onclick = function(){
-        let tipoEntrega = $("#selectTipoEntrega").val();
-        let validRetira = tipoEntrega == "2" && $("#vendedorInput").val() != "";
-        let validEntrega = tipoEntrega == "3" && $("#vendedorInput").val() != "" && $("#dataEntrega").val() != "" && $("#dataMontagem").val() != "";
-        if(validRetira || validEntrega){
-            $("#Dinamica_ModalAposAddCarrinho").modal('hide');
-            aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
-            $(".list-group-item").each(function() {
-                if ($(this).data("ctipoentrega") == 3){
-                    nQtditemCarrinhoEntrega++;
-                }
-                
-            });
-            if (nQtditemCarrinhoEntrega > 0){
-                if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
-                    nQtditemCarrinhoEntrega = 2;
-                }
-                
-                // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
-                // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
+        aposFornecerPedidoEItemDoCliente(item,divCarrinho,next);
+
+        $(".list-group-item").each(function() {
+            if ($(this).data("ctipoentrega") == 3){
+                nQtditemCarrinhoEntrega++;
             }
-            somatorio();//Executa a atualização dos totais
-        }else{
-            showAlert("É necessário preencher os campos");
+            
+        });
+        if (nQtditemCarrinhoEntrega > 0){
+            if (nQtditemCarrinhoEntrega <=2){ //Valor minimo de frete sempre será duas vezes o valor do nValFrete
+                nQtditemCarrinhoEntrega = 2;
+            }
+            
+            // nValFrete = (nValPadraoFrete*nQtditemCarrinhoEntrega);
+            // document.getElementById("valorfrete").innerHTML= ((nValFrete).toFixed(2).toString().toLocaleString());
         }
+        somatorio();//Executa a atualização dos totais
+
     }
 }
 }
@@ -592,8 +543,6 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
     var vendorCodeDinamica = $('#vendedorInput').data('codevendedor').trim();
     var dinamica_codLista = $("#codigo").data("codlista") || "";
     var dinamica_itemLista = $("#codigo").data("itemlista") || "";
-    let filial_reserva = $("#filial_reserva").val() || "";
-    let saldo_endereco = $("#filial_reserva").data("endereco")
     var content=  "" //dropdownGarantia.options[dropdownGarantia.selectedIndex].text;
     cCodigoProd		= $("#codigo").data("codigo")
     nQuantidade		= (parseFloat($("#qtde").val()))
@@ -665,8 +614,6 @@ function aposFornecerPedidoEItemDoCliente (item,divCarrinho,next){
                     ' data-reais="'				+ cDesconto + '"' +
                     ' data-estoque="'			+ cQtdEstoque + '"' +
                 ' data-turno="'			+ dinamica_turno + '"' +
-                ' data-filialreserva="'			+ filial_reserva + '"' +
-                ' data-saldoendereco="'			+ saldo_endereco + '"' +
                 ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                 ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                 ' data-vendcod="'			+ vendorCodeDinamica + '"' +
@@ -761,22 +708,12 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
              lEntregaposterior = true;
          }
         if (lEntregaposterior){
+            jsonenv.cabecalho[0]["AUTRESERVA"]  =  '';
             jsonenv.itens[index]["LR_ENTREGA"] = $(this).data("ctipoentrega").toString();
             jsonenv.itens[index]["LR_XTURNO"] = $(this).data("turno").toString();
-            let dataEntregaFormatada = formatarData($(this).data("dataentrega").toString());
-            jsonenv.itens[index]["LR_FDTENTR"] = dataEntregaFormatada.split('-').reverse().join('/');
-            let dataMontagemFormatada = formatarData($(this).data("datamontagem").toString());
-            jsonenv.itens[index]["LR_FDTMONT"] = dataMontagemFormatada.split('-').reverse().join('/');
-            if ($(this).data("reserva") != undefined) {
-                jsonenv.itens[index]["LR_RESERVA"] = $(this).data("reserva").trim();
-            }
-            if ($(this).data("filialreserva") !== "" && $(this).data("filialreserva") != undefined){
-                jsonenv.itens[index]["LR_FILRES"] = $(this).data("filialreserva").toString().slice(-2);
-                jsonenv.cabecalho[0]["AUTRESERVA"]  =  $(this).data("filialreserva").toString();
-                if ($(this).data("saldoendereco") !== "") {
-                    jsonenv.itens[index]["LR_LOCALIZ"] = $(this).data("saldoendereco").toString();
-                }
-            }
+            jsonenv.itens[index]["LR_FDTENTR"] = $(this).data("dataentrega").toString().split('-').reverse().join('/');
+            jsonenv.itens[index]["LR_FDTMONT"] = $(this).data("datamontagem").toString().split('-').reverse().join('/');
+            
         }
         if ($(this).data("codlista") && $(this).data("itemlista")) {
             jsonenv.itens[index]["LR_CODLPRE"] = $(this).data("codlista").toString();
@@ -786,12 +723,6 @@ function PE_GERORC_ANTES_GERORC2(jsonenv){
 
     return jsonenv;
 } 
-function formatarData(data) {
-    if (data.length === 8 && !data.includes("-") && !data.includes("/")) {
-        return `${data.slice(0, 4)}-${data.slice(4, 6)}-${data.slice(6, 8)}`;
-    }
-    return data;
-}
 
 $("body").append(`
     <div class="modal fade" id="alertModalDinamica" role="dialog">
@@ -928,7 +859,6 @@ function pagarOrcamento(){
                     let dinamica_dataEntrega = this.L2_FDTENTR;
                     let dinamica_dataMontagem = this.L2_FDTMONT;
                     let vendorCodeDinamica = this.L2_VEND;
-                    let reservaCodeDinamica = this.L2_RESERVA;
                     
                     var item = '<a data-acessorio="acessorio"'+
                                     //'" data-percent="' 		+ document.getElementById("percent").value + 
@@ -944,7 +874,6 @@ function pagarOrcamento(){
                                     ' data-dataentrega="'			+ dinamica_dataEntrega + '"' +
                                     ' data-datamontagem="'			+ dinamica_dataMontagem + '"' +
                                     ' data-vendcod="'			+ vendorCodeDinamica + '"' +
-                                    ' data-reserva="'			+ reservaCodeDinamica + '"' +
                                     ' data-reais="'				+ cDesconto+'"' +
                                     ' data-estoque="'			+ cQtdEstoque+'"' +
                                     ' data-cliente="'			+ this.L1_CLIENTE+ this.L1_LOJA+'"' +
@@ -995,7 +924,7 @@ function pagarOrcamento(){
 function PE_ANT_buscaNrOrcamento(cQuery) {
     cQuery = cQuery.replace(
         "L2_LOCAL",
-        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT, L2_RESERVA"
+        "L2_LOCAL, L2_XTURNO, L2_FDTENTR, L2_VEND, L2_FDTMONT"
     );
     cQuery = cQuery.replace(
         "L1_LOJA",
@@ -1017,12 +946,7 @@ $("body").append(
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div style="display: flex; align-items: center;">
-                        <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
-                        <button type="button" class="btn btn-light" style="margin-left: 5px;" onclick="searchforproducts()">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+                    <input type="text" id="produtoSearch" class="form-control" placeholder="Digite o nome do produto" style="border-radius: 10px;">
                     <div id="searchResults" class="list-group" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
                     <input type="number" id="produtoQuantidade" class="form-control" placeholder="Quantidade" style="margin-top: 10px; border-radius: 10px;">
                 </div>
@@ -1040,143 +964,133 @@ $('#modalProdutosLista').on('shown.bs.modal', function () {
     });
 });
 
-let currentRequest = null;
+$('#modalAdicionarItem').on('shown.bs.modal', function () {
+    $('#produtoSearch').val('');
+    $('#produtoSearch').data('selectedItem', null);
+    $('#searchResults').empty();
+    $('#produtoQuantidade').val('');
 
-function searchforproducts(){
-    const searchTerm = $("#produtoSearch").val().trim();
+    $('#produtoSearch').on('input', function() {
+        // $('#searchResults').empty();
+        const searchTerm = $(this).val().trim();
+        
+        if (searchTerm.length >= 3) {
+            let tbSelectDinamica = $("#cliente").data("tabela");
+            let cClienteDinamica = $("#cliente").data("codigo");
+            let cLojaDinamica = $("#cliente").data("loja");
+            let cJsonBodyDinamica = {
+                "cnpj_empresa": cCnpj,
+                "ctype": "BUSCA_GRID_PROD",
+                "cBusca": searchTerm.toUpperCase(),
+                "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
+                "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
+                "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
+            };
 
-    if (searchTerm.length >= 3) {
-        let tbSelectDinamica = $("#cliente").data("tabela");
-        let cClienteDinamica = $("#cliente").data("codigo");
-        let cLojaDinamica = $("#cliente").data("loja");
-        let cJsonBodyDinamica = {
-            "cnpj_empresa": cCnpj,
-            "ctype": "BUSCA_GRID_PROD",
-            "cBusca": searchTerm.toUpperCase(),
-            "cCliente": (cClienteDinamica ? cClienteDinamica : ""),
-            "lojacli": (cLojaDinamica ? cLojaDinamica : ""),
-            "cTabPadrao": (tbSelectDinamica ? tbSelectDinamica : "")
-        };
+            $.ajax({
+                url: url + "EASY_RESULT",
+                type: "POST",
+                async: true,
+                data: JSON.stringify(cJsonBodyDinamica),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data) {
+                    $('#searchResults').empty();
 
-        if (currentRequest) {
-            currentRequest.abort();
-        }
-
-        const loadingOverlay = $(`<div id="loadingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255, 255, 255, 0.7);z-index:9999;display:flex;align-items:center;justify-content:center;">
-            <div style="font-size:24px;color:black;">Buscando...</div>
-          </div>`);
-
-        $("body").append(loadingOverlay);
-
-        currentRequest = $.ajax({
-            url: url + "EASY_RESULT",
-            type: "POST",
-            async: true,
-            data: JSON.stringify(cJsonBodyDinamica),
-            dataType: "json",
-            contentType: "application/json",
-            success: function(data) {
-                $('#searchResults').empty();
-
-                if (data.Dados && data.Dados.length > 0) {
-                    $(data.Dados).each(function(index) {
-                        const itemName = data.Dados[index].NOME.trim();
-                        const itemCode = data.Dados[index].CODIGO.trim();
-                        const itemValue = data.Dados[index].VALOR;
-                        $('#searchResults').append(
-                            `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
-                        );
-                    });
-
-                    $('#searchResults a').on('click', function(e) {
-                        e.preventDefault();
-                        const selectedLabel = $(this).text();
-                        const selectedValue = $(this).data('code');
-                        const selectedPrice = $(this).data('price');
-                        $('#produtoSearch').val(selectedLabel);
-                        $('#produtoSearch').data('selectedItem', {
-                            label: selectedLabel,
-                            value: selectedValue,
-                            price: selectedPrice,
-                            quantity: 1
+                    if (data.Dados && data.Dados.length > 0) {
+                        $(data.Dados).each(function(index) {
+                            const itemName = data.Dados[index].NOME.trim();
+                            const itemCode = data.Dados[index].CODIGO.trim();
+                            const itemValue = data.Dados[index].VALOR;
+                            $('#searchResults').append(
+                                `<a href="#" class="list-group-item list-group-item-action" data-code="${itemCode}" data-price="${itemValue}">${itemName}\n${parseFloat(itemValue).toFixed(2)}</a>`
+                            );
                         });
-                        $('#searchResults').empty();
-                    });
-                } else {
-                    $('#searchResults').append('<div class="list-group-item">No results found</div>');
-                }
-            },
-            error: function(xhr, status, error) {
-                if (status !== 'abort') {
+
+                        $('#searchResults a').on('click', function(e) {
+                            e.preventDefault();
+                            const selectedLabel = $(this).text();
+                            const selectedValue = $(this).data('code');
+                            const selectedPrice = $(this).data('price');
+                            $('#produtoSearch').val(selectedLabel);
+                            $('#produtoSearch').data('selectedItem', {
+                                label: selectedLabel,
+                                value: selectedValue,
+                                price: selectedPrice,
+                                quantity: 1
+                            });
+                            $('#searchResults').empty();
+                        });
+                    } else {
+                        $('#searchResults').append('<div class="list-group-item">No results found</div>');
+                    }
+                },
+                error: function(xhr, status, error) {
                     console.error('Error fetching products:', error);
                 }
-            },
-            complete: function() {
-                currentRequest = null;
-                // Remove loading overlay
-                $('#loadingOverlay').remove();
-            }
-        });
-    } else {
-        $('#searchResults').empty();
-    }
-};
-
-$('#btnIncluirItem').off('click').on('click', function() {
-    let selectedItem = $('#produtoSearch').data('selectedItem');
-    let quantityItems = $('#produtoQuantidade').val();
-
-    if (!selectedItem) {
-        alert('Por favor, selecione um produto.');
-        return;
-    }
-
-    if (!quantityItems || quantityItems <= 0) {
-        alert('Por favor, insira uma quantidade válida.');
-        return;
-    }
-    selectedItem.quantity = parseInt(quantityItems, 10);
-    const listaPresente = listaPresenteDinamica;
-    const finalDataToSend = {
-        "ListaPresentes": [
-            {
-                "Codigo": listaPresente.Codigo,  
-                "Produtos": [
-                    {
-                        "CodigoProduto": String(selectedItem.value).trim(),  
-                        "QtdSolicitada": selectedItem.quantity,
-                        "ValorUnitario": selectedItem.price 
-                    }
-                ]
-            }
-        ]
-    };
-
-    $.ajax({
-        type: 'POST',
-        url: url + 'easymobile/INSERIR/LISTAPRESENTES',
-        data: JSON.stringify(finalDataToSend),
-        contentType: 'application/json',
-        async: true,
-        dataType: 'json',
-        success: function(response) {
-                if(response.message){
-                    showAlert(response.message);
-                }else{
-                    showAlert('Item incluído com sucesso:', response);
-                }
-
-            $('#modalAdicionarItem').modal('hide');
-            $('#modalProdutosLista').modal('hide');
-            $('#btn_pesquisar_dinamica').click();
-        },
-        error: function(xhr, status, error) {
-            // alert("Em desenvolvimento");
-            showAlert('Erro ao incluir item:', error);
-            alert('Ocorreu um erro ao incluir o item.');
+            });
+        } else {
+            $('#searchResults').empty();
         }
     });
+
+    $('#btnIncluirItem').off('click').on('click', function() {
+        let selectedItem = $('#produtoSearch').data('selectedItem');
+        let quantityItems = $('#produtoQuantidade').val();
+
+        if (!selectedItem) {
+            alert('Por favor, selecione um produto.');
+            return;
+        }
+
+        if (!quantityItems || quantityItems <= 0) {
+            alert('Por favor, insira uma quantidade válida.');
+            return;
+        }
+        selectedItem.quantity = parseInt(quantityItems, 10);
+        const listaPresente = listaPresenteDinamica;
+        const finalDataToSend = {
+            "ListaPresentes": [
+                {
+                    "Codigo": listaPresente.Codigo,  
+                    "Produtos": [
+                        {
+                            "CodigoProduto": String(selectedItem.value).trim(),  
+                            "QtdSolicitada": selectedItem.quantity,
+                            "ValorUnitario": selectedItem.price 
+                        }
+                    ]
+                }
+            ]
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: url + 'easymobile/INSERIR/LISTAPRESENTES',
+            data: JSON.stringify(finalDataToSend),
+            contentType: 'application/json',
+            async: true,
+            dataType: 'json',
+            success: function(response) {
+                    if(response.message){
+                        showAlert(response.message);
+                    }else{
+                        showAlert('Item incluído com sucesso:', response);
+                    }
+
+                $('#modalAdicionarItem').modal('hide');
+                $('#modalProdutosLista').modal('hide');
+                $('#btn_pesquisar_dinamica').click();
+            },
+            error: function(xhr, status, error) {
+                // alert("Em desenvolvimento");
+                showAlert('Erro ao incluir item:', error);
+                alert('Ocorreu um erro ao incluir o item.');
+            }
+        });
+    });
 });
+
 
 $('#modalAdicionarItem').on('hidden.bs.modal', function () {
     $('#produtoSearch').val('');
@@ -1194,181 +1108,231 @@ setTimeout(function() {
     };
 }, 3000);
 
-function IniciarProcessoDeReserva() {
-    var tabela = document.querySelector("#divAddProd table");
-    var tdFrete = document.createElement("td");
-    tdFrete.innerHTML = `
-        <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
-        <div class="fonte-big fonte-gray-darken" align="right">
-            <strong id="valorFrete">0,00</strong>
-        </div>
-    `;
-    var segundaLinha = tabela.querySelector("tr:nth-child(2)");
-    segundaLinha.appendChild(tdFrete);
+//----------------------------------------------------------------
+async function createModalReserva() {
 
-    var divAddProd = document.getElementById("opcoesEntrega");
-    var botaoReserva = document.createElement("button");
-    botaoReserva.className = "btn btn-warning";
-    botaoReserva.style.height = "40px";
-    botaoReserva.style.width = "100%";
-    botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
+    let produtos = document.querySelectorAll('#nav1 .list-group-item');
+    let produtosHTML = '';
 
-    botaoReserva.addEventListener("click", function() {
+    let produtosArray = [];  
+    let saldoscdArray = [];
+    let saldosljArray = [];
+
+    let fetchPromises = [];
+
+    produtos.forEach((produto) => {
+        let codprod = produto.getAttribute('data-codigo').trim();
+
+        var json = {
+            "cnpj": tbLogin[0].CNPJ,
+            "produto": codprod
+        };
+
+        var raw = JSON.stringify(json);
+
+        const myHeaders = new Headers();
+        myHeaders.append("tenantId", "01");
+        myHeaders.append("Content-Type", "application/json");
+
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: myHeaders,
+            body: raw,
             redirect: "follow"
         };
-        if($("#codigo").data("codigo") != ""){
-            fetch(url + "easymobile/CONSULTAS/LISTALOJAS", requestOptions)
-                .then(response => response.text())
-                .then(result => {
-                    const jsonData = JSON.parse(result);
-                    if (jsonData.ListaLojas) {
-                        createModalReserva(jsonData.ListaLojas);
-                    } else {
-                        $("#alerta").modal({ backdrop: "static" });
-                        document.getElementById("dmodal").innerHTML = 'Nenhuma loja encontrada.';
+
+        // Adicionar a promessa da requisição fetch �  lista de promessas
+        fetchPromises.push(
+            fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
+                .then((response) => response.text())
+                .then((result) => {
+                    const jsonData = JSON.parse(result); // Converte a string JSON em objeto
+                    if (jsonData.status == true) {
+                        let nSaldoCd = jsonData.valcd;
+                        let nSaldoLoja = jsonData.valloja;
+
+                        // Adiciona os valores aos arrays
+                        produtosArray.push(codprod);
+                        saldoscdArray.push(nSaldoCd);
+                        saldosljArray.push(nSaldoLoja);
                     }
                 })
-                .catch(error => console.error(error));
-        }else{
-            showAlert("Selecione um produto.");
+                .catch((error) => console.error(error))
+        );
+    });
+
+    await Promise.all(fetchPromises);
+
+    produtos.forEach((produto, index) => {
+        const codigo = produto.getAttribute('data-codigo');
+        const descricao = produto.getAttribute('data-desc');
+
+        // Verifica se o produto existe nos arrays de saldo
+        const produtoIndex = produtosArray.indexOf(codigo.trim());
+
+        if (produtoIndex !== -1) {
+            const saldoCD = saldoscdArray[produtoIndex];
+            const saldoLoja = saldosljArray[produtoIndex];
+
+            produtosHTML += `
+                <tr>
+                    <td>${codigo} - ${descricao}</td>
+                    <td>${saldoCD}</td>
+                    <td>${saldoLoja}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}CD" value="CD">
+                                    <label class="form-check-label" for="produto${index}CD">CD</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="produto${index}" id="produto${index}Loja" value="Loja">
+                                    <label class="form-check-label" for="produto${index}Loja">Loja</label>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `;
         }
     });
 
-    divAddProd.appendChild(botaoReserva);
-}
-
-function createModalReserva(listaLojas) {
-    var modalHtml = `
-        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="reservaModalLabel" aria-hidden="true">
+    const modalHTML = `
+        <div class="modal fade" id="reservaModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="reservaModalLabel">Selecionar Loja</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div id="listaLojas" style="display: grid;">
-                            ${listaLojas.map(loja => `
-                                <button type="button" style="margin: 10px;" class="btn btn-outline-primary loja-item" data-codigo="${loja.Codigo}">
-                                    ${loja.Nome} - Filial: ${loja.Filial}
-                                </button>
-                            `).join('')}
-                        </div>
+                        <!-- Tabela de produtos -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Saldo CD</th>
+                                    <th>Saldo Loja</th>
+                                    <th>Escolha Armazém</th>
+                                </tr>
+                            </thead>
+                            <tbody id="produto-lista">
+                                ${produtosHTML}
+                            </tbody>
+                        </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fechar</button>
+                        <button type="button" class="btn btn-success reservas">Salvar</button>
                     </div>
                 </div>
             </div>
         </div>
     `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    const modal = $('#reservaModal');
+    modal.modal();
+
+    $('.reservas').click(function () {
+        const id = $(this).data('id');
+        const quant = $(this).data('quant');
+        modal.modal('hide');
+    });
+
+
+    modal.on('hidden.bs.modal', function () {
+        modal.remove();
+    });
+}
+
+// function adicionaCampoFrete() {
+//     // Localiza a tabela onde o valor do produto está sendo exibido
+//     var tabela = document.querySelector("#divAddProd table");
+
+//     // Cria o elemento <td> para o valor do frete
+//     var tdFrete = document.createElement("td");
+
+//     // Adiciona o conteúdo HTML dentro do <td>
+//     tdFrete.innerHTML = `
+//         <label id="labelFrete" class="fonte" align="right">Valor do frete:</label><br>
+//         <div class="fonte-big fonte-gray-darken" align="right">
+//             <strong id="valorFrete">0,00</strong>
+//         </div>
+//     `;
+
+//     // Insere o <td> na linha ao lado do valor do produto
+//     var segundaLinha = tabela.querySelector("tr:nth-child(2)");
+//     segundaLinha.appendChild(tdFrete);
+
+//     // Agora cria o botão "Reserva" logo após a tabela
+//     var divAddProd = document.getElementById("bfechaorc");
+
+//     // Cria o botão "Reserva"
+//     var botaoReserva = document.createElement("button");
+//     botaoReserva.className = "btn btn-warning"; // Classe bootstrap para estilização
+//     botaoReserva.style.height = "40px";
+//     botaoReserva.style.width = "100%";
+//     botaoReserva.innerHTML = 'Reserva <i class="fa fa-box"></i>';
+
+//     // Adiciona o evento de click com o alert
+//     botaoReserva.addEventListener("click", function() {
+
+//         //if(document.getElementById("codigo").value!=''){
+
+//             var json = {
+//                 "cnpj": tbLogin[0].CNPJ,
+//                 "produto": $("#codigo").data("codigo")
+//               };
+              
+//               var raw = JSON.stringify(json);
     
-    $('body').append(modalHtml);
-    $('#reservaModal').modal('show');
+//               const myHeaders = new Headers();
+//               myHeaders.append("tenantId", "01");
+//               myHeaders.append("Content-Type", "application/json");
+              
+//               const requestOptions = {
+//                 method: "POST",
+//                 headers: myHeaders,
+//                 body: raw,
+//                 redirect: "follow"
+//               };
+              
+//               fetch("https://easyanalytics.com.br/easymobile/easyhub/?cnpj=" + tbLogin[0].TOKEN + "&metodo=getsalarm", requestOptions)
+//                 .then((response) => response.text())
+//                 .then((result) => {    
+    
+//                     const jsonData = JSON.parse(result); // Converte a string JSON em objeto
 
-    // Handle button clicks
-    $('#listaLojas .loja-item').on('click', function () {
-        var selectedLoja = $(this).data('codigo');
-        var selectedProduto = $("#codigo").data("codigo");
+//                     if(jsonData.status==true){
 
-        $('#reservaModal').modal('hide');
-        fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas);
-    });
-}
+//                         createModalReserva(jsonData.valloja,jsonData.valcd);      
 
+//                     }else{
 
-let isFetching = false;
+//                         $("#alerta").modal({backdrop: "static"});	
+//                         document.getElementById("dmodal").innerHTML = 'Nenhum saldo a reservar';
 
-function fetchSaldoInfo(selectedLoja, selectedProduto, listaLojas) {
-    if (selectedLoja && !isFetching) { 
-        isFetching = true;
-
-        var requestBody = JSON.stringify({
-            "Parametros": {
-                "Codigo": selectedLoja,
-                "Produto": selectedProduto.trim()
-            }
-        });
-
-        fetch(url + "easymobile/CONSULTAS/LISTASALDO", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: requestBody
-        })
-        .then(response => response.text())
-        .then(result => {
-            const saldoData = JSON.parse(result);
-
-            if (saldoData.ListaSaldos) {
-                showSaldoModal(saldoData.ListaSaldos[0], selectedLoja, listaLojas);
-            } else {
-                // $("#alerta").modal({ backdrop: "static" });
-                // document.getElementById("dmodal").innerHTML = 'Um erro ocorreu ao tentar listar saldos.';
-                showAlert("Um erro ocorreu ao tentar listar saldos.");
-            }
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-            isFetching = false; 
-        });
-    }
-}
+//                     }
+                    
+    
+//                 })
+//                 .catch((error) => console.error(error));                 
 
 
-function showSaldoModal(saldo, lojaCodigo,listaLojas) {
-    let podeReservar = saldo.QtdDisponivel == 0 ? "disabled" : "";
-    var saldoModalHtml = `
-        <div class="modal fade" id="saldoModal" tabindex="-1" role="dialog" aria-labelledby="saldoModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="saldoModalLabel">Informações de Saldo</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Produto: ${saldo.Produto}</p>
-                        <p>Armazém: ${saldo.Armazem}</p>
-                        <p>Quantidade Atual: ${saldo.QtdAtual}</p>
-                        <p>Quantidade Reservada: ${saldo.QtdReserva}</p>
-                        <p>Quantidade Disponível: ${saldo.QtdDisponivel}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" ${podeReservar} id="submitReserva">Confirmar Reserva</button>
-                        <button type="button" class="btn btn-secondary" id="backToLoja">Voltar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
+//         //}
+        
+//     });    
+    
 
-    $('body').append(saldoModalHtml);
-    $('#saldoModal').modal('show');
-
-
-    $('#backToLoja').on('click', function() {
-        $('#saldoModal').modal('hide');
-        createModalReserva(listaLojas);
-    });
-
-    $('#submitReserva').on('click', function() {
-        console.log('Reserva confirmada para a loja:', lojaCodigo);
-        $("#filial_reserva").text(lojaCodigo);
-        $("#filial_reserva").val(lojaCodigo);
-        $("#filial_reserva").data("endereco", saldo.Endereco);
-        $('#saldoModal').modal('hide');
-    });
-    $('#saldoModal').on('hidden.bs.modal', function() {
-        $(this).remove();
-    });
-}
-
-$(document).ready(function () {
-    IniciarProcessoDeReserva();
-});
+//     // Insere o botão "Reserva" logo após a tabela
+//     divAddProd.appendChild(botaoReserva);
+// }
+// $(document).ready(function () {   
+       
+//     adicionaCampoFrete();
+// });
