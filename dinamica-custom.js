@@ -156,18 +156,20 @@ function insertData() {
                             <div class="card-body">
                                 <h5 class="card-title">Evento: ${lista.Nome}</h5>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="card-text">
-                                            <strong>Cod. Lista:</strong> ${lista.Codigo}<br>
-                                            <strong>Cod. Organizador:</strong> ${lista.CodigoCliente}<br>
-                                        </p>
+                                    <div class="col-6">
+                                        <p class="card-text"><strong>Cod. Lista:</strong> ${lista.Codigo}</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p class="card-text">
-                                            <strong>Nome Organizador:</strong> ${lista.NomeCliente}<br>
-                                            <strong>Data Evento:</strong> ${lista.DataEvento}<br>
-                                            <strong>Local:</strong> ${lista.LocalEvento}
-                                        </p>
+                                    <div class="col-6">
+                                        <p class="card-text"><strong>Cod. Organizador:</strong> ${lista.CodigoCliente}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text"><strong>Nome Organizador:</strong> ${lista.NomeCliente}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text"><strong>Data Evento:</strong> ${lista.DataEvento}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text"><strong>Local:</strong> ${lista.LocalEvento}</p>
                                     </div>
                                 </div>
                             </div>
@@ -186,19 +188,23 @@ function insertData() {
                                     <div class="card-body">
                                         <h5 class="card-title">${produto.DescProduto}</h5>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <p class="card-text">
-                                                    <strong>Item:</strong> ${produto.Item}<br>
-                                                    <strong>Cod. Produto:</strong> ${produto.CodigoProduto}<br>
-                                                </p>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Item:</strong> ${produto.Item}</p>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p class="card-text">
-                                                    <strong>Val. Unitario:</strong> ${produto.ValorUnitario}<br>
-                                                    <strong>Unidade:</strong> ${produto.UnidadeMedida}<br>
-                                                    <strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}<br>
-                                                    <strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}
-                                                </p>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Cod. Produto:</strong> ${produto.CodigoProduto}</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Val. Unitario:</strong> ${produto.ValorUnitario}</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Unidade:</strong> ${produto.UnidadeMedida}</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text"><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</p>
                                             </div>
                                         </div>
                                         <button class="btn btn-primary" onclick="selectProduct('${produto.CodigoProduto}', '${produto.DescProduto}', '${produto.ValorUnitario}', '${lista.Codigo}', '${produto.Item}')">Selecionar</button>
