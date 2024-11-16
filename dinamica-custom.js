@@ -181,7 +181,7 @@ function insertData() {
                                             <div class="col-12">
                                                 <p class="card-text d-flex justify-content-between"><span><strong>Cod. Produto:</strong> ${produto.CodigoProduto}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Item:</strong> ${produto.Item}</span></p>
                                                 <p class="card-text d-flex justify-content-between"><span><strong>Val. Unitario:</strong> ${produto.ValorUnitario}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Unidade:</strong> ${produto.UnidadeMedida}</span></p>
-                                                <p class="card-text d-flex justify-content-between"><span><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</span></p>
+                                                <p class="card-text d-flex justify-content-between"><span><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Qtd. Atendida:</strong> ${produto.QtdAtendida}</span></p>
                                             </div>
                                         </div>
                                     </div>
