@@ -190,7 +190,7 @@ function insertData() {
                         );
 
                         $cardProduto.on("click", function () {
-                            selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item);
+                            selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item, produto);
                         });
 
                         $("#productCardContainer").append($cardProduto);
@@ -210,7 +210,7 @@ function insertData() {
     });
 }
 
-function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, itemLista) {
+function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, itemLista, produto) {
     if (produto.QtdAtendida >= produto.QtdSolicitada) {
         showAlert("A quantidade solicitada deste produto já foi atendida.");
         return
@@ -218,7 +218,7 @@ function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, item
     $("#cliente").data("codigo",lista.CodigoCliente);
     $("#cliente").val(lista.NomeCliente);
     $("#cliente").data("loja","01")
-    
+
     $("#codigo").val(descProduto);
     $("#codigo").data("valor", valorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
     $("#codigo").data("codigo", codigoProduto);
