@@ -6,48 +6,161 @@
 
 /* LISTA DE PRESENTES */
 
-success: function (response) {
-    function formatDate(dateStr) {
-        if (!dateStr || dateStr.length !== 8) return dateStr;
-        return `${dateStr.substring(6, 8)}/${dateStr.substring(4, 6)}/${dateStr.substring(0, 4)}`;
-    }
-    if (!response || !response.ListaPresentes) return;
+let guardarLista = false;
 
-    const data = response.ListaPresentes;
-    data.forEach(function (lista) {
-        const $card = $(
-            `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
-                <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}</span><span><strong>Emissão:</strong> ${formatDate(lista.Emissao)}</span></p>
-                                <h5 class="card-title">Evento: ${lista.Nome}</h5>
-                                <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
-                                <p class="card-text"><strong>Nome Organizador:</strong> ${lista.NomeCliente}</p>
-                                <p class="card-text d-flex justify-content-between"><span><strong>Data Evento:</strong> ${formatDate(lista.DataEvento)}</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
+$(document).ready(function () {
+    const button = `<button id="btnListaPresentes" type="button" class="btn btn-primary form-control" style="margin-top: 5px; margin-bottom: 5px">Lista de Presentes</button>`;
+
+    $('#divMenu').prepend(button);
+
+    $("#btnListaPresentes").on("click", function () {
+        $("#modalListaPresentes").modal({ backdrop: "static" });
+
+        if (guardarLista) {
+            $("#modalProdutosLista").modal({ backdrop: "static" });
+        }
+    });
+});
+
+$("body").append(
+    `<div class="modal fade" id="modalListaPresentes" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="border-radius: 15px;">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Consultar Lista de Presentes
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearListas()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h4>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
+                            <div class="input-group input-group-lg">
+                                <select class="form-control" name="opcPresentes" id="opcPresentes">
+                                    <option value="1">1 - Data do Evento</option>
+                                    <option value="2">2 - Nome do Evento</option>
+                                    <option value="3">3 - Local de Evento</option>
+                                    <option value="4">4 - Nome do organizador</option>
+                                </select>
                             </div>
                         </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
+                            <div class="input-group input-group-lg">
+                                <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
+                            <button class="btn btn-primary" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row justify-content-center" id="cardContainer" style="display: none;">
+                        <!-- Cards will be appended here dynamically -->
                     </div>
                 </div>
-            </div>`
-        );
+                <div class="modal-footer justify-content-center" id="buttons">
+                </div>
+            </div>
+        </div>
+    </div>`
+);
 
-        $card.on("click", function () {
-            listaPresenteDinamica = lista;
-            clearProdutos();
-            lista.Produtos.forEach(function (produto) {
-                const $cardProduto = $(
+$("body").append(
+    `<div class="modal fade" id="modalProdutosLista" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="border-radius: 15px;">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Selecionar Produto
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProdutos()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h4>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row justify-content-center" id="productCardContainer">
+                        <!-- Product cards will be appended here dynamically -->
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>`
+);
+
+$(document).ready(function () {
+    $("#opcPresentes").on("change", function () {
+        const $opcVal = $("#opcPresentes").val();
+
+        if ($opcVal == "1") {
+            $("#txtPesquisa").attr('type', 'date');
+        }
+        else {
+            $("#txtPesquisa").attr('type', 'text');
+        }
+    });
+});
+
+var listaPresenteDinamica;
+function insertData() {
+    clearListas();
+
+    const $cardContainer = $("#cardContainer");
+    const $opcPresentes = $("#opcPresentes");
+    const $txtPesquisa = $("#txtPesquisa");
+
+    if (!$txtPesquisa.val()) {
+        return;
+    }
+
+    const reqObj = {
+        "Parametros": {}
+    };
+
+    const opcValor = $opcPresentes.val();
+    const txtValor = $txtPesquisa.val();
+
+    if (opcValor == "1") {
+        reqObj["Parametros"]["DataEvento"] = txtValor.replace(/-/g, "");
+    } else if (opcValor == "2") {
+        reqObj["Parametros"]["Nome"] = txtValor;
+    } else if (opcValor == "3") {
+        reqObj["Parametros"]["LocalEvento"] = txtValor;
+    } else if (opcValor == "4") {
+        reqObj["Parametros"]["NomeCliente"] = txtValor;
+    }
+
+    $.ajax({
+        url: url + "easymobile/CONSULTAS/LISTAPRESENTES",
+        type: 'POST',
+        contentType: 'application/json',
+        async: true,
+        dataType: 'json',
+        data: JSON.stringify(reqObj),
+        success: function (response) {
+            if (!response || !response.ListaPresentes) return;
+
+            const data = response.ListaPresentes;
+            data.forEach(function (lista) {
+                const $card = $(
                     `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
                         <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                            ${produto.ImagemBase64 ? `<img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">` : ''}
                             <div class="card-body">
-                                <h5 class="card-title">${produto.DescProduto}</h5>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Cod. Produto:</strong> ${produto.CodigoProduto}</span><span><strong>Item:</strong> ${produto.Item}</span></p>
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Val. Unitario:</strong> ${produto.ValorUnitario}</span><span><strong>Unidade:</strong> ${produto.UnidadeMedida}</span></p>
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}</span><span><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</span></p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}</span><span><strong>Emissão:</strong> ${formatDate(lista.Emissao)}</span></p>
+                                        <h5 class="card-title">Evento: ${lista.Nome}</h5>
+                                        <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
+                                        <p class="card-text"><strong>Nome Organizador:</strong> ${lista.NomeCliente}</p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Data Evento:</strong> ${formatDate(lista.DataEvento)}</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -55,51 +168,73 @@ success: function (response) {
                     </div>`
                 );
 
-                $cardProduto.on("click", function () {
-                    selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item);
+                $card.on("click", function () {
+                    listaPresenteDinamica = lista;
+                    clearProdutos();
+                    lista.Produtos.forEach(function (produto) {
+                        const $cardProduto = $(
+                            `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                                <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    ${produto.ImagemBase64 ? `<img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">` : ''}
+                                    <div class="card-body">
+                                        <h5 class="card-title">${produto.DescProduto}</h5>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="card-text d-flex justify-content-between"><span><strong>Cod. Produto:</strong> ${produto.CodigoProduto}</span><span><strong>Item:</strong> ${produto.Item}</span></p>
+                                                <p class="card-text d-flex justify-content-between"><span><strong>Val. Unitario:</strong> ${produto.ValorUnitario}</span><span><strong>Unidade:</strong> ${produto.UnidadeMedida}</span></p>
+                                                <p class="card-text d-flex justify-content-between"><span><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}</span><span><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                        );
+
+                        $cardProduto.on("click", function () {
+                            selectProduct(produto.CodigoProduto, produto.DescProduto, produto.ValorUnitario, lista.Codigo, produto.Item);
+                        });
+
+                        $("#productCardContainer").append($cardProduto);
+                    });
+
+                    $("#modalProdutosLista").modal({ backdrop: "static" });
                 });
 
-                $("#productCardContainer").append($cardProduto);
+                $cardContainer.append($card);
             });
 
-            $("#modalProdutosLista").modal({ backdrop: "static" });
-        });
-
-        $cardContainer.append($card);
+            $cardContainer.show();
+        },
+        error: function () {
+            window.alert("Erro ao carregar as listas de presentes");
+        }
     });
-
-    $cardContainer.show();
-},
-error: function () {
-    window.alert("Erro ao carregar as listas de presentes");
-}
-});
 }
 
 function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, itemLista) {
-$("#codigo").val(descProduto);
-$("#codigo").data("valor", valorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
-$("#codigo").data("codigo", codigoProduto);
-$("#codigo").data("estoque", 10);
-$("#codigo").data("imagem", "img/semimage.png");
-$("#codigo").data("nValor", valorUnitario.toFixed(2));
-$("#codigo").data("codlista", codLista);
-$("#codigo").data("itemlista", itemLista);
+    $("#codigo").val(descProduto);
+    $("#codigo").data("valor", valorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+    $("#codigo").data("codigo", codigoProduto);
+    $("#codigo").data("estoque", 10);
+    $("#codigo").data("imagem", "img/semimage.png");
+    $("#codigo").data("nValor", valorUnitario.toFixed(2));
+    $("#codigo").data("codlista", codLista);
+    $("#codigo").data("itemlista", itemLista);
 
-$("#modalProdutosLista").modal('hide');
-$("#modalListaPresentes").modal('hide');
+    $("#modalProdutosLista").modal('hide');
+    $("#modalListaPresentes").modal('hide');
 
-guardarLista = true;
+    guardarLista = true;
 }
 
 function clearListas() {
-$("#cardContainer").empty();
-$("#cardContainer").hide();
+    $("#cardContainer").empty();
+    $("#cardContainer").hide();
 }
 
 function clearProdutos() {
-$("#productCardContainer").empty();
-guardarLista = false;
+    $("#productCardContainer").empty();
+    guardarLista = false;
 }
 
 
