@@ -38,7 +38,8 @@ $("body").append(
                         <div class="col-lg-4 col-md-6 col-sm-10" style="padding-top: 12px;">
                             <div class="input-group input-group-lg">
                                 <select class="form-control" name="opcPresentes" id="opcPresentes">
-                                    <option value="1">1 -                              <option value="2">2 - Nome do Evento</option>
+                                    <option value="1">1 - Data do Evento</option>
+                                    <option value="2">2 - Nome do Evento</option>
                                     <option value="3">3 - Local de Evento</option>
                                     <option value="4">4 - Nome do organizador</option>
                                 </select>
@@ -154,11 +155,11 @@ function insertData() {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
                                         <h5 class="card-title">Evento: ${lista.Nome}</h5>
                                         <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
                                         <p class="card-text"><strong>Nome Organizador:</strong> ${lista.NomeCliente}</p>
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Data Evento:</strong> ${formatDate(lista.DataEvento)}</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Data Evento:</strong> ${formatDate(lista.DataEvento)}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
                                     </div>
                                 </div>
                             </div>
