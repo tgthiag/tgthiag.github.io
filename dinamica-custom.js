@@ -166,7 +166,18 @@ function insertData() {
                         </div>
                     </div>`
                 );
+                if (produto.QtdAtendida >= produto.QtdSolicitada) {
+                    $card.css("backgroundColor", "#a9a9a9");
+                }
+                else {
+                    $card.on("mouseover", function () {
+                        $card.css("backgroundColor", "#e3e3e3");
+                    });
 
+                    $card.on("mouseout", function () {
+                        $card.css("backgroundColor", "");
+                    });
+                }
                 $card.on("click", function () {
                     listaPresenteDinamica = lista;
                     clearProdutos();
