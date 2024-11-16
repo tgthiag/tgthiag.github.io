@@ -189,10 +189,10 @@ function insertData() {
                             </div>`
                         );
                         if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                            $cardProduto.css("backgroundColor", "#a9a9a9");
+                            $cardProduto.css("backgroundColor", "#ffffff");
                         }
                         else {
-                            $cardProduto.css("backgroundColor", "#e3e3e3");
+                            $cardProduto.css("backgroundColor", "#a9a9a9");
                             // $cardProduto.on("mouseover", function () {
                             //     $cardProduto.css("backgroundColor", "#e3e3e3");
                             // });
