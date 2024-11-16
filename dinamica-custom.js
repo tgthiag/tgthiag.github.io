@@ -84,29 +84,12 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <table id="dtProdutos" class="table display table-striped" style="display: block; overflow: auto; max-height: 75vh;">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Item</th>
-                                        <th scope="col">Cod. Produto</th>
-                                        <th scope="col">Desc. Prod.</th>
-                                        <th scope="col">Val. Unitario</th>
-                                        <th scope="col">Unidade</th>
-                                        <th scope="col">Qtd. Disponivel</th>
-                                        <th scope="col">Qtd. Solicitada</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bodydtProdutos">
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="row" id="productCardContainer">
+                        <!-- Product cards will be appended here dynamically -->
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
                 </div>
             </div>
         </div>
@@ -186,62 +169,29 @@ function insertData() {
 
                 $card.on("click", function () {
                     listaPresenteDinamica = lista;
+                    clearProdutos();
                     lista.Produtos.forEach(function (produto) {
-                        const $produtosRow = $("<tr>");
-                        const $imgElement = $('<img>').attr({
-                            src: 'data:image/png;base64,' + produto.ImagemBase64,
-                            width: 100,
-                            height: 100
-                        });
+                        const $cardProduto = $(`
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="card" style="margin-bottom: 20px;">
+                                    <img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${produto.DescProduto}</h5>
+                                        <p class="card-text">
+                                            <strong>Item:</strong> ${produto.Item}<br>
+                                            <strong>Cod. Produto:</strong> ${produto.CodigoProduto}<br>
+                                            <strong>Val. Unitario:</strong> ${produto.ValorUnitario}<br>
+                                            <strong>Unidade:</strong> ${produto.UnidadeMedida}<br>
+                                            <strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}<br>
+                                            <strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}
+                                        </p>
+                                        <button class="btn btn-primary" onclick="selectProduct('${produto.CodigoProduto}', '${produto.DescProduto}', '${produto.ValorUnitario}', '${lista.Codigo}', '${produto.Item}')">Selecionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
 
-                        $("#bodydtProdutos").append(
-                            $produtosRow.append(
-                                $("<td>").append($imgElement),
-                                $(`
-                                    <td>${produto.Item}</td>
-                                    <td>${produto.CodigoProduto}</td>
-                                    <td>${produto.DescProduto}</td>
-                                    <td>${produto.ValorUnitario}</td>
-                                    <td>${produto.UnidadeMedida}</td>
-                                    <td>${produto.QtdAtendida}</td>
-                                    <td>${produto.QtdSolicitada}</td>
-                                `)
-                            )
-                        );
-
-                        $produtosRow.on("click", function () {
-                            if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                                showAlert("A quantidade solicitada deste produto já foi atendida.");
-                                return;
-                            }
-                            $("#codigo").val(produto.DescProduto);
-                            $("#codigo").data("valor", produto.ValorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
-                            $("#codigo").data("codigo", produto.CodigoProduto);
-                            $("#codigo").data("estoque", 10);
-                            $("#codigo").data("imagem", "img/semimage.png");
-                            $("#codigo").data("nValor", produto.ValorUnitario.toFixed(2));
-
-                            $("#codigo").data("codlista", lista.Codigo);
-                            $("#codigo").data("itemlista", produto.Item);
-
-                            $("#modalProdutosLista").modal('hide');
-                            $("#modalListaPresentes").modal('hide');
-
-                            guardarLista = true;
-                        });
-
-                        if (produto.QtdAtendida >= produto.QtdSolicitada) {
-                            $produtosRow.css("backgroundColor", "#a9a9a9");
-                        }
-                        else {
-                            $produtosRow.on("mouseover", function () {
-                                $produtosRow.css("backgroundColor", "#e3e3e3");
-                            });
-
-                            $produtosRow.on("mouseout", function () {
-                                $produtosRow.css("backgroundColor", "");
-                            });
-                        }
+                        $("#productCardContainer").append($cardProduto);
                     });
 
                     $("#modalProdutosLista").modal({ backdrop: "static" });
@@ -258,13 +208,29 @@ function insertData() {
     });
 }
 
+function selectProduct(codigoProduto, descProduto, valorUnitario, codLista, itemLista) {
+    $("#codigo").val(descProduto);
+    $("#codigo").data("valor", valorUnitario.toFixed(2).toString().replace(/\./g, ",").replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+    $("#codigo").data("codigo", codigoProduto);
+    $("#codigo").data("estoque", 10);
+    $("#codigo").data("imagem", "img/semimage.png");
+    $("#codigo").data("nValor", valorUnitario.toFixed(2));
+    $("#codigo").data("codlista", codLista);
+    $("#codigo").data("itemlista", itemLista);
+
+    $("#modalProdutosLista").modal('hide');
+    $("#modalListaPresentes").modal('hide');
+
+    guardarLista = true;
+}
+
 function clearListas() {
     $("#cardContainer").empty();
     $("#cardContainer").hide();
 }
 
 function clearProdutos() {
-    $("#bodydtProdutos tr").remove();
+    $("#productCardContainer").empty();
     guardarLista = false;
 }
 
