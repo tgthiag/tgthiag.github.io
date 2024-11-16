@@ -156,7 +156,7 @@ function insertData() {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}</span><span><strong>Emissão:</strong> ${formatDate(lista.Emissao)}</span></p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
                                         <h5 class="card-title">Evento: ${lista.Nome}</h5>
                                         <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
                                         <p class="card-text"><strong>Nome Organizador:</strong> ${lista.NomeCliente}</p>
