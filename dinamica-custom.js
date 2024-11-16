@@ -40,57 +40,17 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                            <div class="input-group input-group-lg">
-                                <select class="form-control" name="opcPresentes" id="opcPresentes">
-                                    <option value="1">1 - Data do Evento</option>
-                                    <option value="2">2 - Nome do Evento</option>
-                                    <option value="3">3 - Local de Evento</option>
-                                    <option value="4">4 - Nome do organizador</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                            <div class="input-group input-group-lg">
-                                <input type="date" class="form-control" autocomplete="off" id="txtPesquisa">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10" style="padding-top: 12px;">
-                            <button class="btn" id="btn_pesquisar_dinamica" onclick="insertData()">Pesquisar</button>
-                        </div>
+                    <div class="row" id="bodydtPresentes" style="overflow: auto; max-height: 75vh;">
+                        <!-- Cards will be dynamically appended here -->
                     </div>
-
-                    <br>
-
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <table id="dtPresentes" class="table display table-striped" style="display: none; overflow: auto; max-height: 75vh;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Cod. Lista</th>
-                                            <th scope="col">Cod. Organizador</th>
-                                            <th scope="col">Nome Organizador</th>
-                                            <th scope="col">Evento</th>
-                                            <th scope="col">Data Evento</th>
-                                            <th scope="col">Local</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="bodydtPresentes">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                 </div>
                 <div class="modal-footer" id="buttons">
-                
                 </div>
             </div>
         </div>
     </div>`
-)
+);
+
 
 $("body").append(
     `<div class="modal fade" id="modalProdutosLista" role="dialog">
@@ -105,34 +65,18 @@ $("body").append(
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <table id="dtProdutos" class="table display table-striped" style="display: block; overflow: auto; max-height: 75vh;">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Item</th>
-                                        <th scope="col">Cod. Produto</th>
-                                        <th scope="col">Desc. Prod.</th>
-                                        <th scope="col">Val. Unitario</th>
-                                        <th scope="col">Unidade</th>
-                                        <th scope="col">Qtd. Disponivel</th>
-                                        <th scope="col">Qtd. Solicitada</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bodydtProdutos">
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="row" id="bodydtProdutos" style="overflow: auto; max-height: 75vh;">
+                        <!-- Product cards will be dynamically appended here -->
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
                 </div>
             </div>
         </div>
     </div>`
-)
+);
+
 
 $(document).ready(function () {
     $("#opcPresentes").on("change", function () {
@@ -208,19 +152,15 @@ data.forEach(function (lista) {
         listaPresenteDinamica = lista;
         lista.Produtos.forEach(function (produto) {
             const $prodCard = $(`
-                <div class="card mb-3">
-                    <div class="card-body d-flex align-items-center">
-                    ${produto.ImagemBase64 && produto.ImagemBase64 !== "" ? 
-                        `<img src="data:image/png;base64,${produto.ImagemBase64}" width="100" height="100" class="mr-3">` : 
-                        ""}
-                        <div>
-                            <p class="mb-1"><strong>Item:</strong> ${produto.Item}</p>
-                            <p class="mb-1"><strong>Cod. Produto:</strong> ${produto.CodigoProduto}</p>
-                            <p class="mb-1"><strong>Desc. Prod.:</strong> ${produto.DescProduto}</p>
-                            <p class="mb-1"><strong>Val. Unitario:</strong> ${produto.ValorUnitario}</p>
-                            <p class="mb-1"><strong>Qtd. Disponivel:</strong> ${produto.QtdAtendida}</p>
-                            <p class="mb-1"><strong>Qtd. Solicitada:</strong> ${produto.QtdSolicitada}</p>
-                        </div>
+                <div class="card mb-3 col-12">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Código:</strong> ${produto.CodigoProduto}<br>
+                            <strong>Lista:</strong> ${produto.Lista}<br>
+                            <strong>Preço:</strong> R$ ${produto.ValorUnitario}<br>
+                            <strong>Atendida:</strong> ${produto.QtdAtendida}<br>
+                            <strong>Quantidade:</strong> ${produto.QtdSolicitada}
+                        </p>
                     </div>
                 </div>
             `);
@@ -230,6 +170,7 @@ data.forEach(function (lista) {
                     showAlert("A quantidade solicitada deste produto já foi atendida.");
                     return;
                 }
+
                 $("#cliente").data("codigo", lista.CodigoCliente);
                 $("#cliente").val(lista.NomeCliente);
                 $("#cliente").data("loja", "01");
