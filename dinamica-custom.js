@@ -155,7 +155,7 @@ function insertData() {
                                 <div>
                                     <div class="col-12">
                                         <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
-                                        <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
+                                        <p class="card-title"><strong style="font-size: small;">${lista.Nome}</strong></p>
                                         <!-- <p class="card-text"><strong>Organizador:</strong> ${lista.NomeCliente}</p> -->
                                         <p class="card-text d-flex justify-content-between"><span><strong>Data Evento:</strong> ${formatDate(lista.DataEvento)}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
                                     </div>
