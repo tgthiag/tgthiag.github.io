@@ -84,7 +84,6 @@ $("body").append(
                 </div>
                 <div class="modal-body" style="text-align: center;">
                     <div class="row justify-content-center" id="productCardContainer">
-                        <!-- Product cards will be appended here dynamically -->
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
@@ -150,10 +149,10 @@ function insertData() {
             const data = response.ListaPresentes;
             data.forEach(function (lista) {
                 const $card = $(
-                    `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                    `<div class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-stretch">
                         <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="card-body">
-                                <div class="row">
+                                <div>
                                     <div class="col-12">
                                         <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
                                         <p class="card-title"><strong>Nome:</strong> ${lista.Nome}</p>
@@ -171,12 +170,12 @@ function insertData() {
                     clearProdutos();
                     lista.Produtos.forEach(function (produto) {
                         const $cardProduto = $(
-                            `<div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                            `<div class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-stretch">
                                 <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                                     ${produto.ImagemBase64 ? `<img class="card-img-top" src="data:image/png;base64,${produto.ImagemBase64}" alt="Produto" style="height: 150px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">` : ''}
                                     <div class="card-body">
                                         <h5 class="card-title">${produto.DescProduto}</h5>
-                                        <div class="row">
+                                        <div>
                                             <div class="col-12">
                                                 <p class="card-text d-flex justify-content-between"><span><strong>Cod. Produto:</strong> ${produto.CodigoProduto}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Item:</strong> ${produto.Item}</span></p>
                                                 <p class="card-text d-flex justify-content-between"><span><strong>Val. Unitario:</strong> ${produto.ValorUnitario}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Unidade:</strong> ${produto.UnidadeMedida}</span></p>
