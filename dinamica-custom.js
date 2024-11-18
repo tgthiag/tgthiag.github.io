@@ -148,13 +148,16 @@ function insertData() {
 
             const data = response.ListaPresentes;
             data.forEach(function (lista) {
+                let totalValue = lista.Produtos.reduce((sum, produto) => sum + produto.ValorUnitario, 0);
+                let formattedTotalValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totalValue);
+
                 const $card = $(
                     `<div class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-stretch">
                         <div class="card shadow-sm" style="margin-bottom: 20px; cursor: pointer; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="card-body">
                                 <div>
                                     <div class="col-12">
-                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}</span></p>
+                                        <p class="card-text d-flex justify-content-between"><span><strong>Lista:</strong> ${lista.Codigo}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Emissão:</strong> ${formatDate(lista.DataEmissao)}&nbsp;&nbsp;&nbsp;&nbsp;</span><strong>Valor Total:</strong> ${formattedTotalValue}</p>
                                         <p class="card-title"><strong style="font-size: small;">${lista.Nome}</strong></p>
                                         <!-- <p class="card-text"><strong>Organizador:</strong> ${lista.NomeCliente}</p> -->
                                         <p class="card-text d-flex justify-content-between"><span><strong>Evento:</strong> ${formatDate(lista.DataEvento)}&nbsp;&nbsp;&nbsp;&nbsp;</span><span><strong>Local:</strong> ${lista.LocalEvento}</span></p>
